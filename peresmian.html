@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sejarah Pendirian & Peresmian PPUQHM - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    /* COVER */
+    .cover{margin-top:64px;background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 100%);padding:70px 2rem;text-align:center;color:#fff;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.1) 0%,transparent 70%);pointer-events:none}
+    .cover-content{position:relative;z-index:1}
+    .cover .basmalah{font-family:'Amiri',serif;font-size:clamp(1.3rem,2.5vw,1.6rem);color:var(--emas2);margin-bottom:1.5rem;letter-spacing:.05em}
+    .cover .badge{display:inline-block;background:rgba(255,255,255,.1);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem;border:1px solid rgba(212,160,23,.4)}
+    .cover h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:.4rem;letter-spacing:.04em;line-height:1.3}
+    .cover h2{font-family:'Amiri',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--emas2);margin-bottom:1.25rem;line-height:1.2}
+    .ornamen{font-family:'Amiri',serif;color:var(--emas2);font-size:1.5rem;letter-spacing:.5em;margin:1rem 0}
+
+    /* CHAPTER */
+    .chapter{max-width:900px;margin:0 auto;padding:3rem 2rem 1rem}
+    .chapter-num{font-family:'Amiri',serif;font-size:14px;font-weight:600;color:var(--emas);letter-spacing:.3em;text-align:center;margin-bottom:.5rem}
+    .chapter-title{font-family:'Amiri',serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;color:var(--hijau);text-align:center;margin-bottom:.4rem;line-height:1.3}
+    .chapter-divider{text-align:center;font-family:'Amiri',serif;color:var(--emas);font-size:1.4rem;letter-spacing:.4em;margin-bottom:1.75rem}
+    .chapter-content{padding-top:.5rem}
+    .chapter-content p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .chapter-content p strong{color:var(--hijau);font-weight:600}
+    .chapter-content h3{font-family:'Amiri',serif;font-size:1.3rem;font-weight:700;color:var(--hijau2);margin:2.25rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--emas);display:inline-block}
+
+    /* TIMELINE TABLE */
+    .timeline-table{margin:1.25rem 0 1.75rem;border-radius:10px;overflow:hidden;box-shadow:0 4px 14px rgba(27,67,50,.08);background:#fff}
+    .timeline-row{display:grid;grid-template-columns:180px 1fr;border-bottom:1px solid rgba(27,67,50,.08)}
+    .timeline-row:last-child{border-bottom:none}
+    .timeline-row:nth-child(even){background:rgba(212,160,23,.04)}
+    .timeline-row.head{background:var(--hijau);color:#fff;font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+    .timeline-row > *{padding:1rem 1.15rem}
+    .timeline-row .date{font-weight:600;color:var(--hijau);font-family:'Amiri',serif;font-size:14px}
+    .timeline-row .event{font-size:14px;color:var(--gelap);line-height:1.65}
+    .timeline-row.highlight{background:rgba(212,160,23,.12)}
+    .timeline-row.highlight .date,.timeline-row.highlight .event{color:var(--hijau);font-weight:600}
+
+    /* QUOTE / MOTTO BOX */
+    .motto-box{background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:#fff;border-radius:14px;padding:2.5rem 2rem;text-align:center;margin:2rem 0;position:relative;overflow:hidden}
+    .motto-box::before{content:'"';position:absolute;top:-30px;left:30px;font-family:'Amiri',serif;font-size:9rem;color:var(--emas);opacity:.18;line-height:1}
+    .motto-box::after{content:'"';position:absolute;bottom:-90px;right:30px;font-family:'Amiri',serif;font-size:9rem;color:var(--emas);opacity:.18;line-height:1}
+    .motto-box .ar-motto{font-family:'Amiri',serif;font-size:clamp(1.4rem,3vw,2rem);color:var(--emas2);margin-bottom:.6rem;font-style:italic;font-weight:600;position:relative;z-index:1;line-height:1.5}
+    .motto-box .tr-motto{font-size:14px;color:rgba(255,255,255,.85);font-style:italic;position:relative;z-index:1;margin-bottom:1rem}
+    .motto-box .src{font-size:12px;color:rgba(255,255,255,.55);position:relative;z-index:1;letter-spacing:.05em}
+
+    /* HIGHLIGHT BOX */
+    .highlight-box{background:linear-gradient(135deg,rgba(212,160,23,.1),rgba(212,160,23,.02));border-left:4px solid var(--emas);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:14px;line-height:1.75;color:var(--gelap)}
+    .highlight-box strong{color:var(--hijau)}
+
+    .green-note{background:linear-gradient(135deg,rgba(27,67,50,.07),rgba(27,67,50,.02));border:1px solid rgba(27,67,50,.18);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:14px;line-height:1.8;color:var(--gelap)}
+    .green-note strong{color:var(--hijau)}
+    .green-note .label{display:block;font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--emas);margin-bottom:.5rem;text-transform:uppercase}
+
+    /* TOKOH CARD */
+    .tokoh-card{background:#fff;border-radius:10px;padding:1.5rem 1.75rem 1.5rem 4.75rem;margin:1rem 0;border-left:4px solid var(--emas);box-shadow:0 4px 14px rgba(27,67,50,.06);position:relative;transition:.2s}
+    .tokoh-card:hover{transform:translateX(4px);box-shadow:0 6px 18px rgba(27,67,50,.1)}
+    .tokoh-card .num{position:absolute;top:1.4rem;left:1.25rem;width:42px;height:42px;background:linear-gradient(135deg,var(--emas),var(--emas2));color:var(--hijau);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.3rem;font-weight:700}
+    .tokoh-card h4{font-size:1.05rem;color:var(--hijau);font-weight:700;margin-bottom:.4rem;font-family:'Amiri',serif}
+    .tokoh-card p{font-size:13.5px;color:var(--gelap);line-height:1.8;margin:0!important;text-align:justify}
+    .tokoh-card p strong{color:var(--hijau)}
+
+    /* KONFIGURASI SAKRAL */
+    .konfig-box{background:#fff;border:1px solid rgba(212,160,23,.3);border-radius:10px;padding:1.5rem;margin:1.25rem 0}
+    .konfig-box .head{font-family:'Amiri',serif;font-size:14px;font-weight:700;color:var(--hijau);text-align:center;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(212,160,23,.3)}
+    .konfig-row{display:flex;gap:12px;align-items:flex-start;padding:.75rem 0;border-bottom:1px dashed rgba(27,67,50,.08);font-size:13.5px;line-height:1.7;color:var(--gelap)}
+    .konfig-row:last-child{border-bottom:none}
+    .konfig-row .check{color:var(--emas);font-weight:700;font-size:16px;flex-shrink:0}
+    .konfig-row strong{color:var(--hijau)}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1rem 2rem 3rem}
+
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    @media(max-width:768px){
+      .timeline-row{grid-template-columns:1fr;gap:0}
+      .timeline-row .date{padding-bottom:.25rem;font-size:12px}
+      .timeline-row .event{padding-top:.25rem}
+      .tokoh-card{padding:4.5rem 1.25rem 1.25rem 1.25rem;text-align:left}
+      .tokoh-card .num{top:1rem;left:1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-content">
+    <p class="basmalah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+    <span class="badge">Sejarah Pesantren</span>
+    <h1>Sejarah Pendirian & Peresmian</h1>
+    <h2>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</h2>
+    <div class="ornamen">— ❦ —</div>
+  </div>
+</div>
+
+<!-- BAB 1: SEJARAH PENDIRIAN -->
+<div class="chapter" id="sejarah-pendirian">
+  <p class="chapter-num">BAB 1</p>
+  <h2 class="chapter-title">Sejarah Pendirian</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>Latar Belakang</h3>
+    <p>Pendirian PPUQHM tidak bisa dilepaskan dari perjalanan spiritual <strong>Gus Mursyid Adi Saputra</strong> yang setelah menyelesaikan studi di STKQ Al-Hikam Depok pada tahun 2017, mengikuti program <strong>PROSAKTI (Program Sarjana Mengabdi)</strong> selama satu tahun di tanah Papua. Dalam masa pengabdian inilah Allah SWT menanam benih cita-cita untuk mendirikan pesantren di SP 3.</p>
+    <p>Gus Mursyid melihat realitas yang menggugah hati: di Mimika belum ada pesantren tahfidz dengan manhaj <strong>Aswaja An-Nahdliyah</strong> yang murni. Banyak masyarakat NU di Papua yang merindukan tradisi pesantren seperti yang ada di Jawa, namun tidak ada wadah formal yang menyediakannya. Dari keprihatinan ini, lahirlah cita-cita mendirikan pesantren yang membawa tradisi pesantren NU ke tanah Papua.</p>
+
+    <h3>Kronologi Pendirian</h3>
+    <div class="timeline-table">
+      <div class="timeline-row head">
+        <div>Tanggal</div>
+        <div>Peristiwa</div>
+      </div>
+      <div class="timeline-row">
+        <div class="date">2017 (awal)</div>
+        <div class="event">Gus Mursyid menjalani program PROSAKTI di SP 3 Mimika selama 1 tahun. Cita-cita pendirian pesantren mulai terbentuk.</div>
+      </div>
+      <div class="timeline-row highlight">
+        <div class="date">28 Oktober 2017</div>
+        <div class="event">Peletakan batu pertama oleh tiga ulama besar nasional: <strong>KH. Ma'ruf Amin, KH. Miftahul Akhyar, KH. Lukman Haris Dimyathi</strong></div>
+      </div>
+      <div class="timeline-row">
+        <div class="date">27 Desember 2017</div>
+        <div class="event">Kesepakatan masyarakat 5 wilayah Mimika untuk mendirikan pesantren bersama-sama</div>
+      </div>
+      <div class="timeline-row">
+        <div class="date">25 Januari 2018</div>
+        <div class="event"><strong>HIBAH tanah</strong> dari Pak Edi & Bu Ida sebagai lokasi pesantren</div>
+      </div>
+      <div class="timeline-row">
+        <div class="date">17 Februari 2018</div>
+        <div class="event">Pemindahan batu pertama ke lokasi tanah hibah</div>
+      </div>
+      <div class="timeline-row highlight">
+        <div class="date">23 September 2018</div>
+        <div class="event"><strong>Peresmian PPUQHM</strong> oleh Ny. Hj. Mutammimah Hasyim & Gus Yusron Sidqy</div>
+      </div>
+      <div class="timeline-row">
+        <div class="date">27 Desember 2018</div>
+        <div class="event">Pernikahan Gus Mursyid & Ning Siti Imroatus Sholihah (3 bulan setelah peresmian)</div>
+      </div>
+    </div>
+
+    <h3>Hibah Tanah dari Pak Edi & Bu Ida</h3>
+    <p>Salah satu peristiwa kunci dalam pendirian PPUQHM adalah hibah tanah dari <strong>Pak Edi & Bu Ida</strong> pada <strong>25 Januari 2018</strong>. Pasangan ini dengan ikhlas menghibahkan tanah mereka untuk dijadikan lokasi pesantren — bukan sekadar pewakaf, tetapi <strong>PENGHIBAH</strong> dengan transfer kepemilikan yang lebih kuat secara hukum.</p>
+    <div class="highlight-box">
+      Tindakan mulia ini menjadi salah satu tonggak penting yang memungkinkan PPUQHM berdiri. Tanpa keikhlasan <strong>Pak Edi & Bu Ida</strong>, pesantren ini tidak akan ada di tempat strategis seperti sekarang. Semoga Allah SWT membalas kebaikan beliau berdua dengan keberkahan yang berlipat ganda.
+    </div>
+
+    <h3>Peresmian — Momen Sakral</h3>
+    <p>Peresmian PPUQHM pada <strong>23 September 2018</strong> menjadi momen yang sangat sakral. Yang meresmikan adalah dua sosok kunci dari keluarga Almaghfurullah KH. Hasyim Muzadi:</p>
+
+    <div class="green-note">
+      <span class="label">✓ Yang Meresmikan</span>
+      <strong>Ny. Hj. Mutammimah Hasyim</strong> — istri Almaghfurullah KH. Hasyim Muzadi<br>
+      <strong>Gus Yusron Sidqy</strong> — putra bungsu Almaghfurullah KH. Hasyim Muzadi
+    </div>
+
+    <p>Pada momen peresmian, Ny. Hj. Mutammimah mengucapkan kalimat sakral yang kemudian menjadi <strong>motto pesantren</strong>:</p>
+
+    <div class="motto-box">
+      <p class="ar-motto">"Subhanallah, gak nyongko tibake tandurane Abah puluhan tahun tukule nang Papua"</p>
+      <p class="tr-motto">(Subhanallah, tidak menyangka bahwa tanaman Beliau puluhan tahun, tumbuh di Papua)</p>
+      <p class="src">— Ny. Hj. Mutammimah Hasyim, 23 September 2018</p>
+    </div>
+
+    <p>Kalimat ini menjadi <strong>prasasti spiritual</strong> PPUQHM yang akan terus dikenang dan diulang dalam setiap dokumentasi pesantren. Maknanya sangat dalam: PPUQHM adalah <em>"tanaman"</em> — buah dari benih dakwah Almaghfurullah KH. Hasyim Muzadi yang ditanam puluhan tahun lalu di Pesantren Al-Hikam Malang dan Depok, dan secara takdir Allah tumbuh dan berbuah di tanah Papua.</p>
+  </div>
+</div>
+
+<!-- BAB 2: TOKOH PENDIRI & PERESMIAN -->
+<div class="chapter" id="tokoh-pendiri">
+  <p class="chapter-num">BAB 2</p>
+  <h2 class="chapter-title">Tokoh Pendiri & Peresmian</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>Tiga Ulama Peletak Batu Pertama (28 Oktober 2017)</h3>
+
+    <div class="tokoh-card">
+      <div class="num">1</div>
+      <h4>KH. Ma'ruf Amin</h4>
+      <p>Ulama besar nasional yang pada saat peletakan batu pertama menjabat sebagai <strong>Rais Aam PBNU</strong>. Beliau kemudian terpilih menjadi <strong>Wakil Presiden Republik Indonesia ke-13 (2019-2024)</strong>. Kehadiran beliau dalam peletakan batu pertama PPUQHM adalah bentuk dukungan nyata kepada pesantren NU di tanah Papua.</p>
+    </div>
+
+    <div class="tokoh-card">
+      <div class="num">2</div>
+      <h4>KH. Miftahul Akhyar</h4>
+      <p>Ulama besar dari Surabaya yang kemudian menjabat sebagai <strong>Rais Aam PBNU</strong> dan <strong>Ketua Umum Majelis Ulama Indonesia (MUI)</strong>. Beliau adalah salah satu ulama paling berpengaruh di NU dan Indonesia.</p>
+    </div>
+
+    <div class="tokoh-card">
+      <div class="num">3</div>
+      <h4>KH. Lukman Haris Dimyathi</h4>
+      <p>Pengasuh <strong>Pondok Pesantren Tremas, Pacitan</strong> — salah satu pesantren NU tertua dan paling berwibawa di Jawa Timur. Kehadiran beliau merepresentasikan tradisi pesantren NU klasik di tanah Papua.</p>
+    </div>
+
+    <h3>Dua Sosok Peresmian (23 September 2018)</h3>
+
+    <div class="tokoh-card">
+      <div class="num">1</div>
+      <h4>Ny. Hj. Mutammimah Hasyim</h4>
+      <p>Istri Almaghfurullah <strong>KH. Ahmad Hasyim Muzadi</strong> — Ketua Umum PBNU dua periode (1999-2010), pendiri Pesantren Al-Hikam Malang dan Depok, dan tokoh Islam Wasathiyah dunia. Ny. Hj. Mutammimah adalah saksi langsung perjalanan dakwah suami beliau, dan kehadirannya dalam peresmian PPUQHM merupakan <strong>restu spiritual</strong> yang sangat berharga.</p>
+    </div>
+
+    <div class="tokoh-card">
+      <div class="num">2</div>
+      <h4>Gus Yusron Sidqy</h4>
+      <p>Putra bungsu Almaghfurullah KH. Hasyim Muzadi yang melanjutkan dakwah ayahanda di lingkungan keluarga Al-Hikam. Restu beliau menjadi <strong>pengakuan resmi</strong> dari keluarga Al-Hikam terhadap PPUQHM sebagai <em>"pesantren Hasyim Muzadi di Papua"</em>.</p>
+    </div>
+
+    <h3>Takdir Indah: Dua Sosok yang Sama</h3>
+    <p>Ada takdir yang sangat menyentuh tentang Ny. Hj. Mutammimah dan Gus Yusron Sidqy. Pada <strong>malam wafat Almaghfurullah KH. Hasyim Muzadi (16 Maret 2017)</strong>:</p>
+
+    <div class="konfig-box">
+      <p class="head">Konfigurasi Sakral di Sisi Sang Kyai (Malam Wafat)</p>
+      <div class="konfig-row">
+        <span class="check">✓</span>
+        <div><strong>Sebelah kanan kepala beliau:</strong> Ny. Hj. Mutammimah (istri) — mentalqin syahadat</div>
+      </div>
+      <div class="konfig-row">
+        <span class="check">✓</span>
+        <div><strong>Sebelah kiri kepala beliau:</strong> Gus Yusron Sidqy (putra bungsu) — mentalqin syahadat</div>
+      </div>
+      <div class="konfig-row">
+        <span class="check">✓</span>
+        <div><strong>Tepat di kaki beliau:</strong> Gus Mursyid (santri yang akan mendirikan PPUQHM) — membaca Surah Yasin</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      Yang meresmikan PPUQHM (<strong>23 September 2018</strong>) adalah <strong>dua sosok yang sama</strong> yang berada di samping kepala Almaghfurullah KH. Hasyim Muzadi pada malam wafat beliau. Ini adalah <strong>lingkaran takdir</strong> yang sangat menyentuh dan penuh hikmah — seakan PPUQHM benar-benar adalah <em>"tanaman Abah"</em> yang diakui oleh keluarga inti beliau.
+    </div>
+
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="index.html" class="back-btn">← Kembali ke Beranda</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

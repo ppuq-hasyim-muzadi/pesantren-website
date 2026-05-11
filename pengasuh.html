@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pasangan Pengasuh - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+      --merah:#9b2c2c;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    /* COVER */
+    .cover{margin-top:64px;background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 100%);padding:60px 2rem 70px;text-align:center;color:#fff;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.1) 0%,transparent 70%);pointer-events:none}
+    .cover-content{position:relative;z-index:1}
+    .cover .basmalah{font-family:'Amiri',serif;font-size:clamp(1.3rem,2.8vw,1.8rem);color:var(--emas2);margin-bottom:1.5rem;letter-spacing:.05em}
+    .cover-foto{width:240px;height:240px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;border:5px solid var(--emas2);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+    .cover-foto img{width:100%;height:100%;object-fit:cover}
+    .cover h1{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;color:#fff;margin-bottom:.5rem;letter-spacing:.04em}
+    .cover h2{font-family:'Amiri',serif;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:700;color:var(--emas2);margin-bottom:1.5rem;line-height:1.4}
+    .ornamen{font-family:'Amiri',serif;color:var(--emas2);font-size:1.5rem;letter-spacing:.5em;margin:.75rem 0}
+    .cover .pengasuh-list{margin-top:1.5rem}
+    .cover .pengasuh-name{font-family:'Amiri',serif;font-size:1.3rem;color:var(--emas2);font-weight:600;margin:.4rem 0}
+    .cover .pengasuh-role{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:.5rem;font-style:italic}
+    .cover .pernikahan-info{margin-top:1.5rem;font-size:14px;color:var(--emas);font-weight:600;letter-spacing:.04em}
+
+    /* DAFTAR ISI */
+    .toc-section{background:#fff;padding:3rem 2rem;border-bottom:1px solid rgba(27,67,50,.08)}
+    .toc-wrap{max-width:900px;margin:0 auto}
+    .toc-title{text-align:center;font-family:'Amiri',serif;font-size:1.7rem;font-weight:700;color:var(--hijau);margin-bottom:.4rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .toc-head{text-align:center;margin-bottom:1.75rem}
+    .toc-section-title{font-family:'Amiri',serif;font-size:13px;color:var(--emas);font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:1.5rem 0 .75rem}
+    .toc-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem}
+    .toc-item{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:var(--putih);border-radius:6px;text-decoration:none;color:var(--hijau);font-size:13px;transition:.2s;border-left:3px solid var(--emas)}
+    .toc-item:hover{background:rgba(212,160,23,.08);transform:translateX(4px)}
+    .toc-num{font-family:'Amiri',serif;font-weight:700;color:var(--emas);min-width:30px;font-size:14px}
+
+    /* CHAPTER */
+    .chapter{max-width:900px;margin:0 auto;padding:3rem 2rem 1rem}
+    .chapter-section-label{text-align:center;font-family:'Amiri',serif;font-size:13px;color:var(--emas);font-weight:700;letter-spacing:.4em;margin-bottom:.5rem;text-transform:uppercase}
+    .chapter-num{font-family:'Amiri',serif;font-size:14px;font-weight:600;color:var(--emas);letter-spacing:.3em;text-align:center;margin-bottom:.5rem}
+    .chapter-title{font-family:'Amiri',serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;color:var(--hijau);text-align:center;margin-bottom:.4rem;line-height:1.3}
+    .chapter-subtitle{font-size:14px;color:var(--abu);text-align:center;font-style:italic;margin-bottom:1rem}
+    .chapter-divider{text-align:center;font-family:'Amiri',serif;color:var(--emas);font-size:1.4rem;letter-spacing:.4em;margin-bottom:1.75rem}
+    .chapter-content p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .chapter-content p strong{color:var(--hijau);font-weight:600}
+    .chapter-content h3{font-family:'Amiri',serif;font-size:1.25rem;font-weight:700;color:var(--hijau2);margin:2rem 0 1rem;padding-bottom:.3rem;border-bottom:1px solid rgba(212,160,23,.4);display:inline-block}
+    .chapter-content h4{font-size:15px;font-weight:600;color:var(--hijau);margin:1.25rem 0 .5rem}
+    .chapter-content ul{list-style:none;padding:0;margin:1rem 0 1.5rem}
+    .chapter-content ul li{font-size:14px;color:var(--gelap);line-height:1.8;padding:.4rem 0 .4rem 1.75rem;position:relative}
+    .chapter-content ul li::before{content:'•';color:var(--emas);font-weight:700;position:absolute;left:.5rem;top:.2rem;font-size:18px}
+
+    /* SECTION DIVIDER (Bagian I, II, dll) */
+    .bagian-divider{max-width:600px;margin:3.5rem auto 1rem;padding:2rem;text-align:center;border-top:2px solid var(--emas);border-bottom:2px solid var(--emas);background:linear-gradient(135deg,rgba(212,160,23,.08),rgba(212,160,23,.02))}
+    .bagian-divider .num{font-family:'Amiri',serif;font-size:14px;color:var(--emas);font-weight:700;letter-spacing:.4em;margin-bottom:.5rem}
+    .bagian-divider h2{font-family:'Amiri',serif;font-size:1.6rem;color:var(--hijau);font-weight:700;letter-spacing:.05em}
+
+    .quote-box{border-left:4px solid var(--emas);background:linear-gradient(90deg,rgba(212,160,23,.08),transparent);padding:1.25rem 1.5rem;margin:1.75rem 0;font-style:italic;color:var(--hijau);font-family:'Amiri',serif;font-size:1.05rem;line-height:1.7;border-radius:0 6px 6px 0}
+
+    .arabic-box{text-align:center;padding:1.75rem;background:linear-gradient(135deg,rgba(27,67,50,.06),rgba(212,160,23,.04));border-radius:10px;margin:1.75rem 0;border:1px solid rgba(212,160,23,.2)}
+    .arabic-box .ar{font-family:'Amiri',serif;font-size:1.4rem;color:var(--hijau);margin-bottom:.5rem;line-height:2;direction:rtl}
+    .arabic-box .tr{font-size:13px;color:var(--abu);font-style:italic;margin-top:.5rem}
+
+    /* TAKDIR CARD */
+    .takdir-card{background:#fff;border-radius:10px;padding:1.5rem;margin:1.25rem 0;border-left:4px solid var(--emas);box-shadow:0 4px 12px rgba(27,67,50,.06)}
+    .takdir-card h4{font-family:'Amiri',serif;font-size:1.15rem;color:var(--hijau);font-weight:700;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+    .takdir-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:linear-gradient(135deg,var(--emas),var(--emas2));color:var(--hijau);border-radius:50%;font-size:14px;font-weight:700;font-family:'Amiri',serif}
+    .takdir-card p{font-size:13.5px;color:var(--gelap);line-height:1.8;margin:0}
+
+    /* SANAD TABLE */
+    .sanad-table{margin:1rem 0 1.5rem;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .sanad-row{display:grid;grid-template-columns:50px 1fr 200px;border-bottom:1px solid rgba(27,67,50,.08)}
+    .sanad-row.head{background:var(--hijau);color:#fff;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .sanad-row.head > *{padding:.7rem .9rem}
+    .sanad-row > *{padding:.75rem .9rem;font-size:13px}
+    .sanad-row .num{text-align:center;color:var(--emas);font-weight:700;font-family:'Amiri',serif;font-size:1.1rem}
+    .sanad-row .jalur{color:var(--gelap);line-height:1.6}
+    .sanad-row .muara{color:var(--hijau);font-weight:600;font-size:12.5px}
+    .sanad-row:nth-child(even):not(.head){background:rgba(212,160,23,.04)}
+
+    /* TIME TABLE */
+    .time-table{margin:1.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .time-row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid rgba(27,67,50,.08)}
+    .time-row.head{background:var(--hijau);color:#fff;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .time-row.head > *{padding:.7rem 1rem}
+    .time-row > *{padding:.85rem 1rem;font-size:13.5px}
+    .time-row .tgl{font-weight:600;color:var(--hijau);background:rgba(212,160,23,.06)}
+    .time-row .des{color:var(--gelap);line-height:1.7}
+
+    /* IDENTITAS COMPARE */
+    .identitas-table{margin:1.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .id-row{display:grid;grid-template-columns:160px 1fr 1fr;border-bottom:1px solid rgba(27,67,50,.08)}
+    .id-row.head{background:var(--hijau);color:#fff;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .id-row.head > *{padding:.7rem 1rem}
+    .id-row > *{padding:.7rem 1rem;font-size:12.5px}
+    .id-row .id-asp{font-weight:600;color:var(--hijau);background:rgba(212,160,23,.06);font-size:12px}
+    .id-row .gus{color:var(--hijau);line-height:1.6}
+    .id-row .ning{color:var(--merah);line-height:1.6}
+    .id-row:nth-child(even):not(.head){background:rgba(212,160,23,.03)}
+
+    /* TRADISI GRID */
+    .tradisi-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.25rem 0}
+    .tradisi-col{background:#fff;border-radius:10px;padding:1.5rem;box-shadow:0 4px 12px rgba(27,67,50,.06)}
+    .tradisi-col.gus{border-top:3px solid var(--hijau)}
+    .tradisi-col.ning{border-top:3px solid var(--merah)}
+    .tradisi-col h4{font-size:14px;font-weight:600;margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:1px dashed rgba(27,67,50,.2)}
+    .tradisi-col.gus h4{color:var(--hijau)}
+    .tradisi-col.ning h4{color:var(--merah)}
+    .tradisi-col ul{margin:0!important}
+    .tradisi-col ul li{font-size:12.5px}
+
+    /* PERAN GRID */
+    .peran-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0}
+    .peran-col{background:#fff;border-radius:10px;padding:1.75rem;box-shadow:0 4px 12px rgba(27,67,50,.06)}
+    .peran-col.gus{border-top:4px solid var(--hijau)}
+    .peran-col.ning{border-top:4px solid var(--merah)}
+    .peran-col h4{font-family:'Amiri',serif;font-size:1.2rem;font-weight:700;margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:1px solid rgba(212,160,23,.4)}
+    .peran-col.gus h4{color:var(--hijau)}
+    .peran-col.ning h4{color:var(--merah)}
+
+    /* DZURRIYAH */
+    .dzurriyah-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+    .dzurriyah-card{background:#fff;border-radius:10px;padding:1.5rem;text-align:center;box-shadow:0 4px 12px rgba(27,67,50,.06);border-top:3px solid var(--emas)}
+    .dzurriyah-card .name{font-family:'Amiri',serif;font-size:1.05rem;color:var(--hijau);font-weight:700;margin-bottom:.4rem;line-height:1.4}
+    .dzurriyah-card .meta{font-size:12px;color:var(--abu);margin-bottom:.5rem}
+    .dzurriyah-card .desc{font-size:12.5px;color:var(--gelap);line-height:1.65}
+
+    /* CLOSING BOX */
+    .closing-box{background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:#fff;padding:2.5rem 2rem;border-radius:12px;margin:2rem 0;text-align:center}
+    .closing-box p{color:rgba(255,255,255,.85);font-size:14px;line-height:1.9;font-style:italic;margin-bottom:0!important}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1rem 1rem 3rem}
+
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    @media(max-width:768px){
+      .sanad-row{grid-template-columns:40px 1fr}
+      .sanad-row .muara{grid-column:1/-1;padding-top:0;padding-left:50px;font-size:11.5px}
+      .id-row{grid-template-columns:1fr}
+      .time-row{grid-template-columns:1fr}
+      .tradisi-grid,.peran-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-content">
+    <p class="basmalah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْم</p>
+    <div class="cover-foto"><img src="pengasuh.jpeg" alt="Pasangan Pengasuh PPUQHM"></div>
+    <h1>PASANGAN PENGASUH PPUQHM</h1>
+    <h2>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,.7);margin-bottom:1rem">Karang Senang SP 3, Mimika – Papua Tengah</p>
+    <div class="ornamen">— ❦ —</div>
+    <div class="pengasuh-list">
+      <p class="pengasuh-name">Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz</p>
+      <p class="pengasuh-role">(Pengasuh)</p>
+      <div class="ornamen" style="font-size:1rem;margin:.5rem 0">— ❦ —</div>
+      <p class="pengasuh-name" style="color:#f0b8b8">Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah</p>
+      <p class="pengasuh-role">(Pengasuh Santri Putri)</p>
+    </div>
+    <p class="pernikahan-info">💍 Pernikahan: 27 Desember 2018</p>
+  </div>
+</div>
+
+<!-- DAFTAR ISI -->
+<div class="toc-section">
+  <div class="toc-wrap">
+    <div class="toc-head"><h2 class="toc-title">Daftar Isi</h2></div>
+    <p class="toc-section-title">— Prolog —</p>
+    <ul class="toc-list">
+      <li><a href="#prolog" class="toc-item"><span class="toc-num">📖</span>Sepasang Hafidz-Hafidzah dari Tanah Kendal</a></li>
+    </ul>
+    <p class="toc-section-title">— Bagian I: Profil Pasangan —</p>
+    <ul class="toc-list">
+      <li><a href="#bab1" class="toc-item"><span class="toc-num">BAB 1</span>Profil Gus Mursyid Adi Saputra</a></li>
+      <li><a href="#bab2" class="toc-item"><span class="toc-num">BAB 2</span>Profil Ning Siti Imroatus Sholihah</a></li>
+    </ul>
+    <p class="toc-section-title">— Bagian II: Takdir yang Menyatukan —</p>
+    <ul class="toc-list">
+      <li><a href="#bab3" class="toc-item"><span class="toc-num">BAB 3</span>Empat Takdir Indah dalam Pernikahan</a></li>
+      <li><a href="#bab4" class="toc-item"><span class="toc-num">BAB 4</span>Pertemuan di Sanad-Sanad Krapyak</a></li>
+    </ul>
+    <p class="toc-section-title">— Bagian III: Pernikahan & Perjalanan —</p>
+    <ul class="toc-list">
+      <li><a href="#bab5" class="toc-item"><span class="toc-num">BAB 5</span>27 Desember 2018 — Tanggal Bersejarah</a></li>
+      <li><a href="#bab6" class="toc-item"><span class="toc-num">BAB 6</span>Hijrah Bersama ke Tanah Papua</a></li>
+    </ul>
+    <p class="toc-section-title">— Bagian IV: Keluarga —</p>
+    <ul class="toc-list">
+      <li><a href="#bab7" class="toc-item"><span class="toc-num">BAB 7</span>Husnul Khotimah — Putri yang Pulang Lebih Dahulu</a></li>
+      <li><a href="#bab8" class="toc-item"><span class="toc-num">BAB 8</span>Ahmad Mursyid Hikam Athoillah & Husna Waliyyam Mursyida</a></li>
+    </ul>
+    <p class="toc-section-title">— Bagian V: Kemitraan Pengasuh —</p>
+    <ul class="toc-list">
+      <li><a href="#bab9" class="toc-item"><span class="toc-num">BAB 9</span>Pembagian Peran Pengasuhan</a></li>
+      <li><a href="#bab10" class="toc-item"><span class="toc-num">BAB 10</span>Kombinasi Tradisi yang Unik</a></li>
+    </ul>
+    <p class="toc-section-title">— Epilog —</p>
+    <ul class="toc-list">
+      <li><a href="#epilog" class="toc-item"><span class="toc-num">📜</span>Pasangan Teladan untuk PPUQHM</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- PROLOG -->
+<div class="chapter" id="prolog">
+  <p class="chapter-num">PROLOG</p>
+  <h2 class="chapter-title">Sepasang Hafidz–Hafidzah dari Tanah Kendal</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Di Kabupaten Kendal, Jawa Tengah — yang dijuluki <strong>"Kota Santri"</strong> karena kekayaan tradisi pesantrennya — pada akhir abad 20 lahir dua bayi dari dua keluarga ulama yang berbeda. Yang satu lahir di Karangmalang Wetan pada Malam Maulid Nabi 1414 H (29 Agustus 1993), yang lain lahir di Karanganom Weleri pada 14 Agustus 1992 — selisih hampir setahun, di kabupaten yang sama, tetapi di desa yang berjauhan.</p>
+    <p>Dua bayi itu — yang kelak menjadi <strong>Gus Mursyid Adi Saputra</strong> dan <strong>Ning Siti Imroatus Sholihah</strong> — tumbuh terpisah, mondok di pesantren-pesantren yang berbeda, menempuh pendidikan tinggi di kota yang berbeda. Tetapi Allah SWT, dalam takdir yang sempurna, telah merencanakan pertemuan mereka jauh sebelum keduanya saling kenal. Garis nasab leluhur mereka, garis sanad guru-guru mereka, jaringan pesantren tempat mereka belajar — semuanya secara perlahan diatur Allah untuk bertemu pada satu titik: pernikahan tanggal <strong>27 Desember 2018</strong>.</p>
+    <p>Inilah dokumen yang menceritakan kisah pasangan ini. Bukan sekadar dua biografi yang dijajarkan, tetapi narasi tentang bagaimana Allah menyatukan dua jalur keilmuan yang berbeda menjadi satu kemitraan dakwah di tanah Papua. Empat lapis takdir indah, satu pernikahan yang menjadi puncak "tahun penuh berkah" 2018, dan satu visi bersama untuk PPUQHM.</p>
+    <div class="quote-box">"Mahasuci Dzat yang menciptakan segala sesuatu berpasang-pasangan, baik dari apa yang ditumbuhkan oleh bumi dan dari diri mereka sendiri, maupun dari apa yang tidak mereka ketahui." (QS. Yasin: 36)</div>
+  </div>
+</div>
+
+<!-- BAGIAN I -->
+<div class="bagian-divider">
+  <p class="num">BAGIAN I</p>
+  <h2>Profil Pasangan</h2>
+</div>
+
+<!-- BAB 1 -->
+<div class="chapter" id="bab1">
+  <p class="chapter-num">BAB 1</p>
+  <h2 class="chapter-title">Profil Gus Mursyid Adi Saputra</h2>
+  <p class="chapter-subtitle">(Pengasuh PPUQHM)</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz adalah pendiri sekaligus pengasuh Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM). Beliau lahir di Kendal pada <strong>Malam Senin, 12 Rabi'ul Awwal 1414 H atau 29 Agustus 1993</strong> — bertepatan dengan Malam Maulid Nabi Muhammad SAW. Tanggal kelahiran ini memberi makna spiritual yang dalam: bahwa beliau lahir pada malam paling istimewa bagi umat Islam.</p>
+
+    <h3>Latar Keluarga</h3>
+    <p>Beliau adalah putra dari pasangan <strong>H. Muhammad Sobirin</strong> (Kepala Desa Karangmalang Wetan) dan <strong>Hj. Siti Kumaeroh</strong> (Perangkat Desa). Kakek dari jalur ayah adalah <strong>KH. R. Muhammad Said</strong>. Yang sangat istimewa, dari jalur ibunda Siti Kumaeroh, beliau adalah <strong>dzurriyah Walisongo</strong> — silsilah nasab 43 generasi sampai Rasulullah SAW melalui Sayyidah Fatimah → Sayyid Abdul Qodir Al-Jilani → Maulana Ishaq → Sunan Giri → KH. R. Asy'ari "Kyai Guru Kaliwungu" (kakek buyut).</p>
+    <p>Status nasab beliau telah diverifikasi secara resmi oleh <strong>Naqobah Ansab Auliya' Tis'ah (NAAT) Indonesia</strong> dengan kerjasama <strong>Naqobah As-Saadah Al-Asyrof Kerajaan Maroko</strong>, dengan Sertifikat 0047/NAAT-SHD/XII/2023 tanggal 13 Desember 2023. Nama resmi beliau dalam sertifikat: <em>K.H.R. Mursid Adi Saputra Sibthu al-Giri al-Ishaqi al-Qodiri al-Musawi al-Hasani</em>. Namun dalam tradisi tawadhu mengikuti teladan Walisongo, beliau lebih memilih dipanggil dengan nama akrab: <strong>"Gus Mursyid Adi Saputra"</strong>.</p>
+
+    <h3>Perjalanan Pesantren</h3>
+    <p>Pendidikan agama Gus dimulai dari kakek KH. R. Muhammad Said sejak usia dini. Kemudian beliau menempuh perjalanan keilmuan di pesantren-pesantren ternama:</p>
+    <ul>
+      <li><strong>PPUQ Miftahul Falah Kaliwungu</strong> (2003-2008) di bawah asuhan KH. Munawwiruddin Badawi (putra KH. Ahmad Badawi Ar-Rasyidi, sang "Pentashih Al-Qur'an Modern Pertama Indonesia")</li>
+      <li><strong>SMK Takhassus Al-Qur'an Wonosobo + PPTQ Al-Asy'ariyyah Kalibeber</strong> (2008-2011) di bawah asuhan KH. Mustahal Asy'ari (adik KH. Muntaha Al-Hafidz, belajar langsung ke Mbah Munawwir Krapyak) dan KH. Atho'illah Asy'ari (putra KH. Mustahal)</li>
+      <li><strong>Tabarrukan</strong> kepada KH. As'ad Al-Hafidz di PP. Baitul Abidin Darussalam (2011) sebagai "santri kalong"</li>
+      <li><strong>STKQ Al-Hikam Depok</strong> (2012-2018, lulus Cumlaude jurusan Ilmu Al-Qur'an dan Tafsir) — pesantren tinggi yang didirikan Almaghfurullah KH. Hasyim Muzadi</li>
+      <li><strong>Universitas Az-Zaitunah Tunisia</strong> (2013-2014) melalui Beasiswa PBNU untuk 10 santri terbaik se-Indonesia</li>
+    </ul>
+
+    <h3>Empat Sanad Al-Qur'an ke Mbah Munawwir Krapyak</h3>
+    <p>Sanad Al-Qur'an Gus bersambung melalui empat jalur, semuanya bermuara ke <strong>KH. Muhammad Munawwir Krapyak</strong>:</p>
+    <ul>
+      <li>via KH. Munawwiruddin Badawi → KH. Ahmad Badawi → Mbah Munawwir</li>
+      <li>via KH. Mustahal Asy'ari → langsung Mbah Munawwir</li>
+      <li>via KH. Atho'illah Asy'ari → KH. Muntaha → Mbah Munawwir</li>
+      <li>via KH. As'ad Al-Hafidz → KH. Muntaha → Mbah Munawwir</li>
+    </ul>
+
+    <h3>Status Saat Ini</h3>
+    <p>Saat ini Gus Mursyid menjabat sebagai <strong>Pengasuh PPUQHM</strong> dan <strong>Dewan Khos Pagar Nusa Mimika</strong>. Beliau pernah menjabat sebagai Ketua PC LDNU Mimika dan Ketua PC GP Ansor Mimika selama beberapa periode, namun saat ini telah purna dari kedua jabatan tersebut. Beliau juga sedang menempuh program <strong>S2 Pendidikan Agama Islam di STAI Ma'had Aly Al-Hikam Malang</strong> dengan tesis tentang pemikiran Almaghfurullah KH. Hasyim Muzadi.</p>
+  </div>
+</div>
+
+<!-- BAB 2 -->
+<div class="chapter" id="bab2">
+  <p class="chapter-num">BAB 2</p>
+  <h2 class="chapter-title" style="color:var(--merah)">Profil Ning Siti Imroatus Sholihah</h2>
+  <p class="chapter-subtitle">(Pengasuh Santri Putri PPUQHM)</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah adalah Pengasuh Santri Putri PPUQHM sekaligus pendamping setia Gus Mursyid. Beliau lahir di Kabupaten Kendal pada tanggal <strong>14 Agustus 1992</strong> — lebih tua hampir setahun dari sang suami. Dalam tradisi pesantren, pasangan dengan istri sedikit lebih tua sering dianggap berkah, mengikuti teladan pernikahan Rasulullah SAW dengan Sayyidah Khadijah RA.</p>
+
+    <h3>Latar Keluarga</h3>
+    <p>Beliau adalah anak bungsu dari empat bersaudara, putri pasangan <strong>KH. Syamsuddin</strong> dan <strong>Ny. Hj. Nuriyah</strong> — tokoh agama yang dihormati di Karanganom, Kecamatan Weleri, Kabupaten Kendal. Pendidikan agama dan Al-Qur'an pertama beliau peroleh langsung dari pangkuan kedua orangtua, dilengkapi dengan pendidikan formal di MDT NU 06 Darul Ulum Karanganom.</p>
+
+    <h3>Empat Pesantren Ternama</h3>
+    <p>Setelah lulus SD N 02 Karanganom (2005), beliau menempuh perjalanan keilmuan di empat pesantren:</p>
+    <ul>
+      <li><strong>PP. Giri Kusumo Demak</strong> asuhan KH. Munif Zuhri (2005-2008, sambil SMP Ky Ageng Giri)</li>
+      <li><strong>PP. Raudlatul Ulum Pati</strong> asuhan KH. Humam Suyuthi (2008-2012, jenjang MDPA dan MA)</li>
+      <li><strong>PP. Baitul Abidin Darussalam Wonosobo</strong> asuhan KH. As'ad Al-Hafidz (mulai hafalan tahun 2012, mendapat 15 juz)</li>
+      <li><strong>PP. Ittihadut Tholibin Kalibeber</strong> asuhan Ny. Hj. Umi Fatma (selesai khatam 30 juz pada tahun 2017 dengan sanad muttashil)</li>
+    </ul>
+
+    <h3>Pendidikan Akademik</h3>
+    <p>Bersamaan dengan tahfidz, beliau menempuh pendidikan tinggi di <strong>Universitas Sains Al-Qur'an (UNSIQ) Wonosobo</strong> jurusan Pendidikan Guru Madrasah Ibtidaiyah (PGMI), lulus tahun 2016 dengan gelar Sarjana Pendidikan.</p>
+
+    <h3>Dua Sanad Al-Qur'an ke Mbah Munawwir Krapyak</h3>
+    <p>Sanad Al-Qur'an Ning bersambung melalui dua jalur:</p>
+    <ul>
+      <li>via KH. As'ad Al-Hafidz → KH. Muntaha Al-Hafidz → Mbah Munawwir Krapyak</li>
+      <li>via Ny. Hj. Umi Fatma → KH. Muntaha Al-Hafidz → Mbah Munawwir Krapyak</li>
+    </ul>
+    <p>Sanad ini bermuara ke titik yang sama dengan sanad Gus Mursyid.</p>
+
+    <h3>Status Saat Ini</h3>
+    <p>Saat ini Ning fokus penuh sebagai <strong>Pengasuh Santri Putri PPUQHM</strong>, mendidik anak-anak kandung dan santri putri pesantren. Beliau dengan sadar memilih untuk tidak aktif di organisasi NU eksternal, melainkan memberikan totalitas waktu, perhatian, dan tenaganya pada amanah utama sebagai ibu dan pengasuh — sesuai hadits Nabi SAW: <em>"Wanita adalah pemimpin di rumah suaminya, dan ia bertanggung jawab atas yang dipimpinnya."</em></p>
+  </div>
+</div>
+
+<!-- BAGIAN II -->
+<div class="bagian-divider">
+  <p class="num">BAGIAN II</p>
+  <h2>Takdir yang Menyatukan</h2>
+</div>
+
+<!-- BAB 3 -->
+<div class="chapter" id="bab3">
+  <p class="chapter-num">BAB 3</p>
+  <h2 class="chapter-title">Empat Takdir Indah dalam Pernikahan</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Ketika dua pohon ditanam di tempat berbeda, lalu Allah menyatukan akarnya di bawah tanah — itu adalah takdir. Pernikahan Gus Mursyid dan Ning Siti memiliki <strong>empat lapis takdir indah</strong> yang baru terungkap setelah pernikahan terjadi. Empat takdir ini menjadi bukti bahwa Allah SWT telah mempersiapkan pertemuan mereka jauh sebelum keduanya saling kenal.</p>
+
+    <div class="takdir-card">
+      <h4><span class="takdir-num">1</span> Pertemuan Dua Cabang Keluarga Abdurrosyid Kaliwungu</h4>
+      <p>Di akhir abad 19, <strong>KH. Abdurrosyid Kaliwungu</strong> — saudagar kaya sekaligus kyai Kaliwungu — memiliki dua putra hafidz yang juga menjadi kyai besar: <strong>KH. Usman</strong> (kakak) dan <strong>KH. Ahmad Badawi</strong> (adik). Keduanya bersaudara kandung, bahkan sama-sama mondok di Makkah pada masa muda mereka.</p>
+      <p style="margin-top:.5rem"><strong>KH. Usman</strong> (kakak) → PP. Kauman Kaliwungu → KH. Muntaha Al-Hafidz Kalibeber → KH. As'ad Al-Hafidz/Ny. Hj. Umi Fatma → guru <strong style="color:var(--merah)">NING SITI</strong></p>
+      <p><strong>KH. Ahmad Badawi</strong> (adik) → PPUQ Miftahul Falah Kaliwungu → KH. Munawwiruddin Badawi → guru <strong>GUS MURSYID</strong></p>
+      <p style="margin-top:.5rem">Pernikahan Gus dan Ning adalah penyatuan kembali dua jalur keilmuan yang berasal dari satu kakek bersama. Apa yang berpisah pada generasi anak-anak beliau, bersatu kembali pada generasi cucu-cicit di tanah Papua.</p>
+    </div>
+
+    <div class="takdir-card">
+      <h4><span class="takdir-num">2</span> Pertemuan Dua Keturunan Maulana Ishaq</h4>
+      <p>Gus Mursyid memiliki silsilah nasab yang bersambung kepada <strong>Maulana Ishaq</strong> melalui Sunan Giri (cucu Maulana Ishaq). Sementara pesantren pertama Ning (PP. Giri Kusumo Demak) didirikan oleh Mbah Hadi yang nasabnya juga bersambung kepada Maulana Ishaq.</p>
+      <p>Berarti pesantren pertama tempat Ning mondok ternyata didirikan oleh dzurriyah Maulana Ishaq — sama dengan nasab calon suaminya. Ning sudah "diasuh" oleh dzurriyah Maulana Ishaq selama tiga tahun (2005-2008) sebelum bertemu dengan dzurriyah Maulana Ishaq lainnya untuk pernikahan.</p>
+    </div>
+
+    <div class="takdir-card">
+      <h4><span class="takdir-num">3</span> Pertemuan Sanad-Sanad Mbah Munawwir Krapyak</h4>
+      <p>Sanad Al-Qur'an Gus melalui empat jalur, dan sanad Ning melalui dua jalur — <strong>total enam jalur sanad pasangan ini, semua bermuara ke KH. Muhammad Munawwir Krapyak</strong>. Inilah pasangan hafidz-hafidzah yang sanadnya sangat dekat dalam jaringan tahfidz Nusantara.</p>
+    </div>
+
+    <div class="takdir-card">
+      <h4><span class="takdir-num">4</span> Pertemuan di KH. As'ad Al-Hafidz</h4>
+      <p>Keduanya pernah berinteraksi dengan <strong>KH. As'ad Al-Hafidz</strong> di PP. Baitul Abidin Darussalam — dengan intensitas yang sangat berbeda. Gus Mursyid pada tahun 2011 datang sebagai "santri kalong" untuk tabarrukan setoran hafalan. Sementara Ning Siti memulai hafalan Al-Qur'an di pesantren ini pada tahun 2012, mondok intensif hingga mengkhatamkan 15 juz. Berbeda dalam intensitas dan durasi, tetapi sama dalam keberkahan dari guru yang sama.</p>
+    </div>
+
+    <div class="quote-box">"Empat lapis takdir — keluarga Abdurrosyid, Maulana Ishaq, Mbah Munawwir, KH. As'ad. Tidak ada yang direncanakan oleh manusia. Semua adalah skenario Allah SWT yang terungkap satu per satu setelah pernikahan terjadi."</div>
+  </div>
+</div>
+
+<!-- BAB 4 -->
+<div class="chapter" id="bab4">
+  <p class="chapter-num">BAB 4</p>
+  <h2 class="chapter-title">Pertemuan di Sanad-Sanad Krapyak</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Mari kita lihat lebih detail bagaimana <strong>enam jalur sanad pasangan ini</strong> bertemu di KH. Muhammad Munawwir Krapyak — sanad Al-Qur'an utama abad 20 di Nusantara.</p>
+
+    <h3 style="color:var(--hijau)">Empat Sanad Gus Mursyid</h3>
+    <div class="sanad-table">
+      <div class="sanad-row head"><div>No</div><div>Jalur</div><div>Bermuara</div></div>
+      <div class="sanad-row"><div class="num">1</div><div class="jalur">via KH. Munawwiruddin Badawi → KH. Ahmad Badawi (tabarrukan)</div><div class="muara">Mbah Munawwir Krapyak</div></div>
+      <div class="sanad-row"><div class="num">2</div><div class="jalur">via KH. Mustahal Asy'ari (langsung)</div><div class="muara">Mbah Munawwir Krapyak</div></div>
+      <div class="sanad-row"><div class="num">3</div><div class="jalur">via KH. Atho'illah Asy'ari → KH. Muntaha Al-Hafidz</div><div class="muara">Mbah Munawwir Krapyak</div></div>
+      <div class="sanad-row"><div class="num">4</div><div class="jalur">via KH. As'ad Al-Hafidz → KH. Muntaha Al-Hafidz</div><div class="muara">Mbah Munawwir Krapyak</div></div>
+    </div>
+
+    <h3 style="color:var(--merah)">Dua Sanad Ning Siti</h3>
+    <div class="sanad-table">
+      <div class="sanad-row head"><div>No</div><div>Jalur</div><div>Bermuara</div></div>
+      <div class="sanad-row"><div class="num">1</div><div class="jalur">via KH. As'ad Al-Hafidz → KH. Muntaha Al-Hafidz</div><div class="muara">Mbah Munawwir Krapyak</div></div>
+      <div class="sanad-row"><div class="num">2</div><div class="jalur">via Ny. Hj. Umi Fatma → KH. Muntaha Al-Hafidz</div><div class="muara">Mbah Munawwir Krapyak</div></div>
+    </div>
+
+    <p>Yang sangat indah, kedua sanad Ning bersambung melalui <strong>KH. Muntaha Al-Hafidz</strong> — salah satu jalur yang juga ada dalam sanad Gus Mursyid. Berarti pasangan ini berbagi guru spiritual yang sama. Bahkan KH. As'ad Al-Hafidz, yang menjadi guru langsung Gus pada 2011, juga menjadi guru Ning untuk 15 juz pertama hafalannya.</p>
+    <div class="quote-box">"Pasangan ini, jauh sebelum bertemu untuk menikah, sudah saling 'bertemu' melalui guru-guru yang sama. KH. Muntaha melalui sanad spiritual. KH. As'ad sebagai guru langsung. Mbah Munawwir Krapyak sebagai mata air sanad. Sungguh skenario takdir Allah yang sangat indah."</div>
+  </div>
+</div>
+
+<!-- BAGIAN III -->
+<div class="bagian-divider">
+  <p class="num">BAGIAN III</p>
+  <h2>Pernikahan & Perjalanan</h2>
+</div>
+
+<!-- BAB 5 -->
+<div class="chapter" id="bab5">
+  <p class="chapter-num">BAB 5</p>
+  <h2 class="chapter-title">27 Desember 2018</h2>
+  <p class="chapter-subtitle">— Tanggal Bersejarah —</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Pernikahan Gus Mursyid dan Ning Siti dilangsungkan pada tanggal <strong>27 Desember 2018</strong> — tanggal yang sangat istimewa dalam kronologi perjalanan PPUQHM. Tanggal ini terjadi tepat tiga bulan setelah peresmian pesantren oleh Ny. Hj. Mutammimah Hasyim dan Gus Yusron Sidqy pada 23 September 2018.</p>
+
+    <h3>Tahun Penuh Berkah 2018</h3>
+    <div class="time-table">
+      <div class="time-row head"><div>Tanggal</div><div>Peristiwa</div></div>
+      <div class="time-row"><div class="tgl">17 Februari 2018</div><div class="des">Pemindahan batu pertama PPUQHM ke tanah pesantren</div></div>
+      <div class="time-row"><div class="tgl">Februari–September 2018</div><div class="des">Pembangunan pesantren bersama gotong royong masyarakat 5 wilayah</div></div>
+      <div class="time-row"><div class="tgl">Tahun 2018</div><div class="des">Lulus STKQ Al-Hikam Depok dengan predikat Cumlaude</div></div>
+      <div class="time-row"><div class="tgl">Bulan Ramadan 2018</div><div class="des">Umroh pertama Gus + ziarah Walisongo</div></div>
+      <div class="time-row"><div class="tgl">23 September 2018</div><div class="des">Peresmian PPUQHM oleh keluarga Almaghfurullah KH. Hasyim Muzadi</div></div>
+      <div class="time-row"><div class="tgl">27 Desember 2018</div><div class="des">Pernikahan dengan Ning Siti Imroatus Sholihah</div></div>
+    </div>
+    <p>Pernikahan adalah <strong>puncak dari tahun penuh berkah</strong> ini. Setelah membangun pesantren bersama masyarakat lima wilayah, setelah lulus kuliah dengan prestasi Cumlaude, setelah pesantren diresmikan oleh keluarga sang guru tercinta — Allah SWT menyempurnakan tahun itu dengan menghadirkan Ning Siti sebagai pendamping setia.</p>
+
+    <h3>Selisih Usia: Tradisi yang Berkah</h3>
+    <p>Yang juga sangat indah: Ning Siti lahir pada <strong>14 Agustus 1992</strong>, lebih tua dari Gus Mursyid (29 Agustus 1993) — selisih hampir setahun. Dalam tradisi pesantren, pasangan dengan istri sedikit lebih tua sering dianggap berkah, mengikuti teladan pernikahan Rasulullah SAW dengan Sayyidah Khadijah RA yang juga lebih tua dari Beliau.</p>
+    <p>Sayyidah Khadijah adalah istri yang menjadi sumber penguatan Rasulullah SAW di awal kenabian. Pasangan dengan istri sedikit lebih dewasa sering memiliki dinamika kemitraan yang lebih matang dan saling melengkapi.</p>
+  </div>
+</div>
+
+<!-- BAB 6 -->
+<div class="chapter" id="bab6">
+  <p class="chapter-num">BAB 6</p>
+  <h2 class="chapter-title">Hijrah Bersama ke Tanah Papua</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Setelah pernikahan pada 27 Desember 2018, dimulailah babak baru dalam kehidupan pasangan ini: <strong>hijrah bersama ke tanah Papua</strong>. Bagi Gus Mursyid, ini adalah "pulang kampung" ke pesantren yang baru saja diresmikannya. Bagi Ning Siti, ini adalah keberangkatan ke tanah baru yang belum pernah dilihatnya, jauh dari Karanganom yang menjadi tempat tumbuh kembangnya.</p>
+
+    <h3>Pilihan Mengikuti Suami</h3>
+    <p>Banyak istri ulama yang lebih memilih tinggal di Jawa dengan pesantren mertua atau pesantren keluarga sendiri. Tetapi Ning Siti memilih jalan lain — mengikuti suami yang telah mengikrarkan diri untuk berkhidmah di tanah Papua.</p>
+    <p>Ini bukan karena terpaksa. Ini adalah <strong>pilihan sadar</strong> yang lahir dari keyakinan: bahwa di sanalah dakwah dibutuhkan, di sanalah Allah akan menempatkannya, di sanalah keberkahan menunggu. Ini adalah teladan tertinggi seorang istri shalihah, mengikuti tradisi Sayyidah Hajar yang ditinggalkan di lembah Makkah yang tandus, dan para istri Sahabat yang hijrah dari Makkah ke Madinah.</p>
+
+    <h3>Tantangan Adaptasi</h3>
+    <p>Hijrah ke Mimika berarti menghadapi banyak tantangan adaptasi:</p>
+    <ul>
+      <li><strong>Iklim</strong> — dari iklim tropis pesisir Jawa ke iklim tropis dataran rendah Papua</li>
+      <li><strong>Bahasa</strong> — dari bahasa Jawa keseharian ke bahasa Indonesia plus dialek lokal</li>
+      <li><strong>Makanan</strong> — dari kuliner Jawa ke makanan Papua</li>
+      <li><strong>Sosial</strong> — dari masyarakat Jawa yang relatif homogen ke masyarakat plural Mimika</li>
+      <li><strong>Keluarga</strong> — jauh dari orangtua, saudara, dan kerabat di Karanganom</li>
+    </ul>
+    <p>Tetapi seperti seorang santriwati sejati yang sudah ditempa di empat pesantren, Ning Siti memiliki bekal yang cukup untuk menghadapi semua itu: kemandirian dari pengalaman mondok bertahun-tahun, kesabaran dari tradisi pesantren, dan ketabahan dari keluarga ulama.</p>
+    <div class="quote-box">"Beliau bukan istri yang 'terbawa' ke Papua. Beliau adalah istri yang 'memilih' Papua — dengan kesadaran penuh bahwa di sanalah suaminya berkhidmah, dan di sanalah Allah akan memberkahi rumah tangganya."</div>
+  </div>
+</div>
+
+<!-- BAGIAN IV -->
+<div class="bagian-divider">
+  <p class="num">BAGIAN IV</p>
+  <h2>Keluarga</h2>
+</div>
+
+<!-- BAB 7 -->
+<div class="chapter" id="bab7">
+  <p class="chapter-num">BAB 7</p>
+  <h2 class="chapter-title">Husnul Khotimah</h2>
+  <p class="chapter-subtitle">— Putri yang Pulang Lebih Dahulu —</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tahun <strong>2020</strong> — di era Ustadz Fajar (Masa Pertumbuhan PPUQHM) — keluarga ini dianugerahi kabar gembira: kehamilan putri pertama. Selama sembilan bulan, Ning Siti membawa amanah kehidupan dalam rahimnya. Bayi perempuan yang sedang tumbuh dalam kandungan adalah pendengar pertama tilawah Al-Qur'an seorang Hafidzah.</p>
+    <p>Tetapi Allah SWT memiliki rencana lain. Pada usia kandungan 9 bulan — saat kehidupan sudah hampir siap dimulai di dunia — sang bayi perempuan dipanggil pulang oleh Allah SWT sebelum sempat lahir ke dunia. Sang putri yang berpulang itu diberi nama indah: <strong>Husnul Khotimah</strong> — yang berarti <em>"akhir yang baik"</em>.</p>
+    <p>Penamaan ini adalah keimanan tertinggi seorang ulama: bahwa kepulangan sang putri kepada Allah adalah "akhir yang baik" — bukan tragedi, melainkan karunia tersembunyi. Dalam tradisi Islam, anak yang wafat dalam kandungan setelah ditiupkan ruh adalah calon penghuni surga yang akan menjadi syafaat bagi orangtuanya kelak di Hari Kiamat.</p>
+    <div class="arabic-box">
+      <p class="ar">اَللَّهُمَّ اجْعَلْهَا فَرَطًا وَذُخْرًا لأَِبَوَيْهَا وَشَفِيعَةً مُجَابَةً</p>
+      <p class="tr">"Ya Allah, jadikanlah Husnul Khotimah sebagai pendahulu (di surga), simpanan, dan syafaat yang dikabulkan bagi kedua orangtuanya."</p>
+    </div>
+    <p>Bagi pasangan ini, kehilangan ini adalah ujian yang membentuk kedalaman spiritual mereka. Kesabaran dalam menghadapi musibah, kekuatan untuk terus berkhidmah di pesantren meski hati masih berduka, ketabahan untuk tetap saling menguatkan — semua menjadi pelajaran tersembunyi yang membuat keluarga ini menjadi lebih dalam, lebih kuat, dan lebih bijaksana.</p>
+  </div>
+</div>
+
+<!-- BAB 8 -->
+<div class="chapter" id="bab8">
+  <p class="chapter-num">BAB 8</p>
+  <h2 class="chapter-title">Ahmad Mursyid Hikam Athoillah & Husna Waliyyam Mursyida</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Setelah kehilangan Husnul Khotimah, Allah SWT menganugerahkan dua dzurriyah lain kepada pasangan ini — masing-masing dengan nama yang sangat indah dan sarat makna.</p>
+
+    <h3>Ahmad Mursyid Hikam Athoillah <span style="font-weight:400;font-size:.85rem;color:var(--abu)">(Lahir 8 Oktober 2020)</span></h3>
+    <p>Putra pertama yang hidup, lahir pada tanggal 8 Oktober 2020 — <strong>di tahun yang sama dengan wafatnya Husnul Khotimah</strong>. Allah memberi dengan cara mengambil, dan mengambil dengan cara memberi.</p>
+    <p>Nama Ahmad Mursyid Hikam Athoillah menggabungkan <strong>empat makna</strong> yang sangat dalam:</p>
+    <ul>
+      <li><strong>Ahmad</strong> — pujian (salah satu nama Rasulullah SAW)</li>
+      <li><strong>Mursyid</strong> — nama ayahanda (yang membimbing)</li>
+      <li><strong>Hikam</strong> — Pesantren Al-Hikam dan Kitab Al-Hikam Ibnu Athaillah</li>
+      <li><strong>Athoillah</strong> — Imam Ibnu Athaillah As-Sakandari, sufi besar penulis Kitab Al-Hikam</li>
+    </ul>
+    <p>Sang putra dipersiapkan sejak nama untuk menjadi pewaris tradisi Al-Hikam yang mendalam.</p>
+
+    <h3>Husna Waliyyam Mursyida <span style="font-weight:400;font-size:.85rem;color:var(--abu)">(Lahir 25 Februari 2022)</span></h3>
+    <p>Putri kedua yang hidup, lahir pada tanggal 25 Februari 2022. Yang sangat menyentuh dari nama "Husna" adalah cara mengabadikan ingatan kepada sang kakak yang pulang lebih dahulu — Husnul Khotimah. <strong>"Husna" adalah gema dari "Husnul"</strong>. Setiap kali nama Husna diucapkan, ada gema Husnul yang terdengar.</p>
+    <ul>
+      <li><strong>Husna</strong> — kebaikan (gema dari Husnul Khotimah)</li>
+      <li><strong>Waliyyam</strong> — kewalian (yang mendekat kepada Allah)</li>
+      <li><strong>Mursyida</strong> — yang membimbing (gema dari nama ayahanda Mursyid)</li>
+    </ul>
+    <p>Sang putri yang pulang lebih dahulu tetap hidup dalam nama adiknya. Setiap kali Husna disebut, ada doa untuk Husnul yang ikut tersampaikan.</p>
+
+    <div class="quote-box">"Tiga dzurriyah, tiga karunia, tiga doa yang menyertai pasangan ini. Husnul Khotimah di alam abadi, Ahmad Mursyid Hikam Athoillah dan Husna Waliyyam Mursyida di alam dunia. Keluarga yang utuh secara spiritual — sebagian di sini, sebagian di sana, semuanya milik Allah."</div>
+  </div>
+</div>
+
+<!-- BAGIAN V -->
+<div class="bagian-divider">
+  <p class="num">BAGIAN V</p>
+  <h2>Kemitraan Pengasuh</h2>
+</div>
+
+<!-- BAB 9 -->
+<div class="chapter" id="bab9">
+  <p class="chapter-num">BAB 9</p>
+  <h2 class="chapter-title">Pembagian Peran Pengasuhan</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Di PPUQHM, pasangan ini menjalankan kemitraan pengasuhan yang sangat efektif — masing-masing mengelola domainnya dengan keahlian yang berbeda namun saling melengkapi.</p>
+
+    <div class="peran-grid">
+      <div class="peran-col gus">
+        <h4>👨‍🏫 Peran Gus Mursyid sebagai Pengasuh</h4>
+        <ul>
+          <li>Visi strategis dan arah pesantren ke depan</li>
+          <li>Pengasuhan santri putra (penuh waktu)</li>
+          <li>Hubungan eksternal: PCNU Mimika, pemerintah, masyarakat luas</li>
+          <li>Pendidikan kitab kuning untuk santri tingkat lanjut</li>
+          <li>Pemberian sanad Al-Qur'an kepada santri yang khatam</li>
+          <li>Khotbah Jum'at, ceramah umum, dan dakwah eksternal</li>
+          <li>Saat ini Dewan Khos Pagar Nusa Mimika</li>
+        </ul>
+      </div>
+      <div class="peran-col ning">
+        <h4>👩‍🏫 Peran Ning Siti sebagai Pengasuh Santri Putri</h4>
+        <ul>
+          <li>Pembinaan tahfidz Al-Qur'an santri putri</li>
+          <li>Pendidikan akhlak dan adab santriwati</li>
+          <li>Pendidikan fiqih khusus perempuan (haid, nifas, ibadah perempuan)</li>
+          <li>Pendampingan personal santri putri</li>
+          <li>Pendidikan anak-anak kandung (Ahmad Mursyid & Husna)</li>
+          <li>Menjadi teladan langsung sebagai "ibu" bagi santriwati</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Pilihan Fokus yang Strategis</h3>
+    <p>Yang sangat membedakan kemitraan ini adalah pilihan Ning untuk <strong>fokus penuh pada pendidikan internal pesantren</strong> — anak-anak kandung dan santri putri PPUQHM. Beliau dengan sadar memilih untuk tidak aktif di organisasi NU eksternal seperti Muslimat NU atau Fatayat NU. Pilihan ini bukan karena beliau tidak peduli pada perjuangan organisasi, tetapi karena beliau memilih untuk memberikan totalitas waktu, perhatian, dan tenaganya pada amanah utama: mendidik anak-anak kandung sebagai dzurriyah Walisongo dan generasi penerus dakwah keluarga, serta mendidik santri putri PPUQHM.</p>
+    <p>Sementara Gus Mursyid yang aktif di berbagai organisasi NU eksternal, Ning Siti menjaga <strong>"benteng dalam"</strong> — pesantren dan keluarga — dengan totalitas. Inilah pembagian peran yang sangat efektif: yang satu menjangkau ke luar, yang satu memperkokoh ke dalam.</p>
+    <div class="quote-box">"Tidak setiap perempuan harus menjadi tokoh organisasi untuk memberi manfaat besar. Kadang manfaat yang paling besar adalah manfaat yang fokus dan mendalam — manfaat seorang ibu untuk anaknya, dan seorang pengasuh untuk santrinya."</div>
+  </div>
+</div>
+
+<!-- BAB 10 -->
+<div class="chapter" id="bab10">
+  <p class="chapter-num">BAB 10</p>
+  <h2 class="chapter-title">Kombinasi Tradisi yang Unik</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Yang sangat istimewa dari pasangan ini adalah kombinasi <strong>delapan tradisi pesantren</strong> yang mereka bawa ke PPUQHM. Masing-masing pernah belajar di empat pesantren — totalnya delapan tradisi pesantren NU yang berbeda.</p>
+
+    <div class="tradisi-grid">
+      <div class="tradisi-col gus">
+        <h4>📗 Empat Tradisi Gus Mursyid</h4>
+        <ul>
+          <li>Tradisi Sanad Krapyak Kaliwungu (PPUQ Miftahul Falah, KH. Munawwiruddin Badawi)</li>
+          <li>Tradisi Tahfidz Pegunungan (PPTQ Al-Asy'ariyyah Kalibeber, KH. Mustahal Asy'ari)</li>
+          <li>Tradisi Al-Hikam Wasathiyah (STKQ Al-Hikam Depok, KH. Hasyim Muzadi)</li>
+          <li>Tradisi Akademik Internasional (Univ. Az-Zaitunah Tunisia)</li>
+        </ul>
+      </div>
+      <div class="tradisi-col ning">
+        <h4>📕 Empat Tradisi Ning Siti</h4>
+        <ul>
+          <li>Tradisi Salaf-Thoriqoh Naqsyabandiyyah (PP. Giri Kusumo Demak, KH. Munif Zuhri)</li>
+          <li>Tradisi Kitab Kuning Klasik (PP. Raudlatul Ulum Pati, KH. Humam Suyuthi)</li>
+          <li>Tradisi Tahfidz Pegunungan (PP. Baitul Abidin & Ittihadut Tholibin Wonosobo)</li>
+          <li>Tradisi Akademik Pendidikan (UNSIQ Wonosobo, S.Pd. PGMI)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>PPUQHM sebagai "Melting Pot" Delapan Tradisi</h3>
+    <p>Kedelapan tradisi ini, ketika dipadukan di PPUQHM, menjadikan pesantren ini sebagai <strong>"melting pot"</strong> tradisi pesantren NU yang sangat kaya. Para santri PPUQHM tidak hanya menerima satu tradisi, tetapi delapan tradisi sekaligus — sebuah kekayaan yang jarang ditemui di pesantren-pesantren baru lainnya.</p>
+    <p>Kombinasi unik ini terlihat dalam kurikulum PPUQHM:</p>
+    <ul>
+      <li>Tahfidz Al-Qur'an dengan sanad Krapyak (dari kedua pasangan)</li>
+      <li>Kitab kuning klasik (dari Pati dan Kalibeber)</li>
+      <li>Pemikiran Wasathiyah Al-Hikam (dari Gus)</li>
+      <li>Tradisi salaf dan thoriqoh (dari Ning)</li>
+      <li>Bahasa Arab dan Inggris untuk pendidikan internasional (dari Tunisia & UNSIQ)</li>
+      <li>Metode pedagogi modern (dari latar PGMI Ning)</li>
+      <li>Manhaj Aswaja An-Nahdliyah yang kokoh (dari semua sumber)</li>
+    </ul>
+    <div class="quote-box">"Pasangan ini bukan sekadar pasangan suami-istri biasa. Mereka adalah dua kurator tradisi yang masing-masing membawa kekayaan tersendiri dari masa pendidikan mereka, dan kini menyatukannya untuk membangun pesantren yang kaya warna."</div>
+  </div>
+</div>
+
+<!-- EPILOG -->
+<div class="chapter" id="epilog">
+  <p class="chapter-num">EPILOG</p>
+  <h2 class="chapter-title">Pasangan Teladan untuk PPUQHM</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi memiliki pasangan pengasuh yang sangat istimewa: <strong>Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz</strong> dan <strong>Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah</strong>. Pasangan yang dipertemukan oleh empat lapis takdir indah, yang menikah pada puncak "tahun penuh berkah" 2018, dan yang kini bersama-sama membangun PPUQHM di tanah Cendrawasih.</p>
+
+    <p>Bagi para santri PPUQHM, kehadiran pasangan pengasuh ini adalah teladan langsung tentang banyak hal:</p>
+    <ul>
+      <li>Bahwa pernikahan dengan niat ibadah akan dipertemukan oleh Allah dengan cara yang tidak terduga</li>
+      <li>Bahwa pasangan dalam pernikahan harus saling melengkapi, bukan saling bersaing</li>
+      <li>Bahwa Hafidz dan Hafidzah adalah pasangan ideal yang akan mewariskan Al-Qur'an kepada keturunan</li>
+      <li>Bahwa hijrah mengikuti suami untuk dakwah adalah kemuliaan tertinggi seorang istri shalihah</li>
+      <li>Bahwa duka kehilangan anak harus dihadapi dengan keimanan dan kesabaran</li>
+      <li>Bahwa pembagian peran suami-istri yang efektif adalah kunci kemajuan keluarga dan pesantren</li>
+      <li>Bahwa fokus pada amanah utama lebih baik daripada menyebarkan diri ke berbagai kegiatan</li>
+    </ul>
+
+    <h3>Tabel Identitas Pasangan</h3>
+    <div class="identitas-table">
+      <div class="id-row head"><div>Aspek</div><div>Gus Mursyid</div><div>Ning Siti</div></div>
+      <div class="id-row"><div class="id-asp">Lahir</div><div class="gus">29 Agustus 1993, Kendal</div><div class="ning">14 Agustus 1992, Kendal</div></div>
+      <div class="id-row"><div class="id-asp">Asal</div><div class="gus">Karangmalang Wetan, Kendal</div><div class="ning">Karanganom, Weleri, Kendal</div></div>
+      <div class="id-row"><div class="id-asp">Posisi Keluarga</div><div class="gus">Putra dari H. M. Sobirin & Hj. Siti Kumaeroh</div><div class="ning">Anak bungsu dari 4, putri KH. Syamsuddin & Ny. Hj. Nuriyah</div></div>
+      <div class="id-row"><div class="id-asp">Pesantren</div><div class="gus">Kaliwungu, Kalibeber, Depok, Tunisia</div><div class="ning">Demak, Pati, Wonosobo (2 pesantren)</div></div>
+      <div class="id-row"><div class="id-asp">Status</div><div class="gus">Hafidz, Cumlaude STKQ, Sibthu al-Giri</div><div class="ning">Hafidzah 30 Juz, S.Pd. PGMI</div></div>
+      <div class="id-row"><div class="id-asp">Sanad ke Mbah Munawwir</div><div class="gus">4 jalur</div><div class="ning">2 jalur</div></div>
+      <div class="id-row"><div class="id-asp">Pernikahan</div><div class="gus">27 Desember 2018</div><div class="ning">27 Desember 2018</div></div>
+      <div class="id-row"><div class="id-asp">Peran di PPUQHM</div><div class="gus">Pengasuh / Pendiri</div><div class="ning">Pengasuh Santri Putri</div></div>
+      <div class="id-row"><div class="id-asp">Aktivitas Eksternal</div><div class="gus">Pernah Ketua PC LDNU & GP Ansor Mimika; saat ini Dewan Khos Pagar Nusa & S2 STAIMA</div><div class="ning">Fokus pendidikan anak & santri putri</div></div>
+    </div>
+
+    <h3>Tiga Dzurriyah</h3>
+    <p>Allah SWT telah menganugerahkan <strong>tiga dzurriyah</strong> kepada pasangan ini:</p>
+    <div class="dzurriyah-grid">
+      <div class="dzurriyah-card" style="border-top-color:#a87fb8">
+        <div class="name">Husnul Khotimah</div>
+        <p class="meta">Putri pertama (almarhumah, 2020)</p>
+        <p class="desc">Wafat dalam kandungan — calon penghuni surga</p>
+      </div>
+      <div class="dzurriyah-card">
+        <div class="name">Ahmad Mursyid Hikam Athoillah</div>
+        <p class="meta">Putra (lahir 8 Oktober 2020)</p>
+        <p class="desc">Pewaris tradisi Al-Hikam</p>
+      </div>
+      <div class="dzurriyah-card">
+        <div class="name">Husna Waliyyam Mursyida</div>
+        <p class="meta">Putri (lahir 25 Februari 2022)</p>
+        <p class="desc">Gema nama sang kakak Husnul Khotimah</p>
+      </div>
+    </div>
+
+    <h3>Doa Penutup</h3>
+    <div class="closing-box">
+      <p>"Inilah pasangan pengasuh PPUQHM — yang dipertemukan oleh empat takdir indah, yang menikah pada puncak tahun berkah 2018, yang membangun keluarga di tanah Cendrawasih, yang berkhidmah sebagai pengasuh dan pengasuh santri putri, yang mewariskan delapan tradisi pesantren kepada generasi berikutnya. <strong>Tandurane Abah Hasyim Muzadi, tukule nang Papua</strong> melalui pasangan yang penuh berkah ini."</p>
+    </div>
+    <div class="arabic-box">
+      <p class="ar">اَللَّهُمَّ بَارِكْ لَنَا فِيْ شَيْخِنَا غُسْ مُرْشِدْ وَنِيْنْ سِيْتِيْ، وَفِيْ ذُرِّيَّتِهِمَا، وَفِيْ مَعْهَدِهِمَا، وَفِيْ خِدْمَتِهِمَا، آمِيْنَ يَا رَبَّ الْعَالَمِيْنَ</p>
+      <p class="tr">Ya Allah, berkahilah kami dalam Gus Mursyid dan Ning Siti, dalam keturunan keduanya, dalam pesantrennya, dan dalam khidmah keduanya. Amin Ya Rabbal 'Alamin.</p>
+    </div>
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="index.html#pengasuh" class="back-btn">← Kembali ke Beranda</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

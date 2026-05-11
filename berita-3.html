@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Penerimaan Santri Baru 2026/2027 - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+    .article-header{margin-top:64px;padding:60px 2rem 70px;background:var(--hijau);text-align:center;position:relative;overflow:hidden}
+    .article-header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.08) 0%,transparent 70%);pointer-events:none}
+    .article-cat{display:inline-block;background:rgba(255,255,255,.1);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem;position:relative}
+    .article-header h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:.75rem;max-width:800px;margin-left:auto;margin-right:auto;line-height:1.3;position:relative}
+    .article-meta{display:flex;justify-content:center;align-items:center;gap:1rem;font-size:13px;color:rgba(255,255,255,.7);flex-wrap:wrap;position:relative}
+
+    /* POSTER */
+    .poster-wrap{max-width:600px;margin:-50px auto 0;padding:0 2rem;position:relative;z-index:2}
+    .poster-wrap img{width:100%;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.18);display:block}
+    .poster-caption{text-align:center;font-size:12px;color:var(--abu);margin-top:.75rem;font-style:italic}
+
+    /* ARTICLE BODY */
+    .article-body{max-width:800px;margin:0 auto;padding:3rem 2rem 1rem}
+    .article-body p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .article-body p strong{color:var(--hijau);font-weight:600}
+    .article-body h2{font-family:'Amiri',serif;font-size:1.5rem;font-weight:700;color:var(--hijau);margin:2.5rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .article-body blockquote{border-left:4px solid var(--emas);background:rgba(212,160,23,.08);padding:1rem 1.5rem;margin:1.5rem 0;font-style:italic;color:var(--hijau2);font-size:14px;border-radius:0 6px 6px 0}
+
+    /* VISI BOX */
+    .visi-box{background:linear-gradient(135deg,rgba(27,67,50,.06),rgba(212,160,23,.04));border:1px solid rgba(212,160,23,.3);border-radius:10px;padding:1.5rem 1.75rem;margin:1.5rem 0;text-align:center}
+    .visi-box .label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--emas);background:var(--hijau);padding:4px 14px;border-radius:20px;margin-bottom:.85rem;text-transform:uppercase}
+    .visi-box p{font-family:'Amiri',serif;font-size:1.05rem;color:var(--hijau);line-height:1.75;font-style:italic;margin:0!important;text-align:center!important}
+
+    /* KEUNGGULAN LIST */
+    .keunggulan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem;margin:1.25rem 0 1.5rem}
+    .keunggulan-item{background:#fff;border-left:3px solid var(--emas);padding:.75rem 1rem;font-size:13.5px;color:var(--gelap);line-height:1.6;border-radius:0 6px 6px 0;box-shadow:0 2px 8px rgba(27,67,50,.04)}
+    .keunggulan-item strong{color:var(--hijau);font-weight:600}
+
+    /* PROGRAM CARDS */
+    .program-grid{display:grid;grid-template-columns:1fr;gap:.85rem;margin:1.25rem 0 1.5rem}
+    .program-card{background:#fff;border-radius:10px;padding:1.1rem 1.35rem;border-left:4px solid var(--hijau2);box-shadow:0 4px 12px rgba(27,67,50,.05)}
+    .program-card h4{font-size:14px;color:var(--hijau);font-weight:700;margin-bottom:.35rem;letter-spacing:.02em}
+    .program-card p{font-size:13px;color:var(--abu);margin:0!important;font-style:italic;text-align:left!important}
+
+    /* CTA BOX */
+    .cta-box{background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:#fff;border-radius:14px;padding:2rem 1.75rem;margin:2rem 0;text-align:center;position:relative;overflow:hidden}
+    .cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(212,160,23,.15),transparent 60%);pointer-events:none}
+    .cta-box h3{font-family:'Amiri',serif;font-size:1.4rem;color:var(--emas2);margin-bottom:.5rem;position:relative;z-index:1}
+    .cta-box p{color:rgba(255,255,255,.85)!important;font-size:13.5px!important;margin-bottom:1.25rem!important;line-height:1.7;position:relative;z-index:1;text-align:center!important}
+    .cta-buttons{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+    .cta-btn{display:inline-flex;align-items:center;gap:6px;padding:11px 24px;border-radius:30px;font-size:13px;font-weight:600;text-decoration:none;transition:.2s}
+    .cta-btn-wa{background:#25d366;color:#fff}
+    .cta-btn-wa:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(37,211,102,.45)}
+    .cta-btn-outline{background:transparent;color:var(--emas2);border:1.5px solid var(--emas2)}
+    .cta-btn-outline:hover{background:var(--emas2);color:var(--hijau)}
+
+    /* KONTAK GRID */
+    .kontak-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.25rem 0}
+    .kontak-card{background:#fff;border-radius:10px;padding:1.25rem 1.5rem;border:1px solid rgba(27,67,50,.08);box-shadow:0 4px 12px rgba(27,67,50,.04)}
+    .kontak-card .label{font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--emas);text-transform:uppercase;margin-bottom:.35rem}
+    .kontak-card .name{font-size:15px;color:var(--hijau);font-weight:600;margin-bottom:.2rem}
+    .kontak-card .phone{font-size:13.5px;color:var(--gelap);margin-bottom:.75rem;font-family:'Poppins',monospace}
+    .kontak-card a{display:inline-flex;align-items:center;gap:5px;background:#25d366;color:#fff;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;transition:.2s}
+    .kontak-card a:hover{background:#1da851}
+
+    .alamat-box{background:#fff;border-radius:10px;padding:1.25rem 1.5rem;margin:1rem 0 0;border-left:4px solid var(--emas);box-shadow:0 4px 12px rgba(27,67,50,.04);font-size:13.5px;color:var(--gelap);line-height:1.75}
+    .alamat-box strong{color:var(--hijau);display:block;margin-bottom:.35rem}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1rem 2rem 3rem}
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+    @media(max-width:768px){
+      .keunggulan-grid{grid-template-columns:1fr}
+      .kontak-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="berita.html" class="nav-back">← Semua Berita</a>
+</nav>
+
+<div class="article-header">
+  <span class="article-cat">Pengumuman</span>
+  <h1>Penerimaan Santri Baru Tahun Ajaran 2026/2027 Resmi Dibuka</h1>
+  <div class="article-meta">
+    <span>📅 1 Maret 2026</span>
+    <span>•</span>
+    <span>📍 Kuala Kencana, Papua Tengah</span>
+  </div>
+</div>
+
+<!-- POSTER -->
+<div class="poster-wrap">
+  <img src="pendaftaran.jpeg" alt="Poster Penerimaan Santri Baru Tahun Ajaran 2026-2027">
+  <p class="poster-caption">Poster resmi PSB Tahun Ajaran 2026/2027 PPUQ Hasyim Muzadi</p>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+  <p><strong>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM)</strong> dengan resmi membuka <strong>Penerimaan Santri Baru Tahun Ajaran 2026/2027</strong>. Pesantren tahfidz Aswaja An-Nahdliyah pertama di Kabupaten Mimika, Papua Tengah ini mengundang putra-putri Muslim dari seluruh penjuru Nusantara untuk menjadi bagian dari generasi Qur'ani yang berakhlak mulia dan siap mengabdi kepada umat.</p>
+
+  <p>Diasuh langsung oleh <strong>Gus Mursyid Adi Saputra & Ning Siti Imroatus Sholihah</strong> — pasangan hafidz–hafidzah dengan total enam jalur sanad Al-Qur'an muttashil ke KH. Muhammad Munawwir Krapyak — PPUQHM hadir sebagai jangkar keilmuan Islam moderat di tanah Cendrawasih.</p>
+
+  <h2>🎯 Visi Pesantren</h2>
+  <div class="visi-box">
+    <span class="label">Visi PPUQHM</span>
+    <p>"Mencetak Ahlul Qur'an Bermanhaj Aswaja An-Nahdhiyyah Berkarakter Islam Wasathiyyah Untuk Kemaslahatan Umat dan Bangsa"</p>
+  </div>
+
+  <h2>⭐ Keunggulan Kami</h2>
+  <div class="keunggulan-grid">
+    <div class="keunggulan-item"><strong>Sanad Al-Qur'an KH. Munawwir Krapyak</strong> — Sanad utama tahfidz abad 20 di Nusantara</div>
+    <div class="keunggulan-item"><strong>Pengasuh & Pengajar Hafidz/Hafidzah</strong> — Diasuh langsung oleh pasangan hafidz</div>
+    <div class="keunggulan-item"><strong>Metode Tahfidz Arba'in</strong> — Sistem hafalan terstruktur dan teruji</div>
+    <div class="keunggulan-item"><strong>Metode Amtsilati & Tilawati</strong> — Pengajaran kitab kuning dan tilawah modern</div>
+    <div class="keunggulan-item"><strong>Beasiswa Santri Dhuafa</strong> — Akses pendidikan untuk semua kalangan</div>
+    <div class="keunggulan-item"><strong>Bermanhaj Aswaja An-Nahdhiyyah</strong> — Tradisi NU yang otentik dan moderat</div>
+    <div class="keunggulan-item"><strong>Kerjasama Kampus Dalam & Luar Negeri</strong> — Akses studi lanjut ke universitas Islam terkemuka</div>
+  </div>
+
+  <h2>📚 Program Pendidikan</h2>
+  <div class="program-grid">
+    <div class="program-card">
+      <h4>📖 Pendidikan Al-Qur'an</h4>
+      <p>Metode Tilawati – Tahsin – Tahfidz</p>
+    </div>
+    <div class="program-card">
+      <h4>🎓 Pendidikan Formal</h4>
+      <p>SMP – SMA Terakreditasi (lulusan dapat ijazah resmi negara)</p>
+    </div>
+    <div class="program-card">
+      <h4>📜 Kajian Kitab Kuning</h4>
+      <p>Metode Amtsilati & Ilmu Syariat (fiqih, aqidah, akhlak)</p>
+    </div>
+    <div class="program-card">
+      <h4>🕌 Amaliyyah Aswaja NU</h4>
+      <p>Tahlil, Al-Barzanji, Istighotsah, Yasinan, Maulid, Ziarah, dan tradisi NU lainnya</p>
+    </div>
+    <div class="program-card">
+      <h4>🎤 Kesenian & Dakwah</h4>
+      <p>Rebana, Public Speaking, Pencak Silat Pagar Nusa</p>
+    </div>
+  </div>
+
+  <h2>📝 Cara Pendaftaran</h2>
+  <p>Pendaftaran dapat dilakukan dengan dua cara:</p>
+  <p><strong>1. Pendaftaran Online</strong> — Isi formulir pendaftaran langsung di halaman beranda website ini. Klik tombol <em>"Daftar Sekarang"</em> atau menu <em>"Pendaftaran ▾ → Daftar Online"</em> di navbar atas.</p>
+  <p><strong>2. Pendaftaran via WhatsApp</strong> — Hubungi langsung salah satu kontak resmi pesantren di bawah ini. Tim pendaftaran siap membantu menjawab pertanyaan dan memandu proses pendaftaran.</p>
+
+  <!-- CTA BOX -->
+  <div class="cta-box">
+    <h3>Yuk! Mondok di Ponpes UQ Hasyim Muzadi</h3>
+    <p>Daftarkan putra-putri Anda untuk menjadi bagian dari generasi Qur'ani berkarakter Aswaja-Wasathiyah</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi untuk Tahun Ajaran 2026/2027" class="cta-btn cta-btn-wa" target="_blank">💬 Daftar via WhatsApp</a>
+      <a href="index.html#info" class="cta-btn cta-btn-outline">📝 Daftar Online</a>
+    </div>
+  </div>
+
+  <h2>📞 Contact Person & Alamat</h2>
+  <div class="kontak-grid">
+    <div class="kontak-card">
+      <p class="label">Contact Person 1</p>
+      <p class="name">Mbak Novita</p>
+      <p class="phone">0822-3969-3243</p>
+      <a href="https://wa.me/6282239693243" target="_blank">💬 Chat WhatsApp</a>
+    </div>
+    <div class="kontak-card">
+      <p class="label">Contact Person 2</p>
+      <p class="name">Kang Bedul</p>
+      <p class="phone">0812-4889-2290</p>
+      <a href="https://wa.me/6281248892290" target="_blank">💬 Chat WhatsApp</a>
+    </div>
+  </div>
+  <div class="alamat-box">
+    <strong>📍 Alamat Pesantren</strong>
+    Jl. Sunan Kalijaga, RT 10/RW 02, SP.3, Desa Karang Senang, Kec. Kuala Kencana, Kabupaten Mimika, Papua Tengah
+  </div>
+
+  <blockquote>"Tandurane Abah, Tukule nang Papua" — pesantren yang lahir dari benih dakwah Almaghfurullah KH. Ahmad Hasyim Muzadi, kini tumbuh dan berbuah di tanah Cendrawasih.</blockquote>
+
+  <p>Mari bergabung bersama keluarga besar PPUQHM. Kuota terbatas, daftar segera sebelum gelombang ditutup. <strong>Barokallahu fii ilmikum wa hayatikum.</strong></p>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="berita.html" class="back-btn">← Kembali ke Daftar Berita</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

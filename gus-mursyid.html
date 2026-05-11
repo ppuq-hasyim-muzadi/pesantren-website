@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biografi Lengkap Gus Mursyid Adi Saputra Al-Hafidz - PPUQHM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    /* COVER */
+    .cover{margin-top:64px;background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 100%);padding:80px 2rem;text-align:center;color:#fff;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.1) 0%,transparent 70%);pointer-events:none}
+    .cover-content{position:relative;z-index:1}
+    .cover .basmalah{font-family:'Amiri',serif;font-size:clamp(1.3rem,2.8vw,1.8rem);color:var(--emas2);margin-bottom:1.5rem;letter-spacing:.05em}
+    .cover .badge{display:inline-block;background:rgba(255,255,255,.1);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:700;color:#fff;margin-bottom:.4rem;letter-spacing:.04em}
+    .cover h2{font-family:'Amiri',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:var(--emas2);margin-bottom:.5rem;line-height:1.2}
+    .cover .gelar{font-size:14px;color:var(--emas);font-style:italic;margin-bottom:1.5rem;letter-spacing:.04em}
+    .cover .sub{font-size:13px;color:rgba(255,255,255,.75);margin-bottom:.4rem}
+    .ornamen{font-family:'Amiri',serif;color:var(--emas2);font-size:1.5rem;letter-spacing:.5em;margin:1.5rem 0}
+    .cover .tagline{font-family:'Amiri',serif;font-size:clamp(1.05rem,2vw,1.3rem);color:var(--emas2);font-style:italic;margin:.4rem 0;line-height:1.6}
+
+    /* DAFTAR ISI */
+    .toc-section{background:#fff;padding:3rem 2rem;border-bottom:1px solid rgba(27,67,50,.08)}
+    .toc-wrap{max-width:900px;margin:0 auto}
+    .toc-title{text-align:center;font-family:'Amiri',serif;font-size:1.7rem;font-weight:700;color:var(--hijau);margin-bottom:.4rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .toc-head{text-align:center;margin-bottom:1.75rem}
+    .toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.6rem}
+    .toc-item{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--putih);border-radius:6px;text-decoration:none;color:var(--hijau);font-size:13px;transition:.2s;border-left:3px solid var(--emas)}
+    .toc-item:hover{background:rgba(212,160,23,.08);transform:translateX(4px)}
+    .toc-num{font-family:'Amiri',serif;font-weight:700;color:var(--emas);min-width:28px;font-size:13px}
+
+    /* CHAPTER */
+    .chapter{max-width:900px;margin:0 auto;padding:3rem 2rem 1rem}
+    .chapter-num{font-family:'Amiri',serif;font-size:14px;font-weight:600;color:var(--emas);letter-spacing:.3em;text-align:center;margin-bottom:.5rem}
+    .chapter-title{font-family:'Amiri',serif;font-size:clamp(1.4rem,3.2vw,1.9rem);font-weight:700;color:var(--hijau);text-align:center;margin-bottom:.4rem;line-height:1.3;padding:0 1rem}
+    .chapter-subtitle{font-family:'Amiri',serif;font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:600;color:var(--emas);text-align:center;margin-bottom:.4rem;line-height:1.3}
+    .chapter-divider{text-align:center;font-family:'Amiri',serif;color:var(--emas);font-size:1.4rem;letter-spacing:.4em;margin-bottom:1.75rem}
+    .chapter-content{padding-top:.5rem}
+    .chapter-content p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .chapter-content p strong{color:var(--hijau);font-weight:600}
+    .chapter-content h3{font-family:'Amiri',serif;font-size:1.2rem;font-weight:700;color:var(--hijau2);margin:2rem 0 1rem;padding-bottom:.3rem;border-bottom:1px solid rgba(212,160,23,.4);display:inline-block}
+    .chapter-content ul{list-style:none;padding:0;margin:1rem 0 1.5rem}
+    .chapter-content ul li{font-size:14px;color:var(--gelap);line-height:1.8;padding:.4rem 0 .4rem 1.75rem;position:relative}
+    .chapter-content ul li::before{content:'•';color:var(--emas);font-weight:700;position:absolute;left:.5rem;top:.2rem;font-size:18px}
+
+    .quote-box{border-left:4px solid var(--emas);background:linear-gradient(90deg,rgba(212,160,23,.08),transparent);padding:1.25rem 1.5rem;margin:1.75rem 0;font-style:italic;color:var(--hijau);font-family:'Amiri',serif;font-size:1.05rem;line-height:1.7;border-radius:0 6px 6px 0}
+
+    .note-box{background:linear-gradient(135deg,rgba(212,160,23,.12),rgba(212,160,23,.04));border:1px solid rgba(212,160,23,.35);border-radius:8px;padding:1.1rem 1.35rem;margin:1.5rem 0;font-size:13.5px;line-height:1.75;color:var(--gelap)}
+    .note-box strong{color:var(--hijau)}
+    .note-box .label{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--hijau);margin-bottom:.4rem;text-transform:uppercase}
+
+    .green-note{background:linear-gradient(135deg,rgba(27,67,50,.08),rgba(27,67,50,.02));border:1px solid rgba(27,67,50,.2);border-radius:8px;padding:1.1rem 1.35rem;margin:1.5rem 0;font-size:13.5px;line-height:1.75;color:var(--gelap)}
+    .green-note strong{color:var(--hijau)}
+    .green-note .label{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--emas);margin-bottom:.4rem;text-transform:uppercase}
+
+    .arabic-box{text-align:center;padding:1.75rem;background:linear-gradient(135deg,rgba(27,67,50,.06),rgba(212,160,23,.04));border-radius:10px;margin:1.75rem 0;border:1px solid rgba(212,160,23,.2)}
+    .arabic-box .ar{font-family:'Amiri',serif;font-size:1.4rem;color:var(--hijau);margin-bottom:.5rem;line-height:2;direction:rtl}
+    .arabic-box .tr{font-size:13px;color:var(--abu);font-style:italic;margin-top:.5rem}
+
+    /* DATA TABLE */
+    .data-table{margin:1.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .data-row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid rgba(27,67,50,.08)}
+    .data-row:last-child{border-bottom:none}
+    .data-row:nth-child(even){background:rgba(212,160,23,.05)}
+    .data-row .data-key{padding:.85rem 1.1rem;font-weight:600;color:var(--hijau);font-size:13px;border-right:2px solid var(--emas);background:rgba(27,67,50,.03)}
+    .data-row .data-val{padding:.85rem 1.1rem;font-size:14px;color:var(--gelap)}
+
+    /* SANAD CARD (numbered) */
+    .sanad-card{background:#fff;border-radius:10px;padding:1.25rem 1.5rem 1.25rem 4.25rem;margin:.85rem 0;border-left:4px solid var(--emas);box-shadow:0 4px 12px rgba(27,67,50,.05);position:relative}
+    .sanad-card .num{position:absolute;top:1.1rem;left:1rem;width:38px;height:38px;background:linear-gradient(135deg,var(--emas),var(--emas2));color:var(--hijau);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.2rem;font-weight:700}
+    .sanad-card h4{font-size:14px;color:var(--hijau);font-weight:600;margin-bottom:.4rem}
+    .sanad-card p{font-size:13px;color:var(--gelap);line-height:1.75;margin:0!important}
+
+    .sanad-flow{background:#fff;border-radius:8px;padding:1rem 1.25rem;margin:.85rem 0;border-left:3px solid var(--hijau2);font-size:13px;color:var(--gelap);line-height:1.85;box-shadow:0 2px 8px rgba(27,67,50,.04)}
+    .sanad-flow strong{color:var(--hijau)}
+
+    /* EPILOG TABLE */
+    .epilog-section{margin-top:2rem}
+    .epilog-section h3{margin-bottom:1rem}
+    .pencapaian-list,.sanad-list{list-style:none;padding:0;margin:1rem 0}
+    .pencapaian-list li,.sanad-list li{padding:.5rem 0 .5rem 2rem;position:relative;border-bottom:1px dashed rgba(27,67,50,.08);font-size:13.5px;line-height:1.7}
+    .pencapaian-list li::before{content:'⭐';position:absolute;left:.4rem;top:.5rem}
+    .sanad-list li::before{content:'📿';position:absolute;left:.4rem;top:.5rem}
+    .pencapaian-list li:last-child,.sanad-list li:last-child{border-bottom:none}
+
+    /* CLOSING BOX */
+    .closing-box{background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:#fff;padding:2.5rem 2rem;border-radius:12px;margin:2rem 0;text-align:center}
+    .closing-box p{color:rgba(255,255,255,.85);font-size:14px;line-height:1.9;font-style:italic;margin-bottom:0!important}
+
+    /* MOMEN SAKRAL BOX */
+    .momen-box{background:linear-gradient(135deg,rgba(27,67,50,.06),rgba(212,160,23,.05));border:1px solid rgba(212,160,23,.3);border-radius:12px;padding:1.75rem;margin:1.5rem 0}
+    .momen-box h4{font-family:'Amiri',serif;font-size:1.1rem;color:var(--hijau);font-weight:700;margin-bottom:.75rem;text-align:center;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .momen-box .konfigurasi{display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:1rem}
+    .momen-pos{background:#fff;padding:.85rem 1.15rem;border-radius:8px;border-left:3px solid var(--emas);font-size:13px;color:var(--gelap);line-height:1.7}
+    .momen-pos strong{color:var(--hijau)}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1rem 1rem 3rem}
+
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+    @media(max-width:768px){.data-row{grid-template-columns:1fr}.data-row .data-key{border-right:none;border-bottom:1px solid rgba(212,160,23,.3)}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-content">
+    <p class="basmalah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+    <span class="badge">Biografi Lengkap</span>
+    <h1>GUS MURSYID ADI SAPUTRA</h1>
+    <p class="gelar">Al-Hafidz</p>
+    <h2 style="font-size:1.2rem;color:#fff;font-weight:500;margin-bottom:.5rem">Pendiri & Pengasuh</h2>
+    <p class="sub">Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM)</p>
+    <p class="sub">Karang Senang SP-3, Mimika, Papua Tengah</p>
+    <div class="ornamen">— ❦ —</div>
+    <p class="tagline">"Dari Malam Maulid di Kendal<br>Hingga Tanah Cendrawasih"</p>
+    <p class="sub" style="margin-top:1.25rem">1447 H / 2026 M</p>
+  </div>
+</div>
+
+<!-- DAFTAR ISI -->
+<div class="toc-section">
+  <div class="toc-wrap">
+    <div class="toc-head"><h2 class="toc-title">Daftar Isi</h2></div>
+    <div class="toc-grid">
+      <a href="#prolog" class="toc-item"><span class="toc-num">📖</span>Prolog — Awal Perjalanan</a>
+      <a href="#bab1" class="toc-item"><span class="toc-num">BAB 1</span>Lahir di Malam Maulid</a>
+      <a href="#bab2" class="toc-item"><span class="toc-num">BAB 2</span>Silsilah Nasab — 43 Generasi</a>
+      <a href="#bab3" class="toc-item"><span class="toc-num">BAB 3</span>Akar Keluarga di Karangmalang Wetan</a>
+      <a href="#bab4" class="toc-item"><span class="toc-num">BAB 4</span>Mengenal Al-Qur'an di Pangkuan Sang Kakek</a>
+      <a href="#bab5" class="toc-item"><span class="toc-num">BAB 5</span>Mondok di Kaliwungu — Tanah Para Wali</a>
+      <a href="#bab6" class="toc-item"><span class="toc-num">BAB 6</span>Memperdalam Tahfidz di Kalibeber</a>
+      <a href="#bab7" class="toc-item"><span class="toc-num">BAB 7</span>Kampung Bahasa Pare</a>
+      <a href="#bab8" class="toc-item"><span class="toc-num">BAB 8</span>Bertemu Sang Guru di Al-Hikam Depok</a>
+      <a href="#bab9" class="toc-item"><span class="toc-num">BAB 9</span>Melintasi Lautan ke Az-Zaitunah Tunisia</a>
+      <a href="#bab10" class="toc-item"><span class="toc-num">BAB 10</span>Kembali ke Tanah Air — Setia pada Amanah</a>
+      <a href="#bab11" class="toc-item"><span class="toc-num">BAB 11</span>PROSAKTI ke Mimika</a>
+      <a href="#bab12" class="toc-item"><span class="toc-num">BAB 12</span>Mendirikan PPUQHM</a>
+      <a href="#bab13" class="toc-item"><span class="toc-num">BAB 13</span>Sanad Al-Qur'an — 4 Jalur Krapyak</a>
+      <a href="#bab14" class="toc-item"><span class="toc-num">BAB 14</span>Sanad Keilmuan — 3 Jalur Kyai Guru</a>
+      <a href="#bab15" class="toc-item"><span class="toc-num">BAB 15</span>Sanad Ke-NU-an — 5 Jalur Hadhratussyaikh</a>
+      <a href="#bab16" class="toc-item"><span class="toc-num">BAB 16</span>Pernikahan dan Keluarga</a>
+      <a href="#bab17" class="toc-item"><span class="toc-num">BAB 17</span>Khidmah di Bumi Cendrawasih</a>
+      <a href="#bab18" class="toc-item"><span class="toc-num">BAB 18</span>Penutup — Amanah yang Terus Berjalan</a>
+      <a href="#epilog" class="toc-item"><span class="toc-num">📜</span>Epilog — Ringkasan Biografi</a>
+    </div>
+  </div>
+</div>
+
+<!-- PROLOG -->
+<div class="chapter" id="prolog">
+  <p class="chapter-num">PROLOG</p>
+  <h2 class="chapter-title">Awal Perjalanan</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Pada malam Senin, <strong>12 Rabi'ul Awwal 1414 Hijriah</strong> — bertepatan dengan Malam Maulid Nabi Muhammad SAW — di sebuah desa kecil bernama Karangmalang Wetan, Kendal, lahirlah seorang anak laki-laki. Pasangan H. Muhammad Sobirin (Kepala Desa) dan Hj. Siti Kumaeroh menamainya Mursyid Adi Saputra. Tanggal Masehi-nya adalah <strong>29 Agustus 1993</strong>.</p>
+    <p>Tetapi malam itu bukan malam biasa. Di malam yang dimuliakan kelahiran Sang Nabi, lahir pula seorang yang membawa amanah panjang. Dalam darahnya mengalir silsilah <strong>43 generasi</strong> yang bersambung kepada Rasulullah SAW — melalui Sayyidah Fatimah Az-Zahra, Sayyid Abdul Qodir Al-Jilani, Sunan Giri, dan akhirnya melalui Maulana Ishaq hingga ke Sayyid Adnan, leluhur Nabi Muhammad SAW yang disepakati seluruh ulama.</p>
+    <p>Tiga puluh tahun kemudian, di sebuah desa terpencil bernama Karang Senang SP-3 di Kabupaten Mimika, Papua Tengah — ribuan kilometer dari kampung halaman — anak yang lahir di malam Maulid itu kini dipanggil dengan akrab oleh masyarakat: <strong>Gus Mursyid</strong>. Seorang pengasuh pesantren, ketua organisasi NU, dan pewaris keilmuan yang amanahnya membentang dari tanah Jawa ke bumi Cendrawasih.</p>
+    <p>Inilah biografi perjalanannya.</p>
+    <div class="quote-box">Sesungguhnya Allah memilih siapa yang Dia kehendaki dari hamba-hamba-Nya untuk menjadi pewaris para nabi.</div>
+  </div>
+</div>
+
+<!-- BAB 1 -->
+<div class="chapter" id="bab1">
+  <p class="chapter-num">BAB 1</p>
+  <h2 class="chapter-title">Lahir di Malam Maulid</h2>
+  <p class="chapter-subtitle">Berkah Kelahiran dan Asal Usul</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tahun 1993. Pada saat itu, dunia Islam sedang merayakan kelahiran junjungan kita Nabi Muhammad SAW. Di seluruh penjuru Nusantara, masjid-masjid bergema dengan lantunan shalawat dan barzanji. Para santri di pesantren-pesantren kuno tengah membaca Maulid Diba'i atau Simthud Duror. Dan di sebuah rumah sederhana di Desa Karangmalang Wetan, Kendal, Jawa Tengah — di malam yang sama itu — Hj. Siti Kumaeroh melahirkan seorang putra.</p>
+    <p><strong>12 Rabi'ul Awwal 1414 Hijriah, malam Senin</strong>. Atau dalam kalender Masehi: 29 Agustus 1993. Bayi laki-laki itu kemudian diberi nama <strong>Mursyid Adi Saputra</strong> — Mursyid yang berarti "pembimbing" atau "penunjuk jalan" dalam tradisi sufi.</p>
+    <p>Dalam tradisi Islam, kelahiran di malam Maulid Nabi diyakini sebagai berkah yang besar. Banyak ulama besar yang lahir di tanggal-tanggal istimewa, dan keluarga di Karangmalang Wetan menerima ini sebagai isyarat dari Allah SWT bahwa anak ini memiliki perjalanan hidup yang istimewa pula.</p>
+    <p>Ayahanda, <strong>H. Muhammad Sobirin</strong>, adalah Kepala Desa Karangmalang Wetan — seorang pemimpin yang mengabdi kepada masyarakatnya. Ibunda, <strong>Hj. Siti Kumaeroh</strong>, adalah perangkat desa — ikut serta dalam pelayanan publik. Sementara di rumah, hidup pula sang kakek dari jalur ibu, <strong>KH. R. Muhammad Said</strong> — seorang kyai kampung yang menjadi rujukan keagamaan masyarakat.</p>
+    <p>Perpaduan unik ini akan membentuk karakter Gus Mursyid sejak dini: di satu sisi, jiwa pelayanan publik dari kedua orangtuanya yang berkarya di pemerintahan desa; di sisi lain, akar tradisi pesantren yang dalam dari kakeknya yang seorang kyai. Kelak, kedua sisi ini akan menyatu dalam khidmahnya — menjadi pemimpin pesantren sekaligus pemimpin organisasi NU di Mimika.</p>
+    <p>Tetapi malam Maulid itu juga menyimpan rahasia lain. Dalam tubuh kecil yang baru lahir itu, mengalir darah yang membawa amanah berabad-abad. Darah para wali, darah para sayyid, darah Walisongo, dan darah Rasulullah SAW. Malam itu adalah pertemuan tiga keberkahan: Maulid Nabi, kelahiran seorang anak, dan amanah keturunan yang panjang.</p>
+    <div class="quote-box">"Hari kelahiranku adalah hari Senin, dan aku diutus pada hari Senin pula." — Hadits tentang Maulid Nabi</div>
+  </div>
+</div>
+
+<!-- BAB 2 -->
+<div class="chapter" id="bab2">
+  <p class="chapter-num">BAB 2</p>
+  <h2 class="chapter-title">Silsilah Nasab</h2>
+  <p class="chapter-subtitle">Empat Puluh Tiga Generasi ke Rasulullah SAW</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Pada tanggal <strong>13 Desember 2023</strong>, sebuah dokumen resmi diterbitkan oleh <strong>Naqobah Ansab Auliya' Tis'ah (NAAT)</strong> — Lembaga Pencatat Nasab Walisongo Indonesia yang terdaftar resmi di Kementerian Hukum dan HAM Republik Indonesia, dan <strong>Naqobah As-Saadah Al-Asyrof Kerajaan Maroko</strong>. Sertifikat dengan nomor 0047/NAAT-SHD/XII/2023 itu mengesahkan secara resmi silsilah nasab Gus Mursyid Adi Saputra — seorang dzurriyah Walisongo yang nasabnya bersambung hingga Rasulullah SAW.</p>
+    <p>Yang membuat dokumen ini istimewa adalah pembagian otoritas antara dua lembaga:</p>
+    <div class="green-note">
+      <span class="label">✨ Bagian Kanan (NAAT)</span>
+      Mencatat jalur dari Gus Mursyid melalui ibunda RA. Siti Kumaeroh, naik ke atas, hingga ke Sunan Giri, kemudian ke Sayyid Ibrohim Maulana Ishaq — sebagai titik akhir validasi NAAT (lembaga khusus Walisongo).
+    </div>
+    <div class="green-note">
+      <span class="label">✨ Bagian Kiri (Naqobah Maroko)</span>
+      Mencatat jalur dari Sayyid Ibrohim Maulana Ishaq, naik ke atas, melalui Sayyid Abdul Qodir Al-Jilani, sampai ke Rasulullah Muhammad SAW melalui Sayyidah Fatimah Az-Zahra, kemudian dilanjutkan ke atas hingga Sayyid Adnan.
+    </div>
+    <p>Pertemuan kedua bagian ada di <strong>Maulana Ishaq</strong>, sebagai jembatan antara tradisi keilmuan Sayyid internasional dan tradisi dakwah Walisongo Nusantara.</p>
+
+    <h3>Jalur Lengkap Silsilah Nasab</h3>
+    <p>Silsilah Gus Mursyid bersambung dari beliau hingga Rasulullah SAW melalui jalur ibunda. <strong>Empat generasi terdekat dalam silsilah ini adalah perempuan</strong> — sebuah pengingat bahwa dalam tradisi Islam Nusantara, nasab kemuliaan dapat diwariskan baik melalui jalur laki-laki maupun perempuan.</p>
+    <p>Di antara nama-nama besar dalam silsilah ini:</p>
+    <ul>
+      <li>Sayyidah Fatimah Az-Zahra (putri Rasulullah SAW)</li>
+      <li>Sayyid Hasan Al-Mujtaba (cucu Rasulullah)</li>
+      <li>Sayyid Abdul Qodir Al-Jilani — Sulthonul Auliya' (generasi ke-13 dari atas)</li>
+      <li>Ibrahim Maulana Ishaq — leluhur Walisongo (generasi ke-22)</li>
+      <li>Muhammad Ainul Yaqin Sunan Giri (generasi ke-24)</li>
+      <li>Ibrohim Zainal Abidin Sunan Dalem</li>
+      <li>Muhammad Fadhlulloh Sunan Prapen</li>
+      <li>R. Mas Asy'ari "Kyai Guru" Kaliwungu (1746–1875 M, generasi ke-34)</li>
+      <li>R.A. Siti Kumaeroh (ibunda Gus Mursyid)</li>
+    </ul>
+    <p>Khusus tentang <strong>R. Mas Asy'ari Kaliwungu</strong> — kakek buyut Gus Mursyid generasi ke-9 — beliau dikenal dengan julukan <strong>"Kyai Guru"</strong> karena beliau adalah gurunya para guru. Murid-murid beliau yang kemudian menjadi tokoh besar Islam Nusantara antara lain: <strong>KH. Sholeh Darat Semarang</strong> (mahaguru KH. Hasyim Asy'ari, KH. Ahmad Dahlan, dan RA. Kartini), <strong>KH. Ahmad Rifa'i Tempuran</strong> (Pahlawan Nasional), dan <strong>KH. Musa Kaliwungu</strong>.</p>
+    <div class="note-box">
+      <span class="label">📿 Catatan Penting</span>
+      Kelak, Kyai Guru ini akan muncul lagi dalam perjalanan Gus Mursyid — bukan hanya sebagai kakek buyut nasab, tetapi juga sebagai sumber <strong>TIGA jalur sanad keilmuan</strong> beliau. Inilah pertemuan nasab dan sanad yang sangat istimewa.
+    </div>
+  </div>
+</div>
+
+<!-- BAB 3 -->
+<div class="chapter" id="bab3">
+  <p class="chapter-num">BAB 3</p>
+  <h2 class="chapter-title">Akar Keluarga</h2>
+  <p class="chapter-subtitle">di Karangmalang Wetan</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Karangmalang Wetan adalah sebuah desa di Kecamatan Kangkung, Kabupaten Kendal — sekitar setengah jam berkendara dari pusat kota Kendal. Wilayah pesisir utara Jawa Tengah ini, sebagaimana umumnya wilayah Kendal, memiliki tradisi keagamaan yang kuat dan dihiasi dengan masjid-masjid serta langgar di setiap dusun.</p>
+    <p>Di desa ini, keluarga <strong>H. Muhammad Sobirin</strong> dan <strong>Hj. Siti Kumaeroh</strong> adalah keluarga yang dihormati. H. Muhammad Sobirin sebagai Kepala Desa, dan Hj. Siti Kumaeroh sebagai perangkat desa, sama-sama mengabdikan diri untuk kepentingan masyarakat. Mereka tidak hanya sibuk dengan urusan pemerintahan desa, tetapi juga aktif dalam kegiatan keagamaan dan kemasyarakatan.</p>
+    <p>Yang membuat keluarga ini istimewa adalah kehadiran <strong>KH. R. Muhammad Said</strong> — kakek Gus Mursyid dari jalur ibu. Sebagai seorang kyai kampung, KH. R. Muhammad Said adalah rujukan keagamaan masyarakat setempat. Beliau mengajar Al-Qur'an, memimpin pengajian, dan menjadi imam dalam berbagai acara keagamaan.</p>
+    <p>Ada keberkahan dalam pertemuan tiga generasi di rumah ini: kakek yang seorang kyai, ayahanda yang Kepala Desa, dan ibunda yang perangkat desa. Sang kakek mewakili tradisi keilmuan dan spiritualitas pesantren; kedua orangtua mewakili pelayanan publik kepada masyarakat. Bayi yang baru lahir ini akan tumbuh dalam atmosfer yang menyatukan kedua dunia ini.</p>
+    <p>Sejak balita, Mursyid kecil sudah akrab dengan suara mengaji, dengan pakaian putih sang kakek, dengan bau dupa di langgar. Tetapi ia juga akrab dengan perbincangan tentang masyarakat, tentang pelayanan, tentang kepemimpinan yang ia dengar dari ayah dan ibunya. Kedua dunia ini tertanam dalam jiwanya sejak masih sangat muda.</p>
+    <p>Inilah karakter yang kelak membuatnya berbeda. Ia bukan hanya seorang ulama yang mengasuh pesantren — ia juga adalah pemimpin yang mengasuh organisasi. Ia bukan hanya menjaga Al-Qur'an dalam dada — ia juga menggerakkan masyarakat di sekelilingnya. Dua warisan dari Karangmalang Wetan: warisan kakek (ilmu) dan warisan orangtua (pengabdian).</p>
+  </div>
+</div>
+
+<!-- BAB 4 -->
+<div class="chapter" id="bab4">
+  <p class="chapter-num">BAB 4</p>
+  <h2 class="chapter-title">Mengenal Al-Qur'an</h2>
+  <p class="chapter-subtitle">di Pangkuan Sang Kakek</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tahun 1997. Mursyid kecil baru berumur empat tahun. Di usia ketika anak-anak sebayanya masih bermain pasir di halaman, ia sudah duduk di pangkuan kakeknya. Bukan untuk didongengkan cerita, tetapi untuk dikenalkan dengan huruf hijaiyah.</p>
+    <p><strong>KH. R. Muhammad Said</strong> adalah guru pertamanya. Sang kakek mengajarkan dengan cara yang lembut tetapi penuh kesungguhan — sebagaimana tradisi pengajaran Al-Qur'an di pesantren-pesantren tradisional. Alif, ba', ta', tsa'... satu per satu huruf diperkenalkan. Lalu fathah, kasroh, dhommah. Lalu <em>makharij al-huruf</em> — bagaimana setiap huruf keluar dari tempat keluarnya yang tepat.</p>
+    <p>Selama dua tahun (1997–1999), pelajaran ini berlangsung di rumah, di langgar, di sela-sela kegiatan keluarga. Di usia balita, sebagian besar anak masih kesulitan mengeja kata, tetapi Mursyid kecil sudah mulai membaca ayat-ayat suci Al-Qur'an dengan tartil.</p>
+    <p>Tahun 1999 — saat ia berumur enam tahun — pengajaran berlanjut di <strong>Madrasah Miftahul Hidayah Karangmalang Wetan</strong>. Madrasah ini menjadi tempat ia memperdalam Al-Qur'an dan dasar-dasar agama dari 1999 hingga 2003 — sampai akhirnya ia harus pindah ke Kaliwungu untuk mondok.</p>
+    <p>Di tahun yang sama, ia juga mulai talaqqi Al-Qur'an dengan <strong>Kyai Mu'arif</strong> — seorang kyai dari Karangmalang Wetan. <em>Talaqqi</em> adalah metode klasik dalam pengajaran Al-Qur'an: santri membaca di hadapan guru, guru mendengarkan dan membetulkan. Dengan metode ini, hafalan dan bacaan menjadi sahih dan terjaga.</p>
+    <p>Pendidikan formal SD-nya dimulai di <strong>SD Negeri 1 Karangmalang Wetan</strong> (2000–2003) — dari kelas 1 hingga kelas 4. Di sini ia belajar pelajaran umum seperti matematika, IPA, dan bahasa Indonesia. Tetapi pendidikan agamanya jauh lebih intensif daripada teman-temannya — karena sore dan malamnya selalu diisi dengan mengaji.</p>
+    <p>Tetapi sebelum ia menyelesaikan SD di Karangmalang Wetan, sebuah keputusan diambil oleh keluarga: di usia yang masih sangat belia, Mursyid kecil sudah harus mondok. Saat naik ke kelas 5 SD, di tahun 2003, ia berangkat ke Kaliwungu untuk memulai babak baru perjalanan keilmuannya.</p>
+    <p>Lima tahun ia tumbuh dalam atmosfer ini: pagi sekolah formal, sore-malam mengaji. Pagi belajar pengetahuan dunia, sore belajar pengetahuan akhirat. Pagi membaca buku pelajaran, sore membaca Al-Qur'an. Inilah pondasi yang kuat — yang membuatnya sanggup menjalani perjalanan panjang yang akan datang.</p>
+    <div class="arabic-box">
+      <p class="ar">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</p>
+      <p class="tr">"Sebaik-baik kalian adalah orang yang belajar Al-Qur'an dan mengajarkannya." (HR. Bukhari)</p>
+    </div>
+    <p>Di pangkuan sang kakek, kalimat ini bukan sekadar hadits — ia menjadi jalan hidup.</p>
+  </div>
+</div>
+
+<!-- BAB 5 -->
+<div class="chapter" id="bab5">
+  <p class="chapter-num">BAB 5</p>
+  <h2 class="chapter-title">Mondok di Kaliwungu</h2>
+  <p class="chapter-subtitle">Tanah Para Wali</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tahun 2003. Mursyid baru berumur 9 tahun — baru saja naik ke kelas 5 SD. Di usia ketika kebanyakan anak-anak masih bermanja kepada orangtua, ia sudah harus mengemas pakaian, berpamitan dengan ayah-ibu, dan berangkat ke Kaliwungu — sekitar 35 kilometer dari Karangmalang Wetan, masih di Kabupaten Kendal.</p>
+    <p>Mondok di usia sangat muda bukan hal yang mudah. Anak-anak sebayanya masih pulang ke rumah setiap sore, masih menonton TV bersama keluarga, masih bermain di halaman rumah hingga azan maghrib. Tetapi Mursyid kecil sudah harus belajar mandiri — bangun sebelum subuh, mengantri kamar mandi, mencuci pakaian sendiri, mengaji ba'da subuh, dan menjalani disiplin pesantren yang ketat.</p>
+    <p>Kaliwungu bukanlah tempat sembarangan. Di tanah ini, dua abad sebelumnya, <strong>KH. R. Asy'ari atau yang lebih dikenal sebagai "Kyai Guru"</strong> telah mendirikan pusat pendidikan Islam pertama. Beliau adalah ulama besar yang murid-muridnya kemudian menjadi tokoh-tokoh yang melahirkan dua organisasi Islam terbesar di Indonesia: KH. Sholeh Darat Semarang yang menjadi guru KH. Hasyim Asy'ari (pendiri NU), KH. Ahmad Dahlan (pendiri Muhammadiyah), dan RA. Kartini. KH. Ahmad Rifa'i Tempuran — Pahlawan Nasional. KH. Musa Kaliwungu — yang dibaiat thoriqah Syattariyyah.</p>
+    <div class="note-box">
+      Yang Mursyid muda belum tahu saat itu: <strong>KH. R. Asy'ari adalah kakek buyutnya sendiri</strong> — leluhur dari jalur ibunda. Ia datang ke Kaliwungu bukan sekadar untuk mondok, tetapi untuk pulang ke tanah para leluhurnya. Tetapi kesadaran ini akan datang kemudian.
+    </div>
+    <p>Pesantren tujuannya adalah <strong>Pondok Pesantren Ulumul Qur'an (PPUQ) Miftahul Falah</strong>, di bawah asuhan KH. R. Munawiruddin Badawi. Di pesantren inilah ia mondok selama lima tahun, dari 2003 hingga 2008 — dari anak kelas 5 SD hingga lulus SMP. Lima tahun yang membentuknya dari bocah kecil menjadi remaja yang siap memasuki babak baru.</p>
+    <p>Pendidikan formalnya berpindah ke sekolah-sekolah di Kaliwungu: <strong>SD Negeri 02 Kutoharjo</strong> (2003–2005) untuk menyelesaikan kelas 5 hingga kelas 6 SD, kemudian <strong>SMP Negeri 1 Kaliwungu</strong> (2005–2008). Sambil sekolah formal, ia juga belajar di Madrasah Miftahul Banat wal Banin Kaliwungu — tempat ia mulai berkenalan dengan kitab kuning.</p>
+    <p>Tetapi yang paling penting baginya adalah talaqqi Al-Qur'an dengan <strong>KH. R. Munawwiruddin Badawi</strong>. Dari sang Kyai inilah ia mengambil sanad Al-Qur'an pertamanya — sanad yang muttashil bersambung hingga Rasulullah SAW.</p>
+
+    <h3>Tradisi Keluarga Badawi Kaliwungu</h3>
+    <p>KH. R. Munawwiruddin Badawi adalah penerus langsung tradisi keluarga Badawi Kaliwungu. Beliau adalah <strong>PUTRA</strong> dari <strong>KH. Ahmad Badawi Ar-Rasyidi (1888–1977)</strong> — sosok yang dikenal sebagai "Pentashih Al-Qur'an Modern Pertama di Indonesia". Sehingga sanad Mursyid melalui jalur Kaliwungu ini mengalir secara langsung dari ayah ke putra dalam keluarga Badawi.</p>
+    <p>Perjalanan keilmuan KH. Ahmad Badawi sangat istimewa dan menjadikan sanad jalur Kaliwungu ini sangat kaya. Beliau adalah putra KH. Abdurrosyid Kaliwungu — saudagar kaya sekaligus kyai yang barang-barang dagangannya diekspor ke negara-negara Timur Tengah, sehingga mampu memondokkan putra-putranya di Kota Mekah.</p>
+    <p>Selama lebih dari dua puluh tahun, KH. Ahmad Badawi menuntut ilmu di Makkah, di samping mempelajari ilmu-ilmu syari'ah, beliau juga menghafal Al-Qur'an dan Qira'ah Sab'ah. Guru-guru beliau di Makkah antara lain Syekh Ahmad Ibadi Al-Misri, Syekh Abdullah bin Ibrahim Al-Misri (keduanya ulama Masjidilharam), dan Syekh Abdullah Ibrahim Hamduh As-Sinari.</p>
+    <div class="note-box">
+      <span class="label">📿 Adab Keilmuan</span>
+      Yang sangat istimewa, setelah dua puluh tahun di Makkah, KH. Ahmad Badawi tidak langsung pulang ke kampung halamannya di Kaliwungu. Beliau melanjutkan perjalanan keilmuannya dengan adab yang sangat tinggi: pertama, belajar <strong>HADITS</strong> langsung kepada <strong>Hadhratussyaikh KH. Hasyim Asy'ari</strong>, pendiri Nahdlatul Ulama. Kemudian, beliau melakukan <strong>TABARRUKAN</strong> Al-Qur'an kepada <strong>KH. Muhammad Munawwir Krapyak</strong> — yang merupakan senior beliau ketika di Makkah.
+    </div>
+    <p>Konsep tabarrukan ini sangat menyentuh: meskipun KH. Ahmad Badawi sudah hafidz Al-Qur'an dengan sanad lengkap dari para ulama Masjidilharam, beliau tetap mengambil sanad dari KH. Munawwir Krapyak — bukan untuk belajar dari nol, melainkan untuk mendapat keberkahan (tabarruk) dari ulama Nusantara terbesar saat itu. Inilah teladan adab keilmuan yang sangat tinggi dari para ulama besar.</p>
+    <p>Sehingga melalui satu jalur Kaliwungu ini saja, sanad Mursyid sebenarnya menyimpan <strong>TIGA sanad agung sekaligus</strong>: sanad hadits yang bersambung kepada Hadhratussyaikh KH. Hasyim Asy'ari (pendiri NU), sanad Al-Qur'an yang bersambung kepada KH. Muhammad Munawwir Krapyak (sanad utama Nusantara), dan sanad internasional yang bersambung kepada para ulama Masjidilharam Makkah.</p>
+    <p>Sanad ini, Mursyid muda belum menyadari saat itu, akan menjadi salah satu dari empat sanad Al-Qur'an yang ia miliki — yang semuanya bermuara pada KH. Muhammad Munawwir Krapyak. Lebih dari itu, sanad ini akan menjadi salah satu dari tiga jalur sanad keilmuan yang bermuara pada Kyai Guru Kaliwungu — kakek buyutnya. Dan akan menjadi salah satu dari lima jalur sanad ke Hadhratussyaikh KH. Hasyim Asy'ari, pendiri NU.</p>
+    <p>Lima tahun di Kaliwungu adalah lima tahun pondasi. Tradisi tasawuf, tradisi tahfidz, tradisi ilmu para wali — semuanya mengalir ke dalam dirinya. Anak yang datang sebagai bocah kelas 5 SD, kini berangkat dari Kaliwungu sebagai remaja yang sudah memiliki sanad Al-Qur'an pertamanya.</p>
+  </div>
+</div>
+
+<!-- BAB 6 -->
+<div class="chapter" id="bab6">
+  <p class="chapter-num">BAB 6</p>
+  <h2 class="chapter-title">Memperdalam Tahfidz</h2>
+  <p class="chapter-subtitle">di Kalibeber Wonosobo</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tahun 2008. Mursyid lulus SMP. Saatnya pindah lagi — kali ini ke kawasan pegunungan: <strong>Kalibeber, Wonosobo</strong>. Wilayah dataran tinggi Jawa Tengah ini berbeda total dengan Kaliwungu yang ada di pesisir utara. Udara sejuk, perbukitan hijau, dan pesantren-pesantren tahfidz yang dikenal di seantero Nusantara.</p>
+    <p>Tujuannya: <strong>Pondok Pesantren Tahfidzul Qur'an (PPTQ) Al-Asy'ariyyah</strong>, salah satu pesantren tahfidz terbesar di Jawa Tengah. Beliau masuk Blok M, asuhan KH. R. Mustahal Asy'ari.</p>
+    <p>Selama tiga tahun (2008–2011), Mursyid memperdalam hafalan dan bacaan Al-Qur'an di kawasan pegunungan ini. Pendidikan formalnya di <strong>SMK Takhassus Al-Qur'an Wonosobo</strong>, dan pendidikan kitab kuning di Madrasah Diniyah Al-Asy'ariyyah.</p>
+    <p>Di sini ia talaqqi dengan beberapa kyai sekaligus. Pertama dengan <strong>KH. R. Mustahal Asy'ari</strong> — pengasuh Blok M Al-Asy'ariyyah, dari beliau mengambil sanad Al-Qur'an. Kemudian dengan <strong>KH. R. Atho'illah Asy'ari</strong> pada tahun 2010–2011 — juga mengambil sanad. Lalu pada tahun 2011, beliau juga <strong>tabarrukan</strong> setoran hafalan Al-Qur'an kepada <strong>KH. As'ad Al-Hafidz</strong> di PP. Baitul Abidin Darussalam — datang sebagai "santri kalong" (datang setoran lalu pulang, tidak mukim) untuk mendapat keberkahan dan tambahan jalur sanad ketiga di Wonosobo.</p>
+    <p>Tradisi tabarrukan setoran sebagai santri kalong ini adalah adab keilmuan yang sangat tinggi dalam pesantren — sama seperti yang dilakukan KH. Ahmad Badawi Kaliwungu yang tabarrukan kepada KH. Munawwir Krapyak meski sudah hafidz dengan sanad lengkap dari Mekkah. Bagi Mursyid yang sudah memiliki sanad dari KH. Mustahal dan KH. Atho'illah, tabarrukan kepada KH. As'ad adalah upaya menambah berkah dan menyambungkan diri dengan jalur khodim KH. Muntaha — yang dikenal "plek (sama persis)" dengan sang guru.</p>
+    <div class="green-note">
+      <span class="label">✨ Yang Istimewa</span>
+      Ketiga sanad ini, jika ditelusuri ke atas, semuanya bermuara pada satu tempat: <strong>KH. Muhammad Munawwir Krapyak Yogyakarta</strong> — yang oleh KH. Mustofa Bisri (Gus Mus) disebut sebagai sanad Al-Qur'an utama abad ke-20 di Nusantara.
+    </div>
+    <p>Mbah Munawwir adalah sosok yang melakukan riyadhah luar biasa: mengkhatamkan Al-Qur'an dalam tujuh hari selama tiga tahun, lalu dalam tiga hari selama tiga tahun, lalu dalam sehari semalam selama tiga tahun, lalu membaca Al-Qur'an terus-menerus selama 40 hari.</p>
+    <p>Di Kalibeber, Mursyid bukan hanya menambah hafalan — ia juga menyambungkan dirinya dengan rantai keilmuan yang sangat agung.</p>
+    <p>Ada satu hal lain yang istimewa tentang Kalibeber. Pesantren Al-Asy'ariyyah didirikan oleh KH. Asy'ari — yang kemudian dilanjutkan oleh putra-putra Beliau, di antaranya KH. Muntaha Al-Hafidz dan KH. Mustahal Asy'ari (guru Mursyid). KH. Muntaha Al-Hafidz dan adiknya KH. Mustahal Asy'ari sama-sama belajar langsung kepada KH. Muhammad Munawwir Krapyak. Sehingga jalur Kalibeber ini juga menjadi salah satu jalur sanad Al-Qur'an dan ke-NU-an Mursyid yang sangat dekat ke Mbah Munawwir.</p>
+    <p>Tiga tahun di Wonosobo adalah tiga tahun pendalaman. Hafalan menjadi mutqin (kuat), bacaan menjadi tartil dan fasih, dan sanad-sanad bertambah.</p>
+    <p>Lulus SMK pada tahun 2011, ia bersiap untuk babak baru. Tetapi sebelum kuliah, ia tahu satu hal: untuk memahami Al-Qur'an, ia harus menguasai bahasanya.</p>
+  </div>
+</div>
+
+<!-- BAB 7 -->
+<div class="chapter" id="bab7">
+  <p class="chapter-num">BAB 7</p>
+  <h2 class="chapter-title">Kampung Bahasa Pare</h2>
+  <p class="chapter-subtitle">Belajar Sambil Mengabdi</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tahun 2012. <strong>Pare, Kediri, Jawa Timur</strong>. Wilayah ini terkenal dengan julukan "Kampung Inggris" — pusat kursus bahasa Inggris terbesar di Indonesia, dengan ratusan lembaga kursus yang menjamur. Tetapi yang sedikit orang tahu, Pare juga merupakan pusat kursus bahasa Arab.</p>
+    <p>Mursyid datang ke Pare dengan satu misi: menguasai bahasa Arab dan bahasa Inggris. Bahasa Arab untuk membuka pintu pemahaman Al-Qur'an dan kitab kuning. Bahasa Inggris untuk membuka pintu pemahaman dunia modern.</p>
+    <p>Empat lembaga ia ikuti dalam waktu singkat:</p>
+    <ul>
+      <li><strong>Pondok Darul Falah</strong> — pesantren tempat ia mukim sambil kursus</li>
+      <li><strong>LKBA Ocean Course</strong> — Bahasa Arab</li>
+      <li><strong>LKBA Al-Farisi</strong> — Bahasa Arab</li>
+      <li><strong>LKBI Happy English Course (HEC 1)</strong> — Bahasa Inggris</li>
+    </ul>
+    <p>Tetapi di tengah masa belajarnya yang intensif, terjadi sesuatu yang tidak terduga. Bukannya hanya menjadi murid, Mursyid muda — yang baru berumur 18 tahun — mulai memikirkan untuk membantu pelajar lain. Bersama beberapa rekannya, ia mendirikan sebuah lembaga kursus bahasa: <strong>Darul Furqan Camp English & Arabic</strong>.</p>
+    <div class="green-note">
+      <span class="label">✨ Jejak Pertama Jiwa Pendiri</span>
+      Di usia ketika kebanyakan orang masih sibuk belajar, Mursyid muda sudah mulai mendirikan lembaga. Di usia ketika orang lain mencari ilmu untuk dirinya sendiri, ia sudah mulai berbagi ilmu dengan orang lain.
+    </div>
+    <p>Pelajaran dari Pare bukan hanya tentang bahasa. Pelajaran dari Pare adalah: kebaikan tidak menunggu, ilmu yang bermanfaat adalah ilmu yang dibagikan, dan jiwa pengabdian dapat dimulai sejak muda.</p>
+    <p>Empat tahun kemudian, lembaga ini akan menjadi pengingat baginya: bahwa ia bisa mendirikan sesuatu dari nol. Pengalaman ini akan ia bawa ke tanah Papua, tempat ia akan mendirikan sesuatu yang jauh lebih besar.</p>
+    <div class="arabic-box">
+      <p class="ar">خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ</p>
+      <p class="tr">"Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lain." (HR. Ahmad)</p>
+    </div>
+    <p>Di Pare, prinsip ini mulai ia jalankan.</p>
+  </div>
+</div>
+
+<!-- BAB 8 -->
+<div class="chapter" id="bab8">
+  <p class="chapter-num">BAB 8</p>
+  <h2 class="chapter-title">Bertemu Sang Guru</h2>
+  <p class="chapter-subtitle">di Pesantren Al-Hikam Depok</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tahun 2012. Akhir tahun. Mursyid telah menyelesaikan kursus bahasanya di Pare. Sekarang saatnya melanjutkan ke jenjang yang lebih tinggi: kuliah.</p>
+    <p>Pilihan jatuh ke <strong>Sekolah Tinggi Kuliyyatul Qur'an (STKQ) Al-Hikam Depok</strong> — sebuah perguruan tinggi yang khusus mengkaji Al-Qur'an dan Tafsir, didirikan oleh KH. Ahmad Hasyim Muzadi, salah satu ulama besar Indonesia kontemporer. Di kampus ini, ia mengambil jurusan Ilmu Al-Qur'an dan Tafsir.</p>
+    <p>Tetapi yang lebih penting daripada kuliah adalah: di balik kampus ini, ada <strong>Pesantren Al-Hikam</strong> — tempat KH. Ahmad Hasyim Muzadi tinggal dan mengajar langsung.</p>
+
+    <h3>Mengenal Almaghfurullah KH. Ahmad Hasyim Muzadi</h3>
+    <p><strong>Almaghfurullah KH. Ahmad Hasyim Muzadi (1944–2017)</strong> adalah tokoh besar Islam Indonesia. Beliau pernah menjabat sebagai Ketua Umum Pengurus Besar Nahdlatul Ulama (PBNU) selama dua periode (1999–2010), Presiden World Conference of Religions for Peace, dan tokoh moderasi Islam yang diakui dunia internasional. Beliau pendiri Pesantren Al-Hikam yang ada di Malang dan Depok — pesantren mahasiswa yang konsepnya unik: santri yang sambil kuliah di universitas umum.</p>
+    <p>Bagi Mursyid muda, bertemu KH. Hasyim Muzadi adalah pertemuan dengan figur ayah spiritual. Kyai inilah yang akan membimbingnya selama enam tahun ke depan, yang akan memberikan ijazah Kitab Al-Hikam Ibnu Athaillah, dan yang akan mengirimnya ke Tunisia untuk memperluas wawasan.</p>
+    <p>Sang Kyai memiliki pemikiran yang khas tentang santri. Dalam berbagai ceramahnya, beliau sering menegaskan bahwa <strong>santri bukanlah beban masyarakat, melainkan pemberi solusi</strong>. Beliau juga mengajarkan tentang <em>Tafaqquh fid Din wa fil Mujtama'</em> — memahami agama dan memahami masyarakat secara bersamaan. Dan beliau adalah pelopor konsep <strong>Islam Wasathiyah</strong> — Islam yang moderat, yang menjadi rahmat bagi semesta.</p>
+    <p>Pemikiran-pemikiran inilah yang Mursyid serap selama enam tahun. Setiap pengajian, setiap nasihat, setiap teladan dari sang Kyai — ia simpan dalam dadanya. Pemikiran-pemikiran ini akan menjadi dasar pendirian PPUQHM bertahun-tahun kemudian. Bahkan, akan menjadi tema tesis S2-nya.</p>
+    <p>Pada tahun 2015, di sela-sela kuliah, Mursyid mengikuti <strong>Majlis Talaqqi Kitab Al-Fiqhul Akbar Imam Hanafi</strong>. Di majlis ini ia mengambil sanad dari Syekh Ahmad bin Abdurrozzaq Al-Husaini — sanad yang bersambung sampai ke Imam Abu Hanifah. Ini adalah sanad ilmu fiqih klasik yang sangat berharga.</p>
+    <p>Di Al-Hikam, Mursyid juga mendapat ijazah <strong>Kitab Al-Hikam Ibnu Athaillah As-Sakandari</strong> — kitab tasawuf yang menjadi nama pesantren ini. Kitab Al-Hikam adalah karya Imam Ibnu Athaillah, sufi besar dari mazhab Syadziliyyah, yang berisi mutiara-mutiara hikmah tentang kehidupan spiritual. Mendapat ijazah dari KH. Hasyim Muzadi langsung adalah berkah yang luar biasa.</p>
+    <p>Tetapi di pertengahan kuliahnya — saat ia baru semester ketiga — sebuah panggilan datang yang akan membawanya melintasi lautan.</p>
+  </div>
+</div>
+
+<!-- BAB 9 -->
+<div class="chapter" id="bab9">
+  <p class="chapter-num">BAB 9</p>
+  <h2 class="chapter-title">Melintasi Lautan</h2>
+  <p class="chapter-subtitle">ke Az-Zaitunah Tunisia</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tahun 2013. Mursyid baru semester ketiga di STKQ Al-Hikam. Tetapi sesuatu yang besar terjadi: ia terpilih sebagai salah satu dari sepuluh santri terbaik se-Indonesia yang mendapatkan <strong>Beasiswa Santri Berprestasi</strong> dari Pengurus Besar Nahdlatul Ulama (PBNU) bekerja sama dengan Kementerian Agama Republik Indonesia.</p>
+    <p>Tujuannya: <strong>Universitas Az-Zaitunah, Tunisia</strong>. Universitas Islam tertua di dunia, didirikan pada tahun 737 M (sebelum Universitas Al-Qarawiyyin Fez). Sebuah pengakuan luar biasa bagi seorang santri muda dari Kendal.</p>
+    <p>Sebelum keberangkatan, KH. Hasyim Muzadi memanggil Mursyid. Sang Kyai memberi pesan yang akan menjadi pegangan seumur hidup:</p>
+    <div class="quote-box">"Kamu hanya saya izinkan satu tahun belajar di Tunisia."</div>
+    <p>Mengapa hanya satu tahun? Sang Kyai tidak menjelaskan secara eksplisit. Tetapi pesan ini mengandung pelajaran yang dalam tentang adab seorang santri: setia pada amanah, tahu kapan kembali, dan tidak terlena oleh nikmat dunia.</p>
+    <p>Tunisia. Negeri Maghribi di Afrika Utara. Tanah para sufi besar, tanah ulama Maliki, tanah Universitas Az-Zaitunah dengan tradisi keilmuan 1300 tahun.</p>
+    <p>Di Tunisia, Mursyid mendaftar di jurusan Bahasa dan Peradaban Islam. Tetapi yang lebih penting daripada kuliah formal adalah: berguru langsung kepada para masyaikh besar Tunisia.</p>
+
+    <h3>Lima Masyaikh di Tunisia</h3>
+    <p>Selama setahun di Tunisia, Mursyid berguru kepada lima masyaikh terkemuka:</p>
+    <div class="sanad-card"><div class="num">1</div><h4>Syekh Hisyam Al-Jallashi</h4><p>Dari beliau, Mursyid mendalami ilmu akidah, fiqih madzhab Maliki, dan ilmu nahwu. Yang lebih istimewa: dari beliau, Mursyid dibaiat ke dalam <strong>Thoriqah Rifa'iyyah</strong> dan menerima <strong>ijazah mushofahah ke-7 dari Nabi Khidir AS</strong> — sebuah pencapaian spiritual yang sangat langka.</p></div>
+    <div class="sanad-card"><div class="num">2</div><h4>Syekh Farid Al-Baji</h4><p>Dari beliau, Mursyid belajar kitab-kitab hadits dan mengambil sanad <strong>Kitab Shahih Bukhari</strong>, <strong>Syamail Muhammadiyyah</strong>, dan beberapa kitab hadits klasik lainnya. Sanad-sanad ini sangat berharga karena bersambung hingga Rasulullah SAW.</p></div>
+    <div class="sanad-card"><div class="num">3</div><h4>Syekh Ali Busylaghim</h4><p>Dari beliau, Mursyid talaqqi hafalan Al-Qur'an. Ini adalah sanad Al-Qur'an internasional yang menambah kekayaan sanad Mursyid yang sebelumnya hanya dari Indonesia.</p></div>
+    <div class="sanad-card"><div class="num">4</div><h4>Syekh Muhammad Al-Kamil Sa'adah</h4><p>Dari beliau, Mursyid mengambil sanad <strong>Kitab Al-Muwattho' Imam Malik</strong> — kitab hadits paling tua di dunia Islam, karya Imam Malik bin Anas (pendiri madzhab Maliki).</p></div>
+    <div class="sanad-card"><div class="num">5</div><h4>Syekh Hasan Asy-Syadzili</h4><p>Dari beliau, Mursyid dibaiat ke dalam <strong>Thoriqah Syadziliyyah</strong> — thoriqah sufistik besar yang menjadi rujukan Pesantren Al-Hikam.</p></div>
+    <p>Setahun di Tunisia adalah setahun kekayaan ilmu yang luar biasa. Madzhab Maliki, sanad-sanad kitab klasik, dua thoriqah, ijazah mushofahah dari Nabi Khidir — semuanya bertambah ke dalam khazanah keilmuan Mursyid.</p>
+    <p>Tetapi setahun adalah setahun. Pesan sang Kyai dari Indonesia masih bergema: <em>"Kamu hanya saya izinkan satu tahun belajar di Tunisia."</em></p>
+  </div>
+</div>
+
+<!-- BAB 10 -->
+<div class="chapter" id="bab10">
+  <p class="chapter-num">BAB 10</p>
+  <h2 class="chapter-title">Kembali ke Tanah Air</h2>
+  <p class="chapter-subtitle">Setia pada Amanah Sang Guru</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tahun 2014. Tepat satu tahun setelah keberangkatannya, Mursyid kembali ke Indonesia. Tidak menunggu, tidak berlama-lama. Sebagaimana yang diamanahkan KH. Hasyim Muzadi.</p>
+    <p>Banyak teman dan kenalannya yang heran. Mengapa pulang begitu cepat? Beasiswa Tunisia masih bisa diperpanjang. Universitas Az-Zaitunah masih membuka pintu. Para masyaikh masih ingin mengajar. Mengapa tidak melanjutkan?</p>
+    <p>Jawabannya sederhana: <strong>amanah dari sang Kyai</strong>.</p>
+    <div class="note-box">
+      <span class="label">📿 Adab Santri</span>
+      Dalam tradisi pesantren, ada yang lebih penting daripada ilmu — yaitu adab. Dan adab seorang santri yang paling penting adalah: <strong>taat kepada guru</strong>. Bukan ketaatan buta, tetapi ketaatan yang lahir dari pemahaman bahwa guru memiliki hikmah yang kadang tidak kita pahami.
+    </div>
+    <p>Mengapa KH. Hasyim Muzadi hanya mengizinkan satu tahun? Mungkin sang Kyai tahu bahwa Mursyid dibutuhkan di Indonesia. Mungkin sang Kyai tahu bahwa terlalu lama di luar negeri akan membuat seseorang lupa pulang. Mungkin sang Kyai tahu bahwa amanah Mursyid bukan untuk menjadi ulama internasional, tetapi untuk berkhidmah di tanah air.</p>
+    <p>Apapun alasannya, Mursyid pulang. Ini adalah ujian adab pertama dalam karir keilmuannya — dan ia lulus.</p>
+    <p>Kembali ke STKQ Al-Hikam Depok, Mursyid melanjutkan kuliahnya yang sempat tertunda. Empat tahun lagi (2014–2018) ia habiskan untuk menyelesaikan studi. Sambil kuliah, ia tetap aktif di Pesantren Al-Hikam, terus berguru kepada KH. Hasyim Muzadi, dan terus memperdalam Kitab Al-Hikam dan kitab-kitab lainnya.</p>
+    <p>Selama tahun-tahun itu, kedekatan Mursyid dengan sang Kyai semakin dalam. Ia bukan sekadar mahasiswa biasa — ia adalah salah satu santri kepercayaan yang sering mendampingi KH. Hasyim Muzadi. Hubungan yang terjalin bukan hanya hubungan murid dan guru, tetapi telah berkembang menjadi hubungan yang sedalam ayah dan anak spiritual. Sebagai seorang hafidz Al-Qur'an dengan sanad yang muttashil, Mursyid sering mendapat amanah untuk menjaga sang Kyai di malam-malam tertentu — sebuah kepercayaan yang menunjukkan posisinya yang istimewa di kalangan santri Al-Hikam.</p>
+
+    <h3>Malam yang Tak Akan Terlupakan</h3>
+    <p>Awal tahun 2017, kondisi kesehatan Almaghfurullah KH. Ahmad Hasyim Muzadi memburuk. Sang Kyai yang sudah berusia 73 tahun menjalani perawatan intensif. Para santri yang dipercaya secara bergiliran ditugaskan untuk menjaga Beliau di malam-malam tertentu.</p>
+    <p>Pada satu malam menjelang 16 Maret 2017, gilirannya tiba. Mursyid mendapat tugas untuk menjaga sang Kyai. Kebetulan? Tidak. Dalam keimanan seorang santri, tidak ada kebetulan — yang ada hanyalah takdir Allah yang sempurna. Allah SWT-lah yang menggerakkan hati, mengatur jadwal, menempatkan hamba-hamba-Nya di tempat yang tepat pada waktu yang tepat.</p>
+    <p>Malam itu, Mursyid duduk sendirian di sisi kepala sang Kyai, melantunkan ayat-ayat suci dengan tartil. Surah demi surah ia bacakan. Ayat-ayat yang ia hafal sejak di Kaliwungu, yang ia mantapkan di Kalibeber Wonosobo, yang sanadnya bersambung kepada Mbah Munawwir Krapyak hingga ke Rasulullah SAW — semuanya ia hadiahkan kepada sang guru di malam yang penuh keheningan itu. Hanya ada Mursyid dan sang Kyai. Para santri lain sudah kembali ke pesantren atau tempat tinggalnya. Keluarga inti sudah beristirahat di ruangan-ruangan terdekat.</p>
+    <p>Hingga sebuah momen tiba ketika Mursyid menyadari tanda-tanda yang tidak biasa pada sang Kyai. Tanda-tanda akhir hayat. Dengan sigap, sadar akan tanggung jawab seorang santri yang sedang bertugas, ia bergegas membangunkan keluarga inti. Ibu Nyai Hj. Mutammimah, Gus Yusron Sidqy putra bungsu, dan keluarga inti lainnya — semuanya dibangunkan oleh tangan Mursyid pada malam itu. Sebuah amanah yang berat, tetapi yang dijalankannya dengan adab dan ketenangan.</p>
+
+    <div class="momen-box">
+      <h4 style="display:block">Konfigurasi Sakral di Sisi Sang Kyai</h4>
+      <p style="font-size:13.5px;color:var(--gelap);line-height:1.8;margin-bottom:.75rem">Setelah keluarga berkumpul, posisi pun bergeser dengan adab yang tepat sesuai sunnah. Konfigurasi yang terbentuk adalah konfigurasi yang sempurna sebagaimana tradisi pesantren NU dalam mendampingi orang yang akan wafat:</p>
+      <div class="konfigurasi">
+        <div class="momen-pos"><strong>Sebelah kanan kepala</strong> — Ibu Nyai Hj. Mutammimah, istri tercinta sang Kyai, mentalqin syahadat dengan suara lembut dan penuh cinta.</div>
+        <div class="momen-pos"><strong>Sebelah kiri kepala</strong> — Gus Yusron Sidqy, putra bungsu yang sangat dekat dengan ayahandanya, juga mentalqin syahadat.</div>
+        <div class="momen-pos"><strong>Tepat di kaki sang Kyai</strong> — Mursyid, hafidz dengan sanad muttashil, melantunkan Surah Yasin yang dalam tradisi pesantren disunnahkan dibacakan kepada orang yang menghadapi sakaratul maut.</div>
+        <div class="momen-pos"><strong>Sekeliling</strong> — keluarga inti lainnya, menemani dengan doa dan dzikir.</div>
+      </div>
+    </div>
+
+    <p>Dalam konfigurasi seperti inilah, di hari Kamis <strong>16 Maret 2017</strong>, Almaghfurullah KH. Ahmad Hasyim Muzadi berpulang ke rahmatullah. Ditemani istri tercinta yang membimbing syahadat, ditemani putra bungsu yang turut mentalqin, dan diiringi tilawah Surah Yasin dari seorang hafidz dengan sanad yang bersambung kepada Rasulullah SAW. Sebuah gambaran wafat yang sangat mulia — yang dalam tradisi Islam disebut sebagai <em>husnul khotimah</em>.</p>
+    <div class="quote-box">Dari ribuan santri KH. Hasyim Muzadi di seluruh Indonesia, dari ratusan mahasiswa STKQ Al-Hikam, dirinya yang dipilih Allah untuk berada di tempat itu, di malam itu, di waktu itu. Mengantar pulang sang guru dengan ayat-ayat suci. Membangunkan keluarga ketika tanda-tanda akhir tiba. Menyaksikan langsung kepulangan seorang ulama besar kepada Allah SWT.</div>
+    <p>Sang Kyai meninggalkan dunia ini setelah hidup penuh khidmah untuk umat — sebagai Ketua Umum PBNU dua periode (1999–2010), sebagai pendiri Pesantren Al-Hikam Malang dan Depok, sebagai tokoh Islam Wasathiyah yang diakui dunia internasional, dan terutama sebagai guru bagi ribuan santri yang tersebar di seluruh Nusantara.</p>
+    <p>Mursyid kehilangan sosok ayah spiritual. Tetapi ia juga mendapat anugerah yang tidak ternilai: hadir di detik-detik terakhir sang guru, mengantar kepulangan Beliau dengan ayat-ayat suci, dan menjadi salah satu saksi langsung dari peristiwa sakral itu. Pengalaman ini akan menjadi kenangan paling berharga dalam hidupnya — sebuah pertanggungjawaban moral yang berat sekaligus berkah yang sangat besar.</p>
+    <p>Pesan-pesan sang Kyai tetap hidup dalam dadanya. Pemikiran tentang Islam Wasathiyah, tentang santri sebagai solusi umat, tentang <em>Tafaqquh fid Din wa fil Mujtama'</em> — semuanya tetap menjadi pegangan. Bahkan, pengalaman mengantar sang guru pulang dengan tilawah Surah Yasin menjadi pengalaman yang menguatkan komitmennya untuk menjalankan amanah keilmuan dengan penuh tanggung jawab.</p>
+    <p>Dan justru di tahun 2017 itu pula — beberapa bulan setelah wafatnya sang guru, saat ia masih mahasiswa STKQ Al-Hikam dan belum lulus — sebuah panggilan tugas datang dari pesantren. Sebuah amanah baru. Sebuah panggilan dari tempat yang jauh. Sebuah tanah yang akan mengubah seluruh hidupnya.</p>
+    <p><strong>Tanah Papua memanggil.</strong> Dan dengan bekal keberkahan dari mendampingi sang guru di akhir hayat, Mursyid menerima panggilan itu dengan hati yang kuat dan ridha.</p>
+  </div>
+</div>
+
+<!-- BAB 11 -->
+<div class="chapter" id="bab11">
+  <p class="chapter-num">BAB 11</p>
+  <h2 class="chapter-title">PROSAKTI ke Mimika</h2>
+  <p class="chapter-subtitle">Panggilan Tanah Papua</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Pesantren Al-Hikam Depok memiliki sebuah tradisi yang dikembangkan oleh KH. Hasyim Muzadi: <strong>Program Masa Bakti</strong>, atau yang dikenal dengan singkatan <strong>PROSAKTI</strong>. Para mahasiswa STKQ Al-Hikam, di tengah masa kuliah mereka, ditugaskan untuk menjalankan masa pengabdian di berbagai wilayah Indonesia — terutama wilayah-wilayah yang membutuhkan tenaga dakwah dan pendidikan agama.</p>
+    <p>Tujuan PROSAKTI sederhana tetapi mendalam: agar santri Al-Hikam tidak hanya menjadi cendekiawan di menara gading, tetapi juga benar-benar berkhidmah di tengah masyarakat — terutama masyarakat yang minim akses kepada pendidikan agama yang berkualitas. Inilah pengamalan langsung dari pemikiran KH. Hasyim Muzadi tentang <em>Tafaqquh fid Din wa fil Mujtama'</em> — memahami agama dan memahami masyarakat secara bersamaan.</p>
+    <p>Tahun 2017, di tengah masa kuliahnya yang belum selesai, Mursyid menerima penugasan PROSAKTI: <strong>Mimika, Papua Tengah</strong>. Tepatnya di Desa Karang Senang SP-3, Kecamatan Kuala Kencana, Kabupaten Mimika — sebuah desa transmigrasi yang terdiri dari masyarakat dari berbagai daerah di Indonesia, di tengah Papua yang masyarakatnya plural baik dari segi etnis maupun agama.</p>
+    <p>Masa tugasnya adalah satu tahun — sebagaimana standar PROSAKTI bagi mahasiswa STKQ Al-Hikam. Setelah satu tahun, ia diharapkan kembali ke Depok untuk menyelesaikan kuliahnya dan kemudian melanjutkan ke jenjang berikutnya, sebagaimana lazimnya alumni Al-Hikam.</p>
+    <p>Mimika adalah kabupaten yang dikenal karena keberadaan tambang Freeport. Tetapi di balik nama besar Freeport, ada masyarakat sederhana yang membutuhkan pembina umat — terutama umat Muslim yang merupakan minoritas di tengah masyarakat yang mayoritas Kristen.</p>
+    <p>Dari Depok ke Mimika adalah perpindahan yang radikal. Dari kampus dengan akses ke perpustakaan dan kajian-kajian para masyaikh, ke desa transmigrasi di pedalaman Papua. Dari Jawa yang penuh dengan pesantren ke wilayah yang baru memulai membangun pesantren-pesantren.</p>
+
+    <h3>Tiga Khidmah selama Masa PROSAKTI</h3>
+    <p>Selama satu tahun masa pengabdiannya di SP-3, Karang Senang, Kuala Kencana, Mimika, Mursyid menjalankan tiga khidmah utama yang menyentuh seluruh elemen masyarakat:</p>
+    <div class="sanad-card"><div class="num">1</div><h4>Imam Sholat di Masjid Al-Fattah</h4><p>Sebagai hafidz 30 juz Al-Qur'an dengan empat sanad bermuara pada Mbah Munawwir Krapyak, Mursyid mengemban amanah memimpin shalat lima waktu, shalat Jum'at, shalat Tarawih, dan shalat-shalat khusus lainnya bagi jamaah Masjid Al-Fattah. Bagi masyarakat SP-3, mendengarkan tilawah seorang hafidz dengan sanad Krapyak adalah pengalaman yang sangat berharga — sesuatu yang sebelumnya jarang mereka temui di tanah Papua.</p></div>
+    <div class="sanad-card"><div class="num">2</div><h4>Guru Al-Qur'an di LP Ma'arif NU Mimika</h4><p>Sebagai bagian dari Lembaga Pendidikan Ma'arif NU — sayap pendidikan formal Nahdlatul Ulama — Mursyid mengajar Al-Qur'an di lembaga-lembaga pendidikan di bawah naungan Ma'arif NU Mimika. Inilah pengamalan dari sanad Al-Qur'an yang ia bawa: bukan sekadar untuk dirinya sendiri, tetapi untuk diwariskan kepada generasi muda Muslim Mimika.</p></div>
+    <div class="sanad-card"><div class="num">3</div><h4>Pendidik dan Da'i untuk Seluruh Elemen Masyarakat SP-3</h4><p>Khidmah ini melingkupi mengajar mengaji untuk anak-anak, remaja, dan orang tua; melatih rebana untuk para remaja dan bapak-bapak; serta memberikan ceramah dan dakwah dalam berbagai forum keagamaan dan kemasyarakatan. Tidak ada elemen masyarakat yang terlewat dari khidmahnya — anak-anak, remaja, dewasa, lansia; laki-laki dan perempuan; masyarakat asli Papua dan transmigran. Pendekatannya selalu sama: sederhana, sabar, penuh kasih.</p></div>
+    <p>Tiga khidmah ini berjalan paralel — pagi mengajar di sekolah Ma'arif NU, sore mengajar ngaji di rumah-rumah dan langgar, malam memimpin pengajian dan latihan rebana bersama remaja dan bapak-bapak SP-3, sementara di setiap waktu shalat ia memimpin di Masjid Al-Fattah. Hari-harinya penuh, tetapi dari setiap kegiatan itu, satu hal tumbuh: <strong>kedekatan dengan masyarakat</strong>.</p>
+
+    <h3>Saat Masa Tugas Akan Berakhir</h3>
+    <p>Bulan demi bulan berlalu. Kedekatan dengan masyarakat semakin dalam. Para ibu-ibu memanggilnya "Gus" — sebutan kasih sayang dalam tradisi Jawa yang menunjukkan respek dan keakraban kepada putra kyai. Para bapak-bapak menjadikannya tempat curhat. Anak-anak muda mengaguminya sebagai panutan. Anak-anak kecil mengejarnya untuk minta diajari mengaji.</p>
+    <p>Tetapi PROSAKTI memiliki batas waktu. Satu tahun. Setelah masa tugas selesai, Mursyid harus kembali ke Depok untuk menyelesaikan studi yang masih tersisa, dan kemudian — sebagaimana lazimnya alumni Al-Hikam — melanjutkan karir di Jawa.</p>
+    <p>Ketika masa satu tahun mendekati akhir dan Mursyid mulai bersiap untuk berpamitan, sesuatu yang tidak terduga terjadi.</p>
+    <p>Masyarakat datang. Bukan satu atau dua orang, tetapi banyak. Para tokoh masyarakat, para pengurus masjid, para wali murid Ma'arif NU, para ibu-ibu pengajian, para remaja yang ia ajar rebana — semuanya berkumpul. Mereka tidak rela jika Gus pulang ke Jawa.</p>
+    <div class="quote-box">"Gus, jangan pulang ke Jawa. Tetaplah di sini bersama kami. Dirikanlah pesantren di tanah Papua ini."</div>
+    <p>Permintaan ini bukan permintaan biasa. Ini adalah permintaan dari hati masyarakat yang merasakan langsung manfaat kehadiran Mursyid selama satu tahun PROSAKTI. Mereka menyaksikan dengan mata kepala sendiri: anak-anak yang bisa membaca Al-Qur'an dengan tartil, remaja yang antusias mempelajari rebana, ibu-ibu yang mendapat pencerahan dari pengajian, dan jamaah masjid yang merasakan ketenangan saat dipimpin shalat oleh seorang hafidz.</p>
+    <p>Mereka menyadari satu hal sederhana namun mendalam: jika Gus pulang, semua ini akan kembali kosong. Anak-anak mereka akan kehilangan guru ngaji yang sanadnya bersambung kepada Rasulullah SAW. Mereka akan kembali tanpa pembina umat. Karena itu mereka memohon: jangan hanya pengabdian satu tahun. Tinggallah selamanya. Dan untuk membuat itu mungkin, dirikanlah sebuah pesantren — sebuah jangkar identitas Muslim di tengah masyarakat plural Papua.</p>
+    <p>Mursyid harus memilih. Kembali ke Depok, menyelesaikan kuliah dengan tenang, lalu pulang ke Jawa untuk karier yang sudah dipersiapkan. Atau tetap di Papua, dengan kuliah yang masih harus diselesaikan dari jarak jauh, dan amanah baru yang sangat berat: mendirikan pesantren dari nol di pedalaman Papua.</p>
+    <p>Setelah istikharah dan merenungkan amanah dari sang guru — yang baru beberapa bulan sebelumnya berpulang — tentang santri sebagai solusi umat, jawaban datang. Mursyid menerima panggilan masyarakat tersebut.</p>
+    <div class="note-box">
+      <span class="label">📿 Pelajaran dari Sang Kyai</span>
+      Bahwa santri tidak boleh menolak panggilan umat. Bahwa kebutuhan masyarakat lebih utama daripada kenyamanan pribadi. Bahwa <em>Tafaqquh fid Din wa fil Mujtama'</em> bukan sekadar teori — ia harus diamalkan dalam kehidupan nyata.
+    </div>
+    <p>Kendal akan tetap menjadi tanah kelahiran. Depok akan tetap menjadi tanah keilmuan. Tetapi <strong>Mimika</strong> — Mimika akan menjadi tanah pengabdian seumur hidupnya.</p>
+  </div>
+</div>
+
+<!-- BAB 12 -->
+<div class="chapter" id="bab12">
+  <p class="chapter-num">BAB 12</p>
+  <h2 class="chapter-title">Mendirikan PPUQHM</h2>
+  <p class="chapter-subtitle">Pesantren dari Hati Masyarakat</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Keputusan untuk mendirikan pesantren disambut dengan antusiasme yang luar biasa. Tetapi pertanyaan berikutnya datang: bagaimana cara membangunnya?</p>
+    <p>Tidak ada donatur besar. Tidak ada proyek dari pemerintah. Tidak ada lembaga yang siap menggelontorkan dana. Hanya ada Gus Mursyid dan masyarakat Karang Senang SP-3.</p>
+    <p>Dan dari kondisi inilah lahir pesantren yang istimewa.</p>
+    <p>Masyarakat bergerak dengan gotong royong. Kerja bakti dilakukan oleh hampir seluruh warga desa. Yang punya tanah menyumbang tanah. Yang punya material menyumbang material. Yang punya tenaga menyumbang tenaga. Yang punya makanan menyediakan konsumsi untuk para pekerja.</p>
+    <p>Anak-anak, remaja, orang dewasa, hingga orang tua — semua bahu-membahu. Mengangkat pasir, mencampur semen, memasang batu bata, mendirikan bangunan dengan tangan mereka sendiri. <strong>Pesantren ini benar-benar dibangun dari hati masyarakat.</strong></p>
+    <div class="green-note">
+      <span class="label">✨ Pemberian Nama</span>
+      Pesantren ini diberi nama: <strong>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM)</strong>.
+    </div>
+    <p><strong>"Ulumul Qur'an"</strong> — ilmu-ilmu Al-Qur'an. Bukan sekadar tahfidz (hafalan), tetapi keseluruhan ilmu yang berkaitan dengan Al-Qur'an: tahfidz, tahsin, tajwid, qiraat, tafsir, ulumul Qur'an, asbabun nuzul, dan sebagainya. Sejalan dengan filosofi KH. Hasyim Muzadi tentang <em>Tahfidz dengan Tafhim</em> — hafalan yang disertai pemahaman.</p>
+    <p><strong>"Hasyim Muzadi"</strong> — penghormatan dan pengabadian atas jasa Almaghfurullah KH. Ahmad Hasyim Muzadi. Bagi Gus Mursyid, penamaan ini adalah komitmen untuk melanjutkan estafet pemikiran sang guru di tanah Papua, menjadi amal jariyah berkelanjutan untuk Beliau, dan menjaga ikatan dengan keluarga besar Al-Hikam.</p>
+
+    <h3>Peletakan Batu Pertama: 28 Oktober 2017</h3>
+    <p>Tanggal <strong>28 Oktober 2017</strong> dipilih untuk peletakan batu pertama — bertepatan dengan <strong>Hari Sumpah Pemuda</strong>. Sebuah simbolisme yang dalam: bahwa pesantren ini berdiri di atas semangat kebangsaan.</p>
+    <p>Yang luar biasa, peletakan batu pertama ini dilakukan saat Gus Mursyid masih dalam masa PROSAKTI dan belum menyelesaikan kuliahnya di STKQ Al-Hikam Depok. Kecepatan respons masyarakat dan amanah yang ia terima membuat pesantren ini berdiri sebelum ia sendiri lulus dari kampusnya. Sebuah bukti bahwa Allah SWT meridhai amanah ini, dan masyarakat tidak ingin menunggu lebih lama.</p>
+    <p>Yang meletakkan batu pertama bukan orang sembarangan. <strong>Tiga ulama besar nasional</strong> hadir di pedalaman Papua untuk momen bersejarah ini:</p>
+    <div class="sanad-card"><div class="num">1</div><h4>KH. Ma'ruf Amin</h4><p>Saat itu Ketua Umum Majelis Ulama Indonesia (MUI) dan Rois Aam Pengurus Besar Nahdlatul Ulama (PBNU). Beliau kemudian menjadi <strong>Wakil Presiden Republik Indonesia periode 2019–2024</strong> mendampingi Presiden Joko Widodo.</p></div>
+    <div class="sanad-card"><div class="num">2</div><h4>KH. Miftahul Akhyar</h4><p>Saat itu Wakil Rois Aam PBNU. Beliau kemudian dipercaya menjadi Rois Aam PBNU dan Ketua Umum MUI.</p></div>
+    <div class="sanad-card"><div class="num">3</div><h4>KH. Lukman Haris Dimyathi</h4><p>Pengasuh Pondok Pesantren Tremas, Pacitan. Pesantren Tremas adalah salah satu pesantren tertua dan paling berwibawa dalam tradisi keilmuan pesantren Indonesia, didirikan tahun 1830.</p></div>
+    <div class="note-box">Kehadiran tiga tokoh ulama besar ini di pedalaman Papua untuk meletakkan batu pertama sebuah pesantren yang akan berdiri adalah peristiwa yang sangat langka dan penuh makna. Pesantren ini bukan pesantren biasa — ia diberkahi oleh hierarki keulamaan tertinggi di Indonesia.</div>
+
+    <h3>Peresmian: 23 September 2018</h3>
+    <p>Setelah hampir setahun pembangunan, PPUQHM diresmikan pada <strong>23 September 2018</strong>. Tahun yang sama, Gus Mursyid juga menyelesaikan kuliahnya di STKQ Al-Hikam Depok dengan predikat <strong>Cumlaude</strong> untuk jurusan Ilmu Al-Qur'an dan Tafsir — sebuah bukti bahwa amanah pesantren dan amanah akademik dapat dijalankan secara berbarengan dengan ridha Allah SWT.</p>
+    <p>Yang melaksanakan peresmian adalah dua sosok dari keluarga Almaghfurullah KH. Hasyim Muzadi sendiri:</p>
+    <ul>
+      <li><strong>Ibu Nyai Hj. Mutammimah</strong> — istri tercinta Almaghfurullah KH. Hasyim Muzadi. Sebagai pendamping setia sang Kyai selama puluhan tahun, kehadiran Ibu Nyai Mutammimah dalam peresmian PPUQHM adalah simbol restu langsung dari Dalem Al-Hikam.</li>
+      <li><strong>Gus Yusron Sidqy</strong> — putra bungsu Almaghfurullah KH. Hasyim Muzadi. Kehadiran beliau menegaskan bahwa estafet keilmuan dan keluarga Al-Hikam sampai ke Papua melalui PPUQHM.</li>
+    </ul>
+
+    <h3>Takdir Allah yang Sangat Indah</h3>
+    <p>Yang luar biasa dari peresmian ini — dan ini adalah hikmah yang baru disadari kemudian — adalah bahwa dua sosok yang meresmikan PPUQHM (Ibu Nyai Hj. Mutammimah dan Gus Yusron Sidqy) adalah dua sosok yang sama yang berada bersama Mursyid di malam wafatnya KH. Hasyim Muzadi pada 16 Maret 2017.</p>
+    <p>Pada malam wafat di Malang, mereka bertiga berada dalam konfigurasi sakral di sisi sang Kyai: Ibu Nyai Hj. Mutammimah mentalqin di sebelah kanan kepala, Gus Yusron Sidqy mentalqin di sebelah kiri kepala, dan Mursyid membaca Surah Yasin di kaki Beliau.</p>
+    <p>Satu setengah tahun kemudian, di tanah Papua yang berjarak ribuan kilometer dari Malang, ketiganya kembali bertemu — kali ini bukan untuk mengantar pulang sang Kyai, tetapi untuk meresmikan pesantren yang lahir dari berkah malam itu, yang mengusung nama Beliau, dan yang menjadi amal jariyah berkelanjutan dari Almaghfurullah.</p>
+    <p><strong>Tiga sosok yang sama. Dua momen sakral yang berbeda. Satu nama yang menyatukan: KH. Hasyim Muzadi.</strong></p>
+    <p>Pertemuan ini sama sekali tidak direncanakan, tidak disengaja, dan tidak disangka oleh siapa pun. Penjadwalan peresmian, kesediaan keluarga sang Kyai untuk hadir, kehadiran Mursyid sebagai pengasuh — semuanya berjalan secara natural sesuai kebutuhan dan kelaziman. Tidak ada yang ingat bahwa konfigurasi ini sama dengan konfigurasi malam wafat sang Kyai. Hingga kemudian, ketika dipikirkan lebih dalam, terungkaplah keindahan takdir Allah ini.</p>
+    <div class="note-box">Inilah tanda yang sangat indah dari Allah SWT: bahwa pesantren yang lahir dari malam wafat sang Kyai, diresmikan oleh dua sosok yang sama yang ada di sisi Beliau di akhir hayat. Seakan-akan ruh sang Kyai sendiri yang menyatukan kembali tiga sosok itu — bukan di kamar wafat di Malang, tetapi di pesantren yang lahir dari berkah malam itu di tanah Papua.</div>
+
+    <h3>Kalimat Ibu Nyai yang Tak Akan Terlupakan</h3>
+    <p>Pada momen peresmian itu, Ibu Nyai Hj. Mutammimah mengucapkan sebuah kalimat yang sangat menyentuh hati semua yang hadir. Kalimat dalam bahasa Jawa yang sederhana, tetapi sarat dengan makna sufistik yang dalam:</p>
+    <div class="quote-box">"Subhanallah, gak nyongko tibake tandurane Abah puluhan tahun tukule nang Papua."</div>
+    <p>Yang artinya dalam bahasa Indonesia: <em>"Subhanallah, tidak menyangka ternyata tanaman/bibit yang ditanam oleh Abah selama puluhan tahun, tumbuhnya di Papua."</em></p>
+    <p>Kalimat ini sangat dalam maknanya. "Abah" yang dimaksud adalah panggilan Ibu Nyai dan keluarga kepada Almaghfurullah KH. Hasyim Muzadi. "Tandurane" (tanaman atau bibit) adalah metafora untuk para santri yang Beliau didik selama puluhan tahun di Pesantren Al-Hikam Malang dan Depok.</p>
+    <p>Yang membuat kalimat ini sangat menyentuh adalah pengakuan dari Ibu Nyai sendiri: "gak nyongko" (tidak menyangka). Beliau yang puluhan tahun mendampingi sang Kyai dalam mendidik santri, yang tahu persis ribuan bibit yang ditanam Beliau, ternyata tidak menyangka bahwa hasilnya tumbuh di tempat yang paling jauh — bukan di Jawa, bukan di kota besar, tetapi di pedalaman Papua. Inilah testimoni spiritual yang paling kuat untuk PPUQHM.</p>
+    <div class="green-note">
+      <span class="label">✨ Prasasti Spiritual</span>
+      <strong>"Tandurane Abah, tukule nang Papua"</strong> — empat kata yang menjadi prasasti spiritual PPUQHM. Bahwa di tanah Cendrawasih ini, di tengah masyarakat plural Mimika, salah satu benih dakwah KH. Hasyim Muzadi telah berakar, bertumbuh, dan berbuah.
+    </div>
+    <p>Sejak hari itu, PPUQHM tidak hanya menjadi pesantren yang mengusung nama KH. Hasyim Muzadi, tetapi juga diakui dan dirangkul sebagai bagian dari keluarga besar Al-Hikam — dengan ikatan yang lebih dalam daripada sekadar nama: ikatan yang dimulai dari malam wafat di Malang, dipertegas di peresmian di Mimika, dan disahkan dengan kalimat puitis Ibu Nyai yang menjadi prasasti spiritual pesantren.</p>
+    <p>Tiga pilar legitimasi PPUQHM telah lengkap: <strong>legitimasi sosial</strong> dari masyarakat yang membangun dengan gotong royong, <strong>legitimasi keulamaan</strong> dari tiga ulama besar, dan <strong>legitimasi spiritual-kekeluargaan</strong> dari keluarga KH. Hasyim Muzadi.</p>
+    <p>Tidak banyak pesantren baru yang lahir dengan tiga pilar legitimasi sekuat ini — dan tidak banyak pesantren yang punya cerita takdir Allah seindah ini.</p>
+  </div>
+</div>
+
+<!-- BAB 13 -->
+<div class="chapter" id="bab13">
+  <p class="chapter-num">BAB 13</p>
+  <h2 class="chapter-title">Sanad Al-Qur'an</h2>
+  <p class="chapter-subtitle">Empat Jalur ke Mbah Munawwir Krapyak</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Salah satu kekayaan Gus Mursyid adalah sanad Al-Qur'an yang dimilikinya dari <strong>empat jalur berbeda</strong>. Yang istimewa: keempat sanad ini, jika ditelusuri ke atas, semuanya bermuara pada satu mata air yang sama — <strong>Almaghfurullah KH. Muhammad Munawwir Krapyak Yogyakarta</strong>.</p>
+    <p>KH. Muhammad Munawwir bin Abdullah Rosyad (1870–1942 M) bukanlah nama biasa. KH. Mustofa Bisri (Gus Mus) menggambarkan beliau sebagai sanad Al-Qur'an utama abad ke-20 di Nusantara. Hampir semua pesantren tahfidz besar di Jawa — Al-Munawwir Krapyak, Yanbu'ul Qur'an Kudus, An-Nur Bantul, Mangkuyudan Solo, Al-Asy'ariyyah Wonosobo — semuanya tersambung kepada beliau.</p>
+    <div class="green-note">
+      <span class="label">✨ Riyadhah Mbah Munawwir</span>
+      Mengkhatamkan Al-Qur'an dalam tujuh hari selama tiga tahun, lalu dalam tiga hari selama tiga tahun, lalu dalam sehari semalam selama tiga tahun, lalu membaca Al-Qur'an terus-menerus selama 40 hari.
+    </div>
+    <p>Karena itulah Gus Mus menegaskan: <em>"Saya itu santrinya Kiai Ali Maksum, kurang percaya dengan wali-walian. Hanya saja khusus Kiai Munawwir, saya yakin ia wali."</em></p>
+    <p>Empat jalur sanad Gus Mursyid yang bermuara di Mbah Munawwir adalah:</p>
+
+    <h3>Jalur Pertama: KH. Munawwiruddin Badawi (Kaliwungu)</h3>
+    <p>Diterima tahun 2008 di PPUQ Miftahul Falah Kaliwungu Kendal, sebelum beliau pindah ke Wonosobo. KH. Munawwiruddin Badawi (w. ~2010) adalah putra dan murid langsung dari KH. Ahmad Badawi Ar-Rasyidi (1888-1977), sang "Pentashih Al-Qur'an Modern Pertama Indonesia". Dengan demikian, sanad ini mengalir secara langsung dari ayah ke putra dalam keluarga Badawi Kaliwungu — tradisi waris keilmuan yang sangat khas pesantren NU.</p>
+
+    <h3>Jalur Kedua: KH. R. Mustahal Asy'ari (Kalibeber)</h3>
+    <p>Diterima tahun 2009 di PPTQ Al-Asy'ariyyah Kalibeber Wonosobo. KH. Mustahal Asy'ari adalah putra KH. Asy'ari (pendiri PP. Al-Asy'ariyyah Kalibeber) dan adik dari KH. Muntaha Al-Hafidz. Yang istimewa, KH. Mustahal belajar Al-Qur'an langsung kepada KH. Muhammad Munawwir Krapyak — sehingga sanad ini sangat dekat, hanya berjarak satu generasi dari Mbah Munawwir.</p>
+
+    <h3>Jalur Ketiga: KH. R. Atho'illah Asy'ari (Kalibeber)</h3>
+    <p>Diterima tahun 2010–2011 di PPTQ Al-Asy'ariyyah Kalibeber. Sanad melalui jalur Krapyak yang sama.</p>
+
+    <h3>Jalur Keempat: KH. As'ad Al-Hafidz (Tabarrukan)</h3>
+    <p>Diterima tahun 2011 melalui tabarrukan setoran hafalan sebagai "santri kalong" (datang setoran lalu pulang) di PP. Baitul Abidin Darussalam. Meski tidak mukim di pesantren ini, beliau menerima sanad dan keberkahan langsung dari KH. As'ad — santri kinasih dan khodim KH. Muntaha Al-Hafidz. Sanad ini juga melalui jalur Krapyak yang sama.</p>
+
+    <h3>Naik ke Atas: Sampai ke Rasulullah SAW</h3>
+    <p>Dari Mbah Munawwir, sanad ini terus naik melalui Syekh Abdul Karim bin Umar al-Badri ad-Dimyathi, lalu Syekh Ismail Basyatin, lalu Syekh Ahmad ar-Rasyidi, dan seterusnya — melewati nama-nama besar para imam qira'at — sampai ke Imam Hafsh, Imam 'Ashim, para sahabat Nabi (Sayyidina Utsman, Ali, Zaid bin Tsabit, Ubay bin Ka'b, Abdullah bin Mas'ud), dan akhirnya ke <strong>Rasulullah Muhammad SAW</strong> yang menerimanya dari Malaikat Jibril AS, dari Allah SWT.</p>
+    <div class="quote-box">Empat jalur, satu mata air, dan satu tujuan akhir: Rasulullah SAW.</div>
+    <p>Selain dari empat masyaikh Indonesia ini, Gus Mursyid juga talaqqi tambahan dengan Syekh Ali Busylaghim di Tunisia (2013–2014) — menambahkan dimensi internasional pada sanad Al-Qur'an beliau.</p>
+    <p>Inilah kekayaan yang akan diwariskan kepada para santri PPUQHM: sanad Al-Qur'an yang muttashil hingga Rasulullah SAW melalui jalur Krapyak yang paling agung di Nusantara.</p>
+  </div>
+</div>
+
+<!-- BAB 14 -->
+<div class="chapter" id="bab14">
+  <p class="chapter-num">BAB 14</p>
+  <h2 class="chapter-title">Sanad Keilmuan</h2>
+  <p class="chapter-subtitle">Tiga Jalur ke Kyai Guru Kaliwungu</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Selain sanad Al-Qur'an, Gus Mursyid juga memiliki sanad keilmuan yang sangat istimewa. Yang luar biasa: <strong>tiga jalur sanad keilmuannya semuanya bermuara pada satu titik yang sama</strong> — KH. R. Asy'ari (Kyai Guru Kaliwungu), yang sekaligus adalah kakek buyut beliau dalam silsilah nasab.</p>
+    <div class="note-box">Fenomena ini sangat langka dalam tradisi keilmuan Islam Nusantara. Seorang santri yang menerima sanad dari masyaikh berbeda di tempat-tempat berbeda, ternyata sanad-sanad mereka semua bermuara pada satu titik yang sama — yaitu kakek buyutnya sendiri. Ini bukan kebetulan, melainkan <strong>panggilan keluarga ilmu yang sangat dalam</strong>: ilmu yang ditanamkan oleh leluhur, kembali memanggil keturunan untuk mewarisinya kembali setelah delapan generasi.</div>
+
+    <h3>Jalur 1: Melalui PPUQ Miftahul Falah Kaliwungu</h3>
+    <div class="sanad-flow">Kyai Guru Kaliwungu → KH. Musa Kaliwungu (murid Kyai Guru, kemudian dibaiat Thoriqah Syattariyyah) → KH. Abdurrosyid Kaliwungu (putra dan murid KH. Musa, saudagar kaya yang barang dagangannya diekspor ke Timur Tengah) → KH. Ahmad Badawi Ar-Rasyidi (putra dan murid KH. Abdurrosyid, sang "Pentashih Al-Qur'an Modern Pertama Indonesia") → KH. Munawwiruddin Badawi (putra dan murid KH. Ahmad Badawi, w. ~2010) → <strong>Gus Mursyid</strong>.</div>
+
+    <h3>Jalur 2: Melalui PPTQ Al-Asy'ariyyah Kalibeber</h3>
+    <div class="sanad-flow">Kyai Guru → KH. Muhammad Sholeh Darat Semarang (1820–1903) — <strong>Mahaguru Tanah Jawa</strong>, guru KH. Hasyim Asy'ari, KH. Ahmad Dahlan, dan RA. Kartini → KH. Muhammad Munawwir Krapyak (1870–1942) → KH. Mustahal Asy'ari → <strong>Gus Mursyid</strong>.</div>
+
+    <h3>Jalur 3: Melalui STKQ Al-Hikam Depok</h3>
+    <div class="sanad-flow">Kyai Guru → KH. Muhammad Sholeh Darat → Hadhratussyaikh KH. Muhammad Hasyim Asy'ari (1875–1947) — <strong>Pendiri Nahdlatul Ulama</strong> → KH. Abul Fadhol Senori → KH. Ahmad Hasyim Muzadi → <strong>Gus Mursyid</strong>.</div>
+    <p>Tiga jalur ini menghubungkan Gus Mursyid dengan tiga tokoh paling penting dalam sejarah Islam Nusantara: <strong>KH. Sholeh Darat Semarang</strong> (mahaguru bangsa), <strong>KH. Muhammad Munawwir Krapyak</strong> (sanad Al-Qur'an utama abad 20), dan <strong>Hadhratussyaikh KH. Hasyim Asy'ari</strong> (pendiri NU). Ketiganya adalah murid Kyai Guru — secara langsung atau melalui satu mata rantai.</p>
+    <div class="green-note">
+      <span class="label">✨ Warisan Tradisi Keilmuan</span>
+      Dengan ini, PPUQHM Mimika menjadi pewaris langsung tradisi keilmuan paling otentik Islam Nusantara — ditopang oleh tiga sumber yang semuanya bersambung kepada Kyai Guru Kaliwungu, kakek buyut pengasuhnya.
+    </div>
+    <div class="quote-box">Inilah pertemuan nasab dan sanad: bahwa keilmuan keluarga, setelah delapan generasi terpisah, akhirnya kembali pulang.</div>
+  </div>
+</div>
+
+<!-- BAB 15 -->
+<div class="chapter" id="bab15">
+  <p class="chapter-num">BAB 15</p>
+  <h2 class="chapter-title">Sanad Ke-NU-an</h2>
+  <p class="chapter-subtitle">Lima Jalur ke Hadhratussyaikh</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Untuk seorang kader NU, memiliki sanad yang bersambung kepada Hadhratussyaikh KH. Muhammad Hasyim Asy'ari — pendiri Nahdlatul Ulama — adalah kebanggaan dan amanah. Memiliki satu jalur saja sudah istimewa. Tetapi Gus Mursyid memiliki <strong>LIMA jalur sekaligus</strong>.</p>
+    <p>Lima jalur ini berasal dari lima pesantren berbeda dengan masyaikh berbeda — namun semuanya bermuara pada satu titik puncak: Hadhratussyaikh.</p>
+
+    <h3>Jalur 1: PPUQ Miftahul Falah Kaliwungu</h3>
+    <div class="sanad-flow">Hadhratussyaikh KH. Hasyim Asy'ari → KH. Ahmad Badawi Ar-Rasyidi (belajar HADITS langsung ke Hadhratussyaikh setelah pulang dari 20+ tahun di Makkah) → KH. Munawwiruddin Badawi (putra) → <strong>Gus Mursyid</strong>.</div>
+
+    <h3>Jalur 2: PPTQ Al-Asy'ariyyah Kalibeber</h3>
+    <div class="sanad-flow">Hadhratussyaikh → KH. Ma'shum Ahmad Lasem ("Kangmas Ma'shum", ayah KH. Ali Maksum Krapyak) → KH. Mustahal Asy'ari → <strong>Gus Mursyid</strong>.</div>
+    <p>KH. Ma'shum Lasem adalah salah satu murid kesayangan Hadhratussyaikh, yang dipanggil dengan akrab "Kangmas Ma'shum" karena sudah amat akrab dan secara umur Mbah Ma'shum lebih tua. Beliau adalah pendiri Pesantren Al-Hidayat Lasem dan ayah dari KH. Ali Maksum, Rais Aam PBNU 1981–1984.</p>
+
+    <h3>Jalur 3: PP. Al-Hikam Depok</h3>
+    <div class="sanad-flow">Hadhratussyaikh → KH. Abul Fadhol Senori, Tuban → KH. Ahmad Hasyim Muzadi → <strong>Gus Mursyid</strong>.</div>
+    <div class="green-note">
+      <span class="label">✨ Jalur Paling Agung</span>
+      Inilah jalur paling agung — rantai kepemimpinan NU yang lengkap, dari pendiri NU hingga ke pengasuh PPUQHM di Papua.
+    </div>
+
+    <h3>Jalur 4: PP. Kyai Parak Bambu Runcing Parakan</h3>
+    <div class="sanad-flow">Hadhratussyaikh → KH. Muhaiminan Gunardo (Pendiri Pesantren Kyai Parak Bambu Runcing) → KH. Muhammad Chaidar → <strong>Gus Mursyid</strong>.</div>
+    <p>Pesantren Bambu Runcing dinamakan demikian sebagai monumen <strong>Resolusi Jihad NU 22 Oktober 1945</strong> — fatwa Hadhratussyaikh yang menggerakkan rakyat Indonesia mempertahankan kemerdekaan dengan bambu runcing. Jalur ini menyambungkan Gus Mursyid dengan tradisi perjuangan kebangsaan NU.</p>
+
+    <h3>Jalur 5: PP. Al-Fadhlu wal Fadhilah Kaliwungu</h3>
+    <div class="sanad-flow">Hadhratussyaikh → KH. Abul Fadhol Senori → KH. Dimyathi Rois (Mustasyar PBNU) → <strong>Gus Mursyid</strong>.</div>
+    <p>KH. Abul Fadhol Senori muncul <strong>DUA KALI</strong> dalam jalur sanad Gus Mursyid (Jalur 3 dan Jalur 5) — ini menunjukkan posisi sentral beliau sebagai mata rantai keilmuan NU di abad ke-20, jembatan antara Hadhratussyaikh dengan dua tokoh besar NU kontemporer.</p>
+    <div class="note-box">Lima jalur, satu muara: Hadhratussyaikh KH. Hasyim Asy'ari, Pendiri Nahdlatul Ulama. PPUQHM Mimika tidak sekadar pesantren NU di Papua — ia adalah <strong>lima cabang silsilah keilmuan NU yang bertemu di tanah Cendrawasih</strong>.</div>
+    <div class="quote-box">"Perpanjangan tangan Tebuireng yang mekar di tanah Papua."</div>
+  </div>
+</div>
+
+<!-- BAB 16 -->
+<div class="chapter" id="bab16">
+  <p class="chapter-num">BAB 16</p>
+  <h2 class="chapter-title">Pernikahan dan Keluarga</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Setiap pengasuh pesantren membutuhkan pendamping. Dan untuk Gus Mursyid, pendamping itu datang dari kampung halaman yang sama: Kabupaten Kendal.</p>
+    <p>Beliau adalah <strong>Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah</strong> — putri bungsu dari KH. Syamsuddin dan Ny. Hj. Nuriyah, tokoh agama di Weleri, Kendal. Weleri terletak hanya beberapa puluh kilometer dari Karangmalang Wetan tempat Gus Mursyid lahir, dan dari Kaliwungu tempat para leluhur beliau berkhidmah.</p>
+
+    <h3>Perjalanan Keilmuan Ning Siti Imroatus Sholihah</h3>
+    <p>Ning Siti Imroatus Sholihah memiliki perjalanan keilmuan yang sangat indah. Beliau menempuh pendidikan di empat pesantren ternama:</p>
+    <div class="sanad-card"><div class="num">1</div><h4>Pondok Pesantren Giri Kusumo, Demak</h4><p>Pesantren salaf yang berdiri sejak 1868 M, didirikan oleh Syekh KH. Muhammad Hadi (Ki Ageng Giri) yang nasabnya bersambung kepada Maulana Ishaq dan Sunan Bayat. Pesantren ini juga merupakan pusat penyebaran Thoriqoh Naqsyabandiyyah Khalidiyyah di Jawa Tengah.</p></div>
+    <div class="sanad-card"><div class="num">2</div><h4>Pondok Pesantren Raudlatul Ulum, Pati</h4><p>Pesantren NU dengan tradisi kitab kuning yang kuat.</p></div>
+    <div class="sanad-card"><div class="num">3</div><h4>Pondok Pesantren Ittihadut Tholibin, Kalibeber, Wonosobo</h4><p>Pesantren tahfidz di kawasan pegunungan, di mana beliau menyempurnakan hafalan 30 juz Al-Qur'an.</p></div>
+    <div class="sanad-card"><div class="num">4</div><h4>Universitas Sains Al-Qur'an (UNSIQ) Wonosobo</h4><p>Di mana beliau meraih gelar Sarjana Pendidikan (S.Pd.).</p></div>
+    <p>Pernikahan keduanya adalah pertemuan sempurna: dua hafidz/hafidzah Al-Qur'an, dua keluarga ulama Kendal, dua tradisi yang saling melengkapi. Yang lebih indah, ada koneksi nasab yang mengejutkan: <strong>Mbah Hadi Giri Kusumo</strong> (pendiri pesantren tempat Ning Siti Imroatus mondok pertama) nasabnya bersambung kepada Maulana Ishaq — sama dengan Gus Mursyid. Pernikahan ini secara nasab juga adalah <strong>pertemuan dua keturunan Maulana Ishaq</strong>.</p>
+
+    <h3>Pertemuan Dua Cabang Keluarga Abdurrosyid Kaliwungu</h3>
+    <p>Tetapi yang lebih sangat menakjubkan adalah penemuan ini: ketika sanad keilmuan kedua pasangan ditelusuri ke atas, ternyata keduanya bertemu di satu titik yang sama — <strong>KH. ABDURROSYID KALIWUNGU</strong>, leluhur keluarga Badawi.</p>
+    <p>KH. Abdurrosyid Kaliwungu — saudagar kaya sekaligus kyai di Kaliwungu pada akhir abad 19 — memiliki dua putra hafidz yang juga menjadi kyai besar: <strong>KH. Usman</strong> (kakak) dan <strong>KH. Ahmad Badawi</strong> (adik). Keduanya bahkan mondok bersama-sama di Makkah pada masa muda mereka, kemudian pulang dan masing-masing meneruskan dakwah Al-Qur'an di tempat berbeda.</p>
+    <p>KH. Usman, sang kakak, kemudian menjadi pengasuh Pondok Pesantren Kauman Kaliwungu — dan menjadi guru tahfidz dari KH. Muntaha Al-Hafidz (yang kemudian mendirikan/memimpin PPTQ Al-Asy'ariyyah Kalibeber). Sementara KH. Ahmad Badawi, sang adik, mendirikan dan mengasuh PPUQ Miftahul Falah Kaliwungu, yang kemudian dilanjutkan oleh putranya KH. Munawwiruddin Badawi.</p>
+    <div class="sanad-flow"><strong>Sanad GUS dari Kaliwungu:</strong><br>Gus Mursyid → KH. Munawwiruddin Badawi → KH. Ahmad Badawi (adik) → <strong>KH. Abdurrosyid Kaliwungu</strong></div>
+    <div class="sanad-flow"><strong>Sanad NING dari Wonosobo:</strong><br>Ning Siti Imroatus → Ny. Hj. Umi Fatma → KH. Muntaha Al-Hafidz → KH. Usman Kaliwungu (kakak) → <strong>KH. Abdurrosyid Kaliwungu</strong></div>
+    <p>Tiga generasi sebelumnya — pada zaman akhir abad 19 — dua putra KH. Abdurrosyid berpisah jalan: KH. Usman menetap di Kauman Kaliwungu, sementara KH. Ahmad Badawi mendirikan PPUQ Miftahul Falah. Dari kedua jalur saudara inilah, satu generasi kemudian, sanad keilmuan mengalir ke arah berbeda — yang melalui KH. Usman akhirnya sampai ke Ning Siti Imroatus melalui Kalibeber, yang melalui KH. Ahmad Badawi akhirnya sampai ke Gus Mursyid.</p>
+    <div class="note-box">Inilah salah satu mukjizat takdir Allah dalam pernikahan ini: dua jalur keilmuan dari satu leluhur — <strong>KH. Abdurrosyid Kaliwungu</strong> — yang berpisah pada anak-anak beliau, kini bersatu kembali pada cucu-cicit beliau di tanah Papua. Sungguh skenario Allah lebih indah daripada apapun yang bisa direncanakan manusia.</div>
+
+    <h3>Putra-Putri Pengasuh</h3>
+    <p>Dari pernikahan ini, Allah SWT menganugerahkan dua dzurriyah (keturunan) yang sah secara nasab juga sebagai keturunan Walisongo:</p>
+    <div class="sanad-card"><div class="num">♂</div><h4>Putra: Ahmad Mursyid Hikam Athoillah</h4><p>Nama yang sangat indah dan sarat makna — menggabungkan: <strong>Ahmad</strong> (tafa'ulan kepada KH. Ahmad Hasyim Muzadi), <strong>Mursyid</strong> (nama ayahanda), <strong>Hikam</strong> (Pesantren Al-Hikam dan Kitab Al-Hikam Ibnu Athaillah), dan <strong>Athoillah</strong> (Imam Ibnu Athaillah As-Sakandari, sufi besar). Lahir 8 Oktober 2020.</p></div>
+    <div class="sanad-card"><div class="num">♀</div><h4>Putri: Husna Waliyyam Mursyida</h4><p>Nama yang sangat puitis — <strong>Husna</strong> (kebaikan), <strong>Waliyyam</strong> (kewalian), <strong>Mursyida</strong> (yang membimbing). Lahir 25 Februari 2022.</p></div>
+    <p>Keluarga ini adalah keluarga teladan PPUQHM: pasangan hafidz-hafidzah, dua orangtua dengan latar pesantren dan akademik formal, dua dzurriyah Walisongo yang akan tumbuh dalam atmosfer Qur'ani.</p>
+    <p>Bagi para santri PPUQHM, kehadiran keluarga pengasuh ini bukan hanya sebagai pengasuh, tetapi sebagai teladan langsung tentang bagaimana keluarga ulama membangun rumah tangga dalam ridha Allah SWT.</p>
+    <div class="arabic-box">
+      <p class="ar">خَيْرُكُمْ خَيْرُكُمْ لِأَهْلِهِ</p>
+      <p class="tr">"Sebaik-baik kalian adalah yang paling baik kepada keluarganya." (HR. Tirmidzi)</p>
+    </div>
+  </div>
+</div>
+
+<!-- BAB 17 -->
+<div class="chapter" id="bab17">
+  <p class="chapter-num">BAB 17</p>
+  <h2 class="chapter-title">Khidmah di Bumi Cendrawasih</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Sebagai pengasuh PPUQHM, Gus Mursyid tidak berhenti pada peran pendidik. Beliau juga aktif sebagai <strong>penggerak NU di tanah Papua</strong> — sebuah peran yang sama pentingnya dengan pengasuhan pesantren.</p>
+    <p>Beliau pernah menjabat sebagai <strong>Ketua PC LDNU</strong> (Lembaga Dakwah Nahdlatul Ulama) Mimika dan <strong>Ketua PC GP Ansor</strong> Mimika — dua jabatan strategis yang menempatkan beliau sebagai salah satu pemimpin NU di Mimika selama beberapa periode. Saat ini, meski tidak lagi menjabat sebagai ketua di kedua organisasi tersebut, beliau tetap aktif dalam pembinaan kader-kader NU di Mimika.</p>
+
+    <h3>Jabatan dan Keaktifan Organisasi</h3>
+    <ul>
+      <li>Dewan Khos Pagar Nusa Mimika</li>
+      <li>Anggota PCI (Pengurus Cabang Istimewa) NU Tunisia (sejak masa kuliah)</li>
+      <li>Aktif dalam berbagai pembinaan kader NU di Mimika</li>
+    </ul>
+
+    <h3>Jenjang Kaderisasi NU</h3>
+    <ul>
+      <li>Santri Berprestasi NU</li>
+      <li>Diklatsar Banser 1 Mimika Papua</li>
+      <li>PKD (Pelatihan Kader Dasar) Ansor 1 Mimika Papua</li>
+      <li>PKL (Pelatihan Kader Lanjutan) Ansor 1 Mimika Papua</li>
+      <li>PD-PKPNU (Pendidikan Dasar Pendidikan Kader Penggerak Nahdlatul Ulama)</li>
+    </ul>
+    <div class="green-note">
+      <span class="label">✨ "Gus Baha'nya Timika"</span>
+      Di kalangan masyarakat Mimika, beliau dikenal akrab dengan julukan ini — pengakuan masyarakat atas kedalaman ilmu, keluwesan dakwah, dan kesederhanaan beliau dalam menyampaikan pesan agama. Sebagaimana KH. Bahauddin Nursalim (Gus Baha) di Jawa, Gus Mursyid di Mimika juga dikenal dengan pendekatan dakwah yang sederhana, mendalam, dan menyentuh hati.
+    </div>
+    <p>Mimika adalah wilayah yang sangat plural — penduduk asli Papua, transmigran Jawa, Madura, Bugis, Toraja, dan lain-lain; Kristen Protestan, Katolik, Islam, Hindu hidup berdampingan. Dalam konteks ini, kehadiran pesantren tahfidz dengan manhaj Aswaja An-Nahdliyah memiliki signifikansi khusus.</p>
+    <p>PPUQHM bukan hanya pusat pendidikan, tetapi juga jangkar identitas keagamaan, jembatan dialog antar-umat beragama, dan pusat moderasi yang menolak ekstremisme. Inilah pengamalan langsung pemikiran KH. Hasyim Muzadi tentang Islam Wasathiyah.</p>
+
+    <h3>Capaian PPUQHM</h3>
+    <p>Sejak peresmian tahun 2018, PPUQHM telah mencatat berbagai capaian. <strong>Haflah Khotmil Qur'an pertama</strong> dilangsungkan tahun 2023 dengan meluluskan 70 santri, dan dua di antaranya menerima sertifikat hafalan 30 juz penuh. Para hafidz/hafidzah ini menerima sanad Al-Qur'an dari Gus Mursyid — meneruskan rantai sanad Krapyak hingga ke generasi Muslim Papua.</p>
+
+    <h3>S2 di STAIMA Al-Hikam Malang</h3>
+    <p>Saat ini, Gus Mursyid juga sedang menempuh pendidikan <strong>S2 di Pascasarjana STAI Ma'had Aly Al-Hikam Malang</strong>, jurusan Pendidikan Agama Islam. Tesis yang beliau persiapkan mengambil tema yang sangat relevan: <em>"Implementasi Pemikiran Pendidikan Pesantren KH. Hasyim Muzadi di PPUQHM Mimika"</em> — meneliti bagaimana pemikiran sang guru diimplementasikan secara nyata di pesantren yang mengusung nama Beliau.</p>
+    <p>Khidmah ini terus berjalan. Setiap hari, Gus Mursyid bangun sebelum subuh, mengasuh para santri, mengajar Al-Qur'an, memberikan ceramah di majelis-majelis, memimpin organisasi NU, dan kemudian kembali kepada keluarga. Kehidupan yang sederhana tetapi penuh berkah.</p>
+    <div class="arabic-box">
+      <p class="ar">خَيْرُ النَّاسِ مَنْ طَالَ عُمْرُهُ وَحَسُنَ عَمَلُهُ</p>
+      <p class="tr">"Sebaik-baik manusia adalah yang panjang umurnya dan baik amalnya." (HR. Tirmidzi)</p>
+    </div>
+  </div>
+</div>
+
+<!-- BAB 18 -->
+<div class="chapter" id="bab18">
+  <p class="chapter-num">BAB 18</p>
+  <h2 class="chapter-title">Penutup</h2>
+  <p class="chapter-subtitle">Amanah yang Terus Berjalan</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Tiga puluh tahun setelah malam Maulid Nabi di Karangmalang Wetan Kendal, anak yang lahir di pangkuan kakek seorang kyai itu kini berdiri di tanah Papua sebagai pengasuh sebuah pesantren yang ia bangun bersama masyarakat.</p>
+    <p>Perjalanan panjang yang ia tempuh adalah perjalanan yang sarat amanah. Amanah dari malam Maulid yang penuh berkah. Amanah dari silsilah 43 generasi yang bersambung kepada Rasulullah SAW. Amanah dari kakek buyut Kyai Guru Kaliwungu yang ilmunya kembali pulang setelah delapan generasi. Amanah dari Hadhratussyaikh KH. Hasyim Asy'ari yang sanadnya ia warisi melalui lima jalur. Amanah dari Mbah Munawwir Krapyak yang sanad Al-Qur'an-nya ia warisi melalui empat jalur. Amanah dari KH. Hasyim Muzadi yang pesan-pesannya tetap hidup dalam dadanya.</p>
+    <p>Dan yang paling penting: amanah dari masyarakat Karang Senang SP-3 yang memohon agar ia tidak pulang ke Jawa. Amanah dari para wali santri yang mempercayakan anak-anak mereka untuk dibimbing di PPUQHM. Amanah dari para santri yang sedang menuntut ilmu — yang akan menjadi generasi penerus Islam moderat di tanah Papua.</p>
+    <p>Beliau telah memilih jalan yang tidak mudah. Banyak teman seangkatannya di Al-Hikam yang memilih kota-kota besar dengan kenyamanan. Banyak alumni Az-Zaitunah yang memilih karir akademik di universitas-universitas. Tetapi beliau memilih pedalaman Papua — jauh dari segala kemudahan, jauh dari pusat-pusat keilmuan, jauh dari sanak keluarga.</p>
+    <div class="note-box">
+      <span class="label">📿 Teladan Walisongo</span>
+      Pilihan ini, dalam tradisi pesantren, adalah pilihan yang dimuliakan. Walisongo dulu juga memilih meninggalkan tanah Arab dan Persia untuk berdakwah di Nusantara. Para wali memilih membaur dengan masyarakat lokal, mengenakan pakaian lokal, menggunakan bahasa lokal — sehingga visi dakwah dapat menyatu dengan masyarakat. Inilah teladan yang Gus Mursyid ikuti di tanah Papua.
+    </div>
+    <p>Tidak ada gelar Sayyid yang ditonjolkan. Tidak ada gelar Sibthu al-Giri yang dipajang. Cukup dipanggil <strong>Gus Mursyid</strong>. Sederhana. Akrab. Membaur. Itulah cermin Walisongo yang sejati.</p>
+    <p>Apakah perjalanan ini sudah selesai? Tidak. Masih banyak hal yang ingin diraih. PPUQHM masih harus dikembangkan. Generasi santri masih harus dilahirkan. Pemikiran KH. Hasyim Muzadi masih harus diteliti lebih dalam melalui tesis. Anak-anak Ahmad Mursyid Hikam Athoillah dan Husna Waliyyam Mursyida masih harus dididik untuk meneruskan estafet.</p>
+    <p>Tetapi pondasinya sudah kokoh. Pesantren sudah berdiri. Tradisi sudah dimulai. Dan yang terpenting: <strong>amanah sedang dijalankan</strong>.</p>
+    <p>Mursyid yang berarti "pembimbing" — nama yang diberikan pada malam Maulid tiga puluh tahun lalu — kini benar-benar menjadi pembimbing. Bagi para santri PPUQHM, bagi masyarakat Karang Senang SP-3, bagi keluarga besar NU Mimika, bagi anak-anak dan istri tercinta.</p>
+    <div class="quote-box">Inilah biografi yang masih akan terus ditulis. Dengan setiap santri yang menghafal Al-Qur'an. Dengan setiap pengajian yang digelar. Dengan setiap masjid yang berdiri. Dengan setiap keluarga Muslim Papua yang menemukan ketenangan dalam pesantren ini. Amanah dari malam Maulid itu — masih terus berjalan.</div>
+    <div class="arabic-box">
+      <p class="ar">اَللَّهُمَّ بَارِكْ لَنَا وَلِغُسْ مُرْشِدْ الْحَافِظْ<br>وَلِأَهْلِهِ، وَلِذُرِّيَّتِهِ، وَلِسَنْتْرِيِّيْنَ بِقُتْبِنَا<br>آمِيْنَ يَا رَبَّ الْعَالَمِيْنَ</p>
+      <p class="tr">"Ya Allah, berikanlah keberkahan kepada kami dan kepada Gus Mursyid Al-Hafidz, kepada keluarganya, kepada keturunannya, dan kepada para santri di pondoknya. Amin Ya Rabbal 'Alamin."</p>
+    </div>
+  </div>
+</div>
+
+<!-- EPILOG -->
+<div class="chapter" id="epilog">
+  <p class="chapter-num">EPILOG</p>
+  <h2 class="chapter-title">Ringkasan Biografi</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>Identitas Lengkap</h3>
+    <div class="data-table">
+      <div class="data-row"><div class="data-key">Nama Panggilan</div><div class="data-val">Gus Mursyid Adi Saputra</div></div>
+      <div class="data-row"><div class="data-key">Nama Lengkap</div><div class="data-val">Mursyid Adi Saputra Al-Hafidz</div></div>
+      <div class="data-row"><div class="data-key">Status Nasab</div><div class="data-val">Dzurriyah Walisongo (tervalidasi NAAT & Naqobah As-Saadah Al-Asyrof Maroko)</div></div>
+      <div class="data-row"><div class="data-key">Lahir</div><div class="data-val">Kendal, 29 Agustus 1993 (Malam Senin 12 Rabi'ul Awwal 1414 H — Malam Maulid Nabi)</div></div>
+      <div class="data-row"><div class="data-key">Ayahanda</div><div class="data-val">H. Muhammad Sobirin (Kepala Desa Karangmalang Wetan)</div></div>
+      <div class="data-row"><div class="data-key">Ibunda</div><div class="data-val">Hj. Siti Kumaeroh (Perangkat Desa)</div></div>
+      <div class="data-row"><div class="data-key">Istri</div><div class="data-val">Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah</div></div>
+      <div class="data-row"><div class="data-key">Putra</div><div class="data-val">Ahmad Mursyid Hikam Athoillah</div></div>
+      <div class="data-row"><div class="data-key">Putri</div><div class="data-val">Husna Waliyyam Mursyida</div></div>
+      <div class="data-row"><div class="data-key">Domisili</div><div class="data-val">Karang Senang SP-3, Mimika, Papua Tengah</div></div>
+    </div>
+
+    <h3>Pencapaian Utama</h3>
+    <ul class="pencapaian-list">
+      <li>Hafidz Al-Qur'an 30 Juz dengan sanad muttashil hingga Rasulullah SAW</li>
+      <li>Lulus STKQ Al-Hikam Depok jurusan Ilmu Al-Qur'an dan Tafsir dengan predikat Cumlaude</li>
+      <li>Penerima Beasiswa Santri Berprestasi PBNU — 10 santri terbaik se-Indonesia</li>
+      <li>Alumnus Universitas Az-Zaitunah Tunisia (universitas Islam tertua di dunia)</li>
+      <li>Pendiri & Pengasuh PPUQHM Mimika — pesantren tahfidz pertama di Mimika dengan manhaj Aswaja An-Nahdliyah</li>
+      <li>Pendiri Darul Furqan Camp English & Arabic Pare Kediri (2012)</li>
+      <li>Mantan Ketua PC LDNU Mimika</li>
+      <li>Mantan Ketua PC GP Ansor Mimika</li>
+      <li>Dewan Khos Pagar Nusa Mimika (saat ini)</li>
+      <li>Mahasiswa S2 Pendidikan Agama Islam STAIMA Al-Hikam Malang (sedang berjalan)</li>
+    </ul>
+
+    <h3>Kekayaan Sanad</h3>
+    <ul class="sanad-list">
+      <li>4 jalur sanad Al-Qur'an, semuanya bermuara pada KH. Muhammad Munawwir Krapyak</li>
+      <li>3 jalur sanad keilmuan, semuanya bermuara pada KH. R. Asy'ari (Kyai Guru Kaliwungu) — kakek buyut beliau</li>
+      <li>5 jalur sanad ke-NU-an, semuanya bermuara pada Hadhratussyaikh KH. Muhammad Hasyim Asy'ari (Pendiri NU)</li>
+      <li>Ijazah Kitab Al-Hikam dari KH. Hasyim Muzadi</li>
+      <li>Sanad Shahih Bukhari, Syamail Muhammadiyyah dari Syekh Farid Al-Baji (Tunisia)</li>
+      <li>Sanad Al-Muwattho' Imam Malik dari Syekh Muhammad Al-Kamil Sa'adah (Tunisia)</li>
+      <li>Sanad Al-Fiqhul Akbar Imam Hanafi dari Syekh Ahmad bin Abdurrozzaq Al-Husaini</li>
+      <li>Baiat Thoriqah Rifa'iyyah dari Syekh Hisyam Al-Jallashi</li>
+      <li>Baiat Thoriqah Syadziliyyah dari Syekh Hasan Asy-Syadzili</li>
+      <li>Ijazah Mushofahah ke-7 dari Nabi Khidir AS</li>
+    </ul>
+
+    <div class="closing-box">
+      <p>"Inilah biografi seorang santri yang menjawab panggilan ilmu, menunaikan amanah guru, dan meneruskan estafet keilmuan dari para pendahulunya yang mulia. <strong>Dari malam Maulid di Kendal, ke Tanah Cendrawasih: amanah yang terus berjalan.</strong>"</p>
+    </div>
+
+    <div class="arabic-box">
+      <p class="ar">وَاللَّهُ أَعْلَمُ بِالصَّوَابِ</p>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem;padding:1.5rem;border-top:2px solid var(--emas);border-bottom:2px solid var(--emas)">
+      <p style="font-size:13px;color:var(--abu);margin-bottom:.5rem">Disusun untuk:</p>
+      <p style="font-family:'Amiri',serif;font-size:1.2rem;font-weight:700;color:var(--hijau);margin-bottom:.3rem">Gus Mursyid Adi Saputra Al-Hafidz</p>
+      <p style="font-size:13px;color:var(--abu);margin-bottom:1rem">Pendiri & Pengasuh PPUQHM Mimika, Papua Tengah</p>
+      <p style="font-size:12px;color:var(--abu);font-style:italic">Mimika, 6 Mei 2026 / 18 Dzulqa'dah 1447 H</p>
+    </div>
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="index.html#pengasuh" class="back-btn">← Kembali ke Beranda</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

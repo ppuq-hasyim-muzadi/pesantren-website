@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biografi Masyayikh PPUQHM - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    /* COVER */
+    .cover{margin-top:64px;background:linear-gradient(135deg,#0d2218 0%,var(--hijau) 100%);padding:60px 2rem 50px;text-align:center;color:#fff;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-content{position:relative;z-index:1}
+    .cover .basmalah{font-family:'Amiri',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--emas2);margin-bottom:1.5rem;letter-spacing:.05em}
+    .cover .badge{display:inline-block;background:rgba(212,160,23,.15);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem}
+    .cover h1{font-family:'Amiri',serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:.5rem}
+    .cover p.sub{font-size:14px;color:rgba(255,255,255,.7);max-width:700px;margin:0 auto 1.5rem;line-height:1.7}
+    .ornamen{font-family:'Amiri',serif;color:var(--emas2);font-size:1.5rem;letter-spacing:.5em}
+
+    .cover-photo-wrap{max-width:480px;margin:1.5rem auto 0;border:4px solid var(--emas2);border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.4)}
+    .cover-photo-wrap img{width:100%;display:block}
+
+    /* INTRO */
+    .intro-section{max-width:900px;margin:0 auto;padding:3rem 2rem 1rem}
+    .intro-section p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .intro-section p strong{color:var(--hijau);font-weight:600}
+
+    .quote-box{border-left:4px solid var(--emas);background:linear-gradient(90deg,rgba(212,160,23,.08),transparent);padding:1.25rem 1.5rem;margin:1.75rem auto;font-style:italic;color:var(--hijau);font-family:'Amiri',serif;font-size:1rem;line-height:1.7;border-radius:0 6px 6px 0;max-width:800px}
+
+    /* GRID MASYAYIKH */
+    .masyayikh-section{max-width:1200px;margin:0 auto;padding:2rem 2rem 3rem}
+    .masyayikh-section-title{text-align:center;font-family:'Amiri',serif;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:700;color:var(--hijau);margin-bottom:.5rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .masyayikh-section-head{text-align:center;margin-bottom:2.5rem}
+    .masyayikh-section-sub{font-size:13px;color:var(--abu);font-style:italic;margin-top:.5rem}
+
+    .masyayikh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+    .masyayikh-banner{display:block;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px rgba(27,67,50,.12);transition:.35s;background:#0d2218;position:relative;text-decoration:none}
+    .masyayikh-banner::before{content:'';position:absolute;inset:0;border:1px solid rgba(212,160,23,.3);border-radius:14px;pointer-events:none;z-index:2}
+    .masyayikh-banner:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(27,67,50,.22)}
+    .masyayikh-banner img{width:100%;display:block;transition:.5s}
+    .masyayikh-banner:hover img{transform:scale(1.02)}
+
+    .masyayikh-num{position:absolute;top:.85rem;left:.85rem;width:34px;height:34px;background:linear-gradient(135deg,var(--emas),var(--emas2));color:var(--hijau);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:13px;font-weight:700;z-index:3;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+
+    .closing-doa{text-align:center;padding:2rem;background:linear-gradient(135deg,rgba(27,67,50,.06),rgba(212,160,23,.04));border-radius:10px;margin:2.5rem 0;border:1px solid rgba(212,160,23,.2)}
+    .closing-doa .ar{font-family:'Amiri',serif;font-size:1.3rem;color:var(--hijau);margin-bottom:.5rem;line-height:2;direction:rtl}
+    .closing-doa .tr{font-size:13px;color:var(--abu);font-style:italic;margin-top:.5rem}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1rem 1rem 3rem}
+
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    @media(max-width:600px){
+      .masyayikh-grid{grid-template-columns:1fr 1fr;gap:.75rem}
+      .masyayikh-num{width:28px;height:28px;font-size:11px;top:.5rem;left:.5rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-content">
+    <p class="basmalah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْم</p>
+    <span class="badge">Dewan Pengajar</span>
+    <h1>Biografi Masyayikh PPUQHM</h1>
+    <p class="sub">Para masyayikh dan guru pesantren yang menjadi sumber keilmuan, sanad, dan barakah bagi seluruh sivitas Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</p>
+    <div class="ornamen">— ❦ —</div>
+    <div class="cover-photo-wrap">
+      <img src="semua masyayikh.png" alt="Masyayikh Pengasuh PPUQHM">
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="intro-section">
+  <p>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM) tidak akan dapat berdiri tanpa <strong>keberkahan, sanad, dan bimbingan</strong> dari para masyayikh yang telah membentuk Gus Mursyid Adi Saputra dan Ning Siti Imroatus Sholihah dalam perjalanan keilmuan mereka.</p>
+  <p>Halaman ini didedikasikan sebagai bentuk <strong>ta'dzim dan rasa syukur</strong> kepada para guru-guru besar yang sanad keilmuannya — baik di bidang Al-Qur'an, kitab kuning, hadits, fiqih, maupun thoriqah — terus mengalir di PPUQHM hingga hari ini.</p>
+  <div class="quote-box">"Sesungguhnya para ulama adalah pewaris para nabi. Sungguh para nabi tidak mewariskan dinar dan dirham, mereka hanya mewariskan ilmu. Barangsiapa yang mengambilnya, sungguh ia telah mengambil bagian yang banyak." (HR. Abu Dawud)</div>
+</div>
+
+<!-- MASYAYIKH GRID -->
+<div class="masyayikh-section">
+  <div class="masyayikh-section-head">
+    <h2 class="masyayikh-section-title">Para Masyayikh PPUQHM</h2>
+    <p class="masyayikh-section-sub">16 ulama besar yang menjadi sumber sanad keilmuan PPUQHM</p>
+  </div>
+
+  <div class="masyayikh-grid">
+    <div class="masyayikh-banner"><span class="masyayikh-num">1</span><img src="masyayikh/1.png" alt="KH. Mustahal Asy'ary"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">2</span><img src="masyayikh/2.png" alt="Syech Hisyam Al-Jallashy"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">3</span><img src="masyayikh/3.png" alt="Syech Farid Al-Baaji"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">4</span><img src="masyayikh/4.png" alt="Syech 'Ali Busylaghim"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">5</span><img src="masyayikh/5.png" alt="Syech Muhammad Al-Kamil Sa'adah"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">6</span><img src="masyayikh/6.png" alt="KH. Ahmad Hasyim Muzadi"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">7</span><img src="masyayikh/7.png" alt="Syech Hasan Asy-Syadzili"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">8</span><img src="masyayikh/8.png" alt="Syech Ahmad Al-Husainy"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">9</span><img src="masyayikh/9.png" alt="KH. Chaidar Muhaiminan"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">10</span><img src="masyayikh/10.png" alt="KH. Dimyathy Rois"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">11</span><img src="masyayikh/11.png" alt="KH. Munif Muhammad Zuhri"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">12</span><img src="masyayikh/12.png" alt="KH. Humam Suyuthi"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">13</span><img src="masyayikh/13.png" alt="KH. As'ad"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">14</span><img src="masyayikh/14.png" alt="Ny. Hj. Umi Fatmah"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">15</span><img src="masyayikh/15.png" alt="KH. Atho'illah Asy'ary"></div>
+    <div class="masyayikh-banner"><span class="masyayikh-num">16</span><img src="masyayikh/16.png" alt="KH. Munawwiruddin Badawi"></div>
+  </div>
+
+  <div class="closing-doa">
+    <p class="ar">اَللَّهُمَّ ارْحَمْ مَشَايِخَنَا وَأَطِلْ عُمُرَ الَّذِيْنَ مَا زَالُوْا أَحْيَاءً مِنْهُمْ فِيْ طَاعَتِكَ، آمِيْنَ يَا رَبَّ الْعَالَمِيْنَ</p>
+    <p class="tr">"Ya Allah, rahmati para masyayikh kami yang telah berpulang, dan panjangkanlah umur mereka yang masih hidup dalam ketaatan-Mu. Aamiin Ya Rabbal 'Alamin."</p>
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="index.html#masyayikh" class="back-btn">← Kembali ke Beranda</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

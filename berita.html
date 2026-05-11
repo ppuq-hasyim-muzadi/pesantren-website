@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Berita - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    /* NAVBAR */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:6px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    /* HEADER */
+    .page-header{margin-top:64px;background:var(--hijau);padding:60px 2rem;text-align:center}
+    .page-header h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:.5rem}
+    .page-header p{font-size:14px;color:rgba(255,255,255,.7)}
+    .page-header .sec-line{width:50px;height:3px;background:var(--emas);margin:.75rem auto 0}
+
+    /* BERITA */
+    .berita-container{max-width:1100px;margin:0 auto;padding:3rem 2rem}
+    .berita-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+    .berita-card{background:#fff;border-radius:8px;overflow:hidden;border:1px solid rgba(27,67,50,.1);transition:.3s;text-decoration:none;color:inherit;display:block}
+    .berita-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(27,67,50,.12)}
+    .berita-img{height:190px;background:linear-gradient(135deg,var(--hijau2),var(--hijau3));display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+    .berita-body{padding:1.25rem}
+    .berita-cat{font-size:11px;font-weight:600;color:var(--hijau3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem}
+    .berita-title{font-size:15px;font-weight:600;color:var(--gelap);margin-bottom:.5rem;line-height:1.4}
+    .berita-date{font-size:12px;color:var(--abu);margin-bottom:.5rem}
+    .berita-desc{font-size:13px;color:var(--abu);line-height:1.7}
+
+    /* FOOTER */
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+
+    /* WA FLOAT */
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    @media(max-width:768px){
+      .berita-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>Berita Pesantren</h1>
+  <p>Info terkini seputar kegiatan dan prestasi Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</p>
+  <div class="sec-line"></div>
+</div>
+
+<!-- BERITA -->
+<div class="berita-container">
+  <div class="berita-grid">
+    <a href="berita-1.html" class="berita-card">
+      <div class="berita-img" style="padding:0"><img src="HKQ2.jpg" alt="Haflah Khitmil Qur'an II" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="berita-body">
+        <p class="berita-cat">Kegiatan</p>
+        <h3 class="berita-title">Haflah Khitmil Qur'an II</h3>
+        <p class="berita-date">Minggu, 5 Oktober 2025</p>
+        <p class="berita-desc">Acara Haflah Khitmil Qur'an II dilaksanakan dengan khidmat, menghadirkan santri dan keluarga besar pesantren.</p>
+      </div>
+    </a>
+    <a href="berita-2.html" class="berita-card">
+      <div class="berita-img" style="padding:0"><img src="berita 2/utama.jpg" alt="Penyerahan Surat Keputusan (SK)" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
+      <div class="berita-body">
+        <p class="berita-cat">Kegiatan</p>
+        <h3 class="berita-title">Penyerahan Surat Keputusan (SK) UPZ Hasyim Muzadi</h3>
+        <p class="berita-date">4 Mei 2026</p>
+        <p class="berita-desc">UPZ Hasyim Muzadi resmi terbentuk di PPUQHM, Karang Senang SP.3 Timika. Penyerahan SK dilakukan langsung oleh Wakil Ketua 1 Bidang Pengumpulan BAZNAS Mimika, Ustadz H. Absir Budi Hamzah, SE., M.Pd.</p>
+      </div>
+    </a>
+    <a href="berita-3.html" class="berita-card">
+      <div class="berita-img" style="padding:0"><img src="pendaftaran.jpeg" alt="Penerimaan Santri Baru 2026/2027" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="berita-body">
+        <p class="berita-cat">Pengumuman</p>
+        <h3 class="berita-title">Penerimaan Santri Baru Tahun Ajaran 2026/2027 Resmi Dibuka</h3>
+        <p class="berita-date">1 Maret 2026</p>
+        <p class="berita-desc">PPUQHM membuka pendaftaran santri baru untuk Tahun Ajaran 2026/2027. Tersedia program tahfidz, kitab kuning, dan pendidikan formal SMP/SMA terakreditasi.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

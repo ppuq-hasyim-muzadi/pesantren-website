@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Haflah Khitmil Qur'an II - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    .article-header{margin-top:64px;padding:60px 2rem 40px;background:var(--hijau);text-align:center}
+    .article-cat{display:inline-block;background:rgba(255,255,255,.1);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem}
+    .article-header h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:.75rem;max-width:800px;margin-left:auto;margin-right:auto;line-height:1.3}
+    .article-meta{display:flex;justify-content:center;align-items:center;gap:1rem;font-size:13px;color:rgba(255,255,255,.7);flex-wrap:wrap}
+
+    .article-img-wrap{max-width:900px;margin:-40px auto 0;padding:0 2rem;position:relative;z-index:2}
+    .article-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+
+    .article-body{max-width:800px;margin:0 auto;padding:3rem 2rem}
+    .article-body p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .article-body p strong{color:var(--hijau);font-weight:600}
+    .article-body h2{font-family:'Amiri',serif;font-size:1.5rem;font-weight:700;color:var(--hijau);margin:2rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .article-body blockquote{border-left:4px solid var(--emas);background:rgba(212,160,23,.08);padding:1rem 1.5rem;margin:1.5rem 0;font-style:italic;color:var(--hijau2);font-size:14px}
+
+    .gallery-section{background:var(--putih);padding:3rem 2rem}
+    .gallery-section .container{max-width:1100px;margin:0 auto}
+    .gallery-section h2{text-align:center;font-family:'Amiri',serif;font-size:1.6rem;color:var(--hijau);margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block;width:auto}
+    .gallery-head{text-align:center;margin-bottom:2rem}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .gallery-item{background:linear-gradient(135deg,var(--hijau2),var(--hijau3));border-radius:8px;overflow:hidden;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:2.5rem;position:relative}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
+    .gallery-item .placeholder-text{position:absolute;bottom:12px;left:12px;right:12px;font-size:11px;color:rgba(255,255,255,.6);text-align:center}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1rem 2rem 3rem}
+
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+    @media(max-width:768px){.gallery-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="berita.html" class="nav-back">← Semua Berita</a>
+</nav>
+
+<div class="article-header">
+  <span class="article-cat">Kegiatan</span>
+  <h1>Haflah Khitmil Qur'an II</h1>
+  <div class="article-meta">
+    <span>📅 Minggu, 5 Oktober 2025</span>
+    <span>•</span>
+    <span>📍 Kuala Kencana, Papua Tengah</span>
+  </div>
+</div>
+
+<div class="article-img-wrap">
+  <img src="HKQ2.jpg" alt="Haflah Khitmil Qur'an II" class="article-img">
+</div>
+
+<div class="article-body">
+  <p style="font-size:16px;font-weight:500;color:var(--hijau)"><strong>Pondok Pesantren Hasyim Muzadi Mimika Hasilkan Puluhan Santri Penghafal Qur'an</strong></p>
+
+  <p><strong>TIMIKA</strong> | Pesantren Ulumul Qur'an Hasyim Muzadi Mimika, Provinsi Papua Tengah, berhasil mencetak puluhan santri penghafal Al-Qur'an. Puluhan santri ini mengikuti <strong>Haflah Khatmil Qur'an II</strong> sekaligus <strong>Hari Lahir ke-7 Ponpes</strong>.</p>
+
+  <p>Acara yang diikuti seluruh santri, orang tua serta tokoh-tokoh agama Islam Mimika ini dilaksanakan di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi, Kelurahan Karang Senang SP 3, pada <strong>Minggu, 5 Oktober 2025</strong>.</p>
+
+  <h2>Para Penghafal Al-Qur'an</h2>
+  <p>Kali ini ada <strong>delapan santri</strong> yang telah menyelesaikan hafalan 30 juz Al-Qur'an, di antaranya:</p>
+  <ol style="padding-left:1.5rem;margin:1rem 0;font-size:14.5px;color:var(--gelap);line-height:1.9">
+    <li>Yoga Prastiyo</li>
+    <li>Muhammad Abdul Kholid</li>
+    <li>Octa Ramadhan</li>
+    <li>Miftha Lindi Chaerany</li>
+    <li>Nilam Insansani Istiqamah</li>
+    <li>Zulfa Aliyah Nafi'ah</li>
+    <li>Devita Surya Erlinda</li>
+    <li>Zahro Kliza Kamila</li>
+  </ol>
+
+  <p>Selain itu, ada juga santri yang telah menyelesaikan hafalan juz 1 sampai juz 6 sebanyak <strong>22 santri</strong> dan yang menyelesaikan bacaan Qur'an juz 1 sampai juz 30 sebanyak <strong>17 santri</strong>. Ada juga yang menyelesaikan hafalan juz 2 sampai juz 25 sebanyak <strong>27 santri</strong>.</p>
+
+  <h2>Sambutan Pimpinan Pondok</h2>
+  <p>Pimpinan Pondok Pesantren Hasyim Muzadi Mimika, <strong>Gus Mursyid Adi Saputra</strong> dalam sambutannya mengatakan, setelah menyelesaikan hafalan 30 juz, para santri tidak langsung diterjunkan ke masyarakat untuk mengabdi. Para santri ini menurutnya masih harus belajar tentang tafsir Qur'an dan ilmu lainnya.</p>
+
+  <blockquote>"Ini bukan akhir, tapi ini adalah awal dari proses belajar Qur'an," — Gus Mursyid.</blockquote>
+
+  <h2>Kerja Sama dengan Universitas Internasional</h2>
+  <p>Para santri yang menyelesaikan hafalan 30 juz, ada yang melanjutkan kuliah ke universitas baik di dalam maupun di luar negeri yang sudah menjalin kerja sama dengan Ponpes Hasyim Muzadi.</p>
+
+  <p>Adapun universitas yang sudah bekerja sama yaitu <strong>Pesantren Mahasiswa Al-Hikam Depok</strong>. Sementara untuk di luar negeri Ponpes Hasyim Muzadi sudah menjalin kerjasama dengan <strong>Universitas Azzaitunah di Tunisia</strong> dan <strong>Al-Azhar Kairo di Mesir</strong>.</p>
+
+  <p>Direncanakan tahun depan akan bekerja sama dengan <strong>Universitas Islam Madinah</strong> dan <strong>Al-Azhar Center Pare</strong>.</p>
+
+  <blockquote>"Ada satu santri, bulan ini berangkat kuliah di Universitas Azzaitunah di Tunisia. Sudah MoU dengan Al-Azhar Kairo Mesir, kalau daftar tahun ini tahun depan berangkat," — ungkap Gus Mursyid.</blockquote>
+
+  <p>Kerja sama yang dibangun dengan universitas di luar ini untuk melanjutkan pendidikan bagi para santri dari Mimika.</p>
+
+  <h2>Apresiasi & Santri Award</h2>
+  <p>Pada kesempatan itu, Gus Mursyid menyampaikan terima kasih kepada semua pihak yang telah membantu mulai ponpes ini dibangun sampai saat ini.</p>
+
+  <blockquote>"Tanpa ada orang yang mau isi pesantren ini maka pondok ini tidak akan bisa berkembang," — kata Gus Mursyid.</blockquote>
+
+  <p>Pada kesempatan itu, juga diberikan <strong>Santri Award</strong> kepada para santri dan mahasantri (santri dewasa) yang berhasil menyelesaikan hafalan 30 juz.</p>
+
+  <blockquote>"Salah satunya ini karyawan di ponpes yang menyelesaikan hafalan 30 juz di tengah kesibukan dan usianya yang sudah tidak muda lagi," — ungkap Gus Mursyid.</blockquote>
+
+  <h2>Sambutan Perwakilan Orang Tua</h2>
+  <p>Perwakilan orang tua santri, <strong>Suwarno</strong>, menyampaikan terima kasih kepada pimpinan ponpes, Gus Mursyid dan Ustadzah Imroatussolihah, yang dengan sabar menggantikan peran orang tua mendidik anak-anak mereka.</p>
+
+  <blockquote>"Terima kasih selama ini sudah membimbing dan mengajari akhlak kepada anak-anak kami," — ungkapnya.</blockquote>
+
+  <p>Ia juga mengajak para wali santri, bahwa anak-anak yang telah menghafal Qur'an, untuk ikhlas dan serius saat menitipkan anak-anak di pesantren.</p>
+
+  <p style="background:rgba(212,160,23,.06);border-left:3px solid var(--emas);padding:1rem 1.25rem;border-radius:0 6px 6px 0;font-size:14px;color:var(--abu);margin-top:2rem"><em>Untuk diketahui, di tahun 2023, Ponpes Ulumul Qur'an Hasyim Muzadi juga melaksanakan hafalan Qur'an yang diikuti 70 santri, dua di antaranya telah menyelesaikan hafalan 30 juz.</em></p>
+
+  <p style="text-align:right;font-size:13px;color:var(--abu);font-style:italic;margin-top:2rem">Sumber: <a href="https://seputarpapua.com/view/pondok-pesantren-hasyim-muzadi-mimika-hasilkan-puluhan-santri-penghafal-quran.html" target="_blank" style="color:var(--hijau3)">Seputar Papua</a></p>
+</div>
+
+<div class="gallery-section">
+  <div class="container">
+    <div class="gallery-head"><h2>Galeri Foto</h2></div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="HKQ2.jpg" alt="Foto Haflah 1"></div>
+      <div class="gallery-item"><span>📷</span><p class="placeholder-text">Tambah foto kegiatan</p></div>
+      <div class="gallery-item"><span>📷</span><p class="placeholder-text">Tambah foto kegiatan</p></div>
+      <div class="gallery-item"><span>📷</span><p class="placeholder-text">Tambah foto kegiatan</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="berita.html" class="back-btn">← Kembali ke Daftar Berita</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

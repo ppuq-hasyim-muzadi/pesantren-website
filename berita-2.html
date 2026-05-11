@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Penyerahan SK UPZ Hasyim Muzadi - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+    .article-header{margin-top:64px;padding:60px 2rem 40px;background:var(--hijau);text-align:center}
+    .article-cat{display:inline-block;background:rgba(255,255,255,.1);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem}
+    .article-header h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:.75rem;max-width:800px;margin-left:auto;margin-right:auto;line-height:1.3}
+    .article-meta{display:flex;justify-content:center;align-items:center;gap:1rem;font-size:13px;color:rgba(255,255,255,.7);flex-wrap:wrap}
+    .article-img-wrap{max-width:900px;margin:-40px auto 0;padding:0 2rem;position:relative;z-index:2}
+    .article-img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 30%;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+    .article-body{max-width:800px;margin:0 auto;padding:3rem 2rem}
+    .article-body p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .article-body p strong{color:var(--hijau);font-weight:600}
+    .article-body h2{font-family:'Amiri',serif;font-size:1.5rem;font-weight:700;color:var(--hijau);margin:2rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .article-body blockquote{border-left:4px solid var(--emas);background:rgba(212,160,23,.08);padding:1rem 1.5rem;margin:1.5rem 0;font-style:italic;color:var(--hijau2);font-size:14px}
+    .gallery-section{background:var(--putih);padding:3rem 2rem}
+    .gallery-section .container{max-width:1100px;margin:0 auto}
+    .gallery-section h2{text-align:center;font-family:'Amiri',serif;font-size:1.6rem;color:var(--hijau);margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block;width:auto}
+    .gallery-head{text-align:center;margin-bottom:2rem}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .gallery-item{background:#0d2218;border-radius:10px;overflow:hidden;aspect-ratio:3/2;position:relative;transition:.3s;cursor:pointer;box-shadow:0 4px 12px rgba(27,67,50,.1)}
+    .gallery-item::after{content:'';position:absolute;inset:0;border:1px solid rgba(212,160,23,.2);border-radius:10px;pointer-events:none;z-index:1}
+    .gallery-item:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(27,67,50,.18)}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s}
+    .gallery-item:hover img{transform:scale(1.05)}
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1rem 2rem 3rem}
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+    @media(max-width:768px){.gallery-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="berita.html" class="nav-back">← Semua Berita</a>
+</nav>
+
+<div class="article-header">
+  <span class="article-cat">Kegiatan</span>
+  <h1>Penyerahan Surat Keputusan (SK) UPZ Hasyim Muzadi</h1>
+  <div class="article-meta">
+    <span>📅 4 Mei 2026</span>
+    <span>•</span>
+    <span>📍 Kuala Kencana, Papua Tengah</span>
+  </div>
+</div>
+
+<div class="article-img-wrap">
+  <img src="berita 2/utama.jpg" alt="Penyerahan SK UPZ Hasyim Muzadi" class="article-img">
+</div>
+
+<div class="article-body">
+  <p style="font-size:16px;font-weight:500;color:var(--hijau)"><strong>UPZ Hasyim Muzadi Resmi Terbentuk, Perkuat Sinergi ZIS di Mimika</strong></p>
+
+  <p>Langkah nyata dalam penguatan tata kelola <strong>zakat, infak, dan sedekah (ZIS)</strong> kembali dilakukan oleh BAZNAS Kabupaten Mimika. Pada Ahad (03/05/2026), <strong>Unit Pengumpul Zakat (UPZ) Hasyim Muzadi</strong> resmi terbentuk di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi, Karang Senang SP.3, Timika, Papua Tengah yang dirangkaikan dengan <strong>Pengajian Pekanan PAC Ansor Banser Kuala Kencana</strong>.</p>
+
+  <p>Penyerahan Surat Keputusan (SK) dilakukan langsung oleh <strong>Wakil Ketua 1 Bidang Pengumpulan BAZNAS Mimika, Ustadz H. Absir Budi Hamzah, SE., M.Pd</strong>, kepada Ketua UPZ terpilih <strong>Muklas Wahyudi, A.md</strong>.</p>
+
+  <h2>Sambutan Ustadz H. Absir Budi Hamzah</h2>
+  <p>Dalam sambutannya, Ustadz Absir menegaskan bahwa BAZNAS adalah salah satu lembaga Pemerintah Non Struktural yang mandiri yang melaporkan kinerjanya kepada Presiden melalui Menteri Agama, sesuai <strong>UU No. 23 Tahun 2011</strong>, sedangkan UPZ adalah perpanjangan tangan resmi BAZNAS di daerah.</p>
+
+  <blockquote>"UPZ berfungsi mengumpulkan dan mengelola ZIS yang kemudian dilaporkan secara berkala kepada BAZNAS Kabupaten Mimika. Kami berharap ke depan tercipta laporan yang akurat, transparan, dan akuntabel," — Ustadz Absir.</blockquote>
+
+  <h2>Kesiapan Ketua UPZ</h2>
+  <p>Ketua UPZ Hasyim Muzadi, <strong>Muklas Wahyudi</strong> menyatakan kesiapannya mengemban amanah ini dan mengajak seluruh jajaran pengurus untuk bekerja sama demi kemajuan umat.</p>
+
+  <h2>Sambutan Pimpinan Pondok</h2>
+  <p>Senada dengan hal tersebut, Pimpinan Pondok, <strong>Gus Mursyid Adi Saputra Alhafidz, S.Ag</strong>, menyampaikan bahwa selama ini operasional dan pembangunan pondok bertumpu pada <strong>swadaya masyarakat</strong>. Beliau berharap kehadiran UPZ ini menjadi jembatan sinergi dengan BAZNAS Mimika guna membangun kemaslahatan umat yang jauh lebih besar.</p>
+
+  <blockquote>"Semoga ke depan terjalin kerjasama yang lebih kuat untuk memberikan yang terbaik bagi para santri dan pengabdian kepada masyarakat," — pungkas Gus Mursyid.</blockquote>
+
+  <p style="text-align:right;font-size:13px;color:var(--abu);font-style:italic;margin-top:2rem">Sumber: <a href="https://kabmimika.baznas.go.id/berita/news-show/upz-hasyim-muzadi-resmi-terbentuk-perkuat-sinergi-zis-di-mimika/44684" target="_blank" style="color:var(--hijau3)">BAZNAS Kabupaten Mimika</a></p>
+</div>
+
+<div class="gallery-section">
+  <div class="container">
+    <div class="gallery-head"><h2>Galeri Foto</h2></div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="berita 2/IMG_8136.jpg" alt="Dokumentasi UPZ 1"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8137.jpg" alt="Dokumentasi UPZ 2"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8138.jpg" alt="Dokumentasi UPZ 3"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8140.jpg" alt="Dokumentasi UPZ 4"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8142.jpg" alt="Dokumentasi UPZ 5"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8147.jpg" alt="Dokumentasi UPZ 6"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8150.jpg" alt="Dokumentasi UPZ 7"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8151 (1).jpg" alt="Dokumentasi UPZ 8"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8153.jpg" alt="Dokumentasi UPZ 9"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8159.jpg" alt="Dokumentasi UPZ 10"></div>
+      <div class="gallery-item"><img src="berita 2/IMG_8163.jpg" alt="Dokumentasi UPZ 11"></div>
+      <div class="gallery-item"><img src="berita 2/WhatsApp Image 2026-05-04 at 00.51.50 (1).jpeg" alt="Dokumentasi UPZ 12"></div>
+    </div>
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="berita.html" class="back-btn">← Kembali ke Daftar Berita</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

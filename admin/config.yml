@@ -1,0 +1,141 @@
+# =========================================================
+# KONFIGURASI ADMIN PANEL — PPUQHM
+# Decap CMS Config File
+# =========================================================
+# File ini menentukan apa saja yang bisa diedit dari admin panel.
+# JANGAN diedit langsung kecuali kamu paham — bisa merusak setup.
+# =========================================================
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Tempat upload foto/gambar
+media_folder: "uploads"
+public_folder: "/uploads"
+
+# Bahasa Admin Panel
+locale: 'id'
+
+# =========================================================
+# KOLEKSI KONTEN YANG BISA DIEDIT
+# =========================================================
+collections:
+
+  # ====================================
+  # 1. BERITA
+  # ====================================
+  - name: "berita"
+    label: "📰 Berita Pesantren"
+    label_singular: "Berita"
+    description: "Tambah, edit, atau hapus berita kegiatan pesantren"
+    folder: "_berita"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Judul Berita", name: "title", widget: "string", hint: "Judul artikel yang akan ditampilkan" }
+      - { label: "Kategori", name: "kategori", widget: "select", options: ["Kegiatan", "Prestasi", "Pengumuman", "Kerja Sama"], default: "Kegiatan" }
+      - { label: "Tanggal Publikasi", name: "tanggal", widget: "datetime", date_format: "DD MMMM YYYY", time_format: false, default: "" }
+      - { label: "Lokasi", name: "lokasi", widget: "string", default: "Kuala Kencana, Papua Tengah", required: false }
+      - { label: "Foto Utama", name: "foto_utama", widget: "image", required: false, hint: "Foto yang muncul di atas artikel & sebagai thumbnail" }
+      - { label: "Deskripsi Singkat", name: "deskripsi", widget: "text", hint: "Ringkasan 1-2 kalimat untuk preview di daftar berita" }
+      - { label: "Isi Artikel", name: "body", widget: "markdown", hint: "Tulis isi artikel di sini. Bisa pakai heading, bold, list, foto, dll." }
+      - label: "Galeri Foto Tambahan"
+        name: "galeri"
+        widget: "list"
+        required: false
+        summary: "{{fields.caption}}"
+        fields:
+          - { label: "Foto", name: "image", widget: "image" }
+          - { label: "Caption", name: "caption", widget: "string", required: false }
+
+  # ====================================
+  # 2. GALERI SANTRI (foto kegiatan)
+  # ====================================
+  - name: "galeri"
+    label: "📸 Galeri Foto"
+    label_singular: "Foto"
+    description: "Upload foto-foto kegiatan pesantren untuk halaman galeri"
+    folder: "_galeri"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Judul Foto", name: "title", widget: "string", hint: "Misal: MTQ Tingkat Kabupaten 2025" }
+      - { label: "Kategori", name: "kategori", widget: "select", options: ["Prestasi", "Kegiatan", "Haflah", "Seni & Olahraga", "Lainnya"] }
+      - { label: "Foto", name: "foto", widget: "image" }
+      - { label: "Tanggal", name: "tanggal", widget: "datetime", date_format: "DD MMMM YYYY", time_format: false }
+      - { label: "Deskripsi", name: "deskripsi", widget: "text", required: false }
+
+  # ====================================
+  # 3. PENGATURAN UMUM (settings)
+  # ====================================
+  - name: "pengaturan"
+    label: "⚙️ Pengaturan Pesantren"
+    description: "Ubah info kontak, alamat, sosmed, dan info pendaftaran"
+    files:
+
+      # --- Kontak & Sosmed ---
+      - name: "kontak"
+        label: "📞 Kontak & Sosial Media"
+        file: "data/kontak.yml"
+        fields:
+          - { label: "Nama Pesantren", name: "nama_pesantren", widget: "string" }
+          - { label: "Alamat Lengkap", name: "alamat", widget: "text" }
+          - label: "Contact Person 1"
+            name: "cp1"
+            widget: "object"
+            fields:
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Nomor WhatsApp", name: "wa", widget: "string", hint: "Format: 6282239693243 (tanpa +)" }
+          - label: "Contact Person 2"
+            name: "cp2"
+            widget: "object"
+            fields:
+              - { label: "Nama", name: "nama", widget: "string" }
+              - { label: "Nomor WhatsApp", name: "wa", widget: "string", hint: "Format: 6281248892290 (tanpa +)" }
+          - label: "Media Sosial"
+            name: "sosmed"
+            widget: "object"
+            fields:
+              - { label: "Facebook URL", name: "facebook", widget: "string" }
+              - { label: "Instagram URL (utama)", name: "instagram1", widget: "string" }
+              - { label: "Instagram URL (media)", name: "instagram2", widget: "string", required: false }
+              - { label: "YouTube URL", name: "youtube", widget: "string" }
+              - { label: "Google Maps URL", name: "maps", widget: "string", required: false }
+
+      # --- Info Pendaftaran ---
+      - name: "pendaftaran"
+        label: "📝 Info Pendaftaran"
+        file: "data/pendaftaran.yml"
+        fields:
+          - { label: "Status Pendaftaran", name: "status", widget: "select", options: ["Dibuka", "Ditutup", "Akan Dibuka"], default: "Dibuka" }
+          - { label: "Tahun Ajaran", name: "tahun_ajaran", widget: "string", default: "2026/2027" }
+          - { label: "Tanggal Buka", name: "tanggal_buka", widget: "datetime", date_format: "DD MMMM YYYY", time_format: false, required: false }
+          - { label: "Tanggal Tutup", name: "tanggal_tutup", widget: "datetime", date_format: "DD MMMM YYYY", time_format: false, required: false }
+          - { label: "Poster Pendaftaran", name: "poster", widget: "image", required: false }
+          - { label: "Persyaratan Pendaftaran", name: "persyaratan", widget: "markdown", required: false, hint: "Tulis daftar persyaratan dalam format list" }
+          - { label: "Biaya Pendaftaran", name: "biaya", widget: "markdown", required: false }
+          - { label: "Informasi Tambahan", name: "info_tambahan", widget: "markdown", required: false }
+
+      # --- Profil Pesantren ---
+      - name: "profil"
+        label: "🕌 Info Profil"
+        file: "data/profil.yml"
+        fields:
+          - { label: "Nama Pesantren", name: "nama", widget: "string" }
+          - { label: "Tagline / Motto", name: "motto", widget: "string", default: "Tandurane Abah, Tukule nang Papua" }
+          - { label: "Visi", name: "visi", widget: "text" }
+          - { label: "Tahun Berdiri", name: "tahun_berdiri", widget: "string", default: "2017" }
+          - { label: "Tanggal Peresmian", name: "tanggal_peresmian", widget: "string", default: "23 September 2018" }
+          - label: "Statistik Pesantren"
+            name: "stats"
+            widget: "object"
+            fields:
+              - { label: "Jumlah Santri Aktif", name: "santri", widget: "string", default: "95+" }
+              - { label: "Jumlah Hafidz/Hafidzoh", name: "hafidz", widget: "string", default: "14+" }
+              - { label: "Jumlah Pengajar", name: "pengajar", widget: "string", default: "7+" }
+              - { label: "Tahun Berdiri", name: "tahun", widget: "string", default: "8+" }

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visi, Misi & Tujuan - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    /* COVER */
+    .cover{margin-top:64px;background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 100%);padding:80px 2rem;text-align:center;color:#fff;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.08) 0%,transparent 70%);pointer-events:none}
+    .cover-content{position:relative;z-index:1}
+    .cover .basmalah{font-family:'Amiri',serif;font-size:clamp(1.3rem,2.8vw,1.8rem);color:var(--emas2);margin-bottom:2rem;letter-spacing:.05em}
+    .cover .badge{display:inline-block;background:rgba(255,255,255,.1);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem}
+    .cover h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:#fff;margin-bottom:.4rem;line-height:1.3;letter-spacing:.02em}
+    .cover h2{font-family:'Amiri',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:var(--emas2);margin-bottom:1.25rem;line-height:1.3}
+    .cover .akronim{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:.5rem}
+    .cover .lokasi{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:2rem}
+    .cover .stamp{display:inline-block;border:2px solid var(--emas2);padding:1rem 1.5rem;border-radius:8px;margin-top:1rem}
+    .cover .stamp-label{font-size:11px;letter-spacing:.2em;color:var(--emas2);font-weight:600;margin-bottom:.4rem}
+    .cover .stamp-text{font-size:12px;color:rgba(255,255,255,.85);margin-bottom:.4rem}
+    .cover .stamp-name{font-family:'Amiri',serif;font-size:14px;font-weight:600;color:var(--emas2)}
+
+    /* CHAPTER */
+    .chapter{max-width:900px;margin:0 auto;padding:3rem 2rem 1rem}
+    .chapter-num{font-family:'Amiri',serif;font-size:14px;font-weight:600;color:var(--emas);letter-spacing:.3em;text-align:center;margin-bottom:.5rem}
+    .chapter-title{font-family:'Amiri',serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;color:var(--hijau);text-align:center;margin-bottom:2rem;padding-bottom:.75rem;border-bottom:3px double var(--emas);display:block}
+    .chapter-content p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .chapter-content p strong{color:var(--hijau);font-weight:600}
+    .chapter-content h3{font-family:'Amiri',serif;font-size:1.3rem;font-weight:700;color:var(--hijau2);margin:2rem 0 1rem;padding-bottom:.3rem;border-bottom:1px solid rgba(212,160,23,.4);display:inline-block}
+
+    .quote-box{border-left:4px solid var(--emas);background:linear-gradient(90deg,rgba(212,160,23,.08),transparent);padding:1.25rem 1.5rem;margin:1.75rem 0;font-style:italic;color:var(--hijau);font-family:'Amiri',serif;font-size:1.05rem;line-height:1.7;border-radius:0 6px 6px 0}
+
+    .arabic-box{text-align:center;padding:1.5rem;background:rgba(27,67,50,.04);border-radius:8px;margin:1.75rem 0}
+    .arabic-box .ar{font-family:'Amiri',serif;font-size:1.4rem;color:var(--hijau);margin-bottom:.5rem;line-height:1.8;direction:rtl}
+    .arabic-box .tr{font-size:13px;color:var(--abu);font-style:italic}
+
+    /* VISI HERO */
+    .visi-hero{background:linear-gradient(135deg,rgba(212,160,23,.1),rgba(212,160,23,.02));border:1px solid rgba(212,160,23,.3);border-radius:16px;padding:3rem 2rem;text-align:center;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(27,67,50,.06);margin:1rem 0 2rem}
+    .visi-hero::before{content:'"';position:absolute;top:-30px;left:30px;font-family:'Amiri',serif;font-size:9rem;color:var(--emas);opacity:.18;line-height:1}
+    .visi-hero::after{content:'"';position:absolute;bottom:-90px;right:30px;font-family:'Amiri',serif;font-size:9rem;color:var(--emas);opacity:.18;line-height:1}
+    .visi-hero p{font-family:'Amiri',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--hijau);line-height:1.8;font-style:italic;font-weight:500;position:relative;z-index:1;margin:0}
+
+    /* PENJELASAN VISI - 5 cards */
+    .visi-points{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem}
+    .visi-point{background:#fff;border-radius:10px;padding:1.5rem;display:grid;grid-template-columns:50px 1fr;gap:1.25rem;align-items:start;border-left:4px solid var(--emas);box-shadow:0 4px 12px rgba(27,67,50,.05);transition:.2s}
+    .visi-point:hover{transform:translateX(4px);box-shadow:0 6px 16px rgba(27,67,50,.1)}
+    .visi-point-num{width:40px;height:40px;background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:var(--emas2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:1.2rem;font-weight:700}
+    .visi-point h4{font-size:14px;font-weight:600;color:var(--hijau);margin-bottom:.4rem}
+    .visi-point p{font-size:13.5px;color:var(--gelap);line-height:1.8;margin:0}
+
+    /* MISI TABLE */
+    .misi-table{margin:1.5rem 0;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .misi-row{display:grid;grid-template-columns:60px 1fr;border-bottom:1px solid rgba(27,67,50,.08)}
+    .misi-row:last-child{border-bottom:none}
+    .misi-row.head{background:var(--hijau);color:#fff;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .misi-row.head > *{padding:.7rem .9rem}
+    .misi-row > *{padding:1rem .9rem}
+    .misi-row .num{text-align:center;color:var(--emas);font-weight:700;font-family:'Amiri',serif;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+    .misi-row .txt{font-size:13.5px;color:var(--gelap);line-height:1.7}
+    .misi-row:nth-child(even){background:rgba(212,160,23,.04)}
+
+    /* TUJUAN BIDANG */
+    .tujuan-bidang{background:#fff;border-radius:10px;padding:1.5rem;margin:1.25rem 0;border-left:4px solid var(--emas);box-shadow:0 4px 12px rgba(27,67,50,.05)}
+    .tujuan-bidang h4{font-size:15px;color:var(--hijau);font-weight:600;margin-bottom:.85rem;padding-bottom:.4rem;border-bottom:1px dashed rgba(212,160,23,.4)}
+    .tujuan-bidang ul{list-style:none;padding:0}
+    .tujuan-bidang ul li{font-size:13.5px;color:var(--gelap);line-height:1.8;padding:.4rem 0 .4rem 1.5rem;position:relative}
+    .tujuan-bidang ul li::before{content:'✓';color:var(--emas);font-weight:700;position:absolute;left:.4rem;top:.4rem}
+
+    .tujuan-umum{background:#fff;border-radius:10px;padding:1.5rem;margin:1rem 0 2rem;box-shadow:0 4px 12px rgba(27,67,50,.05);border:1px solid rgba(27,67,50,.08)}
+    .tujuan-umum ul{list-style:none;padding:0}
+    .tujuan-umum ul li{font-size:14px;color:var(--gelap);line-height:1.8;padding:.5rem 0 .5rem 1.75rem;position:relative;border-bottom:1px solid rgba(27,67,50,.05)}
+    .tujuan-umum ul li:last-child{border-bottom:none}
+    .tujuan-umum ul li::before{content:'★';color:var(--emas);font-size:13px;position:absolute;left:.4rem;top:.55rem}
+
+    /* MOTTO BOX */
+    .motto-box{background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:#fff;border-radius:14px;padding:3rem 2rem;text-align:center;margin:2rem 0;position:relative;overflow:hidden}
+    .motto-box::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(212,160,23,.15),transparent 60%);pointer-events:none}
+    .motto-box .ar-motto{font-family:'Amiri',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--emas2);margin-bottom:.5rem;font-style:italic;font-weight:600;position:relative;z-index:1}
+    .motto-box .tr-motto{font-size:14px;color:rgba(255,255,255,.7);font-style:italic;position:relative;z-index:1}
+
+    /* FILOSOFI - numbered cards */
+    .filosofi-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin:1.5rem 0}
+    .filosofi-item{background:#fff;border-radius:10px;padding:1.5rem;border-left:4px solid var(--emas);box-shadow:0 4px 12px rgba(27,67,50,.05);position:relative}
+    .filosofi-item h4{font-family:'Amiri',serif;font-size:1.1rem;color:var(--hijau);font-weight:700;margin-bottom:.5rem}
+    .filosofi-item p{font-size:13.5px;color:var(--gelap);line-height:1.75;margin:0}
+
+    /* NILAI INTI - 7 cards */
+    .nilai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+    .nilai-card{background:#fff;border-radius:10px;padding:1.5rem 1.25rem;text-align:center;box-shadow:0 4px 12px rgba(27,67,50,.06);transition:.3s;border-top:3px solid var(--emas)}
+    .nilai-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(27,67,50,.12)}
+    .nilai-num{width:36px;height:36px;background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:var(--emas2);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-weight:700;margin-bottom:.75rem}
+    .nilai-card h4{font-family:'Amiri',serif;font-size:1.2rem;color:var(--hijau);font-weight:700;margin-bottom:.5rem;letter-spacing:.04em}
+    .nilai-card p{font-size:12.5px;color:var(--abu);line-height:1.7;margin:0}
+
+    /* PROFIL LULUSAN */
+    .lulusan-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin:1.5rem 0}
+    .lulusan-card{background:#fff;border-radius:10px;padding:1.5rem 1.5rem 1.5rem 4rem;box-shadow:0 4px 12px rgba(27,67,50,.05);position:relative;border-left:4px solid var(--emas)}
+    .lulusan-num{position:absolute;top:1.4rem;left:1.25rem;width:36px;height:36px;background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:var(--emas2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-weight:700;font-size:14px}
+    .lulusan-card h4{font-size:14px;color:var(--hijau);font-weight:600;margin-bottom:.5rem}
+    .lulusan-card p{font-size:13.5px;color:var(--gelap);line-height:1.75;margin:0}
+
+    /* PENGESAHAN */
+    .pengesahan{background:#fff;border:2px solid var(--hijau);border-radius:12px;padding:2.5rem 2rem;margin:2.5rem 0 2rem;text-align:center;position:relative}
+    .pengesahan::before{content:'PENGESAHAN';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#fff;color:var(--hijau);font-size:12px;font-weight:700;letter-spacing:.2em;padding:0 1rem}
+    .pengesahan-loc{font-size:13px;color:var(--abu);margin-bottom:.5rem}
+    .pengesahan-role{font-size:14px;color:var(--hijau);font-weight:600;margin-bottom:3.5rem}
+    .pengesahan-line{border-bottom:1px solid var(--abu);width:60%;margin:0 auto .5rem}
+    .pengesahan-name{font-family:'Amiri',serif;font-size:1.1rem;color:var(--hijau);font-weight:700}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1rem 0 3rem}
+
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    @media(max-width:768px){
+      .misi-row{grid-template-columns:50px 1fr}
+      .lulusan-card{padding:1.5rem 1.25rem 1.25rem 3.5rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-content">
+    <p class="basmalah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْم</p>
+    <span class="badge">Dokumen Resmi</span>
+    <h1>VISI, MISI & TUJUAN</h1>
+    <h2>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</h2>
+    <p class="akronim">(PPUQHM)</p>
+    <p class="lokasi">Karang Senang SP 3, Mimika – Papua Tengah</p>
+    <div class="stamp">
+      <p class="stamp-label">DOKUMEN RESMI</p>
+      <p class="stamp-text">Disahkan oleh Pengasuh PPUQHM</p>
+      <p class="stamp-name">Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz</p>
+    </div>
+  </div>
+</div>
+
+<!-- MUKADDIMAH -->
+<div class="chapter">
+  <p class="chapter-num">— BAGIAN 1 —</p>
+  <h2 class="chapter-title">Mukaddimah</h2>
+  <div class="chapter-content">
+    <p>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM) didirikan pada <strong>28 Oktober 2017</strong> dengan peletakan batu pertama oleh KH. Ma'ruf Amin, KH. Miftahul Akhyar, dan KH. Lukman Haris Dimyathi, kemudian diresmikan pada <strong>23 September 2018</strong> oleh Ny. Hj. Mutammimah Hasyim dan Gus Yusron Sidqy.</p>
+    <p>Pesantren ini mengusung nama <strong>Almaghfurullah KH. Ahmad Hasyim Muzadi (1944–2017)</strong> — Ketua Umum PBNU dua periode, pendiri Pesantren Al-Hikam Malang dan Depok, sekaligus tokoh Islam Wasathiyah dunia. Pendirian PPUQHM adalah bentuk pengamalan dan kelanjutan estafet pemikiran sang Mahaguru di tanah Papua.</p>
+    <p>Visi, Misi, dan Tujuan PPUQHM yang tertuang dalam dokumen ini menjadi pedoman utama bagi seluruh sivitas pesantren — pengasuh, asatidz, santri, dan keluarga besar PPUQHM — dalam menjalankan amanah pendidikan dan dakwah Islam Aswaja An-Nahdliyah di tanah Cendrawasih.</p>
+    <div class="quote-box">"Tandurane Abah, tukule nang Papua"<br><em style="font-size:13px;display:block;margin-top:.5rem;color:var(--abu)">— Ny. Hj. Mutammimah Hasyim, peresmian PPUQHM 23 September 2018</em></div>
+  </div>
+</div>
+
+<!-- VISI -->
+<div class="chapter">
+  <p class="chapter-num">— BAGIAN 2 —</p>
+  <h2 class="chapter-title">🎯 Visi PPUQHM</h2>
+  <div class="chapter-content">
+    <div class="visi-hero">
+      <p>Menjadi pesantren tahfidzul Qur'an unggulan yang melahirkan generasi ahlul Qur'an berkarakter Aswaja An-Nahdliyah dan berwawasan Islam Wasathiyah untuk kemaslahatan umat dan bangsa.</p>
+    </div>
+
+    <h3>Penjelasan Visi</h3>
+    <p>Visi PPUQHM mengandung lima kata kunci penting yang menjadi identitas dan arah pesantren:</p>
+
+    <div class="visi-points">
+      <div class="visi-point">
+        <div class="visi-point-num">1</div>
+        <div>
+          <h4>Tahfidzul Qur'an Unggulan</h4>
+          <p>PPUQHM menetapkan tahfidzul Qur'an sebagai jantung kurikulumnya. "Unggulan" berarti tidak sekadar menghafal, tetapi menghafal dengan kualitas: bacaan tartil dan fasih sesuai kaidah tajwid, hafalan yang <strong>mutqin</strong> (kuat dan tidak mudah lupa), serta <strong>sanad muttashil</strong> hingga Rasulullah SAW melalui jalur Mbah Munawwir Krapyak.</p>
+        </div>
+      </div>
+      <div class="visi-point">
+        <div class="visi-point-num">2</div>
+        <div>
+          <h4>Generasi Ahlul Qur'an</h4>
+          <p>Ahlul Qur'an bukan sekadar yang hafal Al-Qur'an, melainkan yang menghidupkan Al-Qur'an dalam kesehariannya — dalam akhlak, ibadah, muamalah, dan dakwah. Lulusan PPUQHM diharapkan menjadi qari/qari'ah yang merepresentasikan Al-Qur'an dalam seluruh dimensi kehidupan.</p>
+        </div>
+      </div>
+      <div class="visi-point">
+        <div class="visi-point-num">3</div>
+        <div>
+          <h4>Berkarakter Aswaja An-Nahdliyah</h4>
+          <p>PPUQHM tegas berdiri di atas manhaj Ahlus Sunnah wal Jama'ah ala Nahdlatul Ulama — dengan rujukan empat madzhab fiqih (utamanya Syafi'i), aqidah Asy'ariyyah-Maturidiyyah, dan tasawuf Imam Junaid Al-Baghdadi & Imam Al-Ghazali. Tradisi tahlilan, yasinan, maulid, ziarah, shalawat, dan ta'dzim kepada ulama dipertahankan sebagai identitas pesantren.</p>
+        </div>
+      </div>
+      <div class="visi-point">
+        <div class="visi-point-num">4</div>
+        <div>
+          <h4>Berwawasan Islam Wasathiyah</h4>
+          <p>Mengikuti pemikiran Almaghfurullah KH. Hasyim Muzadi tentang <strong>Islam Wasathiyah</strong> — Islam yang moderat, tengahan, tidak ekstrem ke kanan (radikalisme) maupun ke kiri (liberalisme). Lulusan PPUQHM diharapkan menjadi penjaga moderasi beragama di tengah masyarakat plural Indonesia, terutama dalam konteks Papua yang sangat majemuk.</p>
+        </div>
+      </div>
+      <div class="visi-point">
+        <div class="visi-point-num">5</div>
+        <div>
+          <h4>Untuk Kemaslahatan Umat dan Bangsa</h4>
+          <p>Akhir dari visi ini adalah <strong>orientasi pengabdian</strong>. Lulusan PPUQHM tidak boleh menjadi ulama yang asing dari masyarakat (ivory tower), melainkan ulama yang turun ke umat, melayani bangsa, dan berkontribusi nyata pada peradaban Indonesia — sebagaimana <em>Tafaqquh fid Din wa fil Mujtama'</em> yang diajarkan KH. Hasyim Muzadi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MISI -->
+<div class="chapter">
+  <p class="chapter-num">— BAGIAN 3 —</p>
+  <h2 class="chapter-title">📌 Misi PPUQHM</h2>
+  <div class="chapter-content">
+    <p>Untuk mewujudkan Visi tersebut, PPUQHM menetapkan <strong>tujuh Misi</strong> sebagai langkah-langkah strategis:</p>
+    <div class="misi-table">
+      <div class="misi-row head"><div>No</div><div>Misi</div></div>
+      <div class="misi-row"><div class="num">1</div><div class="txt">Menyelenggarakan pendidikan tahfidzul Qur'an dengan sanad muttashil hingga Rasulullah SAW melalui jalur <strong>KH. Muhammad Munawwir Krapyak</strong>.</div></div>
+      <div class="misi-row"><div class="num">2</div><div class="txt">Mengembangkan kajian ilmu-ilmu Al-Qur'an (tahsin, tafsir, qira'at) dan ilmu-ilmu syariah dengan tradisi <strong>kitab kuning klasik pesantren NU</strong>.</div></div>
+      <div class="misi-row"><div class="num">3</div><div class="txt">Membentuk karakter santri yang <strong>berakhlak Qur'ani</strong> sesuai uswah hasanah Rasulullah SAW dan adab para ulama salaf.</div></div>
+      <div class="misi-row"><div class="num">4</div><div class="txt">Menanamkan manhaj <strong>Ahlus Sunnah wal Jama'ah An-Nahdliyah</strong> sebagai landasan beragama dan bermasyarakat.</div></div>
+      <div class="misi-row"><div class="num">5</div><div class="txt">Mengamalkan dan menyebarkan pemikiran <strong>Islam Wasathiyah</strong> Almaghfurullah KH. Ahmad Hasyim Muzadi sebagai paradigma moderasi beragama.</div></div>
+      <div class="misi-row"><div class="num">6</div><div class="txt">Berkhidmah aktif kepada <strong>masyarakat Mimika dan Papua</strong> melalui pendidikan, dakwah, sosial, dan layanan keagamaan.</div></div>
+      <div class="misi-row"><div class="num">7</div><div class="txt">Mempersiapkan kader-kader ulama yang <strong>berwawasan internasional</strong> melalui pengembangan bahasa Arab, bahasa Inggris, dan jejaring keilmuan global.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TUJUAN -->
+<div class="chapter">
+  <p class="chapter-num">— BAGIAN 4 —</p>
+  <h2 class="chapter-title">🏁 Tujuan PPUQHM</h2>
+  <div class="chapter-content">
+    <p>Tujuan PPUQHM dibagi menjadi dua kategori: <strong>Tujuan Umum</strong> (jangka panjang) dan <strong>Tujuan Khusus</strong> (operasional).</p>
+
+    <h3>A. Tujuan Umum</h3>
+    <p>PPUQHM bertujuan menjadi institusi pendidikan Islam yang:</p>
+    <div class="tujuan-umum">
+      <ul>
+        <li>Melahirkan hafidz dan hafidzah Al-Qur'an yang berkarakter Qur'ani dan berakhlak mulia.</li>
+        <li>Menjadi pusat keilmuan Al-Qur'an dan ilmu-ilmu syariah di kawasan <strong>Indonesia Timur</strong>.</li>
+        <li>Menjadi rujukan dakwah Aswaja An-Nahdliyah dan Islam Wasathiyah di Mimika dan Papua.</li>
+        <li>Menjadi pusat pengembangan kader ulama yang siap berkhidmah untuk umat dan bangsa.</li>
+        <li>Menjadi simbol kelanjutan estafet pemikiran <strong>Almaghfurullah KH. Ahmad Hasyim Muzadi</strong> di tanah Papua.</li>
+      </ul>
+    </div>
+
+    <h3>B. Tujuan Khusus</h3>
+    <p>Secara operasional, PPUQHM menetapkan tujuan khusus yang terukur sebagai berikut:</p>
+
+    <div class="tujuan-bidang">
+      <h4>📚 Bidang Akademik</h4>
+      <ul>
+        <li>Lulusan menguasai tahfidzul Qur'an minimal <strong>30 juz</strong> dengan kualitas mutqin.</li>
+        <li>Lulusan memiliki <strong>sanad Al-Qur'an muttashil</strong> dari pengasuh PPUQHM.</li>
+        <li>Lulusan mampu membaca kitab kuning klasik (minimal Fathul Qorib/Fathul Mu'in).</li>
+        <li>Lulusan menguasai <strong>bahasa Arab aktif</strong> untuk komunikasi dan pemahaman teks.</li>
+        <li>Lulusan mampu berbahasa Inggris untuk akses ke literatur dan pendidikan internasional.</li>
+      </ul>
+    </div>
+
+    <div class="tujuan-bidang">
+      <h4>💎 Bidang Karakter & Akhlak</h4>
+      <ul>
+        <li>Lulusan beristiqomah dalam ibadah wajib dan sunnah.</li>
+        <li>Lulusan berakhlak mulia dalam keseharian (kepada Allah, sesama manusia, dan alam).</li>
+        <li>Lulusan memiliki adab kepada guru, orangtua, dan masyarakat.</li>
+        <li>Lulusan memiliki <strong>rasa cinta tanah air</strong> sebagai bagian dari iman.</li>
+      </ul>
+    </div>
+
+    <div class="tujuan-bidang">
+      <h4>🤝 Bidang Khidmah & Dakwah</h4>
+      <ul>
+        <li>Lulusan siap menjadi <strong>imam, khatib, dan penceramah</strong> masyarakat.</li>
+        <li>Lulusan siap mengajar Al-Qur'an dan kitab kuning di TPQ/madrasah.</li>
+        <li>Lulusan mampu menjadi penggerak NU di lingkungannya.</li>
+        <li>Lulusan memiliki spirit kewirausahaan untuk kemandirian ekonomi.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- MOTTO & FILOSOFI -->
+<div class="chapter">
+  <p class="chapter-num">— BAGIAN 5 —</p>
+  <h2 class="chapter-title">✨ Motto & Filosofi</h2>
+  <div class="chapter-content">
+
+    <h3>Motto Pesantren</h3>
+    <div class="motto-box">
+      <p class="ar-motto">"Tandurane Abah, Tukule nang Papua"</p>
+      <p class="tr-motto">(Tanaman Beliau, Tumbuh di Papua)</p>
+    </div>
+    <p>Motto ini diambil dari kalimat sakral <strong>Ny. Hj. Mutammimah Hasyim</strong> pada peresmian PPUQHM 23 September 2018. Kalimat ini menjadi prasasti spiritual yang mengingatkan seluruh sivitas PPUQHM bahwa pesantren ini adalah "tanaman" — buah dari benih dakwah Almaghfurullah KH. Ahmad Hasyim Muzadi yang ditanam puluhan tahun lalu di Pesantren Al-Hikam Malang dan Depok, dan secara takdir Allah tumbuh dan berbuah di tanah Papua.</p>
+
+    <h3>Filosofi Pendidikan</h3>
+    <div class="filosofi-grid">
+      <div class="filosofi-item">
+        <h4>1. Tafaqquh fid Din wa fil Mujtama'</h4>
+        <p>Mengikuti ajaran Almaghfurullah KH. Hasyim Muzadi: santri tidak hanya mendalami agama (<em>Tafaqquh fid Din</em>), tetapi juga mendalami masyarakat (<em>Tafaqquh fil Mujtama'</em>). Pesantren bukan menara gading yang terpisah dari realitas sosial, melainkan pusat pencerahan yang turun ke masyarakat.</p>
+      </div>
+      <div class="filosofi-item">
+        <h4>2. Sanad sebagai Mata Air Keilmuan</h4>
+        <p>PPUQHM meyakini bahwa keilmuan tanpa sanad bagaikan air tanpa sumber. <strong>Sanad muttashil</strong> adalah jaminan keaslian dan keberkahan ilmu. Empat sanad Al-Qur'an Pengasuh yang bermuara ke Mbah Munawwir Krapyak menjadi mata air keilmuan PPUQHM.</p>
+      </div>
+      <div class="filosofi-item">
+        <h4>3. Aswaja sebagai Manhaj Tetap</h4>
+        <p>PPUQHM tegas berdiri di atas manhaj Aswaja An-Nahdliyah. Tradisi tahlilan, yasinan, maulid, ziarah, shalawat, dan ta'dzim kepada ulama dipertahankan sebagai identitas. Manhaj ini bukan sekadar warisan, melainkan jalan tengah yang menyelamatkan umat dari ekstremisme.</p>
+      </div>
+      <div class="filosofi-item">
+        <h4>4. Wasathiyah sebagai Wawasan Hidup</h4>
+        <p>Islam Wasathiyah Almaghfurullah KH. Hasyim Muzadi menjadi wawasan hidup santri PPUQHM — moderat, toleran, menghargai keberagaman, namun tetap teguh pada akidah dan syariat.</p>
+      </div>
+      <div class="filosofi-item">
+        <h4>5. Khidmah sebagai Tujuan Akhir</h4>
+        <p>Semua proses pendidikan di PPUQHM bermuara pada satu hal: <strong>khidmah (pengabdian)</strong>. Bukan untuk gelar, bukan untuk kekayaan, bukan untuk popularitas — tetapi untuk berkhidmah kepada Allah, agama, masyarakat, dan bangsa.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NILAI INTI -->
+<div class="chapter">
+  <p class="chapter-num">— BAGIAN 6 —</p>
+  <h2 class="chapter-title">💫 Nilai-Nilai Inti PPUQHM</h2>
+  <div class="chapter-content">
+    <p>PPUQHM menjunjung <strong>tujuh nilai inti</strong> yang menjadi karakter seluruh sivitas pesantren:</p>
+    <div class="nilai-grid">
+      <div class="nilai-card">
+        <div class="nilai-num">1</div>
+        <h4>IKHLAS</h4>
+        <p>Setiap aktivitas pesantren — dari mengajar hingga belajar, dari mengaji hingga melayani — diniatkan murni untuk Allah SWT.</p>
+      </div>
+      <div class="nilai-card">
+        <div class="nilai-num">2</div>
+        <h4>ISTIQAMAH</h4>
+        <p>Konsisten dalam ibadah, belajar, dan amal kebaikan. Tidak putus-putus, tidak setengah-setengah.</p>
+      </div>
+      <div class="nilai-card">
+        <div class="nilai-num">3</div>
+        <h4>TAWADHU</h4>
+        <p>Rendah hati di hadapan Allah dan sesama. Tidak membanggakan ilmu, gelar, nasab, atau prestasi.</p>
+      </div>
+      <div class="nilai-card">
+        <div class="nilai-num">4</div>
+        <h4>ADAB</h4>
+        <p>Mengutamakan adab di atas ilmu. Adab kepada guru, kepada orangtua, kepada Al-Qur'an, kepada sesama makhluk.</p>
+      </div>
+      <div class="nilai-card">
+        <div class="nilai-num">5</div>
+        <h4>BARAKAH</h4>
+        <p>Mengejar keberkahan, bukan sekadar hasil. Karena ilmu yang barakah lebih bermanfaat dari ilmu yang banyak.</p>
+      </div>
+      <div class="nilai-card">
+        <div class="nilai-num">6</div>
+        <h4>WASATHIYAH</h4>
+        <p>Moderat, tengahan, tidak ekstrem. Menghargai perbedaan dalam bingkai persatuan.</p>
+      </div>
+      <div class="nilai-card">
+        <div class="nilai-num">7</div>
+        <h4>KHIDMAH</h4>
+        <p>Pengabdian sebagai puncak nilai. Ilmu untuk diamalkan, hidup untuk melayani.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFIL LULUSAN -->
+<div class="chapter">
+  <p class="chapter-num">— BAGIAN 7 —</p>
+  <h2 class="chapter-title">🎓 Profil Lulusan PPUQHM</h2>
+  <div class="chapter-content">
+    <p>Lulusan PPUQHM diharapkan memiliki <strong>lima karakter utama</strong> yang membedakannya dari lulusan pesantren lain:</p>
+    <div class="lulusan-grid">
+      <div class="lulusan-card">
+        <div class="lulusan-num">1</div>
+        <h4>Hafidz/Hafidzah dengan Sanad Krapyak</h4>
+        <p>Lulusan PPUQHM adalah hafidz/hafidzah <strong>30 juz</strong> dengan sanad Al-Qur'an muttashil melalui jalur KH. Muhammad Munawwir Krapyak. Mereka membawa keberkahan sanad ini kepada generasi berikutnya yang akan mereka didik.</p>
+      </div>
+      <div class="lulusan-card">
+        <div class="lulusan-num">2</div>
+        <h4>Faqih dalam Kitab Kuning</h4>
+        <p>Selain hafidz, lulusan PPUQHM mampu membaca dan memahami kitab kuning klasik — minimal <strong>Fathul Qorib</strong> (fiqih), <strong>Jurumiyah</strong> (nahwu), <strong>Amtsilati Tashrifiyyah</strong> (sorof), dan <strong>Aqidatul Awam</strong> (aqidah). Bagi yang bertahan lebih lama, mampu menguasai Fathul Mu'in, Alfiyah Ibnu Malik, dan kitab-kitab tingkat lanjut.</p>
+      </div>
+      <div class="lulusan-card">
+        <div class="lulusan-num">3</div>
+        <h4>Berkarakter Aswaja-Wasathiyah</h4>
+        <p>Lulusan PPUQHM teguh dalam manhaj Aswaja An-Nahdliyah, dengan wawasan moderat Islam Wasathiyah. Mereka adalah <strong>benteng dari radikalisme dan liberalisme</strong>, sekaligus penjaga moderasi beragama di tengah masyarakat plural.</p>
+      </div>
+      <div class="lulusan-card">
+        <div class="lulusan-num">4</div>
+        <h4>Mampu Berbahasa Internasional</h4>
+        <p>Lulusan PPUQHM menguasai bahasa Arab aktif dan bahasa Inggris pasif/aktif. Mereka siap melanjutkan studi ke perguruan tinggi Islam di Indonesia (UIN, STAIMA, Al-Azhar Indonesia) maupun ke luar negeri (<strong>Al-Azhar Mesir, Az-Zaitunah Tunisia, Universitas Islam Madinah</strong>, dll).</p>
+      </div>
+      <div class="lulusan-card">
+        <div class="lulusan-num">5</div>
+        <h4>Siap Berkhidmah</h4>
+        <p>Lulusan PPUQHM lulus bukan untuk diri sendiri, melainkan untuk umat. Mereka siap menjadi <strong>imam, khatib, guru ngaji, da'i, pengasuh TPQ, ustadz pesantren</strong>, atau bahkan pendiri pesantren cabang PPUQHM di daerah masing-masing.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PENUTUP -->
+<div class="chapter">
+  <p class="chapter-num">— BAGIAN 8 —</p>
+  <h2 class="chapter-title">Penutup</h2>
+  <div class="chapter-content">
+    <p>Visi, Misi, dan Tujuan PPUQHM yang tertuang dalam dokumen ini adalah pedoman utama bagi seluruh sivitas pesantren dalam menjalankan amanah pendidikan dan dakwah. Dokumen ini disusun dengan istikharah, dengan harapan menjadi pijakan untuk <strong>lima dekade ke depan</strong> dan seterusnya.</p>
+    <p>Semua sivitas PPUQHM — pengasuh, asatidz, santri, pengurus, dan keluarga besar pesantren — wajib memahami, menghayati, dan mengamalkan dokumen ini dalam setiap aktivitas pesantren.</p>
+    <p>Semoga Allah SWT memberikan kekuatan, keberkahan, dan istiqomah dalam mewujudkan Visi, Misi, dan Tujuan PPUQHM ini. <strong>Aamiin Ya Rabbal 'Alamin</strong>.</p>
+    <div class="quote-box">"Inna lillahi wa inna ilaihi raji'un — sesungguhnya kepada Allah-lah kami kembali. Dan kepada Allah-lah segala urusan dikembalikan."</div>
+
+    <div class="pengesahan">
+      <p class="pengesahan-loc">Mimika, ___ ___________ 2026</p>
+      <p class="pengesahan-role">Pengasuh PPUQHM,</p>
+      <div class="pengesahan-line"></div>
+      <p class="pengesahan-name">Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz</p>
+    </div>
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="index.html#tentang" class="back-btn">← Kembali ke Beranda</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

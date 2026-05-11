@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cikal Bakal - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    /* NAVBAR */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:6px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    /* HEADER */
+    .page-header{margin-top:64px;background:var(--hijau);padding:60px 2rem;text-align:center}
+    .page-header .badge{display:inline-block;background:rgba(255,255,255,.1);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:.75rem}
+    .page-header h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#fff;margin-bottom:.5rem}
+    .page-header p{font-size:14px;color:rgba(255,255,255,.7);max-width:600px;margin:0 auto}
+    .page-header .line{width:50px;height:3px;background:var(--emas);margin:.75rem auto 0}
+
+    /* CONTENT */
+    .content{max-width:900px;margin:0 auto;padding:3rem 2rem}
+    .content p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .content p strong{color:var(--hijau);font-weight:600}
+    .content h2{font-family:'Amiri',serif;font-size:1.7rem;font-weight:700;color:var(--hijau);margin:2.5rem 0 1.25rem;text-align:center;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block;letter-spacing:.04em}
+    .content .subhead-wrap{text-align:center;margin:2.5rem 0 1.5rem}
+
+    /* GALERI FOTO */
+    .foto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:2rem 0}
+    .foto-item{background:linear-gradient(135deg,var(--hijau2),var(--hijau3));border-radius:8px;overflow:hidden;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:3rem;position:relative}
+    .foto-item img{width:100%;height:100%;object-fit:cover;display:block}
+    .foto-item .placeholder-text{position:absolute;bottom:12px;left:12px;right:12px;font-size:11px;color:rgba(255,255,255,.6);text-align:center}
+
+    /* BACK BTN */
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center}
+
+    /* FOOTER */
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+
+    /* WA FLOAT */
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    @media(max-width:768px){
+      .foto-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <span class="badge">Sejarah Pesantren</span>
+  <h1>🌱 Cikal Bakal</h1>
+  <p>Awal mula perjalanan berdirinya Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</p>
+  <div class="line"></div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+  <p>Berdirinya Pesantren Ulumul Qur'an Hasyim Muzadi tidak bisa lepas dari nama pesantren itu sendiri, yaitu <strong>Hasyim Muzadi</strong>. Diawali dengan program masa bakti santri ke-3, Sekolah Tinggi Kuliyatul Qur'an Al-Hikam Depok.</p>
+
+  <p>Dalam program ini, <strong>KH. Ahmad Hasyim Muzadi</strong> mengutus seluruh mahasiswa Al-Hikam Depok angkatan 3 untuk disebar ke seluruh penjuru Nusantara. <strong>Gus Mursyid Adi Saputra</strong>, yang saat itu masih menjadi salah satu mahasiswa Al-Hikam Depok angkatan 3, diutus untuk mengabdi di bumi Cendrawasih, Kab. Mimika, tepatnya di SP3.</p>
+
+  <!-- Galeri Foto 1 -->
+  <div class="foto-grid">
+    <div class="foto-item">
+      <img src="K.H. Hasyim Muzadi.jpg" alt="KH. Hasyim Muzadi" style="object-position:center top">
+    </div>
+    <div class="foto-item">
+      <img src="al hikam.jpg" alt="Al-Hikam Depok">
+    </div>
+    <div class="foto-item">
+      <img src="Gus Mursyid.png" alt="Gus Mursyid Adi Saputra">
+    </div>
+  </div>
+
+  <div class="subhead-wrap"><h2>Pengabdian Masyarakat</h2></div>
+
+  <p>Gus Mursyid memulai pengabdiannya di <strong>Masjid Al-Fattah</strong> dengan menjadi imam sholat, khotib Jum'at, serta mewarnai suasana masjid dengan mengisi majelis ngaji anak-anak setiap ba'da maghrib dan kajian kitab fikih setiap Ahad pagi, serta mengajar hadroh kepada para remaja masjid.</p>
+
+  <p>Selain di Masjid Al-Fattah, beliau juga mengabdi di <strong>LP Ma'arif NU</strong> dengan menjadi imam Duha dan Asmaul Husna, guru Al-Qur'an, serta menjadi pengajar di ekskul hadroh.</p>
+
+  <p>Pengabdiannya juga berlanjut kepada masyarakat SP3, memulai pendekatan kepada masyarakat secara perlahan melalui futsal dan bermain PS2 bersama, hingga menjadi imam Yasin Tahlil dan kajian kitab kuning di <strong>Mushola Al-Barokah</strong>, membentuk Majelis Sholawat Al-Barokah, mengisi pengajian di majelis ibu-ibu dan di berbagai organisasi seperti KKJB, serta membentuk <strong>Mahasantri pada 3 Desember 2017</strong>.</p>
+
+  <div class="back-btn-wrap">
+    <a href="index.html#info" class="back-btn">← Kembali ke Beranda</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

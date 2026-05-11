@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:#fff;color:var(--gelap);overflow-x:hidden}
+
+    /* LOADER */
+    #loader{position:fixed;inset:0;background:#fff;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s}
+    .loader-logo{width:80px;height:80px;border-radius:50%;overflow:hidden;animation:pulse 1.2s ease-in-out infinite}
+    .loader-logo img{width:100%;height:100%;object-fit:cover}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+    #loader p{font-size:12px;color:var(--hijau);letter-spacing:.15em;text-transform:uppercase}
+
+    /* NAVBAR */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);transition:box-shadow .3s}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-menu{display:flex;list-style:none;gap:1.5rem;align-items:center}
+    .nav-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s}
+    .nav-menu a:hover{color:var(--emas2)}
+    .nav-daftar{background:var(--emas);color:var(--hijau)!important;padding:7px 18px;border-radius:4px;font-weight:600!important}
+    .nav-daftar:hover{background:var(--emas2)!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .hamburger span{width:24px;height:2px;background:#fff;border-radius:2px}
+    .mob-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--hijau);z-index:999;padding:1rem 2rem;flex-direction:column;gap:.5rem}
+    .mob-menu.open{display:flex}
+    .mob-menu a{color:#fff;text-decoration:none;font-size:14px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+
+    /* HERO SLIDER */
+    .slider{position:relative;height:100vh;overflow:hidden;margin-top:64px}
+    .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s;background-size:cover;background-position:center}
+    .slide.active{opacity:1}
+    .slide-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,20,10,.65),rgba(5,20,10,.35) 50%,rgba(5,20,10,.72))}
+    .slide-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+    .arabic{font-family:'Amiri',serif;font-size:clamp(1.3rem,3vw,2rem);color:var(--emas2);margin-bottom:1rem;letter-spacing:.05em}
+    .slide-h1{font-size:clamp(1.8rem,5vw,3.5rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:.75rem;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+    .slide-p{font-size:clamp(.85rem,2vw,1.05rem);color:rgba(255,255,255,.82);max-width:620px;margin-bottom:.5rem}
+    .slide-addr{font-size:12px;color:var(--emas2);margin-bottom:2rem}
+    .slide-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    .btn-gold{background:var(--emas);color:var(--hijau);padding:12px 30px;border-radius:4px;text-decoration:none;font-weight:600;font-size:14px;transition:.2s}
+    .btn-gold:hover{background:var(--emas2);transform:translateY(-2px)}
+    .btn-white{border:1.5px solid rgba(255,255,255,.7);color:#fff;padding:12px 30px;border-radius:4px;text-decoration:none;font-size:14px;transition:.2s}
+    .btn-white:hover{background:rgba(255,255,255,.1)}
+    .slider-prev,.slider-next{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:28px;padding:8px 14px;border-radius:4px;cursor:pointer;transition:.2s}
+    .slider-prev{left:16px}.slider-next{right:16px}
+    .slider-prev:hover,.slider-next:hover{background:rgba(255,255,255,.28)}
+    .slider-dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+    .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:.3s}
+    .dot.active{background:var(--emas);width:24px;border-radius:4px}
+
+    /* SECTIONS BASE */
+    section{padding:80px 2rem}
+    .container{max-width:1100px;margin:0 auto}
+    .sec-head{text-align:center;margin-bottom:3rem}
+    .sec-badge{display:inline-block;background:rgba(27,67,50,.08);color:var(--hijau2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:.75rem}
+    .sec-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:var(--hijau);margin-bottom:.25rem}
+    .sec-line{width:50px;height:3px;background:var(--emas);margin:.75rem auto 0}
+
+    /* KEUNGGULAN */
+    .keunggulan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+    .keunggulan-card{background:var(--putih);border:1px solid rgba(27,67,50,.1);border-radius:8px;padding:1.75rem;transition:.3s;position:relative}
+    .keunggulan-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(27,67,50,.12)}
+    .keunggulan-num{font-family:'Amiri',serif;font-size:2rem;font-weight:700;color:var(--emas);opacity:.5;margin-bottom:.5rem}
+    .keunggulan-card h3{font-size:15px;font-weight:600;color:var(--hijau);margin-bottom:.5rem}
+    .keunggulan-card p{font-size:13px;color:var(--abu);line-height:1.7}
+    .keunggulan-card.full{grid-column:1/-1;text-align:center;background:linear-gradient(135deg,var(--hijau),var(--hijau2));border:none}
+    .keunggulan-card.full .keunggulan-num{color:var(--emas2);opacity:.7}
+    .keunggulan-card.full h3{color:#fff}
+    .keunggulan-card.full p{color:rgba(255,255,255,.75)}
+
+    /* FITUR */
+    #fitur{background:var(--putih)}
+    .fitur-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+    .fitur-card{background:#fff;border:1px solid rgba(27,67,50,.12);border-radius:8px;padding:2rem 1.5rem;text-align:center;text-decoration:none;transition:.3s;position:relative;overflow:hidden}
+    .fitur-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--hijau),var(--emas))}
+    .fitur-card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(27,67,50,.15)}
+    .fitur-icon{font-size:2.4rem;margin-bottom:1rem;display:block}
+    .fitur-card h3{font-size:14px;font-weight:600;color:var(--hijau);margin-bottom:.35rem}
+    .fitur-card p{font-size:12px;color:var(--abu)}
+
+    /* TENTANG */
+    #tentang{background:#fff}
+    .tentang-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+    .tab-btns{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+    .tab-btn{padding:8px 18px;border:1.5px solid var(--hijau2);border-radius:4px;background:transparent;color:var(--hijau2);font-size:13px;font-weight:500;cursor:pointer;transition:.2s;font-family:'Poppins',sans-serif}
+    .tab-btn.active{background:var(--hijau);color:#fff;border-color:var(--hijau)}
+    .tab-c{display:none}
+    .tab-c.active{display:block}
+    #tab-visimisi.active h4{margin-top:2.5rem!important}
+    .tab-c h3{font-family:'Amiri',serif;font-size:1.5rem;color:var(--hijau);margin-bottom:1rem}
+    .tab-c p{font-size:14px;color:var(--abu);line-height:1.8;margin-bottom:.9rem}
+    .img-box{background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau3) 100%);border-radius:8px;overflow:hidden;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.7);gap:12px}
+    .img-box span{font-size:4rem}
+    .img-box p{font-size:13px;text-align:center;padding:0 1rem}
+    .sarana-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
+    .sarana-item{background:rgba(27,67,50,.04);border-radius:6px;padding:.9rem;border-left:3px solid var(--emas)}
+    .sarana-item h4{font-size:13px;font-weight:600;color:var(--hijau);margin-bottom:.25rem}
+    .sarana-item p{font-size:12px;color:var(--abu);line-height:1.6}
+
+    /* PROGRAM PENDIDIKAN */
+    .program-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+    .program-card{background:#fff;border:1px solid rgba(27,67,50,.1);border-radius:8px;padding:1.75rem;transition:.3s;overflow:hidden;position:relative}
+    .program-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--hijau),var(--emas))}
+    .program-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(27,67,50,.12)}
+    .program-card-head{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+    .program-card-icon{font-size:1.5rem;width:44px;height:44px;background:rgba(27,67,50,.06);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .program-card h3{font-size:15px;font-weight:600;color:var(--hijau)}
+    .program-card h3{cursor:pointer}
+    .program-card-toggle{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:0;background:none;border:none;width:100%;font-family:'Poppins',sans-serif}
+    .program-card-toggle .ico{font-size:20px;color:var(--hijau);transition:transform .3s}
+    .program-card-toggle.open .ico{transform:rotate(45deg)}
+    .program-card ul{list-style:none;padding:0;max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .program-card ul.open{max-height:500px}
+    .program-card ul li{font-size:13px;color:var(--abu);padding:6px 0;border-bottom:1px solid rgba(27,67,50,.06);display:flex;align-items:center;gap:8px}
+    .program-card ul li:last-child{border-bottom:none}
+    .program-card ul li::before{content:'•';color:var(--emas);font-weight:700;font-size:16px}
+
+    /* PENGASUH SECTION */
+    #pengasuh{padding:80px 2rem;background:linear-gradient(135deg,#fafaf7 0%,#f5f1e6 100%)}
+    .pengasuh-grid{display:grid;grid-template-columns:380px 1fr;gap:3rem;align-items:start;max-width:1100px;margin:0 auto}
+    .pengasuh-foto-wrap{position:relative}
+    .pengasuh-foto{border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(27,67,50,.18);border:4px solid #fff;position:relative}
+    .pengasuh-foto::before{content:'';position:absolute;inset:0;border:1px solid rgba(212,160,23,.4);border-radius:10px;pointer-events:none;z-index:1}
+    .pengasuh-foto img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover}
+    .pengasuh-stamp{position:absolute;top:-16px;right:-16px;background:linear-gradient(135deg,var(--emas),var(--emas2));padding:.6rem 1rem;border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(212,160,23,.4);text-align:center}
+    .stamp-ar{font-family:'Amiri',serif;font-size:11px;color:var(--hijau);font-weight:700;line-height:1.2}
+
+    .pengasuh-info{padding-top:.5rem}
+    .arabic-quote{font-family:'Amiri',serif;font-size:1.5rem;color:var(--hijau);margin-bottom:1rem;direction:rtl;letter-spacing:.05em}
+    .pengasuh-info h3{font-family:'Amiri',serif;font-size:1.6rem;color:var(--hijau);font-weight:700;margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .pengasuh-desc{font-size:14.5px;color:var(--abu);line-height:1.85;margin-bottom:1.5rem}
+    .pengasuh-desc strong{color:var(--hijau);font-weight:600}
+
+    .pengasuh-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+    .pengasuh-card{background:#fff;border-radius:10px;padding:1.25rem;border-top:3px solid var(--emas);box-shadow:0 6px 16px rgba(27,67,50,.06);transition:.2s;display:flex;flex-direction:column}
+    .pengasuh-card .pengasuh-mini-list{flex:1}
+    .pengasuh-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(27,67,50,.12)}
+    .pengasuh-name-tag{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem}
+    .pengasuh-card h4{font-size:14px;font-weight:600;color:var(--hijau);line-height:1.4;margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:1px dashed rgba(27,67,50,.15)}
+    .pengasuh-mini-list{list-style:none;padding:0;margin:0}
+    .pengasuh-mini-list li{font-size:12px;color:var(--abu);line-height:1.65;padding:.25rem 0 .25rem 1.2rem;position:relative}
+    .pengasuh-mini-list li::before{content:'•';color:var(--emas);font-weight:700;position:absolute;left:.3rem;top:.2rem;font-size:14px}
+    .pengasuh-card-link{display:block;margin-top:1rem;padding:.6rem .85rem;background:rgba(212,160,23,.08);border:1px solid rgba(212,160,23,.3);border-radius:6px;text-decoration:none;font-size:12.5px;font-weight:600;text-align:center;transition:.2s;letter-spacing:.02em}
+    .pengasuh-card-link:hover{background:rgba(212,160,23,.18);transform:translateX(2px)}
+
+    .pengasuh-quote{background:rgba(212,160,23,.08);border-left:3px solid var(--emas);padding:1rem 1.25rem;border-radius:0 6px 6px 0;margin-bottom:1.25rem}
+    .pengasuh-quote p{font-size:13px;color:var(--hijau2);line-height:1.75;font-style:italic;margin:0}
+
+    .btn-pengasuh{display:inline-block;background:var(--hijau);color:#fff;padding:11px 26px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;transition:.2s;border:1px solid var(--hijau)}
+    .btn-pengasuh:hover{background:var(--hijau2);transform:translateY(-2px);box-shadow:0 6px 14px rgba(27,67,50,.2)}
+
+    @media(max-width:900px){
+      .pengasuh-grid{grid-template-columns:1fr;gap:2rem}
+      .pengasuh-foto-wrap{max-width:340px;margin:0 auto}
+      .pengasuh-card-grid{grid-template-columns:1fr}
+      .pengasuh-stamp{top:-12px;right:-12px;width:70px;height:70px}
+      .stamp-ar{font-size:10px}
+    }
+
+    /* MASYAYIKH SECTION */
+    .masyayikh-wrap{display:grid;grid-template-columns:380px 1fr;gap:3rem;align-items:center;max-width:1100px;margin:0 auto}
+    .masyayikh-foto{border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.4);border:3px solid var(--emas2);position:relative}
+    .masyayikh-foto::before{content:'';position:absolute;inset:0;border:1px solid rgba(212,160,23,.4);border-radius:10px;pointer-events:none;z-index:1}
+    .masyayikh-foto img{width:100%;display:block}
+
+    .masyayikh-info{padding:.5rem 0}
+    .masyayikh-arabic{font-family:'Amiri',serif;font-size:1.5rem;color:var(--emas2);margin-bottom:1rem;direction:rtl;letter-spacing:.05em}
+    .masyayikh-info h3{font-family:'Amiri',serif;font-size:1.6rem;color:var(--emas2);font-weight:700;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .masyayikh-info p{font-size:14.5px;color:rgba(255,255,255,.78);line-height:1.85;margin-bottom:1rem}
+    .masyayikh-info p strong{color:var(--emas2);font-weight:600}
+
+    .btn-masyayikh{display:inline-block;background:linear-gradient(135deg,var(--emas),var(--emas2));color:var(--hijau);padding:13px 30px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s;margin-top:1rem;box-shadow:0 6px 16px rgba(212,160,23,.3)}
+    .btn-masyayikh:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(212,160,23,.45)}
+
+    @media(max-width:900px){
+      .masyayikh-wrap{grid-template-columns:1fr;gap:2rem}
+      .masyayikh-foto{max-width:340px;margin:0 auto}
+    }
+
+    /* MISI EXTRA BLOCK (full-width di bawah grid) */
+    .misi-extra{display:none;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(27,67,50,.08);text-align:center}
+    .misi-extra.active{display:block}
+    .misi-extra .misi-mini-grid{text-align:left;margin-top:.5rem}
+
+    /* MISI MINI GRID (di tab Visi & Misi) */
+    .misi-mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem;margin-top:.75rem}
+    .misi-mini{display:grid;grid-template-columns:28px 1fr;gap:.5rem;align-items:start;background:rgba(27,67,50,.04);border-left:3px solid var(--emas);padding:.7rem .8rem;border-radius:0 6px 6px 0}
+    .misi-mini-n{width:24px;height:24px;background:var(--hijau);color:var(--emas2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-size:12px;font-weight:700}
+    .misi-mini p{font-size:12px;color:var(--abu);line-height:1.6;margin:0}
+    @media(max-width:600px){.misi-mini-grid{grid-template-columns:1fr}}
+
+    /* STATS */
+    #stats{background:var(--hijau);padding:60px 2rem}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:1000px;margin:0 auto;text-align:center}
+    .stat-num{font-family:'Amiri',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:700;color:var(--emas2);line-height:1}
+    .stat-lbl{font-size:13px;color:rgba(255,255,255,.7);margin-top:6px}
+
+    /* BERITA */
+    #news{background:var(--putih)}
+    .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:2rem auto 0}
+    .news-card{background:#fff;border-radius:8px;overflow:hidden;border:1px solid rgba(27,67,50,.1);transition:.3s;text-decoration:none;color:inherit;display:block}
+    .news-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(27,67,50,.12)}
+    .news-img{height:190px;background:linear-gradient(135deg,var(--hijau2),var(--hijau3));display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+    .news-body{padding:1.25rem}
+    .news-cat{font-size:11px;font-weight:600;color:var(--hijau3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem}
+    .news-title{font-size:15px;font-weight:600;color:var(--gelap);margin-bottom:.5rem;line-height:1.4}
+    .news-date{font-size:12px;color:var(--abu)}
+    .center-btn{text-align:center;margin-top:2rem}
+    .btn-outline{display:inline-block;border:1.5px solid var(--hijau);color:var(--hijau);padding:10px 28px;border-radius:4px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s}
+    .btn-outline:hover{background:var(--hijau);color:#fff}
+
+    /* FAQ */
+    #faq{background:var(--putih)}
+    .faq-list{max-width:800px;margin:2rem auto 0}
+    .faq-item{border-bottom:1px solid rgba(27,67,50,.12)}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:1.1rem 0;font-size:15px;font-weight:500;color:var(--gelap);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Poppins',sans-serif;gap:1rem}
+    .faq-q .ico{font-size:20px;color:var(--hijau);transition:transform .3s;flex-shrink:0}
+    .faq-q.open .ico{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-a p{padding:0 0 1rem;font-size:14px;color:var(--abu);line-height:1.8}
+
+    /* INFO */
+    #info{background:var(--hijau)}
+    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1100px;margin:2rem auto 0}
+    .info-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:2rem;transition:.3s;text-decoration:none;display:block}
+    .info-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
+    .info-card h3{font-size:1.05rem;font-weight:600;color:var(--emas2);margin-bottom:.75rem}
+    .info-card p{font-size:13px;color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:1rem}
+    .info-card .lnk{font-size:13px;color:var(--emas2);font-weight:500}
+
+    /* SEJARAH */
+    .sejarah-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+    .sejarah-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:2.2rem 1.75rem;text-align:center;text-decoration:none;display:block;transition:.3s;position:relative;overflow:hidden}
+    .sejarah-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--emas),var(--emas2))}
+    .sejarah-card:hover{background:rgba(255,255,255,.12);transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.25)}
+    .sejarah-card-icon{font-size:3rem;margin-bottom:1rem}
+    .sejarah-card h3{font-size:1.05rem;font-weight:600;color:var(--emas2);margin-bottom:.75rem}
+    .sejarah-card p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:1rem}
+    .sejarah-lnk{font-size:13px;color:var(--emas2);font-weight:500}
+
+    /* KONTAK */
+    #kontak{background:var(--putih)}
+    .kontak-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem;align-items:start}
+    .kontak-row{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+    .kontak-ico{width:48px;height:48px;background:rgba(27,67,50,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .kontak-row h4{font-size:14px;font-weight:600;color:var(--hijau);margin-bottom:.3rem}
+    .kontak-row p,.kontak-row a{font-size:14px;color:var(--abu);text-decoration:none}
+    .kontak-row a:hover{color:var(--hijau3)}
+    .map-box{background:#fff;border:1px solid rgba(27,67,50,.12);border-radius:8px;padding:2.5rem;text-align:center}
+    .map-box p.big{font-size:3rem;margin-bottom:.75rem}
+    .map-box h4{font-size:15px;font-weight:600;color:var(--hijau);margin-bottom:.35rem}
+    .map-box p.sm{font-size:13px;color:var(--abu);margin-bottom:1.5rem}
+    .map-iframe-wrap{position:relative;background:#e5e7eb}
+    .map-iframe-wrap iframe{width:100%;height:240px;display:block;filter:saturate(.92)}
+    .map-info{padding:1.5rem;text-align:center}
+    .map-info h4{font-size:15px;font-weight:600;color:var(--hijau);margin-bottom:.35rem}
+    .map-info p.sm{font-size:13px;color:var(--abu);margin-bottom:1rem}
+
+    /* FOOTER */
+    footer{background:#0d2218;padding:60px 2rem 30px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto}
+    .f-logo{width:58px;height:58px;border-radius:50%;overflow:hidden;margin-bottom:1rem}
+    .f-logo img{width:100%;height:100%;object-fit:cover}
+    .footer-brand h3{font-size:15px;font-weight:600;color:#fff;margin-bottom:.5rem}
+    .footer-brand p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7}
+    .footer-col h4{font-size:13px;font-weight:600;color:var(--emas2);margin-bottom:1rem;letter-spacing:.04em}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:.5rem}
+    .footer-col ul li a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+    .footer-col ul li a:hover{color:var(--emas2)}
+    .f-sosmed a{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;margin-bottom:.5rem;transition:color .2s}
+    .f-sosmed a:hover{color:var(--emas2)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:3rem;padding-top:1.5rem;text-align:center;font-size:12px;color:rgba(255,255,255,.3);max-width:1100px;margin-left:auto;margin-right:auto}
+    .footer-bottom span{color:var(--emas2)}
+
+    /* WA FLOAT */
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    /* DROPDOWN PENDAFTARAN */
+    .nav-daftar-wrap{position:relative}
+    .nav-daftar-drop{display:none;position:absolute;top:100%;right:0;margin-top:8px;background:#fff;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.18);overflow:hidden;min-width:180px;z-index:1001}
+    .nav-daftar-wrap:hover .nav-daftar-drop{display:block}
+    .nav-daftar-drop a{display:flex;align-items:center;gap:8px;padding:12px 16px;color:var(--hijau)!important;font-size:13px;font-weight:500;text-decoration:none;transition:.2s;border-bottom:1px solid rgba(0,0,0,.06)}
+    .nav-daftar-drop a:last-child{border-bottom:none}
+    .nav-daftar-drop a:hover{background:rgba(27,67,50,.06);color:var(--hijau)!important}
+    .nav-daftar-drop span{font-size:18px}
+
+    /* CTA DAFTAR SECTION */
+    #cta-daftar{background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 100%);padding:60px 2rem;text-align:center;position:relative;overflow:hidden}
+    #cta-daftar::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.12) 0%,transparent 70%);pointer-events:none}
+    .cta-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
+    .cta-badge{display:inline-block;background:rgba(212,160,23,.18);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:1.25rem;border:1px solid rgba(212,160,23,.4)}
+    .cta-content h2{font-family:'Amiri',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);color:#fff;margin-bottom:.75rem;line-height:1.3;font-weight:700}
+    .cta-content p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;max-width:540px;margin:0 auto 1.75rem}
+    .cta-daftar-wrap{position:relative;display:inline-block}
+    .btn-cta-daftar{display:inline-flex;align-items:center;gap:10px;padding:14px 38px;background:var(--emas);color:var(--hijau);border:none;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;transition:.25s;text-decoration:none;box-shadow:0 6px 18px rgba(212,160,23,.35);letter-spacing:.02em}
+    .btn-cta-daftar:hover{background:var(--emas2);transform:translateY(-2px);box-shadow:0 10px 24px rgba(212,160,23,.45)}
+    .cta-daftar-drop{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#fff;border-radius:8px;box-shadow:0 12px 32px rgba(0,0,0,.25);overflow:hidden;min-width:280px;z-index:50}
+    .cta-daftar-drop.open{display:block}
+    .cta-daftar-drop a{display:flex;align-items:center;gap:12px;padding:16px 20px;color:var(--hijau)!important;font-size:14px;font-weight:500;text-decoration:none;transition:.2s;border-bottom:1px solid rgba(0,0,0,.06);text-align:left}
+    .cta-daftar-drop a:last-child{border-bottom:none}
+    .cta-daftar-drop a:hover{background:rgba(212,160,23,.08)}
+    .cta-daftar-drop .ico{font-size:22px;width:32px;text-align:center}
+    .cta-daftar-drop .lbl{flex:1}
+    .cta-daftar-drop .lbl strong{display:block;color:var(--hijau);margin-bottom:2px}
+    .cta-daftar-drop .lbl small{display:block;font-size:11px;color:var(--abu);font-weight:400}
+
+    /* MODAL FORM */
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;align-items:center;justify-content:center;padding:1rem}
+    .modal-overlay.open{display:flex}
+    .modal-box{background:#fff;border-radius:10px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative}
+    .modal-header{background:var(--hijau);color:#fff;padding:1.25rem 1.5rem;border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:space-between}
+    .modal-header h3{font-size:16px;font-weight:600}
+    .modal-close{background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:0;line-height:1}
+    .modal-body{padding:1.5rem}
+    .form-group{margin-bottom:1.1rem}
+    .form-group label{display:block;font-size:13px;font-weight:600;color:var(--hijau);margin-bottom:6px}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1.5px solid rgba(27,67,50,.2);border-radius:6px;font-size:14px;font-family:'Poppins',sans-serif;transition:border .2s;outline:none}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--hijau3)}
+    .form-group textarea{resize:vertical;min-height:70px}
+    .form-group .file-label{display:flex;align-items:center;gap:8px;padding:12px;border:2px dashed rgba(27,67,50,.2);border-radius:6px;cursor:pointer;font-size:13px;color:var(--abu);transition:.2s;justify-content:center}
+    .form-group .file-label:hover{border-color:var(--hijau3);color:var(--hijau3)}
+    .form-group input[type="file"]{display:none}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .btn-submit{width:100%;padding:12px;background:var(--hijau);color:#fff;border:none;border-radius:6px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;transition:.2s;margin-top:.5rem}
+    .btn-submit:hover{background:var(--hijau2)}
+    .form-note{font-size:11px;color:var(--abu);text-align:center;margin-top:1rem}
+    .form-section{margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas)}
+    .form-section:first-of-type{margin-top:0}
+    .form-section h4{font-size:13px;font-weight:700;color:var(--hijau);letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+    .form-section h4 .ico{background:var(--hijau);color:var(--emas2);width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+    .form-group .hint{display:block;font-size:11px;color:var(--abu);margin-top:4px;font-weight:400;font-style:italic}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .nav-menu{display:none}
+      .hamburger{display:flex}
+      .tentang-grid,.kontak-grid,.footer-grid{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .info-grid{grid-template-columns:1fr}
+      .sarana-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+  <p>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</p>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren Ulumul Qur'an"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#fitur">Fitur</a></li>
+    <li><a href="#keunggulan">Keunggulan</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#pengasuh">Pengasuh</a></li>
+    <li><a href="#masyayikh">Masyayikh</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#news">Berita</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+    <li class="nav-daftar-wrap">
+      <a href="javascript:void(0)" class="nav-daftar">Pendaftaran ▾</a>
+      <div class="nav-daftar-drop">
+        <a href="javascript:void(0)" onclick="openModal()"><span>📝</span> Daftar Online</a>
+        <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar secara offline di Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank"><span>💬</span> Daftar Offline (WA)</a>
+      </div>
+    </li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="#fitur">Fitur</a>
+  <a href="#keunggulan">Keunggulan</a>
+  <a href="#tentang">Tentang</a>
+  <a href="#pengasuh">Pengasuh</a>
+  <a href="#masyayikh">Masyayikh</a>
+  <a href="#program">Program</a>
+  <a href="#news">Berita</a>
+  <a href="#kontak">Kontak</a>
+  <a href="javascript:void(0)" onclick="openModal();document.getElementById('mobMenu').classList.remove('open')">📝 Daftar Online</a>
+  <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar secara offline di Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank">💬 Daftar Offline (WA)</a>
+</div>
+
+<!-- HERO SLIDER -->
+<div class="slider">
+  <div class="slide active" style="background-image:url('sampul pesantren_20260218_063829_0000.png')">
+  </div>
+  <div class="slide" style="background-image:url('sampul pondok.png')">
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <p class="arabic">مَعْهَدُ عُلُوْمِ الْقُرْآنِ هَاشِم مُزَادِي</p>
+      <h1 class="slide-h1">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</h1>
+      <p class="slide-p">Membentuk Generasi Qur'ani yang Berilmu, Berakhlak Mulia, dan Siap Mengabdi kepada Umat</p>
+      <p class="slide-addr">📍 Jl. Sunan Kalijaga, Kel. Karang Senang Sp.3, Distrik Kuala Kencana, Papua Tengah</p>
+      <div class="slide-btns">
+        <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi" class="btn-gold" target="_blank" rel="noopener">Daftar Sekarang</a>
+        <a href="#tentang" class="btn-white">Tentang Kami</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide" style="background-image:url('HKQ2.jpg')">
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <p class="arabic">تَحْفِيْظُ الْقُرْآنِ الْكَرِيْم</p>
+      <h1 class="slide-h1">Program Tahfidz<br>Al-Qur'an 30 Juz</h1>
+      <p class="slide-p">Metode talaqqi dan musyafahah bersama pengajar bersanad yang terpercaya dan berpengalaman</p>
+      <div class="slide-btns">
+        <a href="#program" class="btn-gold">Lihat Program</a>
+        <a href="#kontak" class="btn-white">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+  <button class="slider-prev" onclick="prevSlide()">&#8249;</button>
+  <button class="slider-next" onclick="nextSlide()">&#8250;</button>
+  <div class="slider-dots" id="sliderDots"></div>
+</div>
+
+<!-- FITUR -->
+<section id="fitur">
+  <div class="sec-head">
+    <span class="sec-badge">Layanan & Fitur</span>
+    <h2 class="sec-title">Fitur Aplikasi Pesantren</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="fitur-grid">
+    <a href="#keunggulan" class="fitur-card">
+      <span class="fitur-icon">⭐</span>
+      <h3>Keunggulan</h3>
+      <p>Mengapa memilih Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</p>
+    </a>
+    <a href="#tentang" class="fitur-card">
+      <span class="fitur-icon">🕌</span>
+      <h3>Tentang Pesantren</h3>
+      <p>Sejarah, visi, misi dan profil pesantren</p>
+    </a>
+    <a href="#pengasuh" class="fitur-card">
+      <span class="fitur-icon">👨‍🏫</span>
+      <h3>Pengasuh</h3>
+      <p>Profil pasangan pengasuh PPUQHM</p>
+    </a>
+    <a href="#masyayikh" class="fitur-card">
+      <span class="fitur-icon">📜</span>
+      <h3>Masyayikh</h3>
+      <p>Para masyayikh dan dewan pengajar pesantren</p>
+    </a>
+    <a href="#program" class="fitur-card">
+      <span class="fitur-icon">📖</span>
+      <h3>Program Pesantren</h3>
+      <p>Program pendidikan Al-Qur'an, kitab kuning, dan kegiatan pesantren</p>
+    </a>
+    <a href="#news" class="fitur-card">
+      <span class="fitur-icon">📰</span>
+      <h3>Berita Pesantren</h3>
+      <p>Info terkini kegiatan dan prestasi santri</p>
+    </a>
+    <a href="#kontak" class="fitur-card">
+      <span class="fitur-icon">📞</span>
+      <h3>Hubungi Kami</h3>
+      <p>Kontak langsung pengurus pesantren</p>
+    </a>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section id="keunggulan" style="background:#fff">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Keunggulan Kami</span>
+      <h2 class="sec-title">Mengapa Memilih PPUQHM?</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="keunggulan-grid">
+      <div class="keunggulan-card">
+        <div class="keunggulan-num">01</div>
+        <h3>Pengajar Ahli di Bidangnya</h3>
+        <p>Tenaga pengajar profesional dan kompeten yang memiliki keahlian mendalam di bidang masing-masing.</p>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-num">02</div>
+        <h3>Program Bin-Nadhor & Tahfidz 30 Juz Bersanad</h3>
+        <p>Program hafalan Al-Qur'an 30 juz dengan metode bin-nadhor dan sanad yang terpercaya hingga Rasulullah SAW.</p>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-num">03</div>
+        <h3>Jaringan Internasional</h3>
+        <p>Terhubung dengan jaringan pesantren dan lembaga pendidikan Islam di tingkat internasional.</p>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-num">04</div>
+        <h3>Berfaham Ahlussunnah wal Jama'ah</h3>
+        <p>Menanamkan pemahaman Islam yang moderat berdasarkan faham Ahlussunnah wal Jama'ah.</p>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-num">05</div>
+        <h3>Beasiswa Santri Dhuafa & Berprestasi</h3>
+        <p>Memberikan kesempatan bagi santri kurang mampu dan berprestasi melalui program beasiswa.</p>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-num">06</div>
+        <h3>Program Tahfidz Mutqin Metode Arbain</h3>
+        <p>Metode Arbain yang terbukti efektif untuk menghasilkan hafalan yang mutqin dan berkualitas.</p>
+      </div>
+      <div class="keunggulan-card full">
+        <div class="keunggulan-num">07</div>
+        <h3>Biaya Terjangkau</h3>
+        <p>Biaya pendidikan yang terjangkau tanpa mengurangi kualitas pembelajaran dan fasilitas pesantren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Tiga Hal Penting yang Wajib Diketahui</span>
+      <h2 class="sec-title">Tentang Pesantren</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="tentang-grid">
+      <div>
+        <div class="tab-btns">
+          <button class="tab-btn active" onclick="showTab('profil',this)">Profil & Sejarah</button>
+          <button class="tab-btn" onclick="showTab('visimisi',this)">Visi & Misi</button>
+          <button class="tab-btn" onclick="showTab('sistem',this)">Sistem Belajar</button>
+          <button class="tab-btn" onclick="showTab('sarana',this)">Sarana</button>
+        </div>
+        <div class="tab-c active" id="tab-profil">
+          <h3>Pesantren Ulumul Qur'an Hasyim Muzadi</h3>
+          <p>Pesantren Ulumul Qur'an Hasyim Muzadi adalah lembaga pendidikan Islam yang berdedikasi dalam mencetak generasi hafidz Al-Qur'an yang unggul, berakhlak mulia, dan berwawasan luas di tanah Papua.</p>
+          <p>Berlokasi di Jl. Sunan Kalijaga, Kel. Karang Senang Sp.3, Distrik Kuala Kencana, Papua Tengah, kami hadir sebagai pusat pendidikan Islam yang memadukan metode tahfidz dengan pembinaan karakter Islami yang kuat dan menyeluruh.</p>
+          <p>Pesantren ini mengembangkan kurikulum yang berfokus pada penghafalan Al-Qur'an secara terstruktur, dipadukan dengan ilmu-ilmu agama seperti fiqih, aqidah, bahasa Arab, serta pendidikan karakter berbasis nilai-nilai Islam.</p>
+          <a href="profil.html" class="btn-outline" style="margin-top:1rem">Selengkapnya →</a>
+        </div>
+        <div class="tab-c" id="tab-visimisi">
+          <h3>Visi & Misi</h3>
+          <h4 style="font-size:14px;font-weight:600;color:var(--hijau);margin-bottom:.5rem;margin-top:.5rem">🎯 Visi</h4>
+          <p style="background:rgba(212,160,23,.08);border-left:3px solid var(--emas);padding:1rem 1.25rem;border-radius:0 6px 6px 0;font-style:italic">"Menjadi pesantren tahfidzul Qur'an unggulan yang melahirkan generasi ahlul Qur'an berkarakter Aswaja An-Nahdliyah dan berwawasan Islam Wasathiyah untuk kemaslahatan umat dan bangsa."</p>
+        </div>
+        <div class="tab-c" id="tab-sistem">
+          <h3>Sistem Pembelajaran Tahfidz</h3>
+          <p>Pesantren Ulumul Qur'an Hasyim Muzadi menggunakan sistem pembelajaran terpadu yang memadukan pendekatan tahfidz modern dengan kajian ilmu-ilmu keislaman yang mendalam dan autentik.</p>
+          <p>Metode talaqqi dan musyafahah menjadi tulang punggung program, di mana setiap santri menyetorkan hafalan langsung kepada pengajar bersanad sehingga kualitas bacaan terjaga dengan sangat baik.</p>
+          <p>Selain tahfidz, santri juga mendapatkan pembelajaran ilmu tajwid, tafsir, bahasa Arab, fiqih, dan aqidah yang diajarkan secara terstruktur dan berjenjang sesuai kemampuan masing-masing santri.</p>
+        </div>
+        <div class="tab-c" id="tab-sarana">
+          <h3>Sarana & Prasarana</h3>
+          <p>Pesantren dilengkapi berbagai fasilitas untuk mendukung proses belajar dan kehidupan santri secara nyaman dan optimal.</p>
+          <div class="sarana-grid">
+            <div class="sarana-item"><h4>🕌 Masjid</h4><p>Tempat ibadah dan kegiatan keagamaan</p></div>
+            <div class="sarana-item"><h4>🏠 Asrama</h4><p>Tempat tinggal santri yang nyaman</p></div>
+            <div class="sarana-item"><h4>⚽ Ekskul</h4><p>Olahraga, seni islami, hadroh, dan Pencak Silat Pagar Nusa</p></div>
+            <div class="sarana-item"><h4>🎓 Lembaga Pendidikan Formal</h4><p>SMP dan SMA terakreditasi</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="img-box" style="padding:0;overflow:hidden">
+        <img src="sampul pondok.png" alt="Pondok Pesantren Ulumul Qur'an Hasyim Muzadi" style="width:100%;height:100%;object-fit:cover;min-height:360px">
+      </div>
+    </div>
+    <!-- MISI BLOCK (hanya tampil saat tab Visi & Misi aktif) -->
+    <div class="misi-extra" id="misi-extra-block">
+      <h4 style="font-size:14px;font-weight:600;color:var(--hijau);margin-bottom:1rem;text-align:center;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block">📌 Misi</h4>
+      <div class="misi-mini-grid">
+        <div class="misi-mini"><span class="misi-mini-n">1</span><p>Menyelenggarakan pendidikan tahfidzul Qur'an dengan sanad muttashil hingga Rasulullah SAW.</p></div>
+        <div class="misi-mini"><span class="misi-mini-n">2</span><p>Mengembangkan kajian ilmu-ilmu Al-Qur'an dan ilmu syariah dengan tradisi kitab kuning klasik NU.</p></div>
+        <div class="misi-mini"><span class="misi-mini-n">3</span><p>Membentuk karakter santri yang berakhlak Qur'ani sesuai uswah hasanah Rasulullah SAW.</p></div>
+        <div class="misi-mini"><span class="misi-mini-n">4</span><p>Menanamkan manhaj Ahlus Sunnah wal Jama'ah An-Nahdliyah sebagai landasan beragama.</p></div>
+        <div class="misi-mini"><span class="misi-mini-n">5</span><p>Mengamalkan pemikiran Islam Wasathiyah KH. Ahmad Hasyim Muzadi sebagai moderasi beragama.</p></div>
+        <div class="misi-mini"><span class="misi-mini-n">6</span><p>Berkhidmah aktif kepada masyarakat Mimika dan Papua melalui pendidikan, dakwah, dan sosial.</p></div>
+        <div class="misi-mini"><span class="misi-mini-n">7</span><p>Mempersiapkan kader ulama berwawasan internasional melalui bahasa Arab dan Inggris.</p></div>
+      </div>
+      <a href="visi-misi.html" class="btn-outline" style="margin-top:1.5rem">Selengkapnya →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid">
+    <div><div class="stat-num">95+</div><div class="stat-lbl">Santri Aktif</div></div>
+    <div><div class="stat-num">14+</div><div class="stat-lbl">Hafidz/Hafidzoh</div></div>
+    <div><div class="stat-num">7+</div><div class="stat-lbl">Pengajar</div></div>
+    <div><div class="stat-num">8+</div><div class="stat-lbl">Tahun Berdiri</div></div>
+  </div>
+</section>
+
+<!-- PENGASUH -->
+<section id="pengasuh" style="background:linear-gradient(135deg,#fafaf7 0%,#f5f1e6 100%);position:relative;overflow:hidden">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Pengasuh Pondok</span>
+      <h2 class="sec-title">Profil Pengasuh</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="pengasuh-grid">
+      <div class="pengasuh-foto-wrap">
+        <div class="pengasuh-foto">
+          <img src="pengasuh.jpeg" alt="Gus Mursyid Adi Saputra & Ning Siti Imroatus Sholihah">
+        </div>
+        <div class="pengasuh-stamp">
+          <span class="stamp-ar">معهد الشيخ هاشم مزادي</span>
+        </div>
+      </div>
+      <div class="pengasuh-info">
+        <p class="arabic-quote">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</p>
+        <h3>Sepasang Hafidz–Hafidzah dari Tanah Kendal</h3>
+        <p class="pengasuh-desc">PPUQHM diasuh oleh pasangan suami-istri yang dipertemukan oleh <strong>empat lapis takdir indah</strong>, membawa total <strong>6 jalur sanad Al-Qur'an muttashil</strong> hingga KH. Muhammad Munawwir Krapyak, dan menyatukan <strong>8 tradisi pesantren NU</strong> dalam satu kemitraan dakwah di tanah Papua.</p>
+        <div class="pengasuh-card-grid">
+          <div class="pengasuh-card">
+            <div class="pengasuh-name-tag" style="color:var(--hijau)">Pengasuh / Pendiri</div>
+            <h4>Gus Mursyid Adi Saputra<br><span style="font-size:13px;color:var(--abu);font-weight:400">S.Ag., Al-Hafidz</span></h4>
+            <ul class="pengasuh-mini-list">
+              <li>Dzurriyah Sunan Giri (43 generasi ke Rasulullah SAW)</li>
+              <li>Sertifikat NAAT Indonesia & Naqobah Maroko</li>
+              <li>4 jalur sanad ke Mbah Munawwir Krapyak</li>
+              <li>Alumni STKQ Al-Hikam Depok (Cumlaude)</li>
+              <li>Univ. Az-Zaitunah Tunisia (Beasiswa PBNU)</li>
+            </ul>
+            <a href="gus-mursyid.html" class="pengasuh-card-link" style="border-color:var(--hijau);color:var(--hijau)">Biografi Selengkapnya →</a>
+          </div>
+          <div class="pengasuh-card">
+            <div class="pengasuh-name-tag" style="color:var(--merah)">Pengasuh Santri Putri</div>
+            <h4>Ning Siti Imroatus Sholihah<br><span style="font-size:13px;color:var(--abu);font-weight:400">S.Pd., Al-Hafidzah</span></h4>
+            <ul class="pengasuh-mini-list">
+              <li>Hafidzah 30 juz dengan sanad muttashil</li>
+              <li>Alumni 4 pesantren NU ternama</li>
+              <li>2 jalur sanad ke Mbah Munawwir Krapyak</li>
+              <li>S.Pd. PGMI UNSIQ Wonosobo</li>
+              <li>Fokus pendidikan anak & santri putri</li>
+            </ul>
+            <a href="ning-siti.html" class="pengasuh-card-link" style="border-color:var(--merah);color:var(--merah)">Biografi Selengkapnya →</a>
+          </div>
+        </div>
+        <div class="pengasuh-quote">
+          <p>"Pasangan ini bukan sekadar pasangan suami-istri biasa. Mereka adalah dua kurator tradisi yang masing-masing membawa kekayaan tersendiri dari masa pendidikan mereka, dan kini menyatukannya untuk membangun pesantren yang kaya warna." — <em>Pernikahan 27 Desember 2018</em></p>
+        </div>
+        <a href="pengasuh.html" class="btn-pengasuh">Baca Profil Lengkap →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MASYAYIKH -->
+<section id="masyayikh" style="background:linear-gradient(135deg,#0d2218 0%,#1b4332 100%);color:#fff;padding:80px 2rem">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge" style="background:rgba(212,160,23,.15);color:var(--emas2)">Dewan Pengajar</span>
+      <h2 class="sec-title" style="color:#fff">Masyayikh Pengasuh PPUQHM</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="masyayikh-wrap">
+      <div class="masyayikh-foto">
+        <img src="semua masyayikh.png" alt="Masyayikh Pengasuh PPUQHM">
+      </div>
+      <div class="masyayikh-info">
+        <p class="masyayikh-arabic">السَّلَامُ عَلَيْكُمْ يَا أَهْلَ الْعِلْمِ</p>
+        <h3>Para Masyayikh & Guru Pesantren</h3>
+        <p>PPUQHM diberkahi oleh keberadaan <strong>para masyayikh</strong> yang menjadi sumber keilmuan, sanad, dan barakah bagi seluruh sivitas pesantren. Mereka adalah para ulama, guru, dan tokoh panutan yang silsilah keilmuannya bersambung hingga Rasulullah SAW.</p>
+        <p>Kehadiran para masyayikh menjadi <strong>jangkar spiritual</strong> bagi PPUQHM — menjamin keaslian sanad, kedalaman ilmu, dan kebersihan manhaj Aswaja An-Nahdliyah yang menjadi identitas pesantren.</p>
+        <a href="masyayikh.html" class="btn-masyayikh">📜 Biografi Semua Masyayikh →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM PENDIDIKAN -->
+<section id="program" style="background:var(--putih)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Program Unggulan</span>
+      <h2 class="sec-title">Program Pendidikan Pesantren</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="program-grid">
+      <div class="program-card">
+        <button class="program-card-toggle" onclick="toggleProgram(this)">
+          <div class="program-card-head">
+            <div class="program-card-icon">📖</div>
+            <h3>Pendidikan Al-Qur'an</h3>
+          </div>
+          <span class="material-icons ico">add</span>
+        </button>
+        <ul>
+          <li>Metode Tilawati</li>
+          <li>Program Al-Qur'an Bin Nadhor 30 Juz Bersanad</li>
+          <li>Program Tahfidz Al-Qur'an Bersanad</li>
+          <li>Metode Tahfidz Mutqin Arbain</li>
+          <li>Tasmi' Al-Qur'an</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <button class="program-card-toggle" onclick="toggleProgram(this)">
+          <div class="program-card-head">
+            <div class="program-card-icon">📚</div>
+            <h3>Kajian Kitab Kuning</h3>
+          </div>
+          <span class="material-icons ico">add</span>
+        </button>
+        <ul>
+          <li>Akidah</li>
+          <li>Fikih</li>
+          <li>Akhlak</li>
+          <li>Hadis</li>
+          <li>Tajwid</li>
+          <li>Ulumul Qur'an</li>
+          <li>Tasawwuf</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <button class="program-card-toggle" onclick="toggleProgram(this)">
+          <div class="program-card-head">
+            <div class="program-card-icon">🕌</div>
+            <h3>Amaliyah Aswaja</h3>
+          </div>
+          <span class="material-icons ico">add</span>
+        </button>
+        <ul>
+          <li>Yasin & Tahlil</li>
+          <li>Istighotsah Musabiat</li>
+          <li>Mujahadah</li>
+          <li>Maulid Al-Barzanji</li>
+          <li>Dll</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <button class="program-card-toggle" onclick="toggleProgram(this)">
+          <div class="program-card-head">
+            <div class="program-card-icon">🎵</div>
+            <h3>Kesenian</h3>
+          </div>
+          <span class="material-icons ico">add</span>
+        </button>
+        <ul>
+          <li>Rebana</li>
+          <li>Pencak Silat Pagar Nusa</li>
+          <li>Dll</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <button class="program-card-toggle" onclick="toggleProgram(this)">
+          <div class="program-card-head">
+            <div class="program-card-icon">🎤</div>
+            <h3>Public Speaking</h3>
+          </div>
+          <span class="material-icons ico">add</span>
+        </button>
+        <ul>
+          <li>Muhadhoroh</li>
+          <li>Pelatihan Khutbah</li>
+          <li>Dll</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BERITA -->
+<section id="news">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Ulumul Qur'an News</span>
+      <h2 class="sec-title">Berita Terkini</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="news-grid">
+      <a href="berita-1.html" class="news-card">
+        <div class="news-img" style="background:none;padding:0"><img src="HKQ2.jpg" alt="Haflah Khitmil Qur'an II" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="news-body">
+          <p class="news-cat">Kegiatan</p>
+          <h3 class="news-title">Haflah Khitmil Qur'an II</h3>
+          <p class="news-date">Minggu, 5 Oktober 2025</p>
+        </div>
+      </a>
+      <a href="berita-2.html" class="news-card">
+        <div class="news-img" style="background:none;padding:0"><img src="berita 2/utama.jpg" alt="Penyerahan Surat Keputusan (SK)" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
+        <div class="news-body">
+          <p class="news-cat">Kegiatan</p>
+          <h3 class="news-title">Penyerahan Surat Keputusan (SK) UPZ Hasyim Muzadi</h3>
+          <p class="news-date">4 Mei 2026</p>
+        </div>
+      </a>
+      <a href="berita-3.html" class="news-card">
+        <div class="news-img">📅</div>
+        <div class="news-body">
+          <p class="news-cat">Pengumuman</p>
+          <h3 class="news-title">Pendaftaran Santri Baru Tahun Ajaran 2025/2026 Resmi Dibuka</h3>
+          <p class="news-date">1 Maret 2025</p>
+        </div>
+      </a>
+    </div>
+    <div class="center-btn"><a href="berita.html" class="btn-outline">Lihat Semua Berita →</a></div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge" style="background:rgba(255,255,255,.1);color:var(--emas2)">Sejarah Pesantren</span>
+      <h2 class="sec-title" style="color:#fff">Latar Belakang Berdirinya Pesantren</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="sejarah-grid">
+      <a href="cikal-bakal.html" class="sejarah-card">
+        <div class="sejarah-card-icon">🌱</div>
+        <h3>Cikal Bakal</h3>
+        <p>Awal mula berdirinya pesantren dari program Al-Hikam Depok dan pengabdian masyarakat di SP3 Mimika.</p>
+        <span class="sejarah-lnk">Baca Selengkapnya →</span>
+      </a>
+      <a href="sejarah-berdirinya.html" class="sejarah-card">
+        <div class="sejarah-card-icon">📖</div>
+        <h3>Sejarah Berdirinya</h3>
+        <p>Perjalanan pembentukan Pondok Pesantren Ulumul Qur'an Hasyim Muzadi secara resmi.</p>
+        <span class="sejarah-lnk">Baca Selengkapnya →</span>
+      </a>
+      <a href="peresmian.html" class="sejarah-card">
+        <div class="sejarah-card-icon">🎉</div>
+        <h3>Peresmian</h3>
+        <p>Momen bersejarah peresmian pesantren dan perkembangannya hingga saat ini.</p>
+        <span class="sejarah-lnk">Baca Selengkapnya →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA DAFTAR -->
+<section id="cta-daftar">
+  <div class="cta-content">
+    <span class="cta-badge">Penerimaan Santri Baru 2026/2027</span>
+    <h2>Mari Bergabung di PPUQHM</h2>
+    <p>Daftarkan putra-putri Anda menjadi bagian dari generasi Qur'ani berkarakter Aswaja-Wasathiyah. Pilih metode pendaftaran yang paling nyaman.</p>
+    <div class="cta-daftar-wrap">
+      <button class="btn-cta-daftar" onclick="toggleCtaDaftar(event)">📝 Daftar Sekarang ▾</button>
+      <div class="cta-daftar-drop" id="ctaDaftarDrop">
+        <a href="javascript:void(0)" onclick="openModal();closeCtaDaftar()">
+          <span class="ico">💻</span>
+          <span class="lbl"><strong>Daftar Online</strong><small>Isi formulir di halaman ini</small></span>
+        </a>
+        <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftarkan santri baru di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank">
+          <span class="ico">💬</span>
+          <span class="lbl"><strong>Daftar Offline (WhatsApp)</strong><small>Chat langsung Mbak Novita</small></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Hubungi Kami</span>
+      <h2 class="sec-title">Informasi Kontak</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="kontak-grid">
+      <div>
+        <div class="kontak-row">
+          <div class="kontak-ico">📍</div>
+          <div><h4>Alamat</h4><p>Jl. Sunan Kalijaga, Kel. Karang Senang Sp.3,<br>Distrik Kuala Kencana, Papua Tengah</p></div>
+        </div>
+        <div class="kontak-row">
+          <div class="kontak-ico">💬</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/6282239693243" target="_blank">Mbak Novita: 0822-3969-3243</a><br>
+            <a href="https://wa.me/6281248892290" target="_blank">Kang Bedul: 0812-4889-2290</a>
+          </div>
+        </div>
+        <div class="kontak-row">
+          <div class="kontak-ico">🕐</div>
+          <div><h4>Jam Layanan</h4><p>Setiap Hari: 08.00 – 17.00 WIT<br>Waktu Sowan: Jadwal sesuai pengasuh</p></div>
+        </div>
+      </div>
+      <div class="map-box" style="padding:0;overflow:hidden">
+        <div class="map-iframe-wrap">
+          <iframe src="https://maps.google.com/maps?q=Pondok+Pesantren+Ulumul+Quran+Hasyim+Muzadi+SP3+Kuala+Kencana+Mimika&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="240" style="border:0;display:block" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="map-info">
+          <h4>Kuala Kencana, Papua Tengah</h4>
+          <p class="sm">Distrik Kuala Kencana, Kabupaten Mimika</p>
+          <a href="https://maps.app.goo.gl/qdYLxSF4FLCNgufA8" target="_blank" class="btn-outline">Buka Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="f-logo"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+      <h3>Pesantren Ulumul Qur'an Hasyim Muzadi</h3>
+      <p>Jl. Sunan Kalijaga, Kel. Karang Senang Sp.3,<br>Distrik Kuala Kencana, Papua Tengah</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigasi</h4>
+      <ul>
+        <li><a href="#fitur">Fitur</a></li>
+        <li><a href="#keunggulan">Keunggulan</a></li>
+        <li><a href="#tentang">Tentang Pesantren</a></li>
+        <li><a href="#pengasuh">Pengasuh</a></li>
+        <li><a href="#masyayikh">Masyayikh</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#news">Berita</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak & Sosial Media</h4>
+      <div class="f-sosmed">
+        <a href="https://wa.me/6282239693243" target="_blank">💬 Mbak Novita: 0822-3969-3243</a>
+        <a href="https://wa.me/6281248892290" target="_blank">💬 Kang Bedul: 0812-4889-2290</a>
+        <a href="https://www.facebook.com/share/15kT4C5bao2/" target="_blank">📘 Facebook: Ponpes Hasyim Muzadi</a>
+        <a href="https://www.instagram.com/ppuqhm.official/" target="_blank">📸 Instagram: @ppuqhm.official</a>
+        <a href="https://www.instagram.com/media.uqhm/" target="_blank">📸 Instagram: @media.uqhm</a>
+        <a href="https://youtube.com/@ppuqhm" target="_blank">▶️ YouTube: @ppuqhm</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>©2025 | <span>Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+<!-- MODAL PENDAFTARAN -->
+<div class="modal-overlay" id="modalDaftar" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>Formulir Pendaftaran Santri Baru</h3>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="formDaftar" onsubmit="submitForm(event)">
+
+        <!-- ============ DATA SANTRI ============ -->
+        <div class="form-section">
+          <h4><span class="ico">1</span> Data Santri</h4>
+        </div>
+        <div class="form-group">
+          <label>Nama Lengkap Santri *</label>
+          <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>NIK / NISN</label>
+            <input type="text" name="nik" placeholder="16 digit NIK / 10 digit NISN">
+            <span class="hint">Boleh dikosongkan jika belum ada</span>
+          </div>
+          <div class="form-group">
+            <label>Jenis Kelamin *</label>
+            <select name="jenis_kelamin" required>
+              <option value="" disabled selected>Pilih</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tempat Lahir *</label>
+            <input type="text" name="tempat_lahir" placeholder="Kota/Kabupaten" required>
+          </div>
+          <div class="form-group">
+            <label>Tanggal Lahir *</label>
+            <input type="date" name="tanggal_lahir" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Alamat Lengkap Santri *</label>
+          <textarea name="alamat" placeholder="Jalan, RT/RW, Desa, Kecamatan, Kabupaten, Provinsi" required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>No. HP Santri</label>
+            <input type="tel" name="hp_santri" placeholder="Kosongkan jika belum punya">
+            <span class="hint">Opsional</span>
+          </div>
+          <div class="form-group">
+            <label>Jenjang Masuk *</label>
+            <select name="jenjang" required>
+              <option value="" disabled selected>Pilih jenjang</option>
+              <option value="Tahfidz Saja">Tahfidz Saja (non-formal)</option>
+              <option value="SMP">SMP</option>
+              <option value="SMA">SMA</option>
+              <option value="Mahasantri">Mahasantri (kuliah)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Asal Sekolah Terakhir *</label>
+            <input type="text" name="asal_sekolah" placeholder="Nama sekolah/madrasah" required>
+          </div>
+          <div class="form-group">
+            <label>Tahun Lulus *</label>
+            <input type="text" name="tahun_lulus" placeholder="Contoh: 2026" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Riwayat Hafalan Al-Qur'an *</label>
+          <select name="hafalan" required>
+            <option value="" disabled selected>Pilih jumlah hafalan</option>
+            <option value="Belum hafal">Belum hafal / Pemula</option>
+            <option value="1-5 juz">1 – 5 juz</option>
+            <option value="6-15 juz">6 – 15 juz</option>
+            <option value="16-29 juz">16 – 29 juz</option>
+            <option value="30 juz">30 juz (sudah khatam)</option>
+          </select>
+        </div>
+
+        <!-- ============ DATA ORANG TUA ============ -->
+        <div class="form-section">
+          <h4><span class="ico">2</span> Data Orang Tua / Wali</h4>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nama Ayah *</label>
+            <input type="text" name="ayah" placeholder="Nama lengkap ayah" required>
+          </div>
+          <div class="form-group">
+            <label>Pekerjaan Ayah *</label>
+            <input type="text" name="pekerjaan_ayah" placeholder="Contoh: Petani, Guru, dll" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nama Ibu *</label>
+            <input type="text" name="ibu" placeholder="Nama lengkap ibu" required>
+          </div>
+          <div class="form-group">
+            <label>Pekerjaan Ibu *</label>
+            <input type="text" name="pekerjaan_ibu" placeholder="Contoh: IRT, Guru, dll" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Penghasilan Rata-rata Orang Tua *</label>
+          <select name="penghasilan" required>
+            <option value="" disabled selected>Pilih rentang penghasilan</option>
+            <option value="< Rp 1.000.000">Kurang dari Rp 1.000.000</option>
+            <option value="Rp 1.000.000 - Rp 3.000.000">Rp 1.000.000 – Rp 3.000.000</option>
+            <option value="Rp 3.000.000 - Rp 5.000.000">Rp 3.000.000 – Rp 5.000.000</option>
+            <option value="Rp 5.000.000 - Rp 10.000.000">Rp 5.000.000 – Rp 10.000.000</option>
+            <option value="> Rp 10.000.000">Lebih dari Rp 10.000.000</option>
+          </select>
+          <span class="hint">Untuk pertimbangan beasiswa santri dhuafa</span>
+        </div>
+        <div class="form-group">
+          <label>No. HP / WhatsApp Orang Tua *</label>
+          <input type="tel" name="hp" placeholder="Contoh: 081234567890" required>
+        </div>
+
+        <!-- ============ DOKUMEN ============ -->
+        <div class="form-section">
+          <h4><span class="ico">3</span> Upload Dokumen</h4>
+        </div>
+        <div class="form-group">
+          <label>Foto Santri (3x4 / formal)</label>
+          <label class="file-label" id="fileLabel-foto">
+            <span>📎</span> Pilih foto santri
+            <input type="file" name="foto" accept="image/*" onchange="updateFileName(this,'foto')">
+          </label>
+          <span class="hint">Pas foto wajah jelas, latar bebas</span>
+        </div>
+        <div class="form-group">
+          <label>Foto Kartu Keluarga (KK)</label>
+          <label class="file-label" id="fileLabel-kk">
+            <span>📎</span> Pilih foto Kartu Keluarga
+            <input type="file" name="kk" accept="image/*" onchange="updateFileName(this,'kk')">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Foto Akta Kelahiran</label>
+          <label class="file-label" id="fileLabel-akta">
+            <span>📎</span> Pilih foto Akta Kelahiran
+            <input type="file" name="akta" accept="image/*" onchange="updateFileName(this,'akta')">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>Ijazah / SKL Terakhir</label>
+          <label class="file-label" id="fileLabel-ijazah">
+            <span>📎</span> Pilih foto Ijazah / SKL
+            <input type="file" name="ijazah" accept="image/*" onchange="updateFileName(this,'ijazah')">
+          </label>
+          <span class="hint">Surat Keterangan Lulus dari sekolah sebelumnya</span>
+        </div>
+
+        <button type="submit" class="btn-submit">📩 Kirim Pendaftaran via WhatsApp</button>
+        <p class="form-note">Data akan dikirim ke pengurus pesantren via WhatsApp. Dokumen yang sudah dipilih harap dikirim ulang setelah WhatsApp terbuka.<br>Field bertanda <strong>*</strong> wajib diisi.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+// LOADER
+window.addEventListener('load',()=>{setTimeout(()=>{const l=document.getElementById('loader');l.style.opacity='0';setTimeout(()=>l.style.display='none',500)},1200)});
+
+// HERO SLIDER
+let cur=0;
+const slides=document.querySelectorAll('.slide');
+const dotsEl=document.getElementById('sliderDots');
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>goSlide(i);dotsEl.appendChild(d)});
+function goSlide(n){slides[cur].classList.remove('active');dotsEl.children[cur].classList.remove('active');cur=(n+slides.length)%slides.length;slides[cur].classList.add('active');dotsEl.children[cur].classList.add('active')}
+function nextSlide(){goSlide(cur+1)}function prevSlide(){goSlide(cur-1)}
+setInterval(()=>goSlide(cur+1),5000);
+
+// TABS
+function showTab(id,btn){document.querySelectorAll('.tab-c').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');btn.classList.add('active');const me=document.getElementById('misi-extra-block');if(me){if(id==='visimisi')me.classList.add('active');else me.classList.remove('active')}}
+
+// FAQ
+function toggleFaq(btn){const a=btn.nextElementSibling;const open=btn.classList.contains('open');document.querySelectorAll('.faq-q').forEach(b=>{b.classList.remove('open');b.nextElementSibling.style.maxHeight='0'});if(!open){btn.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}}
+
+// PROGRAM TOGGLE
+function toggleProgram(btn){const ul=btn.nextElementSibling;const isOpen=btn.classList.contains('open');document.querySelectorAll('.program-card-toggle').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open')});if(!isOpen){btn.classList.add('open');ul.classList.add('open')}}
+
+// GALERI
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+
+// NAVBAR SHADOW
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.boxShadow=window.scrollY>40?'0 2px 16px rgba(0,0,0,.25)':'none'});
+
+// CTA DAFTAR DROPDOWN
+function toggleCtaDaftar(e){e.stopPropagation();document.getElementById('ctaDaftarDrop').classList.toggle('open')}
+function closeCtaDaftar(){document.getElementById('ctaDaftarDrop').classList.remove('open')}
+document.addEventListener('click',e=>{const d=document.getElementById('ctaDaftarDrop');if(d&&!d.parentElement.contains(e.target))d.classList.remove('open')});
+
+// MODAL
+function openModal(){document.getElementById('modalDaftar').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('modalDaftar').classList.remove('open');document.body.style.overflow=''}
+const fileLabels={foto:'Pilih foto santri',kk:'Pilih foto Kartu Keluarga',akta:'Pilih foto Akta Kelahiran',ijazah:'Pilih foto Ijazah / SKL'};
+function updateFileName(input,key){const label=document.getElementById('fileLabel-'+key);if(input.files.length>0){label.innerHTML='<span>✅</span> '+input.files[0].name}else{label.innerHTML='<span>📎</span> '+fileLabels[key]}}
+function submitForm(e){
+  e.preventDefault();
+  const f=e.target;
+  const v=n=>f[n]?f[n].value:'';
+  const nama=v('nama'), nik=v('nik')||'-', jk=v('jenis_kelamin');
+  const tempat=v('tempat_lahir'), tgl=v('tanggal_lahir');
+  const alamat=v('alamat'), hpSantri=v('hp_santri')||'-';
+  const jenjang=v('jenjang'), asalSekolah=v('asal_sekolah'), tahunLulus=v('tahun_lulus');
+  const hafalan=v('hafalan');
+  const ayah=v('ayah'), pekerjaanAyah=v('pekerjaan_ayah');
+  const ibu=v('ibu'), pekerjaanIbu=v('pekerjaan_ibu');
+  const penghasilan=v('penghasilan'), hp=v('hp');
+
+  const pesan=`Assalamu'alaikum, saya ingin mendaftarkan santri baru di PPUQHM:%0A%0A`+
+    `*━━ DATA SANTRI ━━*%0A`+
+    `*Nama:* ${nama}%0A`+
+    `*NIK/NISN:* ${nik}%0A`+
+    `*TTL:* ${tempat}, ${tgl}%0A`+
+    `*Jenis Kelamin:* ${jk}%0A`+
+    `*Alamat:* ${alamat}%0A`+
+    `*HP Santri:* ${hpSantri}%0A`+
+    `*Jenjang Masuk:* ${jenjang}%0A`+
+    `*Asal Sekolah:* ${asalSekolah} (Lulus ${tahunLulus})%0A`+
+    `*Hafalan Qur'an:* ${hafalan}%0A%0A`+
+    `*━━ DATA ORANG TUA ━━*%0A`+
+    `*Nama Ayah:* ${ayah}%0A`+
+    `*Pekerjaan Ayah:* ${pekerjaanAyah}%0A`+
+    `*Nama Ibu:* ${ibu}%0A`+
+    `*Pekerjaan Ibu:* ${pekerjaanIbu}%0A`+
+    `*Penghasilan:* ${penghasilan}%0A`+
+    `*HP Ortu:* ${hp}%0A%0A`+
+    `_Dokumen (foto santri, KK, akta, ijazah) akan dikirim menyusul melalui WhatsApp ini._%0A%0A`+
+    `Mohon proses pendaftarannya. Jazakumullah khairan.`;
+  window.open('https://wa.me/6282239693243?text='+pesan,'_blank');
+  alert('Pendaftaran berhasil dikirim!\n\nSilakan upload dokumen (foto santri, KK, akta, ijazah) melalui WhatsApp yang sudah terbuka.');
+  closeModal();
+  f.reset();
+  Object.keys(fileLabels).forEach(k=>{const el=document.getElementById('fileLabel-'+k);if(el)el.innerHTML='<span>📎</span> '+fileLabels[k]});
+}
+</script>
+
+<!-- Netlify Identity Widget (untuk login admin panel) -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

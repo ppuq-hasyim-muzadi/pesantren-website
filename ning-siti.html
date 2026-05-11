@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Ning Siti Imroatus Sholihah - PPUQHM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+      --merah:#9b2c2c;--merah2:#b94545;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    .cover{margin-top:64px;background:linear-gradient(135deg,var(--merah) 0%,var(--merah2) 100%);padding:60px 2rem;text-align:center;color:#fff;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.12) 0%,transparent 70%);pointer-events:none}
+    .cover-content{position:relative;z-index:1}
+    .cover .basmalah{font-family:'Amiri',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--emas2);margin-bottom:1.25rem;letter-spacing:.05em}
+    .cover .badge{display:inline-block;background:rgba(255,255,255,.15);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem}
+    .cover h1{font-family:'Amiri',serif;font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:700;color:#fff;margin-bottom:.4rem;line-height:1.3}
+    .cover .gelar{font-size:14px;color:var(--emas2);font-style:italic;margin-bottom:.75rem}
+    .cover .role{font-size:13px;color:rgba(255,255,255,.85);letter-spacing:.05em}
+    .ornamen{font-family:'Amiri',serif;color:var(--emas2);font-size:1.5rem;letter-spacing:.5em;margin:1rem 0}
+
+    .content{max-width:900px;margin:0 auto;padding:3rem 2rem 1rem}
+    .section{margin-bottom:2.5rem}
+    .section-title{font-family:'Amiri',serif;font-size:1.4rem;font-weight:700;color:var(--merah);margin-bottom:1rem;padding-bottom:.4rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .content p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .content p strong{color:var(--merah);font-weight:600}
+    .content ul{list-style:none;padding:0;margin:1rem 0 1.5rem}
+    .content ul li{font-size:14px;color:var(--gelap);line-height:1.8;padding:.4rem 0 .4rem 1.75rem;position:relative}
+    .content ul li::before{content:'✓';color:var(--emas);font-weight:700;position:absolute;left:.4rem;top:.4rem}
+
+    .quote-box{border-left:4px solid var(--emas);background:linear-gradient(90deg,rgba(212,160,23,.08),transparent);padding:1.25rem 1.5rem;margin:1.5rem 0;font-style:italic;color:var(--merah);font-family:'Amiri',serif;font-size:1rem;line-height:1.7;border-radius:0 6px 6px 0}
+
+    .data-table{margin:1rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(155,44,44,.06);background:#fff}
+    .data-row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid rgba(155,44,44,.08)}
+    .data-row:last-child{border-bottom:none}
+    .data-row:nth-child(even){background:rgba(212,160,23,.05)}
+    .data-row .data-key{padding:.85rem 1.1rem;font-weight:600;color:var(--merah);font-size:13px;border-right:2px solid var(--emas);background:rgba(155,44,44,.04)}
+    .data-row .data-val{padding:.85rem 1.1rem;font-size:14px;color:var(--gelap)}
+
+    .pendidikan-table{margin:1rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(155,44,44,.06);background:#fff}
+    .pen-row{display:grid;grid-template-columns:160px 1fr;border-bottom:1px solid rgba(155,44,44,.08)}
+    .pen-row.head{background:var(--merah);color:#fff;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .pen-row.head > *{padding:.7rem 1rem}
+    .pen-row > *{padding:.75rem 1rem;font-size:13px}
+    .pen-row .periode{font-weight:600;color:var(--merah);background:rgba(212,160,23,.06)}
+    .pen-row:nth-child(even):not(.head){background:rgba(212,160,23,.03)}
+
+    .pesantren-card{background:#fff;border-radius:10px;padding:1.25rem 1.5rem;margin:.75rem 0;border-left:4px solid var(--emas);box-shadow:0 4px 12px rgba(155,44,44,.05)}
+    .pesantren-card h4{font-size:14px;color:var(--merah);font-weight:600;margin-bottom:.4rem}
+    .pesantren-card p{font-size:13px;color:var(--gelap);line-height:1.7;margin:0}
+
+    .sanad-card{background:linear-gradient(135deg,rgba(155,44,44,.05),rgba(212,160,23,.04));border:1px solid rgba(212,160,23,.25);border-radius:10px;padding:1.25rem 1.5rem;margin:.75rem 0}
+    .sanad-card .num{display:inline-block;width:32px;height:32px;background:linear-gradient(135deg,var(--emas),var(--emas2));color:var(--merah);border-radius:50%;font-family:'Amiri',serif;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-right:.5rem}
+    .sanad-card .text{display:inline;font-size:13.5px;color:var(--gelap);font-weight:500}
+
+    .anak-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+    .anak-card{background:#fff;border-radius:10px;padding:1.25rem;text-align:center;box-shadow:0 4px 12px rgba(155,44,44,.06);border-top:3px solid var(--emas)}
+    .anak-card .name{font-family:'Amiri',serif;font-size:1.05rem;color:var(--merah);font-weight:700;margin-bottom:.4rem;line-height:1.4}
+    .anak-card .meta{font-size:12px;color:var(--abu)}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--merah);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--merah2)}
+    .back-btn-wrap{text-align:center;padding:1rem 1rem 3rem}
+
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+    @media(max-width:768px){.data-row,.pen-row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<div class="cover">
+  <div class="cover-content">
+    <p class="basmalah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْم</p>
+    <span class="badge">Pengasuh Santri Putri</span>
+    <h1>Ning Siti Imroatus Sholihah</h1>
+    <p class="gelar">S.Pd., Al-Hafidzah</p>
+    <div class="ornamen">— ❦ —</div>
+    <p class="role">Pengasuh Santri Putri PPUQHM<br>Hafidzah 30 Juz Bersanad</p>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="section">
+    <h2 class="section-title">📋 Identitas</h2>
+    <p>Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah adalah <strong>Pengasuh Santri Putri PPUQHM</strong> sekaligus pendamping setia Gus Mursyid. Beliau lahir di Kabupaten Kendal pada <strong>14 Agustus 1992</strong> — lebih tua hampir setahun dari sang suami. Dalam tradisi pesantren, pasangan dengan istri sedikit lebih tua sering dianggap berkah, mengikuti teladan pernikahan Rasulullah SAW dengan Sayyidah Khadijah RA.</p>
+    <div class="data-table">
+      <div class="data-row"><div class="data-key">Nama Lengkap</div><div class="data-val">Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah</div></div>
+      <div class="data-row"><div class="data-key">Tanggal Lahir</div><div class="data-val">14 Agustus 1992</div></div>
+      <div class="data-row"><div class="data-key">Tempat Lahir</div><div class="data-val">Karanganom, Weleri, Kabupaten Kendal, Jawa Tengah</div></div>
+      <div class="data-row"><div class="data-key">Posisi Keluarga</div><div class="data-val">Anak bungsu dari 4 bersaudara</div></div>
+      <div class="data-row"><div class="data-key">Ayahanda</div><div class="data-val">KH. Syamsuddin</div></div>
+      <div class="data-row"><div class="data-key">Ibunda</div><div class="data-val">Ny. Hj. Nuriyah</div></div>
+      <div class="data-row"><div class="data-key">Status di PPUQHM</div><div class="data-val">Pengasuh Santri Putri</div></div>
+      <div class="data-row"><div class="data-key">Pernikahan</div><div class="data-val">27 Desember 2018 dengan Gus Mursyid Adi Saputra</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🏫 Pendidikan Formal</h2>
+    <div class="pendidikan-table">
+      <div class="pen-row head"><div>Periode</div><div>Pendidikan</div></div>
+      <div class="pen-row"><div class="periode">s.d. 2005</div><div>SD N 02 Karanganom, Weleri</div></div>
+      <div class="pen-row"><div class="periode">2005–2008</div><div>SMP Ky Ageng Giri Demak</div></div>
+      <div class="pen-row"><div class="periode">2008–2009</div><div>MDPA Raudlatul Ulum Pati</div></div>
+      <div class="pen-row"><div class="periode">2009–2012</div><div>MA Raudlatul Ulum Pati</div></div>
+      <div class="pen-row"><div class="periode">2012–2016</div><div><strong>UNSIQ Wonosobo (Sarjana Pendidikan PGMI)</strong></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🕌 Empat Pesantren NU Ternama</h2>
+    <p>Ning Siti telah menempuh pendidikan di <strong>empat pesantren NU ternama</strong> di Jawa Tengah:</p>
+    <div class="pesantren-card">
+      <h4>1. PP. Giri Kusumo Demak</h4>
+      <p>Asuhan KH. Munif Zuhri (2005–2008, sambil SMP Ky Ageng Giri) — Tradisi salaf-thoriqoh Naqsyabandiyyah</p>
+    </div>
+    <div class="pesantren-card">
+      <h4>2. PP. Raudlatul Ulum Pati</h4>
+      <p>Asuhan KH. Humam Suyuthi (2008–2012, jenjang MDPA dan MA) — Tradisi kitab kuning klasik</p>
+    </div>
+    <div class="pesantren-card">
+      <h4>3. PP. Baitul Abidin Darussalam, Wonosobo</h4>
+      <p>Asuhan KH. As'ad Al-Hafidz (mulai hafalan 2012, mendapat 15 juz) — Pesantren tahfidz</p>
+    </div>
+    <div class="pesantren-card">
+      <h4>4. PP. Ittihadut Tholibin Kalibeber</h4>
+      <p>Asuhan Ny. Hj. Umi Fatma — Selesai khatam 30 juz tahun 2017 dengan sanad muttashil</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">📿 Dua Sanad Al-Qur'an ke Mbah Munawwir Krapyak</h2>
+    <p>Sanad Al-Qur'an Ning bersambung melalui <strong>dua jalur</strong>, semuanya bermuara ke KH. Muhammad Munawwir Krapyak:</p>
+    <div class="sanad-card">
+      <span class="num">1</span><span class="text">via <strong>KH. As'ad Al-Hafidz → KH. Muntaha Al-Hafidz</strong> → Mbah Munawwir Krapyak <em>(periode 15 juz)</em></span>
+    </div>
+    <div class="sanad-card">
+      <span class="num">2</span><span class="text">via <strong>Ny. Hj. Umi Fatma → KH. Muntaha Al-Hafidz</strong> → Mbah Munawwir Krapyak <em>(sampai khatam 30 juz)</em></span>
+    </div>
+    <p>Bersama dengan 4 sanad Gus Mursyid, pasangan pengasuh PPUQHM membawa <strong>total 6 jalur sanad</strong> ke Mbah Munawwir Krapyak — keberkahan ganda yang sangat istimewa untuk pesantren tahfidz.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">💍 Pernikahan & Empat Takdir Indah</h2>
+    <p>Pernikahan Ning Siti dengan Gus Mursyid pada <strong>27 Desember 2018</strong> dipertemukan oleh empat lapis takdir indah:</p>
+    <ul>
+      <li>Pertemuan dua cabang keluarga Abdurrosyid Kaliwungu</li>
+      <li>Pertemuan dua keturunan Sayyid Ibrohim Maulana Ishaq</li>
+      <li>Pertemuan sanad-sanad Mbah Munawwir Krapyak (4+2 = 6 jalur)</li>
+      <li>Pertemuan di guru bersama KH. As'ad Al-Hafidz</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">👶 Putra-Putri Pengasuh</h2>
+    <div class="anak-grid">
+      <div class="anak-card" style="border-top-color:#a87fb8">
+        <div class="name">Husnul Khotimah</div>
+        <p class="meta">Putri pertama (almarhumah)</p>
+        <p style="font-size:12.5px;color:var(--gelap);margin-top:.5rem;line-height:1.6">Wafat dalam kandungan usia 9 bulan (era Ustadz Fajar 2020) — calon penghuni surga</p>
+      </div>
+      <div class="anak-card">
+        <div class="name">Ahmad Mursyid Hikam Athoillah</div>
+        <p class="meta">Putra (lahir 8 Oktober 2020)</p>
+        <p style="font-size:12.5px;color:var(--gelap);margin-top:.5rem;line-height:1.6">Pewaris tradisi Al-Hikam dari almamater ayahanda</p>
+      </div>
+      <div class="anak-card">
+        <div class="name">Husna Waliyyam Mursyida</div>
+        <p class="meta">Putri (lahir 25 Februari 2022)</p>
+        <p style="font-size:12.5px;color:var(--gelap);margin-top:.5rem;line-height:1.6">"Husna" adalah gema dari "Husnul" — mengabadikan ingatan kepada sang kakak</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">🏠 Peran di PPUQHM</h2>
+    <p>Sebagai <strong>Pengasuh Santri Putri</strong>, Ning Siti memegang tanggung jawab penuh atas:</p>
+    <ul>
+      <li>Pembinaan tahfidz Al-Qur'an santri putri</li>
+      <li>Pendidikan akhlak dan adab santriwati</li>
+      <li>Pendidikan fiqih khusus perempuan (haid, nifas, ibadah perempuan)</li>
+      <li>Pendampingan personal santri putri dalam masalah-masalah keseharian</li>
+      <li>Pendidikan anak-anak kandung (Ahmad Mursyid & Husna)</li>
+      <li>Menjadi teladan langsung sebagai "ibu" bagi para santriwati</li>
+    </ul>
+    <p>Beliau dengan sadar memilih untuk <strong>tidak aktif di organisasi NU eksternal</strong>, melainkan memberikan totalitas waktu, perhatian, dan tenaganya pada amanah utama sebagai ibu dan pengasuh.</p>
+    <div class="quote-box">"Wanita adalah pemimpin di rumah suaminya, dan ia bertanggung jawab atas yang dipimpinnya." — Hadits Nabi SAW</div>
+  </div>
+
+  <div class="back-btn-wrap">
+    <a href="index.html#pengasuh" class="back-btn">← Kembali ke Beranda</a>
+  </div>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

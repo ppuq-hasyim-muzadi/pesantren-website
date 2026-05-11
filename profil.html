@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil & Sejarah - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+      --merah:#9b2c2c;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    /* COVER */
+    .cover{margin-top:64px;background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 100%);padding:60px 2rem 70px;text-align:center;color:#fff;position:relative;overflow:hidden}
+    .cover::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.08) 0%,transparent 70%);pointer-events:none}
+    .cover-content{position:relative;z-index:1}
+    .cover .basmalah{font-family:'Amiri',serif;font-size:clamp(1.3rem,2.8vw,1.8rem);color:var(--emas2);margin-bottom:1.5rem;letter-spacing:.05em}
+    .cover-logo{width:130px;height:130px;border-radius:50%;overflow:hidden;margin:0 auto 1.5rem;border:3px solid var(--emas2);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .cover-logo img{width:100%;height:100%;object-fit:cover}
+    .cover h1{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;color:#fff;margin-bottom:.5rem;letter-spacing:.04em}
+    .cover h2{font-family:'Amiri',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:var(--emas2);margin-bottom:1.5rem;line-height:1.2}
+    .ornamen{font-family:'Amiri',serif;color:var(--emas2);font-size:1.5rem;letter-spacing:.5em;margin:1rem 0}
+    .cover .motto-box{background:rgba(255,255,255,.08);border:1px solid rgba(212,160,23,.4);border-radius:10px;padding:1.5rem 2rem;margin:1.5rem auto;max-width:560px}
+    .cover .motto-box .ar{font-family:'Amiri',serif;font-size:clamp(1.3rem,2.5vw,1.6rem);color:var(--emas2);font-style:italic;margin-bottom:.4rem}
+    .cover .motto-box .tr{font-size:13px;color:rgba(255,255,255,.65);font-style:italic}
+    .cover .subtitle{font-size:14px;color:rgba(255,255,255,.85);margin-top:1rem;font-weight:500}
+    .cover .info-list{margin-top:1.5rem;display:flex;flex-direction:column;gap:.4rem;font-size:13px;color:rgba(255,255,255,.7)}
+
+    /* DAFTAR ISI */
+    .toc-section{background:#fff;padding:3rem 2rem;border-bottom:1px solid rgba(27,67,50,.08)}
+    .toc-wrap{max-width:900px;margin:0 auto}
+    .toc-title{text-align:center;font-family:'Amiri',serif;font-size:1.7rem;font-weight:700;color:var(--hijau);margin-bottom:.4rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .toc-head{text-align:center;margin-bottom:1.75rem}
+    .toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem}
+    .toc-item{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:var(--putih);border-radius:6px;text-decoration:none;color:var(--hijau);font-size:13px;transition:.2s;border-left:3px solid var(--emas)}
+    .toc-item:hover{background:rgba(212,160,23,.08);transform:translateX(4px)}
+    .toc-num{font-family:'Amiri',serif;font-weight:700;color:var(--emas);min-width:30px;font-size:14px}
+
+    /* CHAPTER */
+    .chapter{max-width:900px;margin:0 auto;padding:3.5rem 2rem 1rem}
+    .chapter-num{font-family:'Amiri',serif;font-size:14px;font-weight:600;color:var(--emas);letter-spacing:.3em;text-align:center;margin-bottom:.5rem}
+    .chapter-title{font-family:'Amiri',serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;color:var(--hijau);text-align:center;margin-bottom:.5rem;line-height:1.3}
+    .chapter-subtitle{font-size:14px;color:var(--abu);text-align:center;font-style:italic;margin-bottom:1rem}
+    .chapter-divider{text-align:center;font-family:'Amiri',serif;color:var(--emas);font-size:1.4rem;letter-spacing:.4em;margin-bottom:1.75rem}
+    .chapter-content{padding-top:.5rem}
+    .chapter-content p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .chapter-content p strong{color:var(--hijau);font-weight:600}
+    .chapter-content h3{font-family:'Amiri',serif;font-size:1.3rem;font-weight:700;color:var(--hijau2);margin:2rem 0 1rem;padding-bottom:.3rem;border-bottom:1px solid rgba(212,160,23,.4);display:inline-block}
+    .chapter-content h4{font-size:15px;font-weight:600;color:var(--hijau);margin:1.25rem 0 .5rem}
+    .chapter-content ul{list-style:none;padding:0;margin:1rem 0 1.5rem}
+    .chapter-content ul li{font-size:14px;color:var(--gelap);line-height:1.8;padding:.4rem 0 .4rem 1.75rem;position:relative}
+    .chapter-content ul li::before{content:'✓';color:var(--emas);font-weight:700;position:absolute;left:.4rem;top:.4rem}
+
+    .quote-box{border-left:4px solid var(--emas);background:linear-gradient(90deg,rgba(212,160,23,.08),transparent);padding:1.25rem 1.5rem;margin:1.75rem 0;font-style:italic;color:var(--hijau);font-family:'Amiri',serif;font-size:1.05rem;line-height:1.7;border-radius:0 6px 6px 0}
+    .quote-box em{font-style:normal}
+
+    .arabic-box{text-align:center;padding:1.75rem;background:linear-gradient(135deg,rgba(27,67,50,.06),rgba(212,160,23,.04));border-radius:10px;margin:1.75rem 0;border:1px solid rgba(212,160,23,.2)}
+    .arabic-box .ar{font-family:'Amiri',serif;font-size:1.4rem;color:var(--hijau);margin-bottom:.5rem;line-height:2;direction:rtl}
+    .arabic-box .tr{font-size:13px;color:var(--abu);font-style:italic;margin-top:.5rem}
+
+    /* TABEL UMUM */
+    .data-table{margin:1.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .data-row{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid rgba(27,67,50,.08)}
+    .data-row:last-child{border-bottom:none}
+    .data-row:nth-child(even){background:rgba(212,160,23,.05)}
+    .data-row .data-key{padding:.85rem 1.1rem;font-weight:600;color:var(--hijau);font-size:13px;border-right:2px solid var(--emas);background:rgba(27,67,50,.03)}
+    .data-row .data-val{padding:.85rem 1.1rem;font-size:14px;color:var(--gelap)}
+
+    /* TABEL TIME / KRONOLOGI */
+    .time-table{margin:1.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .time-row{display:grid;grid-template-columns:180px 1fr;border-bottom:1px solid rgba(27,67,50,.08)}
+    .time-row.head{background:var(--hijau);color:#fff;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .time-row.head > *{padding:.7rem 1rem}
+    .time-row > *{padding:.85rem 1rem;font-size:13.5px}
+    .time-row .tgl{font-weight:600;color:var(--hijau);background:rgba(212,160,23,.05)}
+    .time-row .des{color:var(--gelap);line-height:1.7}
+    .time-row:nth-child(even):not(.head) .tgl{background:rgba(212,160,23,.1)}
+
+    /* PROGRAM TABLE (3 kolom) */
+    .prog-table{margin:1.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .prog-row{display:grid;grid-template-columns:140px 1fr 1fr;border-bottom:1px solid rgba(27,67,50,.08)}
+    .prog-row.head{background:var(--hijau);color:#fff;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .prog-row.head > *{padding:.7rem 1rem}
+    .prog-row > *{padding:.7rem 1rem;font-size:13px}
+    .prog-row .pr-bid{font-weight:600;color:var(--hijau);background:rgba(212,160,23,.06)}
+    .prog-row:nth-child(even):not(.head){background:rgba(212,160,23,.03)}
+
+    /* TOKOH CARD */
+    .tokoh-card{background:#fff;border-radius:10px;padding:1.5rem;margin:1.25rem 0;border-left:4px solid var(--emas);box-shadow:0 4px 12px rgba(27,67,50,.06)}
+    .tokoh-card h4{font-family:'Amiri',serif;font-size:1.2rem;color:var(--hijau);font-weight:700;margin-bottom:.5rem}
+    .tokoh-card p{font-size:13.5px;color:var(--gelap);line-height:1.8;margin:0}
+
+    /* ERA CARD */
+    .era-card{background:#fff;border-radius:10px;padding:1.4rem 1.5rem;margin:1rem 0;border-left:4px solid var(--emas);box-shadow:0 4px 12px rgba(27,67,50,.05);transition:.2s}
+    .era-card:hover{transform:translateX(4px);box-shadow:0 6px 16px rgba(27,67,50,.1)}
+    .era-card .era-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;flex-wrap:wrap;gap:.5rem}
+    .era-card h4{font-family:'Amiri',serif;font-size:1.1rem;color:var(--hijau);font-weight:700}
+    .era-card .era-period{font-size:11px;color:var(--abu);background:rgba(27,67,50,.06);padding:3px 10px;border-radius:12px;letter-spacing:.04em}
+    .era-card p{font-size:13.5px;color:var(--gelap);line-height:1.75;margin:0}
+
+    /* KEUNGGULAN CARD (numbered) */
+    .keung-card{background:#fff;border-radius:10px;padding:1.5rem 1.5rem 1.5rem 4.5rem;margin:1rem 0;box-shadow:0 4px 12px rgba(27,67,50,.05);position:relative;border-left:4px solid var(--emas)}
+    .keung-num{position:absolute;top:1.4rem;left:1.25rem;width:42px;height:42px;background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:var(--emas2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Amiri',serif;font-weight:700;font-size:1.2rem}
+    .keung-card h4{font-size:15px;color:var(--hijau);font-weight:600;margin-bottom:.5rem}
+    .keung-card p{font-size:13.5px;color:var(--gelap);line-height:1.75;margin:0}
+
+    /* HAFIDZ TABLE */
+    .hafidz-table{margin:1.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .hafidz-row{display:grid;grid-template-columns:1fr 1fr 130px;border-bottom:1px solid rgba(27,67,50,.08)}
+    .hafidz-row.head{background:var(--hijau);color:#fff;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .hafidz-row.head > *{padding:.7rem 1rem}
+    .hafidz-row > *{padding:.7rem 1rem;font-size:13.5px}
+    .hafidz-row .nm{font-weight:600;color:var(--hijau);background:rgba(212,160,23,.05)}
+    .hafidz-row:nth-child(even):not(.head){background:rgba(212,160,23,.03)}
+
+    /* ROADMAP */
+    .roadmap-table{margin:1.5rem 0;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(27,67,50,.06);background:#fff}
+    .road-row{display:grid;grid-template-columns:90px 130px 1fr;border-bottom:1px solid rgba(27,67,50,.08)}
+    .road-row.head{background:var(--hijau);color:#fff;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+    .road-row.head > *{padding:.7rem 1rem}
+    .road-row > *{padding:.7rem 1rem;font-size:13px}
+    .road-row .ph{font-weight:700;color:var(--emas);font-family:'Amiri',serif;font-size:14px;background:rgba(212,160,23,.06)}
+    .road-row .pr{color:var(--hijau);font-weight:600;font-size:12.5px}
+
+    /* CLOSING */
+    .closing-box{background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:#fff;padding:2.5rem 2rem;border-radius:12px;margin:2rem 0;text-align:center}
+    .closing-box p{color:rgba(255,255,255,.85);font-size:14px;line-height:1.9;font-style:italic;margin-bottom:0!important}
+
+    /* SIGNATURE */
+    .signature{text-align:center;margin:2.5rem 0 1.5rem;padding:1.5rem 0;border-top:1px solid rgba(27,67,50,.1)}
+    .signature .loc{font-size:13px;color:var(--abu);margin-bottom:.5rem}
+    .signature .role{font-size:14px;color:var(--hijau);font-weight:600;margin-bottom:1rem}
+    .signature .name{font-family:'Amiri',serif;font-size:1.15rem;color:var(--hijau);font-weight:700;line-height:1.6}
+    .signature .name span{display:block;color:var(--merah);font-size:1rem;margin-top:.25rem}
+
+    /* BACK BTN */
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1rem 1rem 3rem}
+
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    @media(max-width:768px){
+      .data-row{grid-template-columns:1fr}
+      .data-row .data-key{border-right:none;border-bottom:1px solid rgba(212,160,23,.3)}
+      .time-row{grid-template-columns:1fr}
+      .time-row .tgl{padding-bottom:0}
+      .prog-row{grid-template-columns:1fr}
+      .prog-row .pr-bid{padding-bottom:.4rem}
+      .hafidz-row{grid-template-columns:1fr 130px}
+      .hafidz-row > *:nth-child(2){display:none}
+      .road-row{grid-template-columns:80px 1fr}
+      .road-row > *:nth-child(2){display:none}
+      .keung-card{padding:1.25rem 1.25rem 1.25rem 4rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-content">
+    <p class="basmalah">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْم</p>
+    <div class="cover-logo"><img src="logo pesantren.jpg" alt="Logo PPUQHM"></div>
+    <h1>PROFIL & SEJARAH</h1>
+    <p style="font-size:14px;color:rgba(255,255,255,.75);margin-bottom:.5rem">PONDOK PESANTREN</p>
+    <h2>Ulumul Qur'an Hasyim Muzadi</h2>
+    <div class="ornamen">— ❦ —</div>
+    <div class="motto-box">
+      <p class="ar">"Tandurane Abah, Tukule nang Papua"</p>
+      <p class="tr">(Tanaman Beliau, Tumbuh di Papua)</p>
+    </div>
+    <p class="subtitle">Pesantren Tahfidz Aswaja An-Nahdliyah<br>Pertama di Kabupaten Mimika, Papua Tengah</p>
+    <div class="info-list">
+      <span>📍 Karang Senang SP-3, Kuala Kencana, Mimika</span>
+      <span>📞 WhatsApp: 0822-3969-3243</span>
+      <span>🌿 Berdiri Sejak 28 Oktober 2017</span>
+    </div>
+  </div>
+</div>
+
+<!-- DAFTAR ISI -->
+<div class="toc-section">
+  <div class="toc-wrap">
+    <div class="toc-head"><h2 class="toc-title">Daftar Isi</h2></div>
+    <div class="toc-grid">
+      <a href="#bab1" class="toc-item"><span class="toc-num">BAB 1</span> Pengantar dari Pengasuh</a>
+      <a href="#bab2" class="toc-item"><span class="toc-num">BAB 2</span> Profil Singkat PPUQHM</a>
+      <a href="#bab3" class="toc-item"><span class="toc-num">BAB 3</span> Sejarah Pendirian</a>
+      <a href="#bab4" class="toc-item"><span class="toc-num">BAB 4</span> Tokoh Pendiri & Peresmian</a>
+      <a href="#bab5" class="toc-item"><span class="toc-num">BAB 5</span> Profil Pengasuh — Gus Mursyid</a>
+      <a href="#bab6" class="toc-item"><span class="toc-num">BAB 6</span> Profil Ning Siti Imroatus Sholihah</a>
+      <a href="#bab7" class="toc-item"><span class="toc-num">BAB 7</span> Visi, Misi, dan Tujuan</a>
+      <a href="#bab8" class="toc-item"><span class="toc-num">BAB 8</span> 7 Keunggulan PPUQHM</a>
+      <a href="#bab9" class="toc-item"><span class="toc-num">BAB 9</span> Sembilan Era Ustadz (2017-2026)</a>
+      <a href="#bab10" class="toc-item"><span class="toc-num">BAB 10</span> Program Pendidikan</a>
+      <a href="#bab11" class="toc-item"><span class="toc-num">BAB 11</span> Pencapaian dan Prestasi</a>
+      <a href="#bab12" class="toc-item"><span class="toc-num">BAB 12</span> Cabang & Pengembangan</a>
+      <a href="#bab13" class="toc-item"><span class="toc-num">BAB 13</span> Mengenal KH. Hasyim Muzadi</a>
+      <a href="#bab14" class="toc-item"><span class="toc-num">BAB 14</span> Penutup & Doa</a>
+    </div>
+  </div>
+</div>
+
+<!-- BAB 1 -->
+<div class="chapter" id="bab1">
+  <p class="chapter-num">BAB 1</p>
+  <h2 class="chapter-title">Pengantar dari Pengasuh</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Bismillahirrahmanirrahim. Alhamdulillah, segala puji bagi Allah SWT yang telah menumbuhkan tanaman dakwah Almaghfurullah KH. Ahmad Hasyim Muzadi di tanah Cendrawasih melalui <strong>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM)</strong>.</p>
+    <p>Dokumen ini disusun sebagai catatan resmi dan dokumentasi lengkap tentang profil dan sejarah PPUQHM — pesantren yang berdiri pada <strong>28 Oktober 2017</strong> dengan peletakan batu pertama oleh tiga ulama besar nasional, dan diresmikan pada <strong>23 September 2018</strong> oleh keluarga Almaghfurullah KH. Hasyim Muzadi.</p>
+    <p>Pesantren ini lahir dari keprihatinan terhadap minimnya pesantren tahfidz dengan manhaj Aswaja An-Nahdliyah di tanah Papua. Pertumbuhannya selama sembilan tahun (2017-2026) telah membuktikan bahwa keberkahan Allah SWT mengalir di setiap sudut bumi — termasuk di tanah ujung timur Indonesia.</p>
+    <p>Dokumen ini bukan sekadar catatan administratif, melainkan refleksi spiritual atas perjalanan pesantren yang setiap babnya berisi pelajaran, kesabaran, kegembiraan, dan kesyukuran. Semoga dokumen ini bermanfaat bagi pembaca, dan menjadi inspirasi bagi siapapun yang ingin berkhidmah dalam pendidikan Islam Aswaja di tempat-tempat yang masih membutuhkan.</p>
+    <div class="quote-box">"Tandurane Abah, Tukule nang Papua"<br><em style="font-size:13px;display:block;margin-top:.5rem;color:var(--abu)">— Ny. Hj. Mutammimah Hasyim, peresmian PPUQHM 23 September 2018</em></div>
+    <div class="signature">
+      <p class="role">Pengasuh PPUQHM,</p>
+      <p class="name">Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz<span>& Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- BAB 2 -->
+<div class="chapter" id="bab2">
+  <p class="chapter-num">BAB 2</p>
+  <h2 class="chapter-title">Profil Singkat PPUQHM</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <h3>Identitas Resmi</h3>
+    <div class="data-table">
+      <div class="data-row"><div class="data-key">Nama Resmi</div><div class="data-val">Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</div></div>
+      <div class="data-row"><div class="data-key">Nama Arab</div><div class="data-val" style="font-family:'Amiri',serif;font-size:18px;direction:rtl;text-align:right">معهد الشيخ هاشم مزادي لعلوم القرآن</div></div>
+      <div class="data-row"><div class="data-key">Singkatan</div><div class="data-val">PPUQHM</div></div>
+      <div class="data-row"><div class="data-key">Tanggal Berdiri</div><div class="data-val">28 Oktober 2017 (peletakan batu pertama)</div></div>
+      <div class="data-row"><div class="data-key">Tanggal Peresmian</div><div class="data-val">23 September 2018</div></div>
+      <div class="data-row"><div class="data-key">Pengasuh</div><div class="data-val">Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz</div></div>
+      <div class="data-row"><div class="data-key">Pengasuh Putri</div><div class="data-val">Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah</div></div>
+      <div class="data-row"><div class="data-key">Manhaj</div><div class="data-val">Ahlus Sunnah wal Jama'ah An-Nahdliyah</div></div>
+      <div class="data-row"><div class="data-key">Lokasi</div><div class="data-val">Karang Senang SP-3, Kec. Kuala Kencana, Kab. Mimika, Papua Tengah</div></div>
+      <div class="data-row"><div class="data-key">Kontak</div><div class="data-val">WhatsApp: 0822-3969-3243</div></div>
+      <div class="data-row"><div class="data-key">Motto</div><div class="data-val">"Tandurane Abah, Tukule nang Papua"</div></div>
+    </div>
+
+    <h3>Identitas dalam 5 Kalimat</h3>
+    <p>PPUQHM adalah <strong>pesantren tahfidz Aswaja An-Nahdliyah pertama di Kabupaten Mimika</strong>, Papua Tengah, yang mengusung nama Almaghfurullah KH. Ahmad Hasyim Muzadi dan meneruskan estafet pemikiran beliau di tanah Cendrawasih.</p>
+    <p>Pesantren ini diasuh oleh pasangan suami-istri hafidz-hafidzah: <strong>Gus Mursyid Adi Saputra</strong> (dzurriyah Sunan Giri dengan sertifikat NAAT) dan <strong>Ning Siti Imroatus Sholihah</strong> (alumni 4 pesantren NU ternama), keduanya membawa total <strong>6 jalur sanad</strong> ke KH. Muhammad Munawwir Krapyak.</p>
+    <p>PPUQHM menggabungkan pendidikan tahfidz, kitab kuning klasik, dan sekolah formal SMP & SMA terakreditasi — sehingga lulusannya menjadi hafidz/hafidzah sekaligus memiliki ijazah resmi negara untuk melanjutkan pendidikan tinggi.</p>
+    <p>Pesantren ini terbuka untuk semua kalangan, dengan menyediakan beasiswa khusus untuk santri dhuafa, mengikuti filosofi NU <em>"murah meriah, banyak berkah"</em>.</p>
+    <p>Selama sembilan tahun perjalanan (2017-2026), PPUQHM telah meluluskan generasi hafidz/hafidzah, membuka cabang Madrasah Ulumul Qur'an Hasyim Muzadi di SP 1, dan membangun jaringan kerjasama dengan kampus-kampus dalam dan luar negeri.</p>
+  </div>
+</div>
+
+<!-- BAB 3 -->
+<div class="chapter" id="bab3">
+  <p class="chapter-num">BAB 3</p>
+  <h2 class="chapter-title">Sejarah Pendirian</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <h3>Latar Belakang</h3>
+    <p>Pendirian PPUQHM tidak bisa dilepaskan dari perjalanan spiritual <strong>Gus Mursyid Adi Saputra</strong> yang setelah menyelesaikan studi di STKQ Al-Hikam Depok pada tahun 2017, mengikuti program <strong>PROSAKTI (Program Sarjana Mengabdi)</strong> selama satu tahun di tanah Papua. Dalam masa pengabdian inilah Allah SWT menanam benih cita-cita untuk mendirikan pesantren di SP 3.</p>
+    <p>Gus Mursyid melihat realitas yang menggugah hati: di Mimika belum ada pesantren tahfidz dengan manhaj Aswaja An-Nahdliyah yang murni. Banyak masyarakat NU di Papua yang merindukan tradisi pesantren seperti yang ada di Jawa, namun tidak ada wadah formal yang menyediakannya. Dari keprihatinan ini, lahirlah cita-cita mendirikan pesantren yang membawa tradisi pesantren NU ke tanah Papua.</p>
+
+    <h3>Kronologi Pendirian</h3>
+    <div class="time-table">
+      <div class="time-row head"><div>Tanggal</div><div>Peristiwa</div></div>
+      <div class="time-row"><div class="tgl">2017 (awal)</div><div class="des">Gus Mursyid menjalani program PROSAKTI di SP 3 Mimika selama 1 tahun. Cita-cita pendirian pesantren mulai terbentuk.</div></div>
+      <div class="time-row"><div class="tgl">28 Oktober 2017</div><div class="des">Peletakan batu pertama oleh tiga ulama besar nasional: KH. Ma'ruf Amin, KH. Miftahul Akhyar, KH. Lukman Haris Dimyathi</div></div>
+      <div class="time-row"><div class="tgl">27 Desember 2017</div><div class="des">Kesepakatan masyarakat 5 wilayah Mimika untuk mendirikan pesantren bersama-sama</div></div>
+      <div class="time-row"><div class="tgl">25 Januari 2018</div><div class="des">HIBAH tanah dari Pak Edi & Bu Ida sebagai lokasi pesantren</div></div>
+      <div class="time-row"><div class="tgl">17 Februari 2018</div><div class="des">Pemindahan batu pertama ke lokasi tanah hibah</div></div>
+      <div class="time-row"><div class="tgl">23 September 2018</div><div class="des">Peresmian PPUQHM oleh Ny. Hj. Mutammimah Hasyim & Gus Yusron Sidqy</div></div>
+      <div class="time-row"><div class="tgl">27 Desember 2018</div><div class="des">Pernikahan Gus Mursyid & Ning Siti Imroatus Sholihah (3 bulan setelah peresmian)</div></div>
+    </div>
+
+    <h3>Hibah Tanah dari Pak Edi & Bu Ida</h3>
+    <p>Salah satu peristiwa kunci dalam pendirian PPUQHM adalah hibah tanah dari <strong>Pak Edi & Bu Ida</strong> pada 25 Januari 2018. Pasangan ini dengan ikhlas menghibahkan tanah mereka untuk dijadikan lokasi pesantren — bukan sekadar pewakaf, tetapi <strong>PENGHIBAH</strong> dengan transfer kepemilikan yang lebih kuat secara hukum.</p>
+    <p>Tindakan mulia ini menjadi salah satu tonggak penting yang memungkinkan PPUQHM berdiri. Tanpa keikhlasan Pak Edi & Bu Ida, pesantren ini tidak akan ada di tempat strategis seperti sekarang. Semoga Allah SWT membalas kebaikan beliau berdua dengan keberkahan yang berlipat ganda.</p>
+
+    <h3>Peresmian — Momen Sakral</h3>
+    <p>Peresmian PPUQHM pada 23 September 2018 menjadi momen yang sangat sakral. Yang meresmikan adalah dua sosok kunci dari keluarga Almaghfurullah KH. Hasyim Muzadi:</p>
+    <ul>
+      <li><strong>Ny. Hj. Mutammimah Hasyim</strong> — istri Almaghfurullah KH. Hasyim Muzadi</li>
+      <li><strong>Gus Yusron Sidqy</strong> — putra bungsu Almaghfurullah KH. Hasyim Muzadi</li>
+    </ul>
+    <p>Pada momen peresmian, Ny. Hj. Mutammimah mengucapkan kalimat sakral yang kemudian menjadi motto pesantren:</p>
+    <div class="quote-box">"Subhanallah, gak nyongko tibake tandurane Abah puluhan tahun tukule nang Papua"<br><em style="font-size:13px;display:block;margin-top:.5rem;color:var(--abu)">(Subhanallah, tidak menyangka bahwa tanaman Beliau puluhan tahun, tumbuh di Papua)</em></div>
+    <p>Kalimat ini menjadi prasasti spiritual PPUQHM yang akan terus dikenang dan diulang dalam setiap dokumentasi pesantren. Maknanya sangat dalam: PPUQHM adalah "tanaman" — buah dari benih dakwah Almaghfurullah KH. Hasyim Muzadi yang ditanam puluhan tahun lalu di Pesantren Al-Hikam Malang dan Depok, dan secara takdir Allah tumbuh dan berbuah di tanah Papua.</p>
+  </div>
+</div>
+
+<!-- BAB 4 -->
+<div class="chapter" id="bab4">
+  <p class="chapter-num">BAB 4</p>
+  <h2 class="chapter-title">Tokoh Pendiri & Peresmian</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>Tiga Ulama Peletak Batu Pertama (28 Oktober 2017)</h3>
+
+    <div class="tokoh-card">
+      <h4>1. KH. Ma'ruf Amin</h4>
+      <p>Ulama besar nasional yang pada saat peletakan batu pertama menjabat sebagai <strong>Rais Aam PBNU</strong>. Beliau kemudian terpilih menjadi <strong>Wakil Presiden Republik Indonesia ke-13 (2019-2024)</strong>. Kehadiran beliau dalam peletakan batu pertama PPUQHM adalah bentuk dukungan nyata kepada pesantren NU di tanah Papua.</p>
+    </div>
+
+    <div class="tokoh-card">
+      <h4>2. KH. Miftahul Akhyar</h4>
+      <p>Ulama besar dari Surabaya yang kemudian menjabat sebagai <strong>Rais Aam PBNU dan Ketua Umum Majelis Ulama Indonesia (MUI)</strong>. Beliau adalah salah satu ulama paling berpengaruh di NU dan Indonesia.</p>
+    </div>
+
+    <div class="tokoh-card">
+      <h4>3. KH. Lukman Haris Dimyathi</h4>
+      <p>Pengasuh <strong>Pondok Pesantren Tremas, Pacitan</strong> — salah satu pesantren NU tertua dan paling berwibawa di Jawa Timur. Kehadiran beliau merepresentasikan tradisi pesantren NU klasik di tanah Papua.</p>
+    </div>
+
+    <h3>Dua Sosok Peresmian (23 September 2018)</h3>
+
+    <div class="tokoh-card">
+      <h4>1. Ny. Hj. Mutammimah Hasyim</h4>
+      <p>Istri Almaghfurullah KH. Ahmad Hasyim Muzadi — Ketua Umum PBNU dua periode (1999-2010), pendiri Pesantren Al-Hikam Malang dan Depok, dan tokoh Islam Wasathiyah dunia. Ny. Hj. Mutammimah adalah saksi langsung perjalanan dakwah suami beliau, dan kehadirannya dalam peresmian PPUQHM merupakan <strong>restu spiritual yang sangat berharga</strong>.</p>
+    </div>
+
+    <div class="tokoh-card">
+      <h4>2. Gus Yusron Sidqy</h4>
+      <p>Putra bungsu Almaghfurullah KH. Hasyim Muzadi yang melanjutkan dakwah ayahanda di lingkungan keluarga Al-Hikam. Restu beliau menjadi pengakuan resmi dari keluarga Al-Hikam terhadap PPUQHM sebagai <strong>"pesantren Hasyim Muzadi di Papua"</strong>.</p>
+    </div>
+
+    <h3>Takdir Indah: Dua Sosok yang Sama</h3>
+    <p>Ada takdir yang sangat menyentuh tentang Ny. Hj. Mutammimah dan Gus Yusron Sidqy. Pada malam wafat Almaghfurullah KH. Hasyim Muzadi (16 Maret 2017):</p>
+    <ul>
+      <li>Sebelah kanan kepala beliau: <strong>Ny. Hj. Mutammimah</strong> (istri) mentalqin</li>
+      <li>Sebelah kiri kepala beliau: <strong>Gus Yusron Sidqy</strong> (putra bungsu) mentalqin</li>
+      <li>Tepat di kaki beliau: <strong>Gus Mursyid</strong> (santri yang akan mendirikan PPUQHM) membaca Surah Yasin</li>
+    </ul>
+    <p>Yang meresmikan PPUQHM (23 September 2018) adalah dua sosok yang sama yang berada di samping kepala Almaghfurullah KH. Hasyim Muzadi pada malam wafat beliau. Ini adalah <strong>lingkaran takdir yang sangat menyentuh dan penuh hikmah</strong> — seakan PPUQHM benar-benar adalah "tanaman Abah" yang diakui oleh keluarga inti beliau.</p>
+  </div>
+</div>
+
+<!-- BAB 5 -->
+<div class="chapter" id="bab5">
+  <p class="chapter-num">BAB 5</p>
+  <h2 class="chapter-title">Profil Pengasuh</h2>
+  <p class="chapter-subtitle">Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>Identitas</h3>
+    <p>Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz lahir di <strong>Karangmalang Wetan, Kabupaten Kendal, Jawa Tengah</strong>, pada Malam Senin 12 Rabi'ul Awwal 1414 H bertepatan dengan <strong>29 Agustus 1993</strong> — Malam Maulid Nabi Muhammad SAW. Beliau adalah putra dari pasangan <strong>H. Muhammad Sobirin</strong> (Kepala Desa Karangmalang Wetan) dan <strong>Hj. Siti Kumaeroh</strong>. Kakek beliau adalah <strong>KH. R. Muhammad Said</strong>.</p>
+
+    <h3>Status Nasab — Dzurriyah Sunan Giri</h3>
+    <p>Yang sangat istimewa tentang Gus Mursyid adalah silsilah nasab beliau yang bersambung <strong>43 generasi sampai Rasulullah Muhammad SAW</strong>. Dari jalur ibunda Hj. Siti Kumaeroh, beliau adalah dzurriyah Sunan Giri melalui:</p>
+    <ul>
+      <li>Sayyidah Fatimah Az-Zahra (putri Rasulullah SAW)</li>
+      <li>Sayyid Hasan bin Ali (cucu Rasulullah SAW)</li>
+      <li>Sayyid Abdul Qodir Al-Jilani (Wali Quthub)</li>
+      <li>Sayyid Ibrohim Maulana Ishaq (ulama Maghrib yang berhijrah ke Nusantara)</li>
+      <li>Sunan Giri (salah satu Walisongo)</li>
+      <li>KH. R. Asy'ari atau "Kyai Guru Kaliwungu" (kakek buyut)</li>
+    </ul>
+
+    <h3>Sertifikat Resmi NAAT + Naqobah Maroko</h3>
+    <p>Status nasab Gus Mursyid telah diverifikasi secara resmi melalui dua lembaga otoritatif dengan <strong>Sertifikat Nomor 0047/NAAT-SHD/XII/2023</strong> tanggal 13 Desember 2023:</p>
+    <h4>Bagian Kanan Sertifikat (NAAT Indonesia)</h4>
+    <ul>
+      <li>Lembaga: <strong>Naqobah Ansab Auliya' Tis'ah (NAAT)</strong></li>
+      <li>Sebagai lembaga pencatat nasab dzurriyyah Walisongo, NAAT mengesahkan nasab Gus Mursyid sampai Sayyid Ibrohim Maulana Ishaq</li>
+    </ul>
+    <h4>Bagian Kiri Sertifikat (Naqobah Kerajaan Maroko)</h4>
+    <ul>
+      <li>Lembaga: <strong>Naqobah As-Saadah Al-Asyrof Kerajaan Maroko</strong></li>
+      <li>Mengesahkan nasab dari Sayyid Ibrohim Maulana Ishaq sampai Rasulullah SAW dan dilanjutkan sampai Sayyid Adnan</li>
+    </ul>
+    <p><strong>Sayyid Ibrohim Maulana Ishaq</strong> menjadi titik temu dua otoritas — beliau adalah jembatan antara dunia Maghrib (asal usul) dan Nusantara (Walisongo).</p>
+
+    <h3>Nama Resmi dalam Sertifikat</h3>
+    <div class="quote-box" style="text-align:center;font-size:1rem">K.H.R. Mursid Adi Saputra Sibthu al-Giri al-Ishaqi al-Qodiri al-Musawi al-Hasani</div>
+    <p>Namun mengikuti teladan tawadhu Walisongo (yang tidak menonjolkan nasab dengan gelar berlebihan), beliau lebih memilih dipanggil dengan nama akrab <strong>"Gus Mursyid Adi Saputra"</strong>.</p>
+
+    <h3>Pendidikan Lengkap</h3>
+    <div class="time-table">
+      <div class="time-row head"><div>Periode</div><div>Pendidikan</div></div>
+      <div class="time-row"><div class="tgl">1997-1999</div><div class="des">Pendidikan dari kakek KH. R. Muhammad Said</div></div>
+      <div class="time-row"><div class="tgl">1999-2003</div><div class="des">Madrasah Miftahul Hidayah Karangmalang Wetan</div></div>
+      <div class="time-row"><div class="tgl">2000-2003</div><div class="des">SD N 1 Karangmalang Wetan</div></div>
+      <div class="time-row"><div class="tgl">2003-2008</div><div class="des">PPUQ Miftahul Falah Kaliwungu (KH. Munawiruddin Badawi)</div></div>
+      <div class="time-row"><div class="tgl">2003-2005</div><div class="des">SD N 02 Kutoharjo, Kaliwungu</div></div>
+      <div class="time-row"><div class="tgl">2005-2008</div><div class="des">SMP N 1 Kaliwungu</div></div>
+      <div class="time-row"><div class="tgl">2008-2011</div><div class="des">PPTQ Al-Asy'ariyyah Kalibeber, Wonosobo</div></div>
+      <div class="time-row"><div class="tgl">2008-2011</div><div class="des">SMK Takhassus Wonosobo</div></div>
+      <div class="time-row"><div class="tgl">2011</div><div class="des">Tabarrukan ke KH. As'ad Al-Hafidz (santri kalong)</div></div>
+      <div class="time-row"><div class="tgl">2012</div><div class="des">Pare Kediri - Darul Furqan Camp (Bahasa Inggris)</div></div>
+      <div class="time-row"><div class="tgl">2012-2018</div><div class="des">STKQ Al-Hikam Depok (S1, Cumlaude)</div></div>
+      <div class="time-row"><div class="tgl">2013-2014</div><div class="des">Universitas Az-Zaitunah Tunisia (Beasiswa PBNU)</div></div>
+      <div class="time-row"><div class="tgl" style="color:var(--emas)">Sekarang</div><div class="des"><strong>Persiapan S2 PAI di STAIMA Al-Hikam Malang</strong></div></div>
+    </div>
+
+    <h3>Sanad Al-Qur'an — 4 Jalur ke Mbah Munawwir Krapyak</h3>
+    <p>Gus Mursyid memiliki <strong>4 jalur sanad Al-Qur'an muttashil</strong> yang semuanya bermuara pada KH. Muhammad Munawwir Krapyak — sanad utama tahfidz abad 20 di Nusantara:</p>
+    <ul>
+      <li><strong>Jalur 1:</strong> KH. Munawiruddin Badawi (PPUQ Miftahul Falah Kaliwungu)</li>
+      <li><strong>Jalur 2:</strong> KH. Mustahal Asy'ari (PPTQ Al-Asy'ariyyah Kalibeber, adik KH. Muntaha)</li>
+      <li><strong>Jalur 3:</strong> KH. Atho'illah Asy'ari (putra KH. Mustahal)</li>
+      <li><strong>Jalur 4:</strong> KH. As'ad Al-Hafidz (PP. Baitul Abidin Darussalam, tabarrukan)</li>
+    </ul>
+
+    <h3>Status Ke-NU-an</h3>
+    <p>Gus Mursyid memiliki rekam jejak panjang dalam organisasi NU di Mimika:</p>
+    <ul>
+      <li>Mantan Ketua PC LDNU (Lembaga Dakwah NU) Kabupaten Mimika</li>
+      <li>Mantan Ketua PC GP Ansor Kabupaten Mimika</li>
+      <li>Saat ini: <strong>Dewan Khos Pagar Nusa Mimika</strong></li>
+      <li>Pengasuh aktif PPUQHM</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BAB 6 -->
+<div class="chapter" id="bab6">
+  <p class="chapter-num">BAB 6</p>
+  <h2 class="chapter-title">Profil Ning</h2>
+  <p class="chapter-subtitle" style="color:var(--merah)">Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>Identitas</h3>
+    <p>Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah lahir di <strong>Kendal, Jawa Tengah pada 14 Agustus 1992</strong>. Beliau adalah anak bungsu dari empat bersaudara, putri dari pasangan <strong>KH. Syamsuddin & Ny. Hj. Nuriyah</strong>, dari Karanganom, Kec. Weleri, Kabupaten Kendal.</p>
+
+    <h3>Pendidikan Formal</h3>
+    <div class="time-table">
+      <div class="time-row head"><div>Periode</div><div>Pendidikan</div></div>
+      <div class="time-row"><div class="tgl">s.d. 2005</div><div class="des">SD N 02 Karanganom, Weleri</div></div>
+      <div class="time-row"><div class="tgl">2005-2008</div><div class="des">SMP Ky Ageng Giri Demak</div></div>
+      <div class="time-row"><div class="tgl">2008-2009</div><div class="des">MDPA Raudlatul Ulum Pati</div></div>
+      <div class="time-row"><div class="tgl">2009-2012</div><div class="des">MA Raudlatul Ulum Pati</div></div>
+      <div class="time-row"><div class="tgl">2012-2016</div><div class="des">UNSIQ Wonosobo (Sarjana Pendidikan PGMI)</div></div>
+    </div>
+
+    <h3>Pendidikan Non Formal (Pesantren)</h3>
+    <p>Yang sangat istimewa: Ning Siti telah menempuh pendidikan di <strong>4 pesantren NU ternama</strong>:</p>
+    <ul>
+      <li>Orang tua sendiri (KH. Syamsuddin & Ny. Hj. Nuriyah)</li>
+      <li>MDT NU 06 Darul Ulum Karanganom</li>
+      <li><strong>PP Giri Kusumo Demak</strong> (KH. Munif Zuhri) — tradisi salaf-thoriqoh</li>
+      <li><strong>PP Raudlatul Ulum Pati</strong> (KH. Humam Suyuthi) — tradisi kitab kuning</li>
+      <li><strong>PP Baitul Abidin Darussalam, Wonosobo</strong> (KH. As'ad Al-Hafidz) — mulai hafalan 2012, dapat 15 juz</li>
+      <li><strong>PP Ittihadut Tholibin Kalibeber</strong> — selesai tahfidz 30 juz tahun 2017, sanad dari Ny. Hj. Umi Fatma → KH. Muntaha Al-Hafidz</li>
+    </ul>
+
+    <h3>Sanad Al-Qur'an — 2 Jalur ke Mbah Munawwir Krapyak</h3>
+    <ul>
+      <li><strong>Jalur 1:</strong> KH. As'ad Al-Hafidz (periode 15 juz)</li>
+      <li><strong>Jalur 2:</strong> Ny. Hj. Umi Fatma → KH. Muntaha Al-Hafidz (sampai khatam 30 juz)</li>
+    </ul>
+    <p>Total dengan sanad Gus Mursyid, pasangan pengasuh PPUQHM membawa <strong>6 jalur sanad ke Mbah Munawwir Krapyak</strong> — keberkahan ganda yang sangat istimewa untuk pesantren tahfidz.</p>
+
+    <h3>Pernikahan dengan Gus Mursyid</h3>
+    <p>Pernikahan Gus Mursyid dengan Ning Siti dilangsungkan pada <strong>27 Desember 2018</strong> — tepat 3 bulan setelah peresmian PPUQHM. Empat takdir indah menyatukan pasangan ini:</p>
+    <ul>
+      <li>Pertemuan dua cabang keluarga Abdurrosyid Kaliwungu</li>
+      <li>Pertemuan dua keturunan Sayyid Ibrohim Maulana Ishaq</li>
+      <li>Pertemuan sanad-sanad Mbah Munawwir Krapyak (4+2 = 6 jalur)</li>
+      <li>Pertemuan di guru bersama KH. As'ad Al-Hafidz</li>
+    </ul>
+
+    <h3>Putra-Putri Pengasuh</h3>
+    <ul>
+      <li><strong>Ahmad Mursyid Hikam Athoillah</strong> — putra (lahir 8 Oktober 2020)</li>
+      <li><strong>Husna Waliyyam Mursyida</strong> — putri (lahir 25 Februari 2022)</li>
+      <li><strong>Almarhumah Husnul Khotimah</strong> — putri pertama (wafat dalam kandungan, era Ustadz Fajar 2020)</li>
+    </ul>
+
+    <h3>Peran di PPUQHM</h3>
+    <p>Ning Siti adalah <strong>Pengasuh Santri Putri PPUQHM</strong>. Beliau saat ini fokus mendidik anak-anak (Ahmad Mursyid & Husna) dan mengasuh santri putri pesantren.</p>
+  </div>
+</div>
+
+<!-- BAB 7 -->
+<div class="chapter" id="bab7">
+  <p class="chapter-num">BAB 7</p>
+  <h2 class="chapter-title">Visi, Misi, & Tujuan</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>VISI</h3>
+    <div class="quote-box" style="font-size:1.1rem;text-align:center;font-weight:500">"Menjadi pesantren tahfidzul Qur'an unggulan yang melahirkan generasi ahlul Qur'an berkarakter Aswaja An-Nahdliyah dan berwawasan Islam Wasathiyah untuk kemaslahatan umat dan bangsa."</div>
+
+    <h3>MISI</h3>
+    <p>Untuk mewujudkan Visi tersebut, PPUQHM menetapkan tujuh Misi:</p>
+    <ul>
+      <li>Menyelenggarakan pendidikan tahfidzul Qur'an dengan sanad muttashil hingga Rasulullah SAW melalui jalur KH. Muhammad Munawwir Krapyak</li>
+      <li>Mengembangkan kajian ilmu-ilmu Al-Qur'an dan ilmu-ilmu syariah dengan tradisi kitab kuning klasik pesantren NU</li>
+      <li>Membentuk karakter santri yang berakhlak Qur'ani</li>
+      <li>Menanamkan manhaj Ahlus Sunnah wal Jama'ah An-Nahdliyah</li>
+      <li>Mengamalkan dan menyebarkan pemikiran Islam Wasathiyah Almaghfurullah KH. Hasyim Muzadi</li>
+      <li>Berkhidmah aktif kepada masyarakat Mimika dan Papua</li>
+      <li>Mempersiapkan kader-kader ulama berwawasan internasional</li>
+    </ul>
+
+    <h3>TUJUAN</h3>
+    <p>Lulusan PPUQHM diharapkan memiliki <strong>lima karakter utama</strong>:</p>
+    <ul>
+      <li>Hafidz/Hafidzah dengan sanad muttashil melalui jalur Krapyak</li>
+      <li>Faqih dalam kitab kuning klasik (minimal Fathul Qorib/Fathul Mu'in)</li>
+      <li>Berkarakter Aswaja An-Nahdliyah dengan wawasan Islam Wasathiyah</li>
+      <li>Mampu berbahasa Arab aktif dan bahasa Inggris untuk akses pendidikan internasional</li>
+      <li>Siap berkhidmah sebagai imam, khatib, da'i, atau pendiri pesantren cabang</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BAB 8 -->
+<div class="chapter" id="bab8">
+  <p class="chapter-num">BAB 8</p>
+  <h2 class="chapter-title">7 Keunggulan PPUQHM</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>PPUQHM memiliki 7 keunggulan resmi yang membedakannya dari pesantren-pesantren lain di Indonesia, khususnya di kawasan Indonesia Timur:</p>
+
+    <div class="keung-card">
+      <div class="keung-num">1</div>
+      <h4>Sanad Al-Qur'an KH. Munawwir Krapyak</h4>
+      <p>Setiap santri yang khatam 30 juz akan menerima sanad Al-Qur'an muttashil melalui jalur KH. Muhammad Munawwir Krapyak — sanad utama tahfidz abad 20 di Nusantara. Pasangan pengasuh PPUQHM membawa total <strong>6 jalur sanad</strong> ke Mbah Munawwir Krapyak (4 dari Gus + 2 dari Ning), keberkahan ganda yang sangat istimewa.</p>
+    </div>
+
+    <div class="keung-card">
+      <div class="keung-num">2</div>
+      <h4>Pengasuh & Pengajar Hafidz-Hafidzah</h4>
+      <p>PPUQHM diasuh oleh pasangan hafidz dan hafidzah — sangat istimewa untuk pesantren tahfidz. Santri putra dibimbing langsung Gus Mursyid, santri putri dibimbing langsung Ning Siti. Selain pengasuh, para asatidz/asatidzah pengajar juga adalah hafidz/hafidzah dengan sanad muttashil.</p>
+    </div>
+
+    <div class="keung-card">
+      <div class="keung-num">3</div>
+      <h4>Program Tahfidz + Kitab Kuning</h4>
+      <p>Tidak hanya tahfidz, santri PPUQHM juga belajar kitab kuning klasik tradisi pesantren NU: <strong>Fathul Qorib, Fathul Mu'in, Aqidatul Awam, Tijan Darari, Ta'lim Muta'allim, Bidayatul Hidayah, Jurumiyah, Imrithi, hingga Alfiyah Ibnu Malik</strong>.</p>
+    </div>
+
+    <div class="keung-card">
+      <div class="keung-num">4</div>
+      <h4>Pendidikan Formal SMP & SMA Terakreditasi</h4>
+      <p>PPUQHM menggabungkan pendidikan tahfidz dan kitab kuning dengan SMP & SMA terakreditasi resmi. Lulusan tidak hanya menjadi hafidz/hafidzah, tetapi juga memiliki <strong>ijazah formal yang diakui Kemendikbud</strong> — sehingga bisa melanjutkan pendidikan tinggi ke perguruan tinggi mana pun.</p>
+    </div>
+
+    <div class="keung-card">
+      <div class="keung-num">5</div>
+      <h4>Beasiswa Santri Dhuafa</h4>
+      <p>PPUQHM mengikuti filosofi NU <em>"murah meriah, banyak berkah"</em> — pesantren tidak boleh menjadi institusi elit yang hanya untuk orang kaya. Karena itu, PPUQHM menyediakan beasiswa untuk santri dhuafa:</p>
+      <ul style="margin-top:.5rem">
+        <li><strong>Beasiswa Penuh</strong> — untuk yatim/dhuafa berprestasi</li>
+        <li><strong>Beasiswa Parsial</strong> — untuk keluarga ekonomi menengah ke bawah</li>
+        <li><strong>Beasiswa Putra/Putri Daerah</strong> — khusus untuk santri Papua asli</li>
+      </ul>
+    </div>
+
+    <div class="keung-card">
+      <div class="keung-num">6</div>
+      <h4>Bermanhaj Aswaja An-Nahdliyah</h4>
+      <p>PPUQHM tegas berdiri di atas manhaj Ahlus Sunnah wal Jama'ah ala Nahdlatul Ulama: madzhab fiqih (utamanya Syafi'i), aqidah Asy'ariyyah-Maturidiyyah, dan tasawuf Imam Junaid Al-Baghdadi & Imam Al-Ghazali. Tradisi NU yang khas — tahlilan, yasinan, maulid, ziarah, shalawat, dan ta'dzim kepada ulama — dipertahankan sebagai identitas pesantren. <strong>Bebas dari radikalisme dan liberalisme</strong>.</p>
+    </div>
+
+    <div class="keung-card">
+      <div class="keung-num">7</div>
+      <h4>Kerjasama Kampus Dalam & Luar Negeri</h4>
+      <p>PPUQHM menjalin kerjasama dengan kampus-kampus dalam dan luar negeri, sehingga lulusan memiliki akses untuk melanjutkan pendidikan tinggi di berbagai institusi terkemuka. Latar belakang pengasuh sebagai alumni STKQ Al-Hikam Depok (Cumlaude) dan Universitas Az-Zaitunah Tunisia menjadi dasar jaringan internasional pesantren.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BAB 9 -->
+<div class="chapter" id="bab9">
+  <p class="chapter-num">BAB 9</p>
+  <h2 class="chapter-title">Sembilan Era Ustadz</h2>
+  <p class="chapter-subtitle">Perjalanan Sembilan Tahun PPUQHM (2017-2026)</p>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Selama sembilan tahun perjalanan PPUQHM, pesantren ini telah dilalui oleh <strong>sembilan era ustadz</strong> dengan dinamika yang beragam — dari masa pembibitan, masa kelam, hingga masa panen raya.</p>
+
+    <div class="era-card">
+      <div class="era-head"><h4>Era 1: Gus Mursyid — Masa Pembibitan</h4><span class="era-period">2017–2018</span></div>
+      <p>Era pendirian. Gus Mursyid sendirian merintis dasar pesantren bersama masyarakat 5 wilayah Mimika. Masa peletakan batu pertama, hibah tanah, dan peresmian PPUQHM. Era spiritual paling intensif yang menetapkan pondasi pesantren.</p>
+    </div>
+
+    <div class="era-card">
+      <div class="era-head"><h4>Era 2: Ustadz Yusuf — Masa Merintis</h4><span class="era-period">2018–2019</span></div>
+      <p>Era awal operasional resmi pesantren. Mulai menerima santri-santri awal. Pembentukan sistem kesantrian dasar dan kurikulum awal.</p>
+    </div>
+
+    <div class="era-card">
+      <div class="era-head"><h4>Era 3: Ustadz Fajar — Masa Pertumbuhan</h4><span class="era-period">2019–2020</span></div>
+      <p>Era pengembangan kurikulum kitab kuning. Era ini juga ditandai dengan peristiwa duka — wafatnya Almarhumah Husnul Khotimah, putri pertama Gus & Ning yang wafat dalam kandungan usia 9 bulan.</p>
+    </div>
+
+    <div class="era-card">
+      <div class="era-head"><h4>Era 4: Ustadz Refa — Masa Kemunduran</h4><span class="era-period">2020–2021</span></div>
+      <p>Era yang penuh tantangan dengan pandemi COVID-19. Tetapi era ini juga menjadi titik pembentukan Tim Ubus-Ubus (Tim Belajar Ruqyah Aswaja) dan terbitnya <strong>IJOP (Izin Operasional Pesantren) dari Kemenag</strong>.</p>
+    </div>
+
+    <div class="era-card">
+      <div class="era-head"><h4>Era 5: Sobirin — Masa Kelam</h4><span class="era-period">2021–2022</span></div>
+      <p>Era yang paling sulit dalam sejarah PPUQHM. Konflik internal dan dinamika yang mengguncang pesantren. Tetapi dari era ini lahir pelajaran berharga tentang manajemen pesantren dan kaderisasi.</p>
+    </div>
+
+    <div class="era-card">
+      <div class="era-head"><h4>Era 6: Ustadz Hanif — Masa Pemulihan</h4><span class="era-period">2022–2023</span></div>
+      <p>Era kebangkitan setelah masa kelam. Era ini mencatat pencapaian besar: <strong>2 hafidz perdana PPUQHM</strong> yaitu Harun Alry dan Kholid Ibrahim. Kelulusan mereka menjadi bukti bahwa PPUQHM mampu meluluskan hafidz dengan sanad muttashil.</p>
+    </div>
+
+    <div class="era-card">
+      <div class="era-head"><h4>Era 7: Ustadz Sahal — Masa Kebangkitan</h4><span class="era-period">2023–2024</span></div>
+      <p>Era pertumbuhan signifikan. Era ini mencatat <strong>2 hafidzah perdana PPUQHM</strong>: Nilam Insansani dan Zulfa. Kelulusan mereka membuktikan PPUQHM mampu meluluskan hafidzah dengan sanad muttashil — menjadi pesantren tahfidz untuk putra DAN putri.</p>
+    </div>
+
+    <div class="era-card">
+      <div class="era-head"><h4>Era 8: Ustadz Wasik — Masa Panen Raya</h4><span class="era-period">2024–2025</span></div>
+      <p>Era kelulusan terbanyak: <strong>5 hafidz/hafidzah lulus dalam satu era</strong> — Devita, Lindi, Yoga, Abdul Kholid, Nur Wasik. Era ini juga ditandai dengan tonggak besar: pembukaan Madrasah Ulumul Qur'an Hasyim Muzadi di SP 1 (17 Januari 2025), yang menjadi cabang resmi pertama PPUQHM.</p>
+    </div>
+
+    <div class="era-card">
+      <div class="era-head"><h4>Era 9: Ustadz Mahbub — Masa Sekarang</h4><span class="era-period">2025–2026</span></div>
+      <p>Era saat ini. Konsolidasi setelah masa panen raya. Persiapan untuk fase ekspansi yang lebih luas, peningkatan kualitas akademik, dan persiapan PSB Tahun Ajaran 2026/2027.</p>
+    </div>
+
+    <div class="chapter-divider">— ❦ —</div>
+    <div class="quote-box">"Setiap era memiliki hikmah, setiap ustadz memiliki kontribusi. PPUQHM adalah hasil kolektif dari sembilan era yang saling melengkapi."</div>
+  </div>
+</div>
+
+<!-- BAB 10 -->
+<div class="chapter" id="bab10">
+  <p class="chapter-num">BAB 10</p>
+  <h2 class="chapter-title">Program Pendidikan</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>Program Tahfidz Al-Qur'an</h3>
+    <p>Program unggulan PPUQHM dengan target <strong>khatam 30 juz dan sanad muttashil</strong>:</p>
+    <ul>
+      <li>Setoran ziyadah (tambah hafalan) harian setelah Subuh</li>
+      <li>Murajaah (mengulang hafalan) setelah Maghrib dan Isya</li>
+      <li>Bimbingan tahsin dan tajwid sesuai metode Tilawati</li>
+      <li>Sema'an bersama untuk menguatkan hafalan</li>
+      <li>Khataman bertingkat: 5 juz, 10 juz, 15 juz, 20 juz, 30 juz</li>
+      <li>Sanad muttashil dari pengasuh setelah khatam 30 juz</li>
+    </ul>
+
+    <h3>Program Kitab Kuning</h3>
+    <div class="prog-table">
+      <div class="prog-row head"><div>Bidang</div><div>Tingkat Dasar</div><div>Tingkat Lanjut</div></div>
+      <div class="prog-row"><div class="pr-bid">Fiqih</div><div>Safinah, Sullam</div><div>Fathul Qorib, Fathul Mu'in</div></div>
+      <div class="prog-row"><div class="pr-bid">Aqidah</div><div>Aqidatul Awam</div><div>Tijan Darari, Kifayatul Awam</div></div>
+      <div class="prog-row"><div class="pr-bid">Akhlak</div><div>Wasoya</div><div>Ta'lim Muta'allim, Bidayatul Hidayah</div></div>
+      <div class="prog-row"><div class="pr-bid">Tafsir</div><div>Hidayatul Mustafid</div><div>Tafsir Jalalain</div></div>
+      <div class="prog-row"><div class="pr-bid">Hadits</div><div>Arba'in Nawawi</div><div>Riyadhus Shalihin</div></div>
+      <div class="prog-row"><div class="pr-bid">Nahwu</div><div>Jurumiyah</div><div>Imrithi, Alfiyah Ibnu Malik</div></div>
+      <div class="prog-row"><div class="pr-bid">Sorof</div><div>Amtsilati Tashrifiyyah</div><div>Tashrifan</div></div>
+      <div class="prog-row"><div class="pr-bid">Tasawuf</div><div>Hidayatul Adzkiya</div><div>Minhajul Abidin</div></div>
+    </div>
+
+    <h3>Pendidikan Formal SMP & SMA</h3>
+    <p>PPUQHM menyelenggarakan pendidikan formal SMP & SMA yang terakreditasi resmi. Lulusan mendapat ijazah resmi yang dapat dipakai untuk:</p>
+    <ul>
+      <li>Melanjutkan ke jenjang berikutnya</li>
+      <li>Melanjutkan ke perguruan tinggi mana pun di Indonesia</li>
+      <li>Mendaftar ke universitas Islam internasional (<strong>Al-Azhar Mesir, Az-Zaitunah Tunisia, Universitas Islam Madinah</strong>, dll)</li>
+    </ul>
+
+    <h3>Program Bahasa</h3>
+    <ul>
+      <li><strong>Bahasa Arab Aktif:</strong> muhadatsah, insya', tamrin lughawi</li>
+      <li><strong>Bahasa Inggris:</strong> untuk persiapan studi internasional</li>
+    </ul>
+
+    <h3>Pengembangan Diri & Kepemimpinan</h3>
+    <ul>
+      <li>Pemikiran Islam Wasathiyah KH. Hasyim Muzadi</li>
+      <li>Tradisi Aswaja An-Nahdliyah (tahlil, yasin, maulid, ziarah)</li>
+      <li>Kepemimpinan dan public speaking</li>
+      <li>Kewirausahaan dan kemandirian</li>
+      <li>Pagar Nusa (seni bela diri tradisi NU)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BAB 11 -->
+<div class="chapter" id="bab11">
+  <p class="chapter-num">BAB 11</p>
+  <h2 class="chapter-title">Pencapaian & Prestasi</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>Pencapaian Institusional</h3>
+    <ul>
+      <li><strong>28 Oktober 2017:</strong> Peletakan batu pertama oleh KH. Ma'ruf Amin, KH. Miftahul Akhyar, KH. Lukman Haris Dimyathi</li>
+      <li><strong>23 September 2018:</strong> Peresmian oleh Ny. Hj. Mutammimah Hasyim & Gus Yusron Sidqy</li>
+      <li>Berdiri secara resmi dengan IJOP dari Kemenag</li>
+      <li>Memiliki bangunan permanen di Karang Senang SP 3</li>
+      <li><strong>17 Januari 2025:</strong> Pembukaan Madrasah Ulumul Qur'an Hasyim Muzadi di SP 1 (cabang resmi pertama)</li>
+      <li>Telah melalui 9 era ustadz</li>
+      <li>Pengakuan dari masyarakat NU Mimika dan tokoh-tokoh besar nasional</li>
+    </ul>
+
+    <h3>Pencapaian Spiritual</h3>
+    <ul>
+      <li>Mahasantri umroh perdana ke Tanah Suci Makkah</li>
+      <li>Khotmil Qur'an Octa Ramadhan di Masjidil Haram</li>
+      <li>Pemberian sanad Al-Qur'an muttashil ke setiap lulusan tahfidz</li>
+    </ul>
+
+    <h3>Hafidz/Hafidzah Lulusan PPUQHM</h3>
+    <div class="hafidz-table">
+      <div class="hafidz-row head"><div>Nama</div><div>Era Ustadz</div><div>Tahun</div></div>
+      <div class="hafidz-row"><div class="nm">Harun Alry</div><div>Ustadz Hanif</div><div>2022–2023</div></div>
+      <div class="hafidz-row"><div class="nm">Kholid Ibrahim</div><div>Ustadz Hanif</div><div>2022–2023</div></div>
+      <div class="hafidz-row"><div class="nm">Nilam Insansani</div><div>Ustadz Sahal</div><div>2023–2024</div></div>
+      <div class="hafidz-row"><div class="nm">Zulfa</div><div>Ustadz Sahal</div><div>2023–2024</div></div>
+      <div class="hafidz-row"><div class="nm">Devita</div><div>Ustadz Wasik</div><div>2024–2025</div></div>
+      <div class="hafidz-row"><div class="nm">Lindi</div><div>Ustadz Wasik</div><div>2024–2025</div></div>
+      <div class="hafidz-row"><div class="nm">Yoga</div><div>Ustadz Wasik</div><div>2024–2025</div></div>
+      <div class="hafidz-row"><div class="nm">Abdul Kholid</div><div>Ustadz Wasik</div><div>2024–2025</div></div>
+      <div class="hafidz-row"><div class="nm">Nur Wasik</div><div>Ustadz Wasik</div><div>2024–2025</div></div>
+    </div>
+
+    <h3>Karakter Lulusan PPUQHM</h3>
+    <ul>
+      <li>Membawa sanad Krapyak yang muttashil ke generasi berikutnya</li>
+      <li>Mampu mengajar Al-Qur'an dengan metode yang baik</li>
+      <li>Memiliki kedalaman akhlak dan adab pesantren NU</li>
+      <li>Siap menjadi imam, khatib, dan da'i di masyarakat</li>
+      <li>Berpotensi melanjutkan studi ke perguruan tinggi dalam dan luar negeri</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BAB 12 -->
+<div class="chapter" id="bab12">
+  <p class="chapter-num">BAB 12</p>
+  <h2 class="chapter-title">Cabang & Pengembangan</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+
+    <h3>Madrasah Ulumul Qur'an Hasyim Muzadi SP 1</h3>
+    <p>Pada <strong>17 Januari 2025</strong>, PPUQHM membuka cabang resmi pertama: <strong>Madrasah Ulumul Qur'an Hasyim Muzadi di SP 1 Mimika</strong>. Pembukaan ini menjadi tonggak ekspansi PPUQHM dari satu lokasi tunggal menjadi jejaring pesantren di Mimika.</p>
+    <p>Cabang ini didirikan dengan tujuan:</p>
+    <ul>
+      <li>Menyediakan akses pendidikan tahfidz dan kitab kuning di SP 1</li>
+      <li>Memperluas jangkauan dakwah Aswaja NU di Mimika</li>
+      <li>Menjadi model untuk pendirian cabang berikutnya di SP-SP lain</li>
+    </ul>
+
+    <h3>Rencana Ekspansi (Roadmap 2026-2050)</h3>
+    <p>Mengikuti Masterplan PPUQHM 2026-2050, ekspansi cabang akan dilakukan dalam <strong>5 fase</strong>:</p>
+    <div class="roadmap-table">
+      <div class="road-row head"><div>Fase</div><div>Periode</div><div>Fokus</div></div>
+      <div class="road-row"><div class="ph">Fase 1</div><div class="pr">2026–2030</div><div>Konsolidasi Pusat — 5 cabang Mimika</div></div>
+      <div class="road-row"><div class="ph">Fase 2</div><div class="pr">2030–2035</div><div>Ekspansi Papua — 10 cabang seluruh Papua</div></div>
+      <div class="road-row"><div class="ph">Fase 3</div><div class="pr">2035–2042</div><div>Ekspansi Indonesia Timur & Awal Jawa</div></div>
+      <div class="road-row"><div class="ph">Fase 4</div><div class="pr">2042–2047</div><div>Keemasan Nasional — 50-100 cabang</div></div>
+      <div class="road-row"><div class="ph">Fase 5</div><div class="pr">2047–2050</div><div>Internasional & Estafet Kepemimpinan</div></div>
+    </div>
+
+    <h3>Kerjasama Eksternal</h3>
+    <p>PPUQHM menjalin kerjasama dengan berbagai pihak untuk pengembangan pesantren:</p>
+    <ul>
+      <li>Kerjasama akademik dengan kampus dalam negeri (STAIMA Al-Hikam, UNUSIA, dll)</li>
+      <li>Kerjasama akademik dengan kampus luar negeri (Az-Zaitunah Tunisia, dll)</li>
+      <li>Kerjasama dengan PCNU Mimika dan badan otonom NU</li>
+      <li>Kerjasama dengan masyarakat 5 wilayah Mimika</li>
+      <li>Kerjasama dengan keluarga besar Al-Hikam Depok dan Malang</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BAB 13 -->
+<div class="chapter" id="bab13">
+  <p class="chapter-num">BAB 13</p>
+  <h2 class="chapter-title">Mengenal KH. Ahmad Hasyim Muzadi</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>PPUQHM mengusung nama Almaghfurullah KH. Ahmad Hasyim Muzadi sebagai bentuk pengamalan dan kelanjutan estafet pemikiran sang Mahaguru di tanah Papua.</p>
+
+    <h3>Identitas</h3>
+    <div class="data-table">
+      <div class="data-row"><div class="data-key">Nama Lengkap</div><div class="data-val">KH. Ahmad Hasyim Muzadi</div></div>
+      <div class="data-row"><div class="data-key">Lahir</div><div class="data-val">Tuban, Jawa Timur, 8 Agustus 1944</div></div>
+      <div class="data-row"><div class="data-key">Wafat</div><div class="data-val">Malang, Jawa Timur, 16 Maret 2017</div></div>
+      <div class="data-row"><div class="data-key">Usia Wafat</div><div class="data-val">72 tahun</div></div>
+      <div class="data-row"><div class="data-key">Pesantren Pendiri</div><div class="data-val">PP Al-Hikam Malang & PP Al-Hikam Depok</div></div>
+      <div class="data-row"><div class="data-key">Posisi NU</div><div class="data-val">Ketua Umum PBNU 2 periode (1999–2010)</div></div>
+      <div class="data-row"><div class="data-key">Pengaruh Internasional</div><div class="data-val">Sekretaris Jenderal World Conference of Religions for Peace</div></div>
+    </div>
+
+    <h3>Pemikiran Islam Wasathiyah</h3>
+    <p>KH. Hasyim Muzadi adalah tokoh terdepan <strong>Islam Wasathiyah</strong> — Islam moderat, tengahan, yang tidak ekstrem ke kanan (radikalisme) maupun ke kiri (liberalisme). Pemikiran beliau dirumuskan dalam beberapa buku:</p>
+    <ul>
+      <li>"Pusaka Kebangsaan" karya Sofiudin</li>
+      <li>"KH. A. Hasyim Muzadi Sang Peace Maker" karya Tasirun Sulaiman</li>
+      <li>"Ka'sus Syarab Al-Widadi" karya Ali Fitriana Rahmat (Al-Hikam Press 2022)</li>
+    </ul>
+
+    <h3>Konsep Tafaqquh fid Din wa fil Mujtama'</h3>
+    <p>Salah satu konsep terkenal KH. Hasyim Muzadi adalah <strong>Tafaqquh fid Din wa fil Mujtama'</strong> — bahwa santri tidak hanya mendalami agama (Tafaqquh fid Din), tetapi juga mendalami masyarakat (Tafaqquh fil Mujtama'). Pesantren bukan menara gading yang terpisah dari realitas sosial, melainkan pusat pencerahan yang turun ke masyarakat.</p>
+    <p>Konsep ini menjadi fondasi pemikiran pendidikan PPUQHM — santri harus menjadi ahli agama yang juga ahli memahami masyarakat di sekitarnya, termasuk masyarakat plural Papua.</p>
+
+    <h3>Hubungan Khusus Gus Mursyid dengan KH. Hasyim Muzadi</h3>
+    <p>Gus Mursyid adalah murid langsung KH. Hasyim Muzadi semasa kuliah di STKQ Al-Hikam Depok (angkatan ke-3, 2012-2018). Hubungan beliau dengan sang Mahaguru bukan hanya hubungan murid-guru biasa, tetapi mencapai puncaknya pada malam wafat KH. Hasyim Muzadi:</p>
+    <div class="quote-box">Pada malam wafat (16 Maret 2017): Sebelah kanan kepala beliau dimentalkin oleh Ny. Hj. Mutammimah (istri). Sebelah kiri kepala dimentalkin oleh Gus Yusron Sidqy (putra bungsu). Dan tepat di kaki beliau, Gus Mursyid membaca Surah Yasin.</div>
+    <p>Posisi yang sangat istimewa untuk seorang santri ini menunjukkan kedekatan spiritual yang mendalam antara Gus Mursyid dengan KH. Hasyim Muzadi. Tidak heran jika beberapa bulan setelah wafat sang Mahaguru, Gus Mursyid mendirikan PPUQHM sebagai bentuk penghormatan dan kelanjutan estafet dakwah beliau di tanah Papua.</p>
+  </div>
+</div>
+
+<!-- BAB 14 -->
+<div class="chapter" id="bab14">
+  <p class="chapter-num">BAB 14</p>
+  <h2 class="chapter-title">Penutup & Doa</h2>
+  <div class="chapter-divider">— ❦ —</div>
+  <div class="chapter-content">
+    <p>Demikian dokumen Profil dan Sejarah Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM) yang merangkum perjalanan sembilan tahun pesantren ini (2017-2026). Dokumen ini disusun bukan sebagai pamer pencapaian, melainkan sebagai dokumentasi resmi yang akan menjadi rujukan keluarga besar PPUQHM dan masyarakat luas.</p>
+    <p>Sembilan tahun bukanlah waktu yang panjang untuk sebuah pesantren. Pesantren-pesantren besar Indonesia — <strong>Lirboyo, Tebuireng, Sidogiri, Krapyak</strong> — semuanya sudah berusia ratusan tahun. PPUQHM masih berada di awal perjalanan panjangnya. Yang sudah dicapai sembilan tahun ini hanyalah pondasi awal — masih banyak pekerjaan yang harus dilakukan untuk menjadikan PPUQHM sebagai pesantren yang benar-benar berkah dan bermanfaat luas.</p>
+    <p>Tetapi sembilan tahun ini juga membuktikan bahwa <strong>keberkahan Allah SWT mengalir di setiap sudut bumi</strong>. PPUQHM, yang lahir di tanah ujung timur Indonesia, telah meluluskan generasi hafidz/hafidzah dengan sanad muttashil ke Mbah Munawwir Krapyak, telah membuka cabang di SP 1, dan terus tumbuh dengan dukungan masyarakat Mimika yang luar biasa.</p>
+    <div class="quote-box">"Kalau Allah ingin sesuatu terjadi, maka tidak ada yang bisa menghalanginya. Kalau Allah ingin sesuatu tumbuh, maka tidak ada gurun yang bisa menahannya."</div>
+    <p>Semoga PPUQHM terus tumbuh dengan keberkahan, melahirkan generasi-generasi ulama yang berkhidmah untuk umat, dan menjadi mercusuar Al-Qur'an di tanah Papua dan seluruh Nusantara. Aamiin Ya Rabbal 'Alamin.</p>
+
+    <div class="chapter-divider">— ❦ —</div>
+
+    <h3 style="text-align:center;display:block;border:none">Doa Penutup</h3>
+    <div class="arabic-box">
+      <p class="ar">اَللَّهُمَّ بَارِكْ لَنَا فِيْ مَعْهَدِنَا، وَأَدِمْ بَرَكَاتَهُ، وَاجْعَلْهُ مَنَارَةَ الْقُرْآنِ فِيْ أَرْضِ بَابُوَا، وَاحْفَظْ أَهْلَهُ مِنْ كُلِّ مَكْرُوْهٍ، آمِيْنَ يَا رَبَّ الْعَالَمِيْنَ</p>
+      <p class="tr">"Ya Allah, berkahilah kami dalam pesantren kami, langgengkanlah keberkahannya, jadikanlah ia sebagai mercusuar Al-Qur'an di tanah Papua, dan jagalah keluarga besarnya dari segala keburukan. Aamiin Ya Rabbal 'Alamin."</p>
+    </div>
+
+    <div class="chapter-divider">— ❦ —</div>
+
+    <div class="signature">
+      <p class="loc">Mimika, 1447 H / 2026 M</p>
+      <p class="role">Pengasuh PPUQHM,</p>
+      <p class="name">Gus Mursyid Adi Saputra, S.Ag., Al-Hafidz<span>& Ning Siti Imroatus Sholihah, S.Pd., Al-Hafidzah</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="index.html#tentang" class="back-btn">← Kembali ke Beranda</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 # robots.txt for Pondok Pesantren Ulumul Qur'an Hasyim Muzadi
-# https://ppuq-hasyim-muzadi.netlify.app/
+# https://santripapua.com/
 
 User-agent: *
 Allow: /
@@ -9,4 +9,4 @@ Disallow: /admin/
 Disallow: /uploads/
 
 # Sitemap location
-Sitemap: https://ppuq-hasyim-muzadi.netlify.app/sitemap.xml
+Sitemap: https://santripapua.com/sitemap.xml

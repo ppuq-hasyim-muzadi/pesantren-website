@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Istighotsah Musabbi'at Rutin Malam Senin Legi - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <meta name="description" content="PPUQHM resmi membuka Istighotsah Musabbi'at rutin setiap malam Senin Legi dengan ijazah sanad muttashil hingga Syekh Nawawi Al-Bantani. Acara perdana 24 April 2026 dihadiri 150 jamaah."/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+    .article-header{margin-top:64px;padding:60px 2rem 40px;background:var(--hijau);text-align:center}
+    .article-cat{display:inline-block;background:rgba(255,255,255,.1);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem}
+    .article-header h1{font-size:clamp(1.45rem,3.2vw,2.15rem);font-weight:700;color:#fff;margin-bottom:.75rem;max-width:880px;margin-left:auto;margin-right:auto;line-height:1.3}
+    .article-lead{font-size:14px;color:rgba(255,255,255,.78);max-width:760px;margin:0 auto 1rem;line-height:1.65;font-style:italic}
+    .article-meta{display:flex;justify-content:center;align-items:center;gap:1rem;font-size:13px;color:rgba(255,255,255,.7);flex-wrap:wrap}
+    .article-img-wrap{max-width:900px;margin:-40px auto 0;padding:0 2rem;position:relative;z-index:2}
+    .article-img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 30%;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+    .article-img-cap{text-align:center;font-size:12px;color:var(--abu);font-style:italic;margin-top:.65rem;padding:0 1rem;line-height:1.55}
+    .article-body{max-width:800px;margin:0 auto;padding:2.5rem 2rem 1rem}
+    .article-body p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .article-body p.lead{font-size:16px;font-weight:500;color:var(--hijau)}
+    .article-body p strong{color:var(--hijau);font-weight:600}
+    .article-body h2{font-family:'Amiri',serif;font-size:1.45rem;font-weight:700;color:var(--hijau);margin:2rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--emas);display:inline-block;line-height:1.35}
+    .article-body blockquote{border-left:4px solid var(--emas);background:rgba(212,160,23,.08);padding:1rem 1.5rem;margin:1.5rem 0;font-style:italic;color:var(--hijau2);font-size:14.5px;border-radius:0 6px 6px 0;line-height:1.75}
+    .article-body blockquote .source{display:block;font-style:normal;font-size:12.5px;color:var(--abu);margin-top:.6rem;font-weight:500;letter-spacing:.02em}
+
+    /* SPECIAL CARDS — Bacaan & Insight */
+    .special-card{max-width:800px;margin:1.75rem auto;padding:0 2rem}
+    .special-card-inner{background:linear-gradient(135deg,#fffef9 0%,#fdf6e3 100%);border:1px solid rgba(212,160,23,.3);border-radius:10px;padding:1.5rem 1.75rem;box-shadow:0 6px 18px rgba(212,160,23,.08)}
+    .special-card-title{font-family:'Amiri',serif;font-size:1.2rem;font-weight:700;color:var(--hijau);margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:1.5px solid var(--emas);display:inline-block;line-height:1.35}
+    .special-card-inner p{font-size:14px;color:var(--gelap);line-height:1.85;margin-bottom:1rem}
+    .special-card-sub{font-size:13.5px;font-weight:600;color:var(--hijau2);margin-bottom:.65rem}
+    .special-card-inner ol{padding-left:1.5rem;margin-bottom:0}
+    .special-card-inner ol li{font-size:14px;color:var(--gelap);line-height:1.85;padding:.15rem 0}
+    .special-card-inner ol li::marker{color:var(--emas);font-weight:700}
+
+    /* SANAD CHAIN */
+    .sanad-wrap{max-width:760px;margin:1.75rem auto;padding:0 2rem}
+    .sanad-box{background:linear-gradient(135deg,#0d2218 0%,var(--hijau) 100%);color:#fff;border-radius:12px;padding:1.75rem 1.5rem;box-shadow:0 8px 24px rgba(13,34,24,.25);position:relative;overflow:hidden}
+    .sanad-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--emas),var(--emas2))}
+    .sanad-title{font-family:'Amiri',serif;font-size:1.25rem;font-weight:700;color:var(--emas2);text-align:center;margin-bottom:1.5rem;letter-spacing:.02em}
+    .sanad-node{background:rgba(255,255,255,.06);border:1px solid rgba(212,160,23,.25);border-radius:8px;padding:.85rem 1.1rem;position:relative}
+    .sanad-node .nm{font-size:14.5px;font-weight:600;color:var(--emas2);margin-bottom:.2rem;line-height:1.35}
+    .sanad-node .role{font-size:12px;color:rgba(255,255,255,.7);line-height:1.5}
+    .sanad-arrow{text-align:center;color:var(--emas);font-size:1.4rem;margin:.4rem 0;line-height:1;opacity:.7}
+
+    /* INFO BOX */
+    .info-box{max-width:800px;margin:1.5rem auto 0;padding:0 2rem}
+    .info-box-inner{background:#fff;border:1px solid rgba(27,67,50,.12);border-radius:10px;padding:1.5rem 1.75rem;box-shadow:0 4px 14px rgba(27,67,50,.06)}
+    .info-box-title{font-size:13px;font-weight:700;color:var(--hijau);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .info-box dl{display:grid;grid-template-columns:max-content 1fr;gap:.65rem 1.25rem}
+    .info-box dt{font-size:12.5px;font-weight:600;color:var(--hijau2);letter-spacing:.02em}
+    .info-box dd{font-size:13.5px;color:var(--gelap);line-height:1.6}
+
+    /* GALLERY */
+    .gallery-section{background:var(--putih);padding:3rem 2rem;margin-top:2rem}
+    .gallery-section .container{max-width:1100px;margin:0 auto}
+    .gallery-head{text-align:center;margin-bottom:2rem}
+    .gallery-head h2{font-family:'Amiri',serif;font-size:1.6rem;color:var(--hijau);padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .gallery-item{background:#0d2218;border-radius:10px;overflow:hidden;aspect-ratio:3/2;position:relative;transition:.3s;cursor:pointer;box-shadow:0 4px 12px rgba(27,67,50,.1)}
+    .gallery-item::after{content:'';position:absolute;inset:0;border:1px solid rgba(212,160,23,.2);border-radius:10px;pointer-events:none;z-index:1}
+    .gallery-item:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(27,67,50,.18)}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s}
+    .gallery-item:hover img{transform:scale(1.05)}
+
+    /* MOTTO */
+    .motto-block{max-width:800px;margin:2.5rem auto 0;padding:0 2rem;text-align:center}
+    .motto-divider{font-size:1.3rem;color:var(--emas);letter-spacing:.6rem;margin-bottom:1rem;opacity:.7}
+    .motto-block .motto-text{font-family:'Amiri',serif;font-size:1.5rem;color:var(--hijau);font-weight:700;line-height:1.4}
+    .motto-block .motto-by{font-size:12px;color:var(--abu);margin-top:.5rem;letter-spacing:.05em}
+
+    /* TAGS */
+    .tags-wrap{max-width:800px;margin:2.5rem auto 0;padding:0 2rem}
+    .tags-title{font-size:13px;font-weight:600;color:var(--hijau);margin-bottom:.75rem}
+    .tags-list{display:flex;flex-wrap:wrap;gap:.5rem}
+    .tag{font-size:12px;color:var(--hijau2);background:rgba(27,67,50,.06);padding:5px 12px;border-radius:14px;border:1px solid rgba(27,67,50,.1)}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1.5rem 2rem 3rem}
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    @media(max-width:768px){
+      nav{padding:0 1rem}
+      .nav-logo-text{font-size:13px;max-width:200px}
+      .article-header{padding:50px 1.25rem 35px}
+      .article-img-wrap{padding:0 1.25rem;margin-top:-32px}
+      .article-body{padding:2rem 1.25rem 1rem}
+      .article-body p{font-size:14.5px;line-height:1.85}
+      .article-body h2{font-size:1.25rem}
+      .article-body blockquote{padding:.85rem 1.1rem;font-size:14px}
+      .special-card,.sanad-wrap,.info-box,.motto-block,.tags-wrap{padding:0 1.25rem}
+      .special-card-inner,.sanad-box,.info-box-inner{padding:1.25rem 1.25rem}
+      .special-card-title{font-size:1.1rem}
+      .sanad-title{font-size:1.1rem}
+      .sanad-node .nm{font-size:13.5px}
+      .info-box dl{grid-template-columns:1fr;gap:.2rem .5rem}
+      .info-box dt{margin-top:.5rem}
+      .info-box dt:first-child{margin-top:0}
+      .gallery-section{padding:2.5rem 1.25rem}
+      .gallery-grid{grid-template-columns:1fr 1fr;gap:.75rem}
+      .wa-float{bottom:20px;right:20px;width:50px;height:50px;font-size:22px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="berita.html" class="nav-back">← Semua Berita</a>
+</nav>
+
+<div class="article-header">
+  <span class="article-cat">Amaliyah Aswaja</span>
+  <h1>PPUQHM Mimika Resmikan Istighotsah Musabbi'at Rutin Setiap Malam Senin Legi, Forum Silaturrahim Keluarga Besar Pesantren</h1>
+  <p class="article-lead">Dihadiri sekitar 150 jamaah di tengah gerimis hujan. Malam Senin Legi dipilih karena bertepatan dengan weton kelahiran Pengasuh, Gus Mursyid Adi Saputra. Amaliyah berijazah sanad muttashil hingga Syekh Nawawi Al-Bantani.</p>
+  <div class="article-meta">
+    <span>📅 Jumat, 24 April 2026</span>
+    <span>•</span>
+    <span>📍 PPUQHM Mimika</span>
+    <span>•</span>
+    <span>✍️ Redaksi PPUQHM</span>
+    <span>•</span>
+    <span>⏱️ 4 menit baca</span>
+  </div>
+</div>
+
+<div class="article-img-wrap">
+  <img src="berita-istighotsah.jpg" alt="Gus Mursyid memimpin Istighotsah Musabbi'at di tengah jamaah PPUQHM" class="article-img">
+  <p class="article-img-cap">Gus Mursyid Adi Saputra Al-Hafidz memimpin dzikir Istighotsah Musabbi'at di kompleks PPUQHM, Karang Senang SP-3, Mimika — di tengah gerimis hujan malam Senin Legi.</p>
+</div>
+
+<div class="article-body">
+  <p class="lead">Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM) Mimika resmi membuka kegiatan <strong>Istighotsah Musabbi'at</strong> sebagai forum silaturrahim sekaligus amaliyah doa bersama keluarga besar pesantren pada Jumat malam (24/4) di kompleks pesantren Karang Senang SP-3, Mimika. Sekitar 150 jamaah hadir dalam acara perdana yang berlangsung khidmat di tengah suasana gerimis hujan.</p>
+
+  <p>Pembukaan kegiatan ini menandai dimulainya amaliyah rutin pesantren yang akan dilaksanakan secara <strong>selapanan</strong> — yakni setiap 35 hari sekali — pada malam Senin Legi sesuai tradisi penanggalan Jawa-Islam yang dipegang kuat oleh masyarakat NU sejak masa Walisongo.</p>
+
+  <p>Pengasuh PPUQHM, <strong>Gus Mursyid Adi Saputra Al-Hafidz</strong>, hadir langsung memimpin seluruh rangkaian acara. Hadir pula santri-santriwati, mahasantri-mahasantriwati SP-3, para walisantri, tim Fundraising/UPZ Hasyim Muzadi, dan seluruh keluarga besar pesantren.</p>
+
+  <h2>Tiga Tujuan Mulia: Silaturrahim, Doa Kemajuan, dan Keberkahan</h2>
+
+  <p>Dalam sambutannya, Gus Mursyid menjelaskan bahwa kegiatan Istighotsah Musabbi'at ini dilahirkan dengan <strong>tiga tujuan utama</strong> yang saling berkaitan dan menjadi ruh kegiatan rutin ini.</p>
+
+  <p><strong>Pertama</strong>, sebagai forum silaturrahim seluruh keluarga besar pesantren — mempererat ikatan antara pengasuh, ustadz/ustadzah, santri, mahasantri, walisantri, dan para muhibbin PPUQHM. <strong>Kedua</strong>, sebagai majelis doa bersama untuk kemajuan pesantren ke depan, baik dari sisi kelembagaan, kualitas pendidikan, maupun pengembangan cabang. <strong>Ketiga</strong>, sebagai sarana memohon keselamatan dan keberkahan untuk seluruh keluarga besar pesantren, baik yang hadir maupun yang berhalangan.</p>
+</div>
+
+<!-- BACAAN ISTIGHOTSAH -->
+<div class="special-card">
+  <div class="special-card-inner">
+    <h3 class="special-card-title">📿 Bacaan Istighotsah Musabbi'at</h3>
+    <p>Istighotsah Musabbi'at adalah amaliyah dzikir Aswaja yang terdiri dari pembacaan <strong>enam surat pilihan</strong> dari Al-Qur'an, masing-masing sebanyak <strong>tujuh kali</strong> (dari kata <em>musabbi'at</em> yang bermakna "yang ditujuhkan"). Bacaannya diawali dengan istighfar dan diakhiri dengan doa.</p>
+    <p class="special-card-sub">📖 Tata Cara &amp; Urutan Bacaan:</p>
+    <ol>
+      <li><strong>Pembuka:</strong> Istighfar</li>
+      <li>QS. Al-Fatihah ×7</li>
+      <li>QS. Al-Insyirah (<em>Alam Nasyrah</em>) ×7</li>
+      <li>QS. Al-Qadr (<em>Inna Anzalnah</em>) ×7</li>
+      <li>QS. Al-Ikhlas (<em>Qul Huwallahu Ahad</em>) ×7</li>
+      <li>QS. Al-Falaq (<em>Qul A'udzu bi Rabbil Falaq</em>) ×7</li>
+      <li>QS. An-Nas (<em>Qul A'udzu bi Rabbin Nas</em>) ×7</li>
+      <li><strong>Penutup:</strong> Doa</li>
+    </ol>
+  </div>
+</div>
+
+<div class="article-body" style="padding-top:.5rem">
+  <h2>Rangkaian Acara: Dari Shalawat Al-Barzanji Hingga Tausiyah</h2>
+
+  <p>Acara perdana yang dimulai selepas Isya' ini dibuka dengan pembacaan <strong>Shalawat Al-Barzanji</strong> — karya monumental Sayyid Ja'far Al-Barzanji yang menjadi tradisi khas pesantren NU dalam mengagungkan Baginda Nabi Muhammad SAW. Lantunan shalawat yang dipimpin oleh para santri membahana di kompleks pesantren menyatu dengan suara gerimis hujan yang turun lembut malam itu.</p>
+
+  <p>Setelah Al-Barzanji, rangkaian dilanjutkan dengan inti acara yakni dzikir Istighotsah Musabbi'at yang dipimpin langsung oleh Pengasuh. Suasana hening dan khusyu' menyelimuti seluruh jamaah, dengan sebagian di antaranya terlihat meneteskan air mata haru. Hujan rintik-rintik yang turun di luar musholla seolah menjadi tirai langit yang ikut mengamini setiap lantunan doa.</p>
+
+  <p>Acara kemudian dilanjutkan dengan tausiyah yang disampaikan langsung oleh Gus Mursyid sebagai Pengasuh. Beliau menyampaikan pesan-pesan ruhani tentang pentingnya istighotsah sebagai jembatan hati kepada Allah SWT, sekaligus pentingnya merawat ikatan silaturrahim antar keluarga besar pesantren. Pesan-pesan ini disampaikan dengan bahasa yang akrab dan menyentuh, dekat dengan realitas jamaah PPUQHM di tanah perantauan.</p>
+
+  <p>Sebagai penutup, seluruh jamaah duduk bersama untuk <strong>makan bersama</strong> dalam suasana hangat khas pesantren NU — santri, walisantri, dan pengurus duduk membaur tanpa sekat status. Hidangan sederhana terasa istimewa karena disantap dalam ikatan persaudaraan yang erat.</p>
+
+  <h2>Sanad Ijazah Bersambung ke Syekh Nawawi Al-Bantani</h2>
+
+  <p>Yang menjadikan kegiatan ini sangat istimewa adalah <strong>sanad ijazah</strong> amaliyah ini yang dimiliki Gus Mursyid bersambung secara <em>muttashil</em> (tersambung) hingga ulama besar Nusantara abad ke-19, <strong>Syekh Nawawi Al-Bantani</strong> — ulama Banten yang dikenal sebagai <em>Sayyid 'Ulama Al-Hijaz</em> dan menjadi guru para pendiri Nahdlatul Ulama.</p>
+
+  <p>Dalam tausiyah pembuka, Gus Mursyid menjelaskan kepada jamaah silsilah sanad ijazah Istighotsah Musabbi'at yang beliau amalkan dan ajarkan malam itu, sebagai berikut:</p>
+</div>
+
+<!-- SANAD CHAIN -->
+<div class="sanad-wrap">
+  <div class="sanad-box">
+    <p class="sanad-title">📿 Sanad Ijazah Istighotsah Musabbi'at</p>
+    <div class="sanad-node">
+      <p class="nm">Gus Mursyid Adi Saputra Al-Hafidz</p>
+      <p class="role">Pengasuh PPUQHM Mimika, Papua Tengah</p>
+    </div>
+    <div class="sanad-arrow">↓</div>
+    <div class="sanad-node">
+      <p class="nm">KH. Dimyathi Rois</p>
+      <p class="role">Pengasuh PP. Al-Fadhlu, Kaliwungu, Kendal</p>
+    </div>
+    <div class="sanad-arrow">↓</div>
+    <div class="sanad-node">
+      <p class="nm">KH. Ahmad Rukyat</p>
+      <p class="role">Pengasuh PP. APIK, Kaliwungu, Kendal</p>
+    </div>
+    <div class="sanad-arrow">↓</div>
+    <div class="sanad-node">
+      <p class="nm">KH. Idris Jamsaren</p>
+      <p class="role">Pengasuh PP Jamsaren, Solo</p>
+    </div>
+    <div class="sanad-arrow">↓</div>
+    <div class="sanad-node">
+      <p class="nm">KH. Muhammad Sholeh Darat</p>
+      <p class="role">Ulama Semarang, Guru Hadhratussyaikh KH. Hasyim Asy'ari</p>
+    </div>
+    <div class="sanad-arrow">↓</div>
+    <div class="sanad-node">
+      <p class="nm">Syekh Nawawi Al-Bantani</p>
+      <p class="role">Sayyid 'Ulama Al-Hijaz, ulama besar Nusantara abad ke-19</p>
+    </div>
+  </div>
+</div>
+
+<div class="article-body" style="padding-top:.5rem">
+  <p>Sanad ini menjadi bukti otentisitas amaliyah yang diajarkan, sekaligus penghubung spiritual antara jamaah PPUQHM di Mimika dengan sanad keilmuan ulama-ulama besar Nusantara. <strong>KH. Sholeh Darat</strong> sendiri merupakan guru dari Hadhratussyaikh KH. Hasyim Asy'ari (pendiri NU), KH. Ahmad Dahlan (pendiri Muhammadiyah), dan RA. Kartini — sehingga sanad ini membawa keberkahan dari mata air keilmuan yang sama dengan tokoh-tokoh besar bangsa.</p>
+
+  <blockquote>
+    "Setiap kita yang ikut malam ini, dengan izin Allah, sambung silsilah keilmuannya sampai ke Syekh Nawawi Al-Bantani, dan terus ke atas hingga Rasulullah SAW."
+    <span class="source">— Gus Mursyid Adi Saputra Al-Hafidz, Pengasuh PPUQHM</span>
+  </blockquote>
+
+  <h2>Akan Menjadi Tradisi Rutin Setiap Malam Senin Legi</h2>
+
+  <p>Yang istimewa dari kegiatan ini, PPUQHM secara resmi menetapkan Istighotsah Musabbi'at sebagai <strong>kegiatan rutin selapanan</strong> — yakni siklus 35 hari sekali sesuai sistem penanggalan tradisional Jawa-Islam. Hari yang dipilih adalah malam <strong>Senin Legi</strong>, hari yang sarat makna personal sekaligus tradisional bagi Pengasuh PPUQHM.</p>
+
+  <p>Dalam tausiyahnya, Gus Mursyid mengungkapkan kepada jamaah bahwa pemilihan malam Senin Legi bukan tanpa alasan. Malam Senin Legi adalah <strong>weton kelahiran beliau sendiri</strong> — Gus Mursyid lahir pada malam Senin Legi. Dengan menjadikan hari weton sebagai majelis dzikir bersama keluarga besar pesantren, Gus berikhtiar mengikat keberkahan hari kelahirannya untuk seluruh jamaah, santri, walisantri, dan muhibbin PPUQHM.</p>
+</div>
+
+<!-- INSIGHT: MENGAPA MALAM SENIN LEGI -->
+<div class="special-card">
+  <div class="special-card-inner">
+    <h3 class="special-card-title">🌙 Mengapa Malam Senin Legi?</h3>
+    <p>Dalam tradisi pesantren Jawa-NU, <strong>weton</strong> (hari kelahiran berdasarkan penanggalan Jawa-Islam) memiliki keistimewaan tersendiri. Menjadikan weton sebagai hari rutin amaliyah dzikir adalah bentuk syukur atas nikmat hayat dari Allah SWT, sekaligus ikhtiar agar keberkahan hari kelahiran terus mengalir kepada diri dan orang-orang di sekitar. Tradisi ini telah lama dipraktikkan oleh para ulama Nusantara — termasuk Walisongo — sebagai bagian dari memuliakan nikmat penciptaan.</p>
+  </div>
+</div>
+
+<div class="article-body" style="padding-top:.5rem">
+  <p>Penetapan jadwal selapanan ini bukan tanpa makna. Dalam tradisi NU, hari Senin Legi juga memiliki kedudukan tersendiri sebagai hari yang dipilih banyak ulama Walisongo untuk menggelar majelis dzikir dan munajat. PPUQHM dengan menetapkan jadwal ini sekaligus melanjutkan tradisi yang telah berakar dari generasi ke generasi.</p>
+
+  <p>Dengan diresmikannya kegiatan ini, keluarga besar PPUQHM kini memiliki agenda rutin yang akan terus mengikat batin seluruh komponen pesantren dalam dzikir dan doa bersama. Acara berikutnya akan dilaksanakan pada malam Senin Legi berikutnya — bertepatan sekitar lima minggu ke depan.</p>
+</div>
+
+<!-- INFO BOX -->
+<div class="info-box">
+  <div class="info-box-inner">
+    <div class="info-box-title">📋 Informasi Kegiatan</div>
+    <dl>
+      <dt>Nama Kegiatan</dt><dd>Istighotsah Musabbi'at</dd>
+      <dt>Acara Perdana</dt><dd>Jumat malam, 24 April 2026</dd>
+      <dt>Lokasi</dt><dd>Kompleks PPUQHM, Karang Senang SP-3, Mimika</dd>
+      <dt>Pemimpin</dt><dd>Gus Mursyid Adi Saputra Al-Hafidz</dd>
+      <dt>Jumlah Jamaah</dt><dd>± 150 orang</dd>
+      <dt>Rangkaian Acara</dt><dd>Al-Barzanji → Istighotsah Musabbi'at → Tausiyah → Makan Bersama</dd>
+      <dt>Sanad Ijazah</dt><dd>KH. Dimyathi Rois → KH. Ahmad Rukyat → KH. Idris Jamsaren → KH. Sholeh Darat → Syekh Nawawi Al-Bantani</dd>
+      <dt>Jadwal Rutin</dt><dd>Setiap selapan sekali (35 hari) pada malam Senin Legi</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-section">
+  <div class="container">
+    <div class="gallery-head"><h2>Galeri Foto Kegiatan</h2></div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="istighotsah-1.jpg" alt="Dokumentasi Istighotsah Musabbi'at 1"></div>
+      <div class="gallery-item"><img src="istighotsah-2.jpg" alt="Dokumentasi Istighotsah Musabbi'at 2"></div>
+      <div class="gallery-item"><img src="istighotsah-3.jpg" alt="Dokumentasi Istighotsah Musabbi'at 3"></div>
+      <div class="gallery-item"><img src="istighotsah-4.jpg" alt="Dokumentasi Istighotsah Musabbi'at 4"></div>
+      <div class="gallery-item"><img src="istighotsah-5.jpg" alt="Dokumentasi Istighotsah Musabbi'at 5"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MOTTO -->
+<div class="motto-block">
+  <div class="motto-divider">─── ❦ ───</div>
+  <p class="motto-text">Tandurane Abah, Tukule nang Papua</p>
+  <p class="motto-by">— Motto PPUQHM —</p>
+</div>
+
+<!-- TAGS -->
+<div class="tags-wrap">
+  <p class="tags-title">🏷️ Tag Berita</p>
+  <div class="tags-list">
+    <span class="tag">#PPUQHM</span>
+    <span class="tag">#IstighotsahMusabbiat</span>
+    <span class="tag">#MalamSeninLegi</span>
+    <span class="tag">#AmaliyahNU</span>
+    <span class="tag">#GusMursyid</span>
+    <span class="tag">#AswajaNU</span>
+    <span class="tag">#PesantrenMimika</span>
+    <span class="tag">#HasyimMuzadi</span>
+    <span class="tag">#Selapanan</span>
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="berita.html" class="back-btn">← Kembali ke Daftar Berita</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+</body>
+</html>

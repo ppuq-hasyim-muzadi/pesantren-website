@@ -117,21 +117,56 @@
     .mob-menu a{color:#fff;text-decoration:none;font-size:14px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
 
     /* HERO SLIDER */
-    .slider{position:relative;height:100vh;overflow:hidden;margin-top:64px}
-    .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s;background-size:cover;background-position:center}
+    .slider{position:relative;height:100vh;min-height:520px;max-height:820px;overflow:hidden;margin-top:64px}
+    .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s;background-size:cover;background-position:center;background-repeat:no-repeat}
     .slide.active{opacity:1}
-    .slide-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,20,10,.65),rgba(5,20,10,.35) 50%,rgba(5,20,10,.72))}
-    .slide-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
-    .arabic{font-family:'Amiri',serif;font-size:clamp(1.3rem,3vw,2rem);color:var(--emas2);margin-bottom:1rem;letter-spacing:.05em}
-    .slide-h1{font-size:clamp(1.8rem,5vw,3.5rem);font-weight:700;color:#fff;line-height:1.2;margin-bottom:.75rem;text-shadow:0 2px 10px rgba(0,0,0,.4)}
-    .slide-p{font-size:clamp(.85rem,2vw,1.05rem);color:rgba(255,255,255,.82);max-width:620px;margin-bottom:.5rem}
-    .slide-addr{font-size:12px;color:var(--emas2);margin-bottom:2rem}
-    .slide-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
-    .btn-gold{background:var(--emas);color:var(--hijau);padding:12px 30px;border-radius:4px;text-decoration:none;font-weight:600;font-size:14px;transition:.2s}
+
+    /* Posisi fokus per-slide (subjek foto ada di posisi berbeda) */
+    /* Slide 1: logo & wajah pengasuh ada di KIRI → geser ke 25% */
+    .slide-1{background-position:25% center}
+    /* Slide 2: bangunan pesantren — fokus ke tengah-atas */
+    .slide-2{background-position:center 40%}
+    /* Slide 3: foto angkatan di bawah-tengah */
+    .slide-3{background-position:center 65%}
+
+    /* Mobile portrait: cropping makin agresif, pertegas focal point */
+    @media (max-width:768px){
+      .slide-1{background-position:28% center}
+      .slide-2{background-position:center 45%}
+      .slide-3{background-position:center 60%}
+    }
+    @media (max-width:480px){
+      .slide-1{
+        background-image:url('mode-mobile.jpg') !important;
+        background-position:center center;
+        background-size:contain;
+        background-color:#fff
+      }
+      .slide-2{background-position:center 50%}
+      .slide-3{background-position:center 58%}
+    }
+
+    /* Judul slide 2 & 3 — paksa SATU BARIS (font auto-shrink di HP sempit) */
+    .slide-2 .slide-h1,
+    .slide-3 .slide-h1{
+      max-width:100%;
+      white-space:nowrap;
+      font-size:clamp(1rem,4.8vw,3.2rem);
+    }
+    .slide-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,20,10,.7),rgba(5,20,10,.4) 50%,rgba(5,20,10,.78))}
+    .slide-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem;max-width:900px;margin:0 auto;box-sizing:border-box;overflow-wrap:break-word;word-wrap:break-word;hyphens:auto}
+    .slide-content > *{max-width:100%}
+    .slide-badge{display:inline-block;background:rgba(212,160,23,.18);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:1.25rem;border:1px solid rgba(212,160,23,.4)}
+    .arabic{font-family:'Amiri',serif;font-size:clamp(1.05rem,3vw,2rem);color:var(--emas2);margin-bottom:1rem;letter-spacing:.05em;line-height:1.5}
+    .slide-h1{font-size:clamp(1.5rem,5vw,3.5rem);font-weight:700;color:#fff;line-height:1.25;margin-bottom:.75rem;text-shadow:0 2px 10px rgba(0,0,0,.5);max-width:18ch}
+    .slide-p{font-size:clamp(.9rem,2vw,1.05rem);color:rgba(255,255,255,.88);max-width:560px;margin-bottom:.75rem;line-height:1.65}
+    .slide-addr{font-size:12px;color:var(--emas2);margin-bottom:1.75rem;padding:0 1rem;line-height:1.55;max-width:90%}
+    .slide-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;width:100%;max-width:480px}
+    .btn-gold{background:var(--emas);color:var(--hijau);padding:13px 28px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;transition:.2s;display:inline-flex;align-items:center;justify-content:center;min-height:46px;white-space:nowrap}
     .btn-gold:hover{background:var(--emas2);transform:translateY(-2px)}
-    .btn-white{border:1.5px solid rgba(255,255,255,.7);color:#fff;padding:12px 30px;border-radius:4px;text-decoration:none;font-size:14px;transition:.2s}
+    .btn-white{border:1.5px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:6px;text-decoration:none;font-size:14px;transition:.2s;display:inline-flex;align-items:center;justify-content:center;min-height:46px;white-space:nowrap}
     .btn-white:hover{background:rgba(255,255,255,.1)}
-    .slider-prev,.slider-next{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:28px;padding:8px 14px;border-radius:4px;cursor:pointer;transition:.2s}
+    .slider-prev,.slider-next{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:24px;padding:10px 14px;border-radius:6px;cursor:pointer;transition:.2s;backdrop-filter:blur(4px)}
     .slider-prev{left:16px}.slider-next{right:16px}
     .slider-prev:hover,.slider-next:hover{background:rgba(255,255,255,.28)}
     .slider-dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
@@ -423,14 +458,112 @@
     .form-group .hint{display:block;font-size:11px;color:var(--abu);margin-top:4px;font-weight:400;font-style:italic}
 
     /* RESPONSIVE */
+    /* ===== RESPONSIVE — TABLET (≤900px) ===== */
+    @media(max-width:900px){
+      section{padding:60px 1.5rem}
+      .sec-head{margin-bottom:2rem}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+    }
+
+    /* ===== RESPONSIVE — MOBILE BESAR (≤768px) ===== */
     @media(max-width:768px){
+      /* Navbar */
       .nav-menu{display:none}
       .hamburger{display:flex}
-      .tentang-grid,.kontak-grid,.footer-grid{grid-template-columns:1fr}
-      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      nav{padding:0 1rem}
+      .nav-logo-text{font-size:13px;max-width:200px}
+      .nav-logo-circle{width:38px;height:38px}
+
+      /* Hero Slider */
+      .slider{height:calc(100vh - 64px);min-height:540px;max-height:680px}
+      .slide-content{padding:1.5rem 1.25rem}
+      .slide-btns{flex-direction:column;gap:.65rem;max-width:300px}
+      .btn-gold,.btn-white{width:100%;padding:14px 24px}
+      .slider-prev,.slider-next{padding:8px 12px;font-size:20px}
+      .slide-badge{font-size:10px;padding:5px 14px;letter-spacing:.1em;max-width:90%;white-space:normal;line-height:1.4}
+
+      /* Sections */
+      section{padding:50px 1rem}
+      .container{padding:0 .5rem}
+      .sec-head{margin-bottom:1.75rem}
+
+      /* Grids */
+      .tentang-grid,.kontak-grid,.footer-grid{grid-template-columns:1fr;gap:2rem}
+      .stats-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
       .info-grid{grid-template-columns:1fr}
       .sarana-grid{grid-template-columns:1fr}
+      .fitur-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+      .keunggulan-grid{grid-template-columns:1fr;gap:1rem}
+      .news-grid{grid-template-columns:1fr;gap:1rem}
+      .pengasuh-card-grid{grid-template-columns:1fr}
+
+      /* Card padding */
+      .fitur-card{padding:1.5rem 1rem}
+      .keunggulan-card{padding:1.25rem}
+      .keunggulan-num{font-size:1.6rem}
+      .news-img{height:170px}
+
+      /* Stats */
+      #stats{padding:50px 1rem}
+      .stats-grid{max-width:400px}
+
+      /* CTA daftar */
+      #cta-daftar{padding:50px 1.25rem}
+      .cta-content p{font-size:13px;padding:0 .5rem}
+      .btn-cta-daftar{padding:13px 28px;font-size:14px}
+      .cta-daftar-drop{min-width:260px;max-width:calc(100vw - 2rem)}
+
+      /* Pengasuh */
+      .pengasuh-stamp{width:64px;height:64px;top:-10px;right:-10px}
+      .stamp-ar{font-size:9px}
+      .pengasuh-foto-wrap{max-width:300px}
+
+      /* Modal pendaftaran */
+      .modal-overlay{padding:.5rem;align-items:flex-start;padding-top:1rem}
+      .modal-box{max-height:calc(100vh - 1rem)}
+      .modal-body{padding:1rem}
+      .form-row{grid-template-columns:1fr;gap:0}
     }
+
+    /* ===== RESPONSIVE — MOBILE KECIL (≤480px) ===== */
+    @media(max-width:480px){
+      /* Hero Slider */
+      .slider{min-height:500px}
+      .slide-content{padding:1rem .85rem}
+      .arabic{font-size:.95rem;margin-bottom:.6rem;line-height:1.45}
+      .slide-h1{font-size:1.35rem;line-height:1.25;margin-bottom:.6rem;max-width:100%}
+      .slide-p{font-size:.85rem;margin-bottom:.5rem;line-height:1.55}
+      .slide-addr{font-size:11px;margin-bottom:1.25rem;padding:0 .25rem}
+      .slide-badge{font-size:9px;padding:4px 12px;margin-bottom:.85rem;letter-spacing:.08em}
+      /* Sembunyikan panah di HP kecil — sudah ada dots untuk navigasi */
+      .slider-prev,.slider-next{display:none}
+      .slider-dots{bottom:14px}
+
+      /* Sections */
+      section{padding:40px .85rem}
+      .sec-title{font-size:1.4rem}
+      .sec-badge{font-size:10px;padding:4px 12px}
+
+      /* Fitur — single column at very small screens */
+      .fitur-grid{grid-template-columns:1fr;gap:.85rem}
+      .fitur-card{padding:1.25rem 1rem}
+      .fitur-icon{font-size:2rem}
+
+      /* CTA daftar */
+      .cta-content h2{font-size:1.4rem}
+      .btn-cta-daftar{padding:12px 24px;font-size:13px;width:100%;max-width:280px}
+
+      /* Footer */
+      .footer-grid{grid-template-columns:1fr;gap:1.75rem}
+      footer{padding:30px 1rem}
+
+      /* WA Float — adjust position */
+      .wa-float{bottom:20px;right:20px;width:50px;height:50px;font-size:22px}
+    }
+
+    /* Prevent horizontal scroll */
+    html,body{overflow-x:hidden;max-width:100%}
+    img{max-width:100%;height:auto}
   </style>
 </head>
 <body>
@@ -483,35 +616,37 @@
 
 <!-- HERO SLIDER -->
 <div class="slider">
-  <div class="slide active" style="background-image:url('sampul pesantren_20260218_063829_0000.png')">
+  <div class="slide slide-1 active" style="background-image:url('sampul pesantren_20260218_063829_0000.png')">
   </div>
-  <div class="slide" style="background-image:url('sampul pondok.png')">
+  <div class="slide slide-2" style="background-image:url('sampul pondok.png')">
     <div class="slide-overlay"></div>
     <div class="slide-content">
+      <span class="slide-badge">Pondok Pesantren</span>
       <p class="arabic">مَعْهَدُ عُلُوْمِ الْقُرْآنِ هَاشِم مُزَادِي</p>
-      <h1 class="slide-h1">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</h1>
-      <p class="slide-p">Membentuk Generasi Qur'ani yang Berilmu, Berakhlak Mulia, dan Siap Mengabdi kepada Umat</p>
-      <p class="slide-addr">📍 Jl. Sunan Kalijaga, Kel. Karang Senang Sp.3, Distrik Kuala Kencana, Papua Tengah</p>
+      <h1 class="slide-h1">Ulumul Qur'an Hasyim Muzadi</h1>
+      <p class="slide-p">Mencetak generasi Qur'ani yang berilmu, berakhlak, dan siap mengabdi pada umat.</p>
+      <p class="slide-addr">📍 Kuala Kencana, Mimika — Papua Tengah</p>
       <div class="slide-btns">
-        <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi" class="btn-gold" target="_blank" rel="noopener">Daftar Sekarang</a>
-        <a href="#tentang" class="btn-white">Tentang Kami</a>
+        <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi" class="btn-gold" target="_blank" rel="noopener">Daftar via WhatsApp</a>
+        <a href="#tentang" class="btn-white">Profil Pesantren</a>
       </div>
     </div>
   </div>
-  <div class="slide" style="background-image:url('HKQ2.jpg')">
+  <div class="slide slide-3" style="background-image:url('HKQ2.jpg')">
     <div class="slide-overlay"></div>
     <div class="slide-content">
+      <span class="slide-badge">Program Unggulan</span>
       <p class="arabic">تَحْفِيْظُ الْقُرْآنِ الْكَرِيْم</p>
-      <h1 class="slide-h1">Program Tahfidz<br>Al-Qur'an 30 Juz</h1>
-      <p class="slide-p">Metode talaqqi dan musyafahah bersama pengajar bersanad yang terpercaya dan berpengalaman</p>
+      <h1 class="slide-h1">Tahfidz Al-Qur'an 30 Juz</h1>
+      <p class="slide-p">Metode talaqqi & musyafahah bersama pengajar bersanad ke KH. Munawwir Krapyak.</p>
       <div class="slide-btns">
         <a href="#program" class="btn-gold">Lihat Program</a>
         <a href="#kontak" class="btn-white">Hubungi Kami</a>
       </div>
     </div>
   </div>
-  <button class="slider-prev" onclick="prevSlide()">&#8249;</button>
-  <button class="slider-next" onclick="nextSlide()">&#8250;</button>
+  <button class="slider-prev" onclick="prevSlide()" aria-label="Previous slide">&#8249;</button>
+  <button class="slider-next" onclick="nextSlide()" aria-label="Next slide">&#8250;</button>
   <div class="slider-dots" id="sliderDots"></div>
 </div>
 
@@ -865,14 +1000,6 @@
       <div class="sec-line"></div>
     </div>
     <div class="news-grid">
-      <a href="berita-1.html" class="news-card">
-        <div class="news-img" style="background:none;padding:0"><img src="HKQ2.jpg" alt="Haflah Khitmil Qur'an II" style="width:100%;height:100%;object-fit:cover"></div>
-        <div class="news-body">
-          <p class="news-cat">Kegiatan</p>
-          <h3 class="news-title">Haflah Khitmil Qur'an II</h3>
-          <p class="news-date">Minggu, 5 Oktober 2025</p>
-        </div>
-      </a>
       <a href="berita-2.html" class="news-card">
         <div class="news-img" style="background:none;padding:0"><img src="berita 2/utama.jpg" alt="Penyerahan Surat Keputusan (SK)" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
         <div class="news-body">
@@ -881,12 +1008,20 @@
           <p class="news-date">4 Mei 2026</p>
         </div>
       </a>
-      <a href="berita-3.html" class="news-card">
-        <div class="news-img">📅</div>
+      <a href="berita-5.html" class="news-card">
+        <div class="news-img" style="background:none;padding:0"><img src="berita-istighotsah.jpg" alt="Istighotsah Musabbi'at PPUQHM" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
         <div class="news-body">
-          <p class="news-cat">Pengumuman</p>
-          <h3 class="news-title">Pendaftaran Santri Baru Tahun Ajaran 2025/2026 Resmi Dibuka</h3>
-          <p class="news-date">1 Maret 2025</p>
+          <p class="news-cat">Amaliyah Aswaja</p>
+          <h3 class="news-title">Istighotsah Musabbi'at Rutin Malam Senin Legi</h3>
+          <p class="news-date">Jumat, 24 April 2026</p>
+        </div>
+      </a>
+      <a href="berita-4.html" class="news-card">
+        <div class="news-img" style="background:none;padding:0"><img src="berita-penugasan-mahbub.jpg" alt="Penugasan Ustadz Mahbub ke MUQHM SP-1" style="width:100%;height:100%;object-fit:cover;object-position:center 40%"></div>
+        <div class="news-body">
+          <p class="news-cat">Kegiatan Pesantren</p>
+          <h3 class="news-title">Penugasan Ustadz Mahbub ke MUQHM SP-1</h3>
+          <p class="news-date">Rabu, 22 April 2026</p>
         </div>
       </a>
     </div>

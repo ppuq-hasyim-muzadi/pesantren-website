@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pendaftaran Santri Baru 2026/2027 - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <meta name="description" content="Pendaftaran Santri Baru PPUQHM TA 2026/2027 sudah DIBUKA. 4 Program: Tahfidz Pure, Kitab Kuning, SMP & SMA Terakreditasi. Beasiswa santri dhuafa & putra-putri Papua tersedia."/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+
+    /* NAVBAR */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:6px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+
+    /* HERO */
+    .page-hero{margin-top:64px;background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 100%);padding:70px 2rem 50px;text-align:center;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,160,23,.1) 0%,transparent 70%);pointer-events:none}
+    .hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+    .hero-badge{display:inline-block;background:rgba(212,160,23,.18);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:1.25rem;border:1px solid rgba(212,160,23,.4)}
+    .page-hero h1{font-family:'Amiri',serif;font-size:clamp(1.7rem,4vw,2.6rem);color:#fff;margin-bottom:.75rem;line-height:1.3;font-weight:700}
+    .page-hero .subtitle{font-size:15px;color:rgba(255,255,255,.85);line-height:1.7;max-width:620px;margin:0 auto 1.5rem}
+    .status-pill{display:inline-flex;align-items:center;gap:8px;background:#22c55e;color:#fff;padding:8px 22px;border-radius:30px;font-size:13px;font-weight:600;box-shadow:0 6px 16px rgba(34,197,94,.35);margin-bottom:1rem}
+    .status-pill .dot{width:8px;height:8px;background:#fff;border-radius:50%;animation:pulse 1.5s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .hero-timeline{font-size:13px;color:rgba(255,255,255,.7);margin-top:.5rem}
+    .hero-timeline strong{color:var(--emas2)}
+
+    /* SECTIONS */
+    section{padding:60px 2rem}
+    .container{max-width:1100px;margin:0 auto}
+    .sec-head{text-align:center;margin-bottom:3rem}
+    .sec-badge{display:inline-block;background:rgba(27,67,50,.08);color:var(--hijau2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:.75rem}
+    .sec-title{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:var(--hijau);margin-bottom:.25rem}
+    .sec-line{width:50px;height:3px;background:var(--emas);margin:.75rem auto 0}
+
+    /* PROGRAM GRID */
+    .program-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+    .prog-card{background:#fff;border:1px solid rgba(27,67,50,.1);border-radius:10px;padding:1.75rem 1.5rem;transition:.3s;position:relative;overflow:hidden}
+    .prog-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--hijau),var(--emas))}
+    .prog-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(27,67,50,.12)}
+    .prog-card-icon{font-size:2.2rem;margin-bottom:.85rem;display:block}
+    .prog-card h3{font-size:16px;font-weight:700;color:var(--hijau);margin-bottom:.5rem;line-height:1.35}
+    .prog-card .durasi{font-size:11.5px;font-weight:600;color:var(--emas);background:rgba(212,160,23,.1);padding:3px 10px;border-radius:12px;display:inline-block;margin-bottom:.85rem;letter-spacing:.05em;text-transform:uppercase}
+    .prog-card p{font-size:13.5px;color:var(--abu);line-height:1.75}
+    .prog-card ul{list-style:none;padding:0;margin-top:.85rem}
+    .prog-card ul li{font-size:12.5px;color:var(--abu);line-height:1.7;padding:.2rem 0 .2rem 1.2rem;position:relative}
+    .prog-card ul li::before{content:'✓';color:var(--hijau3);font-weight:700;position:absolute;left:0;font-size:14px}
+
+    /* SYARAT */
+    #syarat{background:#fff}
+    .syarat-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+    .syarat-list{background:linear-gradient(135deg,#fafaf7 0%,#f5f1e6 100%);border-radius:12px;padding:2rem 1.75rem;border:1px solid rgba(212,160,23,.2)}
+    .syarat-list h3{font-family:'Amiri',serif;font-size:1.4rem;color:var(--hijau);margin-bottom:1.25rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .syarat-list ol{padding-left:1.5rem}
+    .syarat-list ol li{font-size:14px;color:var(--gelap);line-height:1.9;padding:.2rem 0}
+    .syarat-list ol li::marker{color:var(--emas);font-weight:700}
+    .syarat-list .note{margin-top:1rem;padding-top:1rem;border-top:1px dashed rgba(27,67,50,.15);font-size:12px;color:var(--abu);font-style:italic;line-height:1.65}
+    .syarat-poster{position:relative}
+    .syarat-poster img{width:100%;border-radius:12px;box-shadow:0 12px 32px rgba(27,67,50,.18);display:block}
+    .syarat-poster .cap{text-align:center;font-size:12px;color:var(--abu);font-style:italic;margin-top:.65rem}
+
+    /* BEASISWA */
+    #beasiswa{background:linear-gradient(135deg,#0d2218 0%,var(--hijau) 100%);color:#fff;padding:60px 2rem}
+    #beasiswa .sec-title{color:#fff}
+    #beasiswa .sec-badge{background:rgba(212,160,23,.15);color:var(--emas2)}
+    .beasiswa-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:900px;margin:0 auto}
+    .beasiswa-card{background:rgba(255,255,255,.06);border:1px solid rgba(212,160,23,.25);border-radius:12px;padding:1.75rem 1.5rem;transition:.3s}
+    .beasiswa-card:hover{transform:translateY(-3px);background:rgba(255,255,255,.1)}
+    .beasiswa-card .ico{font-size:2.2rem;margin-bottom:.85rem}
+    .beasiswa-card h3{font-size:1.05rem;font-weight:700;color:var(--emas2);margin-bottom:.6rem;line-height:1.35}
+    .beasiswa-card p{font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.75}
+
+    /* FAQ */
+    #faq{background:var(--putih)}
+    .faq-list{max-width:800px;margin:0 auto}
+    .faq-item{border-bottom:1px solid rgba(27,67,50,.12);background:#fff;margin-bottom:.5rem;border-radius:6px;padding:0 1.2rem}
+    .faq-q{width:100%;text-align:left;background:none;border:none;padding:1.1rem 0;font-size:14.5px;font-weight:500;color:var(--gelap);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Poppins',sans-serif;gap:1rem;line-height:1.45}
+    .faq-q .ico{font-size:1.4rem;color:var(--hijau);transition:transform .3s;flex-shrink:0}
+    .faq-q.open .ico{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-a-inner{padding:0 0 1rem;font-size:13.5px;color:var(--abu);line-height:1.85}
+    .faq-a-inner strong{color:var(--hijau);font-weight:600}
+
+    /* FORM SECTION */
+    #form-daftar{background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 100%);padding:60px 2rem}
+    #form-daftar .sec-title{color:#fff}
+    #form-daftar .sec-badge{background:rgba(212,160,23,.18);color:var(--emas2)}
+    .form-shell{max-width:760px;margin:0 auto;background:#fff;border-radius:12px;padding:2rem 1.75rem;box-shadow:0 16px 48px rgba(0,0,0,.18)}
+    .form-section{margin:1.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas)}
+    .form-section:first-of-type{margin-top:0}
+    .form-section h4{font-size:13px;font-weight:700;color:var(--hijau);letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+    .form-section h4 .ico{background:var(--hijau);color:var(--emas2);width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+    .form-group{margin-bottom:1.1rem}
+    .form-group label{display:block;font-size:13px;font-weight:600;color:var(--hijau);margin-bottom:6px}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1.5px solid rgba(27,67,50,.2);border-radius:6px;font-size:14px;font-family:'Poppins',sans-serif;transition:border .2s;outline:none}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--hijau3)}
+    .form-group textarea{resize:vertical;min-height:70px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .form-group .hint{display:block;font-size:11px;color:var(--abu);margin-top:4px;font-weight:400;font-style:italic}
+    .btn-submit{width:100%;padding:14px;background:linear-gradient(135deg,var(--emas),var(--emas2));color:var(--hijau);border:none;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;transition:.25s;margin-top:.5rem;letter-spacing:.02em;box-shadow:0 6px 16px rgba(212,160,23,.3)}
+    .btn-submit:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(212,160,23,.45)}
+    .form-note{font-size:12px;color:var(--abu);text-align:center;margin-top:1rem;line-height:1.7}
+
+    /* ALT CONTACT */
+    .alt-contact{margin-top:2rem;text-align:center;color:rgba(255,255,255,.85);font-size:13px}
+    .alt-contact .or{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.85rem;color:rgba(255,255,255,.5)}
+    .alt-contact .wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:11px 22px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;margin:.25rem;transition:.2s}
+    .alt-contact .wa-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(37,211,102,.4)}
+
+    /* FOOTER */
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+
+    /* WA FLOAT */
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      nav{padding:0 1rem}
+      .nav-logo-text{font-size:13px;max-width:200px}
+      .page-hero{padding:55px 1.25rem 40px}
+      section{padding:50px 1.25rem}
+      .syarat-grid{grid-template-columns:1fr;gap:2rem}
+      .syarat-list{padding:1.5rem 1.25rem}
+      .beasiswa-grid{grid-template-columns:1fr}
+      .form-shell{padding:1.5rem 1.25rem}
+      .form-row{grid-template-columns:1fr;gap:0}
+      .wa-float{bottom:20px;right:20px;width:50px;height:50px;font-size:22px}
+    }
+    @media(max-width:480px){
+      section{padding:45px 1rem}
+      .program-grid{gap:1rem}
+      .prog-card{padding:1.5rem 1.25rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="index.html" class="nav-back">← Kembali ke Beranda</a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-content">
+    <span class="hero-badge">Penerimaan Santri Baru</span>
+    <h1>Pendaftaran Santri Baru<br>Tahun Ajaran 2026/2027</h1>
+    <p class="subtitle">Bergabunglah menjadi bagian dari generasi ahlul Qur'an berkarakter Aswaja An-Nahdliyah di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi — Mimika, Papua Tengah.</p>
+    <div class="status-pill"><span class="dot"></span> Status: DIBUKA</div>
+    <p class="hero-timeline">Dibuka <strong>1 Maret 2026</strong> &nbsp;•&nbsp; Ditutup <strong>31 Juli 2026</strong></p>
+  </div>
+</div>
+
+<!-- PROGRAM -->
+<section id="program">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Pilihan Program</span>
+      <h2 class="sec-title">Program & Jalur Santri</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="program-grid">
+
+      <div class="prog-card">
+        <span class="prog-card-icon">📖</span>
+        <span class="durasi">Non-Formal</span>
+        <h3>Tahfidz Pure</h3>
+        <p>Fokus penuh menghafal Al-Qur'an 30 juz dengan sanad muttashil ke KH. Munawwir Krapyak.</p>
+        <ul>
+          <li>Metode Tahfidz Arba'in (mutqin)</li>
+          <li>Talaqqi langsung ke pengajar bersanad</li>
+          <li>Sertifikat sanad setelah khatam 30 juz</li>
+          <li>Cocok untuk anak setelah lulus SD/SMP</li>
+        </ul>
+      </div>
+
+      <div class="prog-card">
+        <span class="prog-card-icon">📚</span>
+        <span class="durasi">Non-Formal</span>
+        <h3>Kitab Kuning</h3>
+        <p>Kajian kitab kuning klasik tradisi NU dengan metode Amtsilati untuk dasar gramatika Arab.</p>
+        <ul>
+          <li>Akidah, Fikih, Akhlak, Hadis, Tajwid</li>
+          <li>Ulumul Qur'an &amp; Tasawwuf</li>
+          <li>Metode Amtsilati (Nahwu &amp; Shorof)</li>
+          <li>Tilawati untuk pembelajaran tilawah</li>
+        </ul>
+      </div>
+
+      <div class="prog-card">
+        <span class="prog-card-icon">🎓</span>
+        <span class="durasi">Formal · Terakreditasi</span>
+        <h3>SMP + Pesantren</h3>
+        <p>Pendidikan formal SMP Terakreditasi dipadukan program tahfidz / kitab kuning di pesantren.</p>
+        <ul>
+          <li>Ijazah resmi diakui negara</li>
+          <li>Lanjutan ke SMA / pesantren tinggi</li>
+          <li>Untuk lulusan SD / MI</li>
+          <li>Asrama santri (boarding school)</li>
+        </ul>
+      </div>
+
+      <div class="prog-card">
+        <span class="prog-card-icon">🎓</span>
+        <span class="durasi">Formal · Terakreditasi</span>
+        <h3>SMA + Pesantren</h3>
+        <p>Pendidikan formal SMA Terakreditasi dipadukan program tahfidz / kitab kuning di pesantren.</p>
+        <ul>
+          <li>Ijazah resmi diakui negara</li>
+          <li>Lanjutan ke STKQ Al-Hikam, Az-Zaitunah, Al-Azhar, UIM</li>
+          <li>Untuk lulusan SMP / MTs</li>
+          <li>Asrama santri (boarding school)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SYARAT -->
+<section id="syarat">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Dokumen Diperlukan</span>
+      <h2 class="sec-title">Persyaratan Pendaftaran</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="syarat-grid">
+      <div class="syarat-list">
+        <h3>📋 Dokumen yang Harus Disiapkan</h3>
+        <ol>
+          <li>Mengisi formulir pendaftaran online (form di halaman ini)</li>
+          <li>Fotocopy <strong>Akta Kelahiran</strong> santri</li>
+          <li>Fotocopy <strong>Kartu Keluarga</strong> (KK)</li>
+          <li>Fotocopy <strong>KTP Orang Tua / Wali</strong></li>
+          <li>Pas foto <strong>3×4</strong> sebanyak 3 lembar</li>
+          <li><strong>Surat Keterangan Sehat</strong> dari Puskesmas/dokter</li>
+          <li><strong>Surat Keterangan Lulus / Ijazah</strong> (untuk pendaftar SMP &amp; SMA)</li>
+        </ol>
+        <p class="note">📌 Dokumen bisa di-foto/scan dan dikirim via WhatsApp setelah submit form. Kuota terbatas — daftarkan segera sebelum gelombang ditutup.</p>
+      </div>
+      <div class="syarat-poster">
+        <img src="pendaftaran.jpeg" alt="Poster Pendaftaran Santri Baru PPUQHM 2026/2027">
+        <p class="cap">Poster resmi Penerimaan Santri Baru PPUQHM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEASISWA -->
+<section id="beasiswa">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Beasiswa Tersedia</span>
+      <h2 class="sec-title">Program Beasiswa PPUQHM</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="beasiswa-grid">
+      <div class="beasiswa-card">
+        <div class="ico">🤲</div>
+        <h3>Beasiswa Santri Dhuafa</h3>
+        <p>Bagi santri dari keluarga kurang mampu yang memiliki semangat tinggi belajar Al-Qur'an. Mengikuti filosofi NU <em>"murah meriah, banyak berkah"</em> — pendidikan berkualitas terbuka untuk semua kalangan.</p>
+      </div>
+      <div class="beasiswa-card">
+        <div class="ico">🏝️</div>
+        <h3>Beasiswa Putra-Putri Papua</h3>
+        <p>Khusus untuk putra-putri asli daerah Papua sebagai komitmen PPUQHM mengembangkan kader dakwah lokal — sesuai motto pesantren: <strong>"Tandurane Abah, Tukule nang Papua"</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Pertanyaan Umum</span>
+      <h2 class="sec-title">Frequently Asked Questions</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah anak saya harus sudah hafal Al-Qur'an untuk bisa daftar?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <strong>Tidak perlu.</strong> PPUQHM menerima santri dari semua tingkat — mulai dari yang <em>belum bisa baca Al-Qur'an</em>, sudah <em>bin nadhar</em> (lancar baca), sampai yang sudah memiliki hafalan parsial. Setiap santri akan ditempatkan di kelas sesuai kemampuan awalnya.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Berapa biaya pendaftaran dan SPP per bulannya?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Rincian biaya pendaftaran dan SPP bulanan dapat dikonfirmasi langsung ke pengurus melalui <strong>WhatsApp</strong>: Mbak Novita (0822-3969-3243) atau Kang Bedul (0812-4889-2290). Tersedia juga <strong>beasiswa</strong> untuk santri dhuafa dan putra-putri Papua.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah pesantren menerima santri dari luar Papua?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <strong>Ya, terbuka untuk seluruh Indonesia.</strong> PPUQHM saat ini memiliki santri dari berbagai daerah — Papua, Jawa, Sumatra, NTB, dan lainnya. Asrama santri (boarding school) tersedia bagi santri dari luar Mimika.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Bagaimana sistem pendidikannya? Bisa pilih tahfidz saja atau harus formal?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          PPUQHM menyediakan <strong>4 jalur</strong>: (1) <strong>Tahfidz Pure</strong> — fokus menghafal Al-Qur'an saja, (2) <strong>Kitab Kuning</strong> — kajian klasik NU, (3) <strong>SMP + Pesantren</strong> — pendidikan formal SMP terakreditasi + program pesantren, (4) <strong>SMA + Pesantren</strong> — pendidikan formal SMA terakreditasi + program pesantren. Bisa pilih sesuai kebutuhan dan jenjang anak.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Bagaimana proses seleksi penerimaan santri baru?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Setelah formulir online dan dokumen diterima, tim pengurus akan menghubungi calon walisantri via WhatsApp untuk informasi lebih lanjut. Proses seleksi mencakup wawancara dengan calon santri dan walisantri, serta tes baca Al-Qur'an sesuai jenjang.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah ada batasan usia untuk mendaftar?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Tidak ada batasan kaku — tapi penyesuaian dilakukan menurut jenjang: <strong>Tahfidz Pure</strong> umumnya untuk lulusan SD ke atas, <strong>SMP</strong> untuk lulusan SD/MI, <strong>SMA</strong> untuk lulusan SMP/MTs, <strong>Mahasantri</strong> untuk lulusan SMA/sederajat.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Kapan orang tua bisa berkunjung atau sowan ke pesantren?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Jam layanan pesantren: <strong>setiap hari 08.00 – 17.00 WIT</strong>. Untuk waktu sowan dengan Pengasuh (Gus Mursyid &amp; Ning Siti), jadwal disesuaikan dan sebaiknya dikonfirmasi dulu via WA agar pengasuh siap menerima.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Setelah mengisi formulir online, apa langkah selanjutnya?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Setelah klik <em>"Kirim Pendaftaran"</em>, sistem akan otomatis membuka WhatsApp dengan data terlampir. Anda tinggal <strong>klik kirim</strong> di WhatsApp, lalu <strong>upload dokumen pendukung</strong> (foto santri, KK, akta, ijazah/SKL, surat sehat) dalam chat yang sama. Pengurus akan merespons dalam 1×24 jam.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah formulir bisa dilengkapi bertahap?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Bisa. Anda bisa kirim data utama dulu lewat formulir, lalu menyusulkan dokumen pendukung di chat WhatsApp dalam beberapa hari. Pengurus akan membantu mengingatkan kalau ada yang belum lengkap.
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Bagaimana kalau saya belum yakin atau masih perlu konsultasi?
+          <span class="ico">＋</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Silakan langsung <strong>chat WhatsApp</strong> pengurus tanpa harus isi formulir dulu — kami siap menjawab pertanyaan, mengirim brosur, atau bahkan menjadwalkan kunjungan ke pesantren. Hubungi: Mbak Novita (0822-3969-3243) atau Kang Bedul (0812-4889-2290).
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FORM DAFTAR -->
+<section id="form-daftar">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-badge">Formulir Online</span>
+      <h2 class="sec-title">Daftar Sekarang</h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="form-shell">
+      <form id="formDaftarPage" onsubmit="submitFormPage(event)">
+
+        <div class="form-section">
+          <h4><span class="ico">1</span> Data Santri</h4>
+        </div>
+        <div class="form-group">
+          <label>Nama Lengkap Santri *</label>
+          <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>NIK / NISN</label>
+            <input type="text" name="nik" placeholder="16 digit NIK / 10 digit NISN">
+            <span class="hint">Boleh dikosongkan jika belum ada</span>
+          </div>
+          <div class="form-group">
+            <label>Jenis Kelamin *</label>
+            <select name="jenis_kelamin" required>
+              <option value="" disabled selected>Pilih</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tempat Lahir *</label>
+            <input type="text" name="tempat_lahir" placeholder="Kota/Kabupaten" required>
+          </div>
+          <div class="form-group">
+            <label>Tanggal Lahir *</label>
+            <input type="date" name="tanggal_lahir" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Alamat Lengkap Santri *</label>
+          <textarea name="alamat" placeholder="Jalan, RT/RW, Desa, Kecamatan, Kabupaten, Provinsi" required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>No. HP Santri</label>
+            <input type="tel" name="hp_santri" placeholder="Kosongkan jika belum punya">
+            <span class="hint">Opsional</span>
+          </div>
+          <div class="form-group">
+            <label>Jenjang / Program Dipilih *</label>
+            <select name="jenjang" required>
+              <option value="" disabled selected>Pilih program</option>
+              <option value="Tahfidz Pure">Tahfidz Pure (non-formal)</option>
+              <option value="Kitab Kuning">Kitab Kuning (non-formal)</option>
+              <option value="SMP + Pesantren">SMP + Pesantren</option>
+              <option value="SMA + Pesantren">SMA + Pesantren</option>
+              <option value="Mahasantri">Mahasantri (kuliah)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Asal Sekolah Terakhir *</label>
+            <input type="text" name="asal_sekolah" placeholder="Nama sekolah/madrasah" required>
+          </div>
+          <div class="form-group">
+            <label>Tahun Lulus *</label>
+            <input type="text" name="tahun_lulus" placeholder="Contoh: 2026" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Riwayat Hafalan Al-Qur'an *</label>
+          <select name="hafalan" required>
+            <option value="" disabled selected>Pilih jumlah hafalan</option>
+            <option value="Belum bisa baca">Belum bisa baca Al-Qur'an</option>
+            <option value="Sudah bin nadhar">Sudah bin nadhar (lancar baca)</option>
+            <option value="1-5 juz">1 – 5 juz</option>
+            <option value="6-15 juz">6 – 15 juz</option>
+            <option value="16-29 juz">16 – 29 juz</option>
+            <option value="30 juz">30 juz (sudah khatam)</option>
+          </select>
+        </div>
+
+        <div class="form-section">
+          <h4><span class="ico">2</span> Data Orang Tua / Wali</h4>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nama Ayah *</label>
+            <input type="text" name="ayah" placeholder="Nama lengkap ayah" required>
+          </div>
+          <div class="form-group">
+            <label>Pekerjaan Ayah *</label>
+            <input type="text" name="pekerjaan_ayah" placeholder="Contoh: Petani, Guru, dll" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nama Ibu *</label>
+            <input type="text" name="ibu" placeholder="Nama lengkap ibu" required>
+          </div>
+          <div class="form-group">
+            <label>Pekerjaan Ibu *</label>
+            <input type="text" name="pekerjaan_ibu" placeholder="Contoh: IRT, Guru, dll" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Penghasilan Rata-rata Orang Tua *</label>
+          <select name="penghasilan" required>
+            <option value="" disabled selected>Pilih rentang penghasilan</option>
+            <option value="< Rp 1.000.000">Kurang dari Rp 1.000.000</option>
+            <option value="Rp 1.000.000 - Rp 3.000.000">Rp 1.000.000 – Rp 3.000.000</option>
+            <option value="Rp 3.000.000 - Rp 5.000.000">Rp 3.000.000 – Rp 5.000.000</option>
+            <option value="Rp 5.000.000 - Rp 10.000.000">Rp 5.000.000 – Rp 10.000.000</option>
+            <option value="> Rp 10.000.000">Lebih dari Rp 10.000.000</option>
+          </select>
+          <span class="hint">Untuk pertimbangan beasiswa santri dhuafa</span>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>No. HP / WhatsApp Orang Tua *</label>
+            <input type="tel" name="hp" placeholder="Contoh: 081234567890" required>
+          </div>
+          <div class="form-group">
+            <label>Asal Daerah *</label>
+            <input type="text" name="asal_daerah" placeholder="Contoh: Mimika, Papua" required>
+            <span class="hint">Untuk pertimbangan beasiswa putra-putri Papua</span>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h4><span class="ico">3</span> Informasi Tambahan</h4>
+        </div>
+        <div class="form-group">
+          <label>Dari Mana Mengetahui PPUQHM?</label>
+          <select name="sumber">
+            <option value="-">Pilih (opsional)</option>
+            <option value="Media Sosial (FB/IG/YouTube)">Media Sosial (FB/IG/YouTube)</option>
+            <option value="Website santripapua.com">Website santripapua.com</option>
+            <option value="Rekomendasi keluarga/teman">Rekomendasi keluarga/teman</option>
+            <option value="Tetangga / Warga sekitar">Tetangga / Warga sekitar</option>
+            <option value="Brosur / Spanduk">Brosur / Spanduk</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Pesan / Pertanyaan Tambahan</label>
+          <textarea name="pesan" placeholder="Tulis pesan, pertanyaan, atau catatan khusus untuk pengurus (opsional)"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">📩 Kirim Pendaftaran via WhatsApp</button>
+        <p class="form-note">Data akan dikirim ke pengurus pesantren via WhatsApp. <strong>Dokumen pendukung</strong> (foto santri, KK, akta, ijazah, surat sehat) silakan dikirim ulang setelah WhatsApp terbuka.<br>Field bertanda <strong>*</strong> wajib diisi.</p>
+      </form>
+
+      <div class="alt-contact" style="color:var(--abu)">
+        <p style="font-size:12px;text-align:center;margin-top:1.5rem">Form tidak bekerja? Langsung chat saja:</p>
+        <p style="text-align:center;margin-top:.5rem">
+          <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftarkan santri baru di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank" class="wa-btn" style="background:#25d366">💬 Mbak Novita</a>
+          <a href="https://wa.me/6281248892290?text=Assalamu'alaikum, saya ingin mendaftarkan santri baru di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank" class="wa-btn" style="background:#25d366">💬 Kang Bedul</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+
+<script>
+// FAQ TOGGLE
+function toggleFaq(btn){
+  const a = btn.nextElementSibling;
+  const open = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q').forEach(b=>{
+    b.classList.remove('open');
+    b.nextElementSibling.style.maxHeight = '0';
+  });
+  if (!open) {
+    btn.classList.add('open');
+    a.style.maxHeight = a.scrollHeight + 'px';
+  }
+}
+
+// SUBMIT FORM → WhatsApp
+function submitFormPage(e){
+  e.preventDefault();
+  const f = e.target;
+  const v = n => f[n] ? f[n].value : '';
+  const nama = v('nama'), nik = v('nik') || '-', jk = v('jenis_kelamin');
+  const tempat = v('tempat_lahir'), tgl = v('tanggal_lahir');
+  const alamat = v('alamat'), hpSantri = v('hp_santri') || '-';
+  const jenjang = v('jenjang'), asalSekolah = v('asal_sekolah'), tahunLulus = v('tahun_lulus');
+  const hafalan = v('hafalan');
+  const ayah = v('ayah'), pekerjaanAyah = v('pekerjaan_ayah');
+  const ibu = v('ibu'), pekerjaanIbu = v('pekerjaan_ibu');
+  const penghasilan = v('penghasilan'), hp = v('hp');
+  const asalDaerah = v('asal_daerah'), sumber = v('sumber') || '-', pesanTxt = v('pesan') || '-';
+
+  const pesan = `Assalamu'alaikum, saya ingin mendaftarkan santri baru di PPUQHM:%0A%0A` +
+    `*━━ DATA SANTRI ━━*%0A` +
+    `*Nama:* ${nama}%0A` +
+    `*NIK/NISN:* ${nik}%0A` +
+    `*TTL:* ${tempat}, ${tgl}%0A` +
+    `*Jenis Kelamin:* ${jk}%0A` +
+    `*Alamat:* ${alamat}%0A` +
+    `*HP Santri:* ${hpSantri}%0A` +
+    `*Program Dipilih:* ${jenjang}%0A` +
+    `*Asal Sekolah:* ${asalSekolah} (Lulus ${tahunLulus})%0A` +
+    `*Hafalan Qur'an:* ${hafalan}%0A%0A` +
+    `*━━ DATA ORANG TUA ━━*%0A` +
+    `*Nama Ayah:* ${ayah} (${pekerjaanAyah})%0A` +
+    `*Nama Ibu:* ${ibu} (${pekerjaanIbu})%0A` +
+    `*Penghasilan:* ${penghasilan}%0A` +
+    `*HP Ortu:* ${hp}%0A` +
+    `*Asal Daerah:* ${asalDaerah}%0A%0A` +
+    `*━━ TAMBAHAN ━━*%0A` +
+    `*Mengetahui PPUQHM dari:* ${sumber}%0A` +
+    `*Pesan:* ${pesanTxt}%0A%0A` +
+    `Mohon informasi proses selanjutnya. Terima kasih.`;
+
+  window.open('https://wa.me/6282239693243?text=' + pesan, '_blank');
+  alert('Pendaftaran berhasil dikirim!\n\nWhatsApp akan terbuka — silakan klik KIRIM, lalu lampirkan dokumen (foto santri, KK, akta, ijazah, surat sehat) di chat yang sama.');
+  f.reset();
+}
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buku Saku Fiqih Zakat Madzhab Syafi'i Gratis - Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</title>
+  <meta name="description" content="UPZ Hasyim Muzadi PPUQHM rilis Buku Saku Fiqih Zakat Madzhab Syafi'i, 76 halaman, 7 bab, lengkap dengan dalil Arab + terjemahan. Download PDF gratis."/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --hijau:#1b4332;--hijau2:#2d6a4f;--hijau3:#40916c;
+      --emas:#d4a017;--emas2:#f0c040;
+      --putih:#f8f9fa;--abu:#6c757d;--gelap:#1a1a1a;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--putih);color:var(--gelap);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);box-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-circle{width:42px;height:42px;border-radius:50%;overflow:hidden}
+    .nav-logo-circle img{width:100%;height:100%;object-fit:cover}
+    .nav-logo-text{color:#fff;font-size:15px;font-weight:600;line-height:1.3;max-width:280px}
+    .nav-back{color:#fff;text-decoration:none;font-size:14px;transition:.2s}
+    .nav-back:hover{color:var(--emas2)}
+    .article-header{margin-top:64px;padding:60px 2rem 40px;background:var(--hijau);text-align:center}
+    .article-cat{display:inline-block;background:rgba(255,255,255,.1);color:var(--emas2);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:1rem}
+    .article-header h1{font-size:clamp(1.5rem,3.3vw,2.25rem);font-weight:700;color:#fff;margin-bottom:.75rem;max-width:880px;margin-left:auto;margin-right:auto;line-height:1.3}
+    .article-lead{font-size:14px;color:rgba(255,255,255,.78);max-width:720px;margin:0 auto 1rem;line-height:1.65;font-style:italic}
+    .article-meta{display:flex;justify-content:center;align-items:center;gap:1rem;font-size:13px;color:rgba(255,255,255,.7);flex-wrap:wrap}
+
+    /* COVER (portrait, smaller) */
+    .article-cover-wrap{max-width:380px;margin:-40px auto 0;padding:0 1rem;position:relative;z-index:2}
+    .article-cover{width:100%;border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.25);display:block}
+    .article-cover-cap{text-align:center;font-size:12px;color:var(--abu);font-style:italic;margin-top:.65rem;line-height:1.55}
+
+    .article-body{max-width:800px;margin:0 auto;padding:2.5rem 2rem 1rem}
+    .article-body p{font-size:15px;color:var(--gelap);line-height:1.9;margin-bottom:1.2rem;text-align:justify}
+    .article-body p.lead{font-size:16px;font-weight:500;color:var(--hijau)}
+    .article-body p strong{color:var(--hijau);font-weight:600}
+    .article-body p em{color:var(--hijau2)}
+    .article-body h2{font-family:'Amiri',serif;font-size:1.45rem;font-weight:700;color:var(--hijau);margin:2rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid var(--emas);display:inline-block;line-height:1.35}
+    .article-body blockquote{border-left:4px solid var(--emas);background:rgba(212,160,23,.08);padding:1rem 1.5rem;margin:1.5rem 0;font-style:italic;color:var(--hijau2);font-size:14.5px;border-radius:0 6px 6px 0;line-height:1.75}
+
+    /* STATS GRID */
+    .stats-wrap{max-width:800px;margin:1.5rem auto;padding:0 2rem}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .stat-card{background:#fff;border:1px solid rgba(27,67,50,.1);border-radius:10px;padding:1.25rem .85rem;text-align:center;border-top:3px solid var(--emas)}
+    .stat-card .num{font-family:'Amiri',serif;font-size:2rem;font-weight:700;color:var(--hijau);line-height:1}
+    .stat-card .lbl{font-size:10.5px;color:var(--abu);text-transform:uppercase;letter-spacing:.1em;margin-top:.4rem;font-weight:600}
+
+    /* DAFTAR ISI */
+    .toc-wrap{max-width:800px;margin:1.5rem auto;padding:0 2rem}
+    .toc-inner{background:linear-gradient(135deg,#fafaf7 0%,#f5f1e6 100%);border:1px solid rgba(212,160,23,.25);border-radius:10px;padding:1.75rem 1.5rem}
+    .toc-title{font-family:'Amiri',serif;font-size:1.2rem;color:var(--hijau);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1.5px solid var(--emas);display:inline-block}
+    .toc-item{margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px dashed rgba(27,67,50,.1)}
+    .toc-item:last-child{border-bottom:none;padding-bottom:0}
+    .toc-bab{font-size:13.5px;font-weight:700;color:var(--hijau);margin-bottom:.3rem;letter-spacing:.02em}
+    .toc-sub{font-size:13px;color:var(--abu);line-height:1.7;padding-left:1.2rem}
+    .toc-note{font-size:12px;color:var(--emas);font-style:italic;padding-left:1.2rem;margin-top:.3rem;line-height:1.6}
+
+    /* KEUNGGULAN GRID */
+    .feat-wrap{max-width:800px;margin:1.5rem auto;padding:0 2rem}
+    .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .feat-card{background:#fff;border:1px solid rgba(27,67,50,.1);border-radius:10px;padding:1.25rem 1.1rem;transition:.2s}
+    .feat-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(27,67,50,.08)}
+    .feat-icon{font-size:1.75rem;margin-bottom:.5rem;display:block}
+    .feat-card h4{font-size:14px;font-weight:700;color:var(--hijau);margin-bottom:.35rem;line-height:1.4}
+    .feat-card p{font-size:12.5px;color:var(--abu);line-height:1.7}
+
+    /* PENYUSUN BOX */
+    .penyusun-wrap{max-width:800px;margin:1.5rem auto;padding:0 2rem}
+    .penyusun-inner{background:linear-gradient(135deg,#fafaf7 0%,#f5f1e6 100%);border-left:5px solid var(--hijau);padding:1.75rem 1.5rem;border-radius:0 10px 10px 0}
+    .penyusun-inner h3{font-family:'Amiri',serif;font-size:1.3rem;color:var(--hijau);margin-bottom:.3rem}
+    .penyusun-inner .role{font-size:12.5px;color:var(--emas);font-style:italic;margin-bottom:.85rem;letter-spacing:.02em}
+    .penyusun-inner p{font-size:13.5px;color:var(--gelap);line-height:1.85;margin:0;text-align:justify}
+    .penyusun-inner p strong{color:var(--hijau);font-weight:600}
+
+    /* CTA DOWNLOAD */
+    .cta-wrap{max-width:800px;margin:2rem auto;padding:0 2rem}
+    .cta-inner{background:linear-gradient(135deg,var(--emas),var(--emas2));border-radius:12px;padding:2rem 1.5rem;text-align:center;box-shadow:0 10px 28px rgba(212,160,23,.25)}
+    .cta-inner h3{font-family:'Amiri',serif;font-size:1.6rem;color:var(--hijau);margin-bottom:.5rem}
+    .cta-inner p{font-size:13.5px;color:var(--hijau);line-height:1.7;margin-bottom:1.25rem;max-width:480px;margin-left:auto;margin-right:auto}
+    .cta-inner .btn{display:inline-block;background:var(--hijau);color:var(--emas2);padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;margin:.3rem;transition:.2s;letter-spacing:.02em}
+    .cta-inner .btn:hover{background:#0d2218;transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,34,24,.3)}
+    .cta-inner .btn.wh{background:#fff;color:var(--hijau);border:1.5px solid var(--hijau)}
+    .cta-inner .btn.wh:hover{background:var(--hijau);color:var(--emas2)}
+    .cta-inner .file-info{font-size:11.5px;color:var(--hijau);opacity:.8;margin-top:1rem;font-style:italic}
+    .cta-inner .placeholder-note{background:rgba(255,255,255,.6);padding:.6rem 1rem;border-radius:6px;font-size:12px;color:var(--hijau);margin-top:1rem;font-weight:500}
+
+    /* INFO BOX */
+    .info-box{max-width:800px;margin:1.5rem auto;padding:0 2rem}
+    .info-box-inner{background:#fff;border:1px solid rgba(27,67,50,.12);border-radius:10px;padding:1.5rem 1.75rem;box-shadow:0 4px 14px rgba(27,67,50,.06)}
+    .info-box-title{font-size:13px;font-weight:700;color:var(--hijau);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--emas);display:inline-block}
+    .info-box dl{display:grid;grid-template-columns:max-content 1fr;gap:.65rem 1.25rem}
+    .info-box dt{font-size:12.5px;font-weight:600;color:var(--hijau2);letter-spacing:.02em}
+    .info-box dd{font-size:13.5px;color:var(--gelap);line-height:1.6}
+
+    /* UPZ CONTACT */
+    .upz-wrap{max-width:800px;margin:1.5rem auto;padding:0 2rem}
+    .upz-inner{background:linear-gradient(135deg,#0d2218 0%,var(--hijau) 100%);color:#fff;border-radius:12px;padding:1.75rem 1.5rem}
+    .upz-inner h3{font-family:'Amiri',serif;font-size:1.3rem;color:var(--emas2);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(212,160,23,.3)}
+    .upz-inner p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.85;margin-bottom:1rem}
+    .upz-inner strong{color:var(--emas2)}
+    .upz-inner .wa-btn{display:inline-block;background:#25d366;color:#fff;padding:11px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:13.5px;margin-top:.5rem;transition:.2s}
+    .upz-inner .wa-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(37,211,102,.35)}
+
+    /* MOTTO */
+    .motto-block{max-width:800px;margin:2.5rem auto 0;padding:0 2rem;text-align:center}
+    .motto-divider{font-size:1.3rem;color:var(--emas);letter-spacing:.6rem;margin-bottom:1rem;opacity:.7}
+    .motto-block .motto-text{font-family:'Amiri',serif;font-size:1.5rem;color:var(--hijau);font-weight:700;line-height:1.4}
+    .motto-block .motto-by{font-size:12px;color:var(--abu);margin-top:.5rem;letter-spacing:.05em}
+
+    /* TAGS */
+    .tags-wrap{max-width:800px;margin:2.5rem auto 0;padding:0 2rem}
+    .tags-title{font-size:13px;font-weight:600;color:var(--hijau);margin-bottom:.75rem}
+    .tags-list{display:flex;flex-wrap:wrap;gap:.5rem}
+    .tag{font-size:12px;color:var(--hijau2);background:rgba(27,67,50,.06);padding:5px 12px;border-radius:14px;border:1px solid rgba(27,67,50,.1)}
+
+    .back-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--hijau);color:#fff;border-radius:6px;text-decoration:none;font-size:14px;font-weight:500;transition:.2s;margin:2rem 0}
+    .back-btn:hover{background:var(--hijau2)}
+    .back-btn-wrap{text-align:center;padding:1.5rem 2rem 3rem}
+    footer{background:#0d2218;padding:30px 2rem;text-align:center}
+    footer p{font-size:12px;color:rgba(255,255,255,.3)}
+    footer span{color:var(--emas2)}
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:500;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.5);transition:.2s}
+    .wa-float:hover{transform:scale(1.1)}
+
+    @media(max-width:768px){
+      nav{padding:0 1rem}
+      .nav-logo-text{font-size:13px;max-width:200px}
+      .article-header{padding:50px 1.25rem 35px}
+      .article-cover-wrap{margin-top:-32px;max-width:280px}
+      .article-body{padding:2rem 1.25rem 1rem}
+      .article-body p{font-size:14.5px;line-height:1.85}
+      .article-body h2{font-size:1.25rem}
+      .stats-wrap,.toc-wrap,.feat-wrap,.penyusun-wrap,.cta-wrap,.info-box,.upz-wrap,.motto-block,.tags-wrap{padding:0 1.25rem}
+      .stats-grid{grid-template-columns:repeat(2,1fr);gap:.75rem}
+      .stat-card{padding:1rem .5rem}
+      .stat-card .num{font-size:1.7rem}
+      .toc-inner,.feat-card,.penyusun-inner,.cta-inner,.info-box-inner,.upz-inner{padding:1.25rem 1.25rem}
+      .info-box dl{grid-template-columns:1fr;gap:.2rem .5rem}
+      .info-box dt{margin-top:.5rem}
+      .info-box dt:first-child{margin-top:0}
+      .cta-inner h3{font-size:1.3rem}
+      .cta-inner .btn{display:block;width:100%;max-width:280px;margin:.4rem auto}
+      .wa-float{bottom:20px;right:20px;width:50px;height:50px;font-size:22px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-circle"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
+    <div class="nav-logo-text">Pondok Pesantren<br>Ulumul Qur'an Hasyim Muzadi</div>
+  </a>
+  <a href="berita.html" class="nav-back">← Semua Berita</a>
+</nav>
+
+<div class="article-header">
+  <span class="article-cat">Publikasi PPUQHM</span>
+  <h1>PPUQHM Terbitkan Buku Saku Fiqih Zakat Madzhab Syafi'i, Tersedia Gratis untuk Umat</h1>
+  <p class="article-lead">UPZ Hasyim Muzadi PPUQHM merilis panduan ringkas fiqih zakat madzhab Syafi'i tradisi NU — 76 halaman, 7 bab, lengkap dengan dalil Arab dan terjemahan. Bebas dibagikan kepada keluarga, jamaah, dan umat Aswaja.</p>
+  <div class="article-meta">
+    <span>📅 Kamis, 14 Mei 2026</span>
+    <span>•</span>
+    <span>📍 PPUQHM Mimika</span>
+    <span>•</span>
+    <span>✍️ Redaksi PPUQHM</span>
+  </div>
+</div>
+
+<div class="article-cover-wrap">
+  <img src="cover-buku-zakat.jpg" alt="Cover Buku Saku Fiqih Zakat Madzhab Syafi'i" class="article-cover">
+  <p class="article-cover-cap">Cover Buku Saku Fiqih Zakat Madzhab Syafi'i — Tradisi NU, disusun oleh Gus Mursyid Adi Saputra Al-Hafidz.</p>
+</div>
+
+<div class="article-body">
+  <p class="lead">Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM) Mimika melalui <strong>UPZ Hasyim Muzadi</strong> resmi menerbitkan <strong>Buku Saku Fiqih Zakat Madzhab Syafi'i</strong> — sebuah panduan ringkas namun komprehensif tentang fiqih zakat dalam tradisi Ahlussunnah wal Jama'ah An-Nahdliyah. Buku ini tersedia <em>gratis</em> dalam format PDF dan terbuka untuk dibagikan kepada seluruh umat Muslim.</p>
+
+  <p>Buku ini ditulis dengan gaya klasik pesantren NU, disusun secara sistematis dengan merujuk kepada kitab-kitab fiqih klasik karya ulama Syafi'iyyah seperti <em>Al-Umm</em> karya Imam Asy-Syafi'i, <em>Al-Majmu'</em> karya Imam An-Nawawi, <em>Fathul Mu'in</em> karya Syaikh Zainuddin Al-Malibari, <em>Al-Iqna'</em> karya Imam Asy-Syirbini, hingga <em>Bughyatul Mustarsyidin</em> dan kitab-kitab lain yang menjadi pegangan pesantren NU di Indonesia.</p>
+
+  <p>Buku saku ini dimaksudkan menjadi referensi praktis bagi <strong>keluarga besar pesantren, walisantri, jamaah pengajian, karyawan/profesional Mimika, serta umat Muslim Ahlussunnah wal Jama'ah</strong> di tanah Papua dan sekitarnya.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats-wrap">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="num">76</div><div class="lbl">Halaman</div></div>
+    <div class="stat-card"><div class="num">7</div><div class="lbl">Bab</div></div>
+    <div class="stat-card"><div class="num">3</div><div class="lbl">Lampiran</div></div>
+    <div class="stat-card"><div class="num">31</div><div class="lbl">Istilah Fiqih</div></div>
+  </div>
+</div>
+
+<div class="article-body" style="padding-top:1rem">
+  <h2>📑 Daftar Isi Buku</h2>
+  <p>Pembahasan disusun dalam 7 bab utama, ditambah 3 lampiran praktis untuk memudahkan pembaca menghitung dan menunaikan zakat secara tepat:</p>
+</div>
+
+<!-- DAFTAR ISI -->
+<div class="toc-wrap">
+  <div class="toc-inner">
+    <h3 class="toc-title">📚 Outline 7 Bab + Lampiran</h3>
+
+    <div class="toc-item">
+      <p class="toc-bab">📚 BAB I — PENDAHULUAN</p>
+      <p class="toc-sub">Definisi Zakat · Kedudukan Zakat dalam Islam · Hikmah Disyariatkan Zakat</p>
+    </div>
+
+    <div class="toc-item">
+      <p class="toc-bab">📜 BAB II — DALIL-DALIL ZAKAT</p>
+      <p class="toc-sub">Dalil dari Al-Qur'an · Dalil dari Hadits · Ijma' Ulama</p>
+    </div>
+
+    <div class="toc-item">
+      <p class="toc-bab">🌙 BAB III — ZAKAT FITRAH</p>
+      <p class="toc-sub">Definisi &amp; Kedudukan · Syarat Wajib · Kadar &amp; Jenis · Waktu Pelaksanaan</p>
+      <p class="toc-note">📌 Termasuk: Sikap Mukhtar PPUQHM tentang Zakat Fitrah dengan Uang (Taqlid Hanafi)</p>
+    </div>
+
+    <div class="toc-item">
+      <p class="toc-bab">💰 BAB IV — ZAKAT MAL (HARTA)</p>
+      <p class="toc-sub">Syarat Umum · Emas, Perak, Uang · Perdagangan · Pertanian · Hewan Ternak · Tambang &amp; Rikaz · Profesi &amp; Penghasilan</p>
+      <p class="toc-note">📌 Termasuk: Sikap Mukhtar PPUQHM tentang Zakat Profesi 5% / 10% / 20%</p>
+    </div>
+
+    <div class="toc-item">
+      <p class="toc-bab">👥 BAB V — DELAPAN ASNAF PENERIMA ZAKAT</p>
+      <p class="toc-sub">Fakir · Miskin · Amil · Mualaf · Riqab · Gharimin · Fi Sabilillah · Ibnu Sabil</p>
+    </div>
+
+    <div class="toc-item">
+      <p class="toc-bab">🕌 BAB VI — TATA CARA PENUNAIAN ZAKAT</p>
+      <p class="toc-sub">Niat Zakat · Doa Pemberian &amp; Penerimaan · Adab Muzakki &amp; Mustahiq</p>
+    </div>
+
+    <div class="toc-item">
+      <p class="toc-bab">🏛️ BAB VII — PENGELOLAAN ZAKAT</p>
+      <p class="toc-sub">UPZ dalam Tradisi NU · Profil UPZ Hasyim Muzadi PPUQHM</p>
+    </div>
+
+    <div class="toc-item">
+      <p class="toc-bab" style="color:var(--emas)">📋 LAMPIRAN</p>
+      <p class="toc-sub">A. Tabel Ringkas Cara Menghitung Zakat · B. 10 Pertanyaan &amp; Jawaban (FAQ) · C. Glosarium 31 Istilah Fiqih</p>
+    </div>
+  </div>
+</div>
+
+<div class="article-body" style="padding-top:1rem">
+  <h2>✨ Keunggulan Buku Ini</h2>
+</div>
+
+<!-- KEUNGGULAN -->
+<div class="feat-wrap">
+  <div class="feat-grid">
+    <div class="feat-card">
+      <span class="feat-icon">📿</span>
+      <h4>Sanad Keilmuan Jelas</h4>
+      <p>Mengikuti madzhab Imam Asy-Syafi'i tradisi pesantren NU, rujukan kitab klasik &amp; kontemporer.</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🕌</span>
+      <h4>Dalil Arab + Terjemahan</h4>
+      <p>Setiap pembahasan dilengkapi nash Al-Qur'an &amp; Hadits dalam tulisan Arab + terjemahan Indonesia.</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">⛰️</span>
+      <h4>Kontekstual Mimika</h4>
+      <p>Pembahasan khusus untuk karyawan tambang, profesional Freeport, dan realitas ekonomi Papua.</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">📊</span>
+      <h4>Tabel Praktis</h4>
+      <p>Tabel ringkas nishab, kadar, dan waktu setiap jenis zakat — siap pakai untuk perhitungan.</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">❓</span>
+      <h4>10 FAQ Praktis</h4>
+      <p>Menjawab pertanyaan jamaah seputar zakat profesi, fitrah, dan kasus khas Mimika.</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🤝</span>
+      <h4>Sikap Resmi PPUQHM</h4>
+      <p>Mendokumentasikan sikap mukhtar UPZ Hasyim Muzadi tentang zakat profesi &amp; fitrah dengan uang.</p>
+    </div>
+  </div>
+</div>
+
+<div class="article-body" style="padding-top:1rem">
+  <h2>👥 Cocok untuk Siapa?</h2>
+  <p>Buku ini didesain agar bisa dipahami dari kalangan awam hingga pengurus dakwah:</p>
+  <ul style="font-size:14.5px;line-height:1.95;color:var(--gelap);padding-left:1.25rem;margin-bottom:1.2rem">
+    <li><strong>Walisantri PPUQHM</strong> — panduan keluarga dalam menunaikan zakat</li>
+    <li><strong>Jamaah pengajian rutin</strong> — materi belajar fiqih ibadah</li>
+    <li><strong>Karyawan/pegawai Mimika</strong> — yang ingin paham zakat profesi sesuai gaji</li>
+    <li><strong>Pengurus pesantren &amp; dakwah</strong> — referensi mengajar zakat</li>
+    <li><strong>Mahasantri PPUQHM</strong> — materi pengantar fiqih zakat</li>
+    <li><strong>Muzakki (pemberi zakat)</strong> — yang ingin menunaikan zakat dengan benar</li>
+    <li><strong>Amil/UPZ daerah</strong> — pedoman pengelolaan zakat</li>
+    <li><strong>Setiap Muslim Aswaja</strong> — yang ingin menambah ilmu fiqih</li>
+  </ul>
+
+  <h2>✍️ Tentang Penyusun</h2>
+</div>
+
+<!-- PENYUSUN -->
+<div class="penyusun-wrap">
+  <div class="penyusun-inner">
+    <h3>Gus Mursyid Adi Saputra Al-Hafidz</h3>
+    <p class="role">Pengasuh PPUQHM Mimika, Papua Tengah</p>
+    <p>Alumni Pondok Pesantren Al-Hikam Depok, murid langsung Almaghfurullah <strong>KH. Ahmad Hasyim Muzadi</strong> (mantan Rais Aam PBNU &amp; Wantimpres RI). Dzurriyah Sunan Giri dengan sertifikat NAAT (Naqobah Ansab Auliya' Tis'ah Indonesia) bersambung hingga Rasulullah ﷺ. Pendiri PPUQHM Mimika sebagai realisasi wasiat dakwah Almaghfurullah KH. Hasyim Muzadi di tanah Papua.</p>
+  </div>
+</div>
+
+<!-- CTA DOWNLOAD -->
+<div class="cta-wrap">
+  <div class="cta-inner">
+    <h3>📥 Unduh Gratis Sekarang</h3>
+    <p>Sebarkan ilmu, raih pahala. Bagikan buku ini kepada keluarga, jamaah, dan kerabat Anda.</p>
+    <a href="#" id="btnDownload" class="btn" onclick="return downloadPDF()">📄 Download PDF</a>
+    <a href="https://wa.me/6285716067467?text=Assalamu'alaikum, saya ingin menunaikan zakat di UPZ Hasyim Muzadi PPUQHM" class="btn wh" target="_blank">📿 Tunaikan Zakat ke UPZ</a>
+    <p class="placeholder-note">⏳ <strong>PDF segera tersedia</strong> — sedang dalam tahap finalisasi. Hubungi UPZ Hasyim Muzadi via WhatsApp untuk request salinan duluan.</p>
+  </div>
+</div>
+
+<!-- INFO -->
+<div class="info-box">
+  <div class="info-box-inner">
+    <div class="info-box-title">📋 Informasi Buku</div>
+    <dl>
+      <dt>Judul</dt><dd>Buku Saku Fiqih Zakat Madzhab Syafi'i</dd>
+      <dt>Penyusun</dt><dd>Gus Mursyid Adi Saputra Al-Hafidz</dd>
+      <dt>Penerbit</dt><dd>UPZ Hasyim Muzadi — PPUQHM Mimika</dd>
+      <dt>Tradisi</dt><dd>Madzhab Syafi'i / Tradisi Nahdlatul Ulama</dd>
+      <dt>Format</dt><dd>PDF · A5 · 76 halaman · ± 312 KB</dd>
+      <dt>Lisensi</dt><dd>Bebas dibagikan untuk dakwah &amp; pendidikan (non-komersial)</dd>
+      <dt>Rilis</dt><dd>Mei 2026</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- UPZ CONTACT -->
+<div class="upz-wrap">
+  <div class="upz-inner">
+    <h3>📞 Tunaikan Zakat Anda di UPZ Hasyim Muzadi</h3>
+    <p><strong>UPZ Hasyim Muzadi</strong> adalah Unit Pengumpul Zakat resmi di bawah PPUQHM, didedikasikan untuk pengelolaan zakat, infaq, dan shadaqah yang amanah dan profesional di wilayah Mimika dan sekitarnya.</p>
+    <p><strong>🏛️ Alamat:</strong><br>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi<br>Karang Senang SP-3, Kuala Kencana<br>Mimika, Papua Tengah</p>
+    <p style="margin-bottom:0"><strong>🕌 Layanan:</strong> Penerimaan Zakat Fitrah · Zakat Mal · Zakat Profesi bulanan · Infaq &amp; Shadaqah · Konsultasi fiqih zakat · Distribusi tepat sasaran ke mustahiq Mimika.</p>
+    <a href="https://wa.me/6285716067467?text=Assalamu'alaikum, saya ingin menunaikan zakat di UPZ Hasyim Muzadi PPUQHM" target="_blank" class="wa-btn">💬 Chat UPZ via WhatsApp (0857-1606-7467)</a>
+  </div>
+</div>
+
+<!-- MOTTO -->
+<div class="motto-block">
+  <div class="motto-divider">─── ❦ ───</div>
+  <p class="motto-text">Tandurane Abah, Tukule nang Papua</p>
+  <p class="motto-by">— Motto PPUQHM —</p>
+</div>
+
+<!-- TAGS -->
+<div class="tags-wrap">
+  <p class="tags-title">🏷️ Tag Berita</p>
+  <div class="tags-list">
+    <span class="tag">#PPUQHM</span>
+    <span class="tag">#BukuSakuZakat</span>
+    <span class="tag">#UPZHasyimMuzadi</span>
+    <span class="tag">#FiqihZakat</span>
+    <span class="tag">#MadzhabSyafii</span>
+    <span class="tag">#AswajaNU</span>
+    <span class="tag">#PublikasiPPUQHM</span>
+    <span class="tag">#PesantrenMimika</span>
+    <span class="tag">#GusMursyid</span>
+  </div>
+</div>
+
+<div class="back-btn-wrap">
+  <a href="berita.html" class="back-btn">← Kembali ke Daftar Berita</a>
+</div>
+
+<footer>
+  <p>©2025 | <span>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</span> · Kuala Kencana, Papua Tengah · All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/6285716067467" class="wa-float" target="_blank">💬</a>
+
+<script>
+function downloadPDF(){
+  alert('Buku Saku Fiqih Zakat sedang dalam tahap finalisasi.\n\nUntuk mendapatkan salinan duluan, silakan chat UPZ Hasyim Muzadi:\nWhatsApp 0857-1606-7467');
+  return false;
+}
+</script>
+
+</body>
+</html>

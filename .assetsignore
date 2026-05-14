@@ -1,0 +1,22 @@
+# Git internal database (jangan deploy ke web)
+.git
+.gitignore
+.gitkeep
+
+# Build config files
+wrangler.toml
+.assetsignore
+
+# Project meta (tidak perlu di production)
+.claude
+README.md
+admin/PANDUAN-ADMIN.md
+
+# System / dev files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Original large assets (jika masih ada)
+*.pdf

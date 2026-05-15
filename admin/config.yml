@@ -1,14 +1,19 @@
 # =========================================================
 # KONFIGURASI ADMIN PANEL — PPUQHM
-# Decap CMS Config File
+# Sveltia CMS Config File (drop-in pengganti Decap CMS)
 # =========================================================
 # File ini menentukan apa saja yang bisa diedit dari admin panel.
 # JANGAN diedit langsung kecuali kamu paham — bisa merusak setup.
 # =========================================================
 
+# Backend: GitHub OAuth via PKCE flow (tidak butuh OAuth proxy)
+# Site di-host di Cloudflare, login pakai akun GitHub langsung
 backend:
-  name: git-gateway
+  name: github
+  repo: ppuq-hasyim-muzadi/pesantren-website
   branch: main
+  auth_type: pkce
+  app_id: Ov23liRrhjk0enTCSrvj
 
 # Tempat upload foto/gambar
 media_folder: "uploads"

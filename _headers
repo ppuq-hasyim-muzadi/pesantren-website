@@ -42,8 +42,11 @@
 /*.xml
   Cache-Control: public, max-age=3600, s-maxage=86400
 
-# === Security headers untuk semua halaman ===
+# === Default untuk semua halaman (termasuk clean URL tanpa .html) ===
+# Berlaku untuk /, /berita-6, /pendaftaran, dll (yang tidak ada extension)
+# Untuk file dengan extension spesifik (.jpg, .css, dll), aturan di atas akan override
 /*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: interest-cohort=()

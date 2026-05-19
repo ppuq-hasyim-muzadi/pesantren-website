@@ -1,0 +1,49 @@
+# =========================================================
+# CLOUDFLARE _headers — Cache & Security Headers
+# =========================================================
+# File ini bikin Cloudflare cache file lama di edge, sehingga:
+# - File hampir tidak pernah hit Worker (anti-503)
+# - Loading lebih cepat untuk repeat visitor
+# - Bandwidth hemat
+#
+# Format: pattern URL + indented header lines, empty line between rules
+# =========================================================
+
+# === HTML pages — short cache (5 menit browser, 1 hari Cloudflare edge) ===
+# Pendek di browser agar update berita cepat sampai user
+# Lama di edge agar Cloudflare yang serve (bukan Worker)
+/*.html
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+
+# === Images — aggressive cache (1 minggu browser, 1 tahun edge) ===
+# Foto/gambar jarang berubah, cache selama mungkin
+*.jpg
+  Cache-Control: public, max-age=604800, s-maxage=31536000, immutable
+*.jpeg
+  Cache-Control: public, max-age=604800, s-maxage=31536000, immutable
+*.png
+  Cache-Control: public, max-age=604800, s-maxage=31536000, immutable
+*.webp
+  Cache-Control: public, max-age=604800, s-maxage=31536000, immutable
+*.svg
+  Cache-Control: public, max-age=604800, s-maxage=31536000, immutable
+*.ico
+  Cache-Control: public, max-age=604800, s-maxage=31536000, immutable
+*.gif
+  Cache-Control: public, max-age=604800, s-maxage=31536000, immutable
+
+# === CSS & JS — medium cache (1 hari browser, 1 bulan edge) ===
+*.css
+  Cache-Control: public, max-age=86400, s-maxage=2592000
+*.js
+  Cache-Control: public, max-age=86400, s-maxage=2592000
+
+# === XML / Sitemap — short cache ===
+*.xml
+  Cache-Control: public, max-age=3600, s-maxage=86400
+
+# === Security headers untuk semua halaman ===
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: interest-cohort=()

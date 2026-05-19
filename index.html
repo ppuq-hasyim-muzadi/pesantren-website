@@ -93,11 +93,15 @@
     body{font-family:'Poppins',sans-serif;background:#fff;color:var(--gelap);overflow-x:hidden}
 
     /* LOADER */
-    #loader{position:fixed;inset:0;background:#fff;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s}
+    #loader{position:fixed;inset:0;background:#fff;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .25s}
     .loader-logo{width:80px;height:80px;border-radius:50%;overflow:hidden;animation:pulse 1.2s ease-in-out infinite}
     .loader-logo img{width:100%;height:100%;object-fit:cover}
     @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-    #loader p{font-size:12px;color:var(--hijau);letter-spacing:.15em;text-transform:uppercase}
+    #loader p{font-size:12px;color:var(--hijau);letter-spacing:.15em;text-transform:uppercase;text-align:center;line-height:1.7;max-width:90%;padding:0 1rem}
+    #loader p span{display:block}
+    @media(max-width:480px){
+      #loader p{font-size:11px;letter-spacing:.12em}
+    }
 
     /* NAVBAR */
     nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(27,67,50,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;border-bottom:2px solid var(--emas);transition:box-shadow .3s}
@@ -110,11 +114,26 @@
     .nav-menu a:hover{color:var(--emas2)}
     .nav-daftar{background:var(--emas);color:var(--hijau)!important;padding:7px 18px;border-radius:4px;font-weight:600!important}
     .nav-daftar:hover{background:var(--emas2)!important}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
-    .hamburger span{width:24px;height:2px;background:#fff;border-radius:2px}
-    .mob-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--hijau);z-index:999;padding:1rem 2rem;flex-direction:column;gap:.5rem}
+    /* HAMBURGER ICON — animate ke X saat open */
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border-radius:6px;transition:background .2s}
+    .hamburger:hover{background:rgba(255,255,255,.08)}
+    .hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* MOBILE MENU — overlay full-screen elegant */
+    .mob-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:linear-gradient(180deg,var(--hijau) 0%,#0d2218 100%);z-index:999;padding:1.5rem 1.25rem 2rem;flex-direction:column;gap:.35rem;max-height:calc(100vh - 64px);overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.3);border-top:2px solid var(--emas);animation:slideDown .25s ease-out}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
     .mob-menu.open{display:flex}
-    .mob-menu a{color:#fff;text-decoration:none;font-size:14px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+    .mob-menu a{color:#fff;text-decoration:none;font-size:15px;font-weight:500;padding:14px 18px;border-radius:8px;display:flex;align-items:center;gap:12px;transition:background .2s,padding-left .2s,color .2s;border-left:3px solid transparent}
+    .mob-menu a:hover,.mob-menu a:active{background:rgba(212,160,23,.12);border-left-color:var(--emas);padding-left:22px;color:var(--emas2)}
+    .mob-menu a .ico{font-size:1.1rem;line-height:1;width:22px;display:inline-flex;justify-content:center;flex-shrink:0}
+    .mob-menu .sep{height:1px;background:rgba(212,160,23,.2);margin:.6rem 0;border:none}
+    .mob-menu a.cta{background:linear-gradient(135deg,var(--emas),var(--emas2));color:var(--hijau);font-weight:700;justify-content:center;border-left:none;margin-top:.25rem;padding:14px 18px;box-shadow:0 4px 12px rgba(212,160,23,.25)}
+    .mob-menu a.cta:hover{background:var(--emas);color:#0d2218;padding-left:18px;border-left:none;transform:translateY(-1px);box-shadow:0 6px 16px rgba(212,160,23,.4)}
+    .mob-menu a.cta-wa{background:#25d366;color:#fff;font-weight:600;justify-content:center;border-left:none}
+    .mob-menu a.cta-wa:hover{background:#1eb358;color:#fff;padding-left:18px;border-left:none}
 
     /* HERO SLIDER */
     .slider{position:relative;height:100vh;min-height:520px;max-height:820px;overflow:hidden;margin-top:64px}
@@ -482,10 +501,10 @@
       .slider-prev,.slider-next{padding:8px 12px;font-size:20px}
       .slide-badge{font-size:10px;padding:5px 14px;letter-spacing:.1em;max-width:90%;white-space:normal;line-height:1.4}
 
-      /* Sections */
-      section{padding:50px 1rem}
-      .container{padding:0 .5rem}
-      .sec-head{margin-bottom:1.75rem}
+      /* Sections — padding lebih elegan di mobile */
+      section{padding:55px 1.5rem}
+      .container{padding:0 .25rem}
+      .sec-head{margin-bottom:2rem}
 
       /* Grids */
       .tentang-grid,.kontak-grid,.footer-grid{grid-template-columns:1fr;gap:2rem}
@@ -539,10 +558,11 @@
       .slider-prev,.slider-next{display:none}
       .slider-dots{bottom:14px}
 
-      /* Sections */
-      section{padding:40px .85rem}
+      /* Sections — padding HP kecil lebih breathing room */
+      section{padding:48px 1.25rem}
       .sec-title{font-size:1.4rem}
       .sec-badge{font-size:10px;padding:4px 12px}
+      .sec-head{margin-bottom:1.85rem}
 
       /* Fitur — single column at very small screens */
       .fitur-grid{grid-template-columns:1fr;gap:.85rem}
@@ -571,7 +591,7 @@
 <!-- LOADER -->
 <div id="loader">
   <div class="loader-logo"><img src="logo pesantren.jpg" alt="Logo Pesantren"></div>
-  <p>Pondok Pesantren Ulumul Qur'an Hasyim Muzadi</p>
+  <p><span>Pondok Pesantren</span><span>Ulumul Qur'an Hasyim Muzadi</span></p>
 </div>
 
 <!-- NAVBAR -->
@@ -598,22 +618,23 @@
       </div>
     </li>
   </ul>
-  <div class="hamburger" onclick="document.getElementById('mobMenu').classList.toggle('open')">
+  <div class="hamburger" id="hamburgerBtn" onclick="toggleMobMenu()">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="#fitur">Fitur</a>
-  <a href="#keunggulan">Keunggulan</a>
-  <a href="#tentang">Tentang</a>
-  <a href="#pengasuh">Pengasuh</a>
-  <a href="#masyayikh">Masyayikh</a>
-  <a href="#program">Program</a>
-  <a href="#news">Berita</a>
-  <a href="#kontak">Kontak</a>
-  <a href="pendaftaran.html">📋 Halaman Pendaftaran</a>
-  <a href="javascript:void(0)" onclick="openModal();document.getElementById('mobMenu').classList.remove('open')">📝 Daftar Online</a>
-  <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar secara offline di Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank">💬 Daftar Offline (WA)</a>
+  <a href="#fitur"><span class="ico">✨</span> Fitur</a>
+  <a href="#keunggulan"><span class="ico">⭐</span> Keunggulan</a>
+  <a href="#tentang"><span class="ico">🕌</span> Tentang</a>
+  <a href="#pengasuh"><span class="ico">👤</span> Pengasuh</a>
+  <a href="#masyayikh"><span class="ico">📜</span> Masyayikh</a>
+  <a href="#program"><span class="ico">📖</span> Program</a>
+  <a href="#news"><span class="ico">📰</span> Berita</a>
+  <a href="#kontak"><span class="ico">📞</span> Kontak</a>
+  <hr class="sep">
+  <a href="pendaftaran.html" class="cta">📋 Halaman Pendaftaran</a>
+  <a href="javascript:void(0)" onclick="openModal()" class="cta">📝 Daftar Online Cepat</a>
+  <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar secara offline di Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank" class="cta-wa">💬 Daftar via WhatsApp</a>
 </div>
 
 <!-- HERO SLIDER -->
@@ -1339,8 +1360,8 @@
 </div>
 
 <script>
-// LOADER
-window.addEventListener('load',()=>{setTimeout(()=>{const l=document.getElementById('loader');l.style.opacity='0';setTimeout(()=>l.style.display='none',500)},1200)});
+// LOADER — fade out cepat (300ms + 250ms transition)
+window.addEventListener('load',()=>{setTimeout(()=>{const l=document.getElementById('loader');l.style.opacity='0';setTimeout(()=>l.style.display='none',250)},300)});
 
 // HERO SLIDER
 let cur=0;
@@ -1374,8 +1395,22 @@ function closeCtaDaftar(){document.getElementById('ctaDaftarDrop').classList.rem
 document.addEventListener('click',e=>{const d=document.getElementById('ctaDaftarDrop');if(d&&!d.parentElement.contains(e.target))d.classList.remove('open')});
 
 // MODAL
-function openModal(){document.getElementById('modalDaftar').classList.add('open');document.body.style.overflow='hidden'}
+function openModal(){document.getElementById('modalDaftar').classList.add('open');document.body.style.overflow='hidden';closeMobMenu()}
 function closeModal(){document.getElementById('modalDaftar').classList.remove('open');document.body.style.overflow=''}
+
+// MOBILE MENU — toggle + auto-close saat item di-klik
+function toggleMobMenu(){
+  document.getElementById('mobMenu').classList.toggle('open');
+  document.getElementById('hamburgerBtn').classList.toggle('open');
+}
+function closeMobMenu(){
+  document.getElementById('mobMenu').classList.remove('open');
+  document.getElementById('hamburgerBtn').classList.remove('open');
+}
+// Auto-close menu kalau klik link apapun di dalam mobMenu
+document.getElementById('mobMenu').addEventListener('click', function(e){
+  if (e.target.closest('a')) { closeMobMenu(); }
+});
 const fileLabels={foto:'Pilih foto santri',kk:'Pilih foto Kartu Keluarga',akta:'Pilih foto Akta Kelahiran',ijazah:'Pilih foto Ijazah / SKL'};
 function updateFileName(input,key){const label=document.getElementById('fileLabel-'+key);if(input.files.length>0){label.innerHTML='<span>✅</span> '+input.files[0].name}else{label.innerHTML='<span>📎</span> '+fileLabels[key]}}
 function submitForm(e){

@@ -148,21 +148,29 @@
     /* Slide 3: foto angkatan di bawah-tengah */
     .slide-3{background-position:center 65%}
 
-    /* Mobile portrait: cropping makin agresif, pertegas focal point */
+    /* Mobile & tablet portrait (≤768px) — pakai gambar portrait khusus, tampil UTUH (contain) */
     @media (max-width:768px){
-      .slide-1{background-position:28% center}
-      .slide-2{background-position:center 45%}
-      .slide-3{background-position:center 60%}
-    }
-    @media (max-width:480px){
+      /* Slide 1 — poster portrait (mode-mobile.jpg) */
       .slide-1{
         background-image:url('mode-mobile.jpg') !important;
         background-position:center center;
         background-size:contain;
         background-color:#fff
       }
-      .slide-2{background-position:center 50%}
-      .slide-3{background-position:center 58%}
+      /* Slide 2 — bangunan pondok versi portrait 4:5 */
+      .slide-2{
+        background-image:url('slide-2-mobile.jpg') !important;
+        background-position:center center;
+        background-size:contain;
+        background-color:#0d2218
+      }
+      /* Slide 3 — Haflah Khotmil Qur'an versi portrait 4:5 */
+      .slide-3{
+        background-image:url('slide-3-mobile.jpg') !important;
+        background-position:center center;
+        background-size:contain;
+        background-color:#0d2218
+      }
     }
 
     /* Judul slide 2 & 3 — paksa SATU BARIS (font auto-shrink di HP sempit) */
@@ -493,8 +501,8 @@
       .nav-logo-text{font-size:13px;max-width:200px}
       .nav-logo-circle{width:38px;height:38px}
 
-      /* Hero Slider */
-      .slider{height:calc(100vh - 64px);min-height:540px;max-height:680px}
+      /* Hero Slider — aspek 4:5 persis match gambar portrait, no letterbox */
+      .slider{height:auto;min-height:0;max-height:none;aspect-ratio:4/5}
       .slide-content{padding:1.5rem 1.25rem}
       .slide-btns{flex-direction:column;gap:.65rem;max-width:300px}
       .btn-gold,.btn-white{width:100%;padding:14px 24px}
@@ -547,7 +555,7 @@
     /* ===== RESPONSIVE — MOBILE KECIL (≤480px) ===== */
     @media(max-width:480px){
       /* Hero Slider */
-      .slider{min-height:500px}
+      .slider{min-height:0;aspect-ratio:4/5}
       .slide-content{padding:1rem .85rem}
       .arabic{font-size:.95rem;margin-bottom:.6rem;line-height:1.45}
       .slide-h1{font-size:1.35rem;line-height:1.25;margin-bottom:.6rem;max-width:100%}

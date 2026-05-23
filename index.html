@@ -592,6 +592,28 @@
     /* Prevent horizontal scroll */
     html,body{overflow-x:hidden;max-width:100%}
     img{max-width:100%;height:auto}
+
+    /* WHATSAPP BRAND ICON — official logo SVG (bukan emoji) */
+    img.wa-icon{height:1em;width:1em;display:inline-block;vertical-align:-.18em}
+    .fitur-icon img.wa-icon{height:2.4rem;width:2.4rem}
+    .kontak-ico img.wa-icon{height:24px;width:24px}
+    .mob-menu a .ico img.wa-icon{height:20px;width:20px}
+    .cta-daftar-drop .ico img.wa-icon{height:22px;width:22px}
+    img.wa-icon-float{height:32px;width:32px;display:block;filter:brightness(0) invert(1)}
+
+    /* TWEMOJI — PNG icons rendered konsisten lintas device */
+    img.emoji{height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-.15em;display:inline-block}
+    .fitur-icon img.emoji{height:2.4rem;width:2.4rem;margin:0}
+    .sejarah-card-icon img.emoji{height:2.8rem;width:2.8rem;margin:0}
+    .program-card-icon img.emoji{height:1.5rem;width:1.5rem;margin:0}
+    .mob-menu a .ico img.emoji{height:20px;width:20px;margin:0}
+    .kontak-ico img.emoji{height:24px;width:24px;margin:0}
+    .cta-daftar-drop .ico img.emoji{height:22px;width:22px;margin:0}
+    .wa-float img.emoji{height:28px;width:28px;margin:0}
+    .footer-col img.emoji,.f-sosmed img.emoji{height:1.05em;width:1.05em}
+    @media(max-width:480px){
+      .fitur-icon img.emoji{height:2rem;width:2rem}
+    }
   </style>
 </head>
 <body>
@@ -622,7 +644,7 @@
       <div class="nav-daftar-drop">
         <a href="pendaftaran.html"><span>📋</span> Halaman Pendaftaran</a>
         <a href="javascript:void(0)" onclick="openModal()"><span>📝</span> Daftar Online</a>
-        <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar secara offline di Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank"><span>💬</span> Daftar Offline (WA)</a>
+        <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftar secara offline di Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank"><img src="icon-wa.svg" class="wa-icon" alt="WhatsApp"> Daftar Offline (WA)</a>
       </div>
     </li>
   </ul>
@@ -638,7 +660,7 @@
   <a href="#masyayikh"><span class="ico">📜</span> Masyayikh</a>
   <a href="#program"><span class="ico">📖</span> Program</a>
   <a href="#news"><span class="ico">📰</span> Berita</a>
-  <a href="#kontak"><span class="ico">💬</span> Kontak</a>
+  <a href="#kontak"><span class="ico"><img src="icon-wa.svg" class="wa-icon" alt="WhatsApp"></span> Kontak</a>
   <hr class="sep">
   <a href="pendaftaran.html" class="cta">📋 Halaman Pendaftaran</a>
   <a href="javascript:void(0)" onclick="openModal()" class="cta">📝 Daftar Online Cepat</a>
@@ -720,7 +742,7 @@
       <p>Info terkini kegiatan dan prestasi santri</p>
     </a>
     <a href="#kontak" class="fitur-card">
-      <span class="fitur-icon">💬</span>
+      <span class="fitur-icon"><img src="icon-wa.svg" class="wa-icon" alt="WhatsApp"></span>
       <h3>Hubungi Kami</h3>
       <p>Kontak langsung pengurus pesantren</p>
     </a>
@@ -1109,7 +1131,7 @@
           <span class="lbl"><strong>Daftar Online Cepat</strong><small>Isi formulir di halaman ini</small></span>
         </a>
         <a href="https://wa.me/6282239693243?text=Assalamu'alaikum, saya ingin mendaftarkan santri baru di Pondok Pesantren Ulumul Qur'an Hasyim Muzadi" target="_blank">
-          <span class="ico">💬</span>
+          <span class="ico"><img src="icon-wa.svg" class="wa-icon" alt="WhatsApp"></span>
           <span class="lbl"><strong>Daftar Offline (WhatsApp)</strong><small>Chat langsung Mbak Novita</small></span>
         </a>
       </div>
@@ -1132,7 +1154,7 @@
           <div><h4>Alamat</h4><p>Jl. Sunan Kalijaga, Kel. Karang Senang Sp.3,<br>Distrik Kuala Kencana, Papua Tengah</p></div>
         </div>
         <div class="kontak-row">
-          <div class="kontak-ico">💬</div>
+          <div class="kontak-ico"><img src="icon-wa.svg" class="wa-icon" alt="WhatsApp"></div>
           <div>
             <h4>WhatsApp</h4>
             <a href="https://wa.me/6282239693243" target="_blank">Mbak Novita: 0822-3969-3243</a><br>
@@ -1182,8 +1204,8 @@
     <div class="footer-col">
       <h4>Kontak & Sosial Media</h4>
       <div class="f-sosmed">
-        <a href="https://wa.me/6282239693243" target="_blank">💬 Mbak Novita: 0822-3969-3243</a>
-        <a href="https://wa.me/6281248892290" target="_blank">💬 Kang Bedul: 0812-4889-2290</a>
+        <a href="https://wa.me/6282239693243" target="_blank"><img src="icon-wa.svg" class="wa-icon" alt="WhatsApp"> Mbak Novita: 0822-3969-3243</a>
+        <a href="https://wa.me/6281248892290" target="_blank"><img src="icon-wa.svg" class="wa-icon" alt="WhatsApp"> Kang Bedul: 0812-4889-2290</a>
         <a href="https://www.facebook.com/share/15kT4C5bao2/" target="_blank">📘 Facebook: Ponpes Hasyim Muzadi</a>
         <a href="https://www.instagram.com/ppuqhm.official/" target="_blank">📸 Instagram: @ppuqhm.official</a>
         <a href="https://www.instagram.com/media.uqhm/" target="_blank">📸 Instagram: @media.uqhm</a>
@@ -1196,7 +1218,7 @@
   </div>
 </footer>
 
-<a href="https://wa.me/6282239693243" class="wa-float" target="_blank">💬</a>
+<a href="https://wa.me/6282239693243" class="wa-float" target="_blank" aria-label="Chat via WhatsApp"><img src="icon-wa.svg" class="wa-icon-float" alt="WhatsApp"></a>
 
 <!-- MODAL PENDAFTARAN -->
 <div class="modal-overlay" id="modalDaftar" onclick="if(event.target===this)closeModal()">
@@ -1460,6 +1482,27 @@ function submitForm(e){
   f.reset();
   Object.keys(fileLabels).forEach(k=>{const el=document.getElementById('fileLabel-'+k);if(el)el.innerHTML='<span>📎</span> '+fileLabels[k]});
 }
+</script>
+
+<!-- TWEMOJI — render emoji jadi PNG colorful konsisten di semua device -->
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous" defer></script>
+<script>
+// Render emoji jadi PNG setelah load
+window.addEventListener('load', function(){
+  if (window.twemoji) {
+    twemoji.parse(document.body, {
+      folder: '72x72',
+      ext: '.png',
+      base: 'https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/'
+    });
+  }
+});
+// Re-parse setelah modal/form update (untuk emoji dinamis di file upload)
+const _origUpdateFileName = window.updateFileName;
+window.updateFileName = function(input, key){
+  if (typeof _origUpdateFileName === 'function') _origUpdateFileName(input, key);
+  if (window.twemoji) twemoji.parse(document.getElementById('fileLabel-'+key), { folder:'72x72', ext:'.png', base:'https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets/' });
+};
 </script>
 
 </body>

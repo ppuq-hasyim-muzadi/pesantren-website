@@ -1352,14 +1352,6 @@
           <h4><span class="ico">3</span> Upload Dokumen</h4>
         </div>
         <div class="form-group">
-          <label>Foto Santri (3x4 / formal)</label>
-          <label class="file-label" id="fileLabel-foto">
-            <span>📎</span> Pilih foto santri
-            <input type="file" name="foto" accept="image/*" onchange="updateFileName(this,'foto')">
-          </label>
-          <span class="hint">Pas foto wajah jelas, latar bebas</span>
-        </div>
-        <div class="form-group">
           <label>Foto Kartu Keluarga (KK)</label>
           <label class="file-label" id="fileLabel-kk">
             <span>📎</span> Pilih foto Kartu Keluarga
@@ -1441,7 +1433,7 @@ function closeMobMenu(){
 document.getElementById('mobMenu').addEventListener('click', function(e){
   if (e.target.closest('a')) { closeMobMenu(); }
 });
-const fileLabels={foto:'Pilih foto santri',kk:'Pilih foto Kartu Keluarga',akta:'Pilih foto Akta Kelahiran',ijazah:'Pilih foto Ijazah / SKL'};
+const fileLabels={kk:'Pilih foto Kartu Keluarga',akta:'Pilih foto Akta Kelahiran',ijazah:'Pilih foto Ijazah / SKL'};
 function updateFileName(input,key){const label=document.getElementById('fileLabel-'+key);if(input.files.length>0){label.innerHTML='<span>✅</span> '+input.files[0].name}else{label.innerHTML='<span>📎</span> '+fileLabels[key]}}
 function submitForm(e){
   e.preventDefault();

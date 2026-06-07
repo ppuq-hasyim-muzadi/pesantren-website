@@ -413,6 +413,7 @@
     <div class="form-shell">
       <form id="formDaftarPage" onsubmit="submitFormPage(event)">
 
+        <!-- ============ DATA SANTRI ============ -->
         <div class="form-section">
           <h4><span class="ico">1</span> Data Santri</h4>
         </div>
@@ -420,20 +421,9 @@
           <label>Nama Lengkap Santri *</label>
           <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>NIK / NISN</label>
-            <input type="text" name="nik" placeholder="16 digit NIK / 10 digit NISN">
-            <span class="hint">Boleh dikosongkan jika belum ada</span>
-          </div>
-          <div class="form-group">
-            <label>Jenis Kelamin *</label>
-            <select name="jenis_kelamin" required>
-              <option value="" disabled selected>Pilih</option>
-              <option value="Laki-laki">Laki-laki</option>
-              <option value="Perempuan">Perempuan</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label>No. NIK *</label>
+          <input type="text" name="nik" placeholder="16 digit NIK sesuai KTP / KK" required>
         </div>
         <div class="form-row">
           <div class="form-group">
@@ -445,120 +435,170 @@
             <input type="date" name="tanggal_lahir" required>
           </div>
         </div>
-        <div class="form-group">
-          <label>Alamat Lengkap Santri *</label>
-          <textarea name="alamat" placeholder="Jalan, RT/RW, Desa, Kecamatan, Kabupaten, Provinsi" required></textarea>
-        </div>
         <div class="form-row">
           <div class="form-group">
-            <label>No. HP Santri</label>
-            <input type="tel" name="hp_santri" placeholder="Kosongkan jika belum punya">
-            <span class="hint">Opsional</span>
+            <label>Jenis Kelamin *</label>
+            <select name="jenis_kelamin" required>
+              <option value="" disabled selected>Pilih</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
           </div>
           <div class="form-group">
-            <label>Jenjang / Program Dipilih *</label>
-            <select name="jenjang" required>
-              <option value="" disabled selected>Pilih program</option>
-              <option value="Tahfidz Pure">Tahfidz Pure (non-formal)</option>
-              <option value="Kitab Kuning">Kitab Kuning (non-formal)</option>
-              <option value="SMP + Pesantren">SMP + Pesantren</option>
-              <option value="SMA + Pesantren">SMA + Pesantren</option>
-              <option value="Mahasantri">Mahasantri (kuliah)</option>
+            <label>Agama *</label>
+            <select name="agama" required>
+              <option value="" disabled selected>Pilih</option>
+              <option value="Islam" selected>Islam</option>
+              <option value="Kristen">Kristen</option>
+              <option value="Katolik">Katolik</option>
+              <option value="Hindu">Hindu</option>
+              <option value="Buddha">Buddha</option>
+              <option value="Konghucu">Konghucu</option>
             </select>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>Asal Sekolah Terakhir *</label>
-            <input type="text" name="asal_sekolah" placeholder="Nama sekolah/madrasah" required>
+            <label>Jumlah Saudara *</label>
+            <input type="number" name="jumlah_saudara" min="0" placeholder="Contoh: 3" required>
           </div>
           <div class="form-group">
-            <label>Tahun Lulus *</label>
-            <input type="text" name="tahun_lulus" placeholder="Contoh: 2026" required>
+            <label>Anak Ke- *</label>
+            <input type="number" name="anak_ke" min="1" placeholder="Contoh: 2" required>
           </div>
         </div>
         <div class="form-group">
-          <label>Riwayat Hafalan Al-Qur'an *</label>
-          <select name="hafalan" required>
-            <option value="" disabled selected>Pilih jumlah hafalan</option>
-            <option value="Belum bisa baca">Belum bisa baca Al-Qur'an</option>
-            <option value="Sudah bin nadhar">Sudah bin nadhar (lancar baca)</option>
-            <option value="1-5 juz">1 – 5 juz</option>
-            <option value="6-15 juz">6 – 15 juz</option>
-            <option value="16-29 juz">16 – 29 juz</option>
-            <option value="30 juz">30 juz (sudah khatam)</option>
-          </select>
+          <label>Cita-cita *</label>
+          <input type="text" name="cita_cita" placeholder="Contoh: Hafidz, Dokter, Guru" required>
         </div>
-
-        <div class="form-section">
-          <h4><span class="ico">2</span> Data Orang Tua / Wali</h4>
+        <div class="form-group">
+          <label>Hobi *</label>
+          <input type="text" name="hobi" placeholder="Contoh: Membaca, Sepak bola, Menulis" required>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>Nama Ayah *</label>
-            <input type="text" name="ayah" placeholder="Nama lengkap ayah" required>
+            <label>Email Santri</label>
+            <input type="email" name="email_santri" placeholder="contoh@email.com">
+            <span class="hint">Opsional</span>
+          </div>
+          <div class="form-group">
+            <label>No. HP Santri</label>
+            <input type="tel" name="hp_santri" placeholder="Kosongkan jika belum punya">
+            <span class="hint">Opsional</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tanggal Masuk Pondok *</label>
+          <input type="date" name="tanggal_masuk" required>
+        </div>
+
+        <!-- ============ DATA KELUARGA ============ -->
+        <div class="form-section">
+          <h4><span class="ico">2</span> Data Keluarga</h4>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>No. Kartu Keluarga (KK) *</label>
+            <input type="text" name="no_kk" placeholder="16 digit nomor KK" required>
+          </div>
+          <div class="form-group">
+            <label>Kepala Keluarga *</label>
+            <input type="text" name="kepala_keluarga" placeholder="Nama kepala keluarga di KK" required>
+          </div>
+        </div>
+
+        <!-- ============ DATA AYAH ============ -->
+        <div class="form-section">
+          <h4><span class="ico">3</span> Data Ayah Kandung</h4>
+        </div>
+        <div class="form-group">
+          <label>Nama Lengkap Ayah Kandung *</label>
+          <input type="text" name="ayah" placeholder="Nama lengkap ayah" required>
+        </div>
+        <div class="form-group">
+          <label>No. NIK Ayah *</label>
+          <input type="text" name="nik_ayah" placeholder="16 digit NIK ayah" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tempat Lahir Ayah *</label>
+            <input type="text" name="tempat_lahir_ayah" placeholder="Kota/Kabupaten" required>
+          </div>
+          <div class="form-group">
+            <label>Tanggal Lahir Ayah *</label>
+            <input type="date" name="tanggal_lahir_ayah" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Pendidikan Terakhir Ayah *</label>
+            <select name="pendidikan_ayah" required>
+              <option value="" disabled selected>Pilih</option>
+              <option value="Tidak Sekolah">Tidak Sekolah</option>
+              <option value="SD/Sederajat">SD / Sederajat</option>
+              <option value="SMP/Sederajat">SMP / Sederajat</option>
+              <option value="SMA/Sederajat">SMA / Sederajat</option>
+              <option value="D1-D3">D1 – D3</option>
+              <option value="S1/D4">S1 / D4</option>
+              <option value="S2">S2</option>
+              <option value="S3">S3</option>
+            </select>
           </div>
           <div class="form-group">
             <label>Pekerjaan Ayah *</label>
-            <input type="text" name="pekerjaan_ayah" placeholder="Contoh: Petani, Guru, dll" required>
+            <input type="text" name="pekerjaan_ayah" placeholder="Contoh: Petani, Guru" required>
+          </div>
+        </div>
+
+        <!-- ============ DATA IBU ============ -->
+        <div class="form-section">
+          <h4><span class="ico">4</span> Data Ibu Kandung</h4>
+        </div>
+        <div class="form-group">
+          <label>Nama Lengkap Ibu Kandung *</label>
+          <input type="text" name="ibu" placeholder="Nama lengkap ibu" required>
+        </div>
+        <div class="form-group">
+          <label>No. NIK Ibu *</label>
+          <input type="text" name="nik_ibu" placeholder="16 digit NIK ibu" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tempat Lahir Ibu *</label>
+            <input type="text" name="tempat_lahir_ibu" placeholder="Kota/Kabupaten" required>
+          </div>
+          <div class="form-group">
+            <label>Tanggal Lahir Ibu *</label>
+            <input type="date" name="tanggal_lahir_ibu" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>Nama Ibu *</label>
-            <input type="text" name="ibu" placeholder="Nama lengkap ibu" required>
+            <label>Pendidikan Terakhir Ibu *</label>
+            <select name="pendidikan_ibu" required>
+              <option value="" disabled selected>Pilih</option>
+              <option value="Tidak Sekolah">Tidak Sekolah</option>
+              <option value="SD/Sederajat">SD / Sederajat</option>
+              <option value="SMP/Sederajat">SMP / Sederajat</option>
+              <option value="SMA/Sederajat">SMA / Sederajat</option>
+              <option value="D1-D3">D1 – D3</option>
+              <option value="S1/D4">S1 / D4</option>
+              <option value="S2">S2</option>
+              <option value="S3">S3</option>
+            </select>
           </div>
           <div class="form-group">
             <label>Pekerjaan Ibu *</label>
-            <input type="text" name="pekerjaan_ibu" placeholder="Contoh: IRT, Guru, dll" required>
+            <input type="text" name="pekerjaan_ibu" placeholder="Contoh: IRT, Guru" required>
           </div>
         </div>
         <div class="form-group">
-          <label>Penghasilan Rata-rata Orang Tua *</label>
-          <select name="penghasilan" required>
-            <option value="" disabled selected>Pilih rentang penghasilan</option>
-            <option value="< Rp 1.000.000">Kurang dari Rp 1.000.000</option>
-            <option value="Rp 1.000.000 - Rp 3.000.000">Rp 1.000.000 – Rp 3.000.000</option>
-            <option value="Rp 3.000.000 - Rp 5.000.000">Rp 3.000.000 – Rp 5.000.000</option>
-            <option value="Rp 5.000.000 - Rp 10.000.000">Rp 5.000.000 – Rp 10.000.000</option>
-            <option value="> Rp 10.000.000">Lebih dari Rp 10.000.000</option>
-          </select>
-          <span class="hint">Untuk pertimbangan beasiswa santri dhuafa</span>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>No. HP / WhatsApp Orang Tua *</label>
-            <input type="tel" name="hp" placeholder="Contoh: 081234567890" required>
-          </div>
-          <div class="form-group">
-            <label>Asal Daerah *</label>
-            <input type="text" name="asal_daerah" placeholder="Contoh: Mimika, Papua" required>
-            <span class="hint">Untuk pertimbangan beasiswa putra-putri Papua</span>
-          </div>
-        </div>
-
-        <div class="form-section">
-          <h4><span class="ico">3</span> Informasi Tambahan</h4>
-        </div>
-        <div class="form-group">
-          <label>Dari Mana Mengetahui PPUQHM?</label>
-          <select name="sumber">
-            <option value="-">Pilih (opsional)</option>
-            <option value="Media Sosial (FB/IG/YouTube)">Media Sosial (FB/IG/YouTube)</option>
-            <option value="Website santripapua.com">Website santripapua.com</option>
-            <option value="Rekomendasi keluarga/teman">Rekomendasi keluarga/teman</option>
-            <option value="Tetangga / Warga sekitar">Tetangga / Warga sekitar</option>
-            <option value="Brosur / Spanduk">Brosur / Spanduk</option>
-            <option value="Lainnya">Lainnya</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Pesan / Pertanyaan Tambahan</label>
-          <textarea name="pesan" placeholder="Tulis pesan, pertanyaan, atau catatan khusus untuk pengurus (opsional)"></textarea>
+          <label>No. HP / WhatsApp Ibu *</label>
+          <input type="tel" name="hp_ibu" placeholder="Contoh: 081234567890" required>
         </div>
 
         <button type="submit" class="btn-submit">📩 Kirim Pendaftaran via WhatsApp</button>
-        <p class="form-note">Data akan dikirim ke pengurus pesantren via WhatsApp. <strong>Dokumen pendukung</strong> (foto santri, KK, akta, ijazah, surat sehat) silakan dikirim ulang setelah WhatsApp terbuka.<br>Field bertanda <strong>*</strong> wajib diisi.</p>
+        <p class="form-note">Data akan dikirim ke pengurus pesantren via WhatsApp. <strong>Foto Kartu Keluarga (KK)</strong> silakan dikirim setelah WhatsApp terbuka.<br>Field bertanda <strong>*</strong> wajib diisi.</p>
       </form>
 
       <div class="alt-contact" style="color:var(--abu)">
@@ -599,40 +639,57 @@ function submitFormPage(e){
   e.preventDefault();
   const f = e.target;
   const v = n => f[n] ? f[n].value : '';
-  const nama = v('nama'), nik = v('nik') || '-', jk = v('jenis_kelamin');
+  const nama = v('nama'), nik = v('nik');
   const tempat = v('tempat_lahir'), tgl = v('tanggal_lahir');
-  const alamat = v('alamat'), hpSantri = v('hp_santri') || '-';
-  const jenjang = v('jenjang'), asalSekolah = v('asal_sekolah'), tahunLulus = v('tahun_lulus');
-  const hafalan = v('hafalan');
-  const ayah = v('ayah'), pekerjaanAyah = v('pekerjaan_ayah');
-  const ibu = v('ibu'), pekerjaanIbu = v('pekerjaan_ibu');
-  const penghasilan = v('penghasilan'), hp = v('hp');
-  const asalDaerah = v('asal_daerah'), sumber = v('sumber') || '-', pesanTxt = v('pesan') || '-';
+  const jk = v('jenis_kelamin'), agama = v('agama');
+  const jumlahSaudara = v('jumlah_saudara'), anakKe = v('anak_ke');
+  const citaCita = v('cita_cita'), hobi = v('hobi');
+  const emailSantri = v('email_santri') || '-', hpSantri = v('hp_santri') || '-';
+  const tanggalMasuk = v('tanggal_masuk');
+  const noKK = v('no_kk'), kepalaKeluarga = v('kepala_keluarga');
+  const ayah = v('ayah'), nikAyah = v('nik_ayah');
+  const tempatAyah = v('tempat_lahir_ayah'), tglAyah = v('tanggal_lahir_ayah');
+  const pendidikanAyah = v('pendidikan_ayah'), pekerjaanAyah = v('pekerjaan_ayah');
+  const ibu = v('ibu'), nikIbu = v('nik_ibu');
+  const tempatIbu = v('tempat_lahir_ibu'), tglIbu = v('tanggal_lahir_ibu');
+  const pendidikanIbu = v('pendidikan_ibu'), pekerjaanIbu = v('pekerjaan_ibu');
+  const hpIbu = v('hp_ibu');
 
   const pesan = `Assalamu'alaikum, saya ingin mendaftarkan santri baru di PPUQHM:%0A%0A` +
     `*━━ DATA SANTRI ━━*%0A` +
     `*Nama:* ${nama}%0A` +
-    `*NIK/NISN:* ${nik}%0A` +
+    `*NIK:* ${nik}%0A` +
     `*TTL:* ${tempat}, ${tgl}%0A` +
     `*Jenis Kelamin:* ${jk}%0A` +
-    `*Alamat:* ${alamat}%0A` +
+    `*Agama:* ${agama}%0A` +
+    `*Jumlah Saudara:* ${jumlahSaudara}%0A` +
+    `*Anak ke-:* ${anakKe}%0A` +
+    `*Cita-cita:* ${citaCita}%0A` +
+    `*Hobi:* ${hobi}%0A` +
+    `*Email:* ${emailSantri}%0A` +
     `*HP Santri:* ${hpSantri}%0A` +
-    `*Program Dipilih:* ${jenjang}%0A` +
-    `*Asal Sekolah:* ${asalSekolah} (Lulus ${tahunLulus})%0A` +
-    `*Hafalan Qur'an:* ${hafalan}%0A%0A` +
-    `*━━ DATA ORANG TUA ━━*%0A` +
-    `*Nama Ayah:* ${ayah} (${pekerjaanAyah})%0A` +
-    `*Nama Ibu:* ${ibu} (${pekerjaanIbu})%0A` +
-    `*Penghasilan:* ${penghasilan}%0A` +
-    `*HP Ortu:* ${hp}%0A` +
-    `*Asal Daerah:* ${asalDaerah}%0A%0A` +
-    `*━━ TAMBAHAN ━━*%0A` +
-    `*Mengetahui PPUQHM dari:* ${sumber}%0A` +
-    `*Pesan:* ${pesanTxt}%0A%0A` +
-    `Mohon informasi proses selanjutnya. Terima kasih.`;
+    `*Tanggal Masuk Pondok:* ${tanggalMasuk}%0A%0A` +
+    `*━━ DATA KELUARGA ━━*%0A` +
+    `*No. KK:* ${noKK}%0A` +
+    `*Kepala Keluarga:* ${kepalaKeluarga}%0A%0A` +
+    `*━━ DATA AYAH ━━*%0A` +
+    `*Nama Ayah:* ${ayah}%0A` +
+    `*NIK Ayah:* ${nikAyah}%0A` +
+    `*TTL Ayah:* ${tempatAyah}, ${tglAyah}%0A` +
+    `*Pendidikan Ayah:* ${pendidikanAyah}%0A` +
+    `*Pekerjaan Ayah:* ${pekerjaanAyah}%0A%0A` +
+    `*━━ DATA IBU ━━*%0A` +
+    `*Nama Ibu:* ${ibu}%0A` +
+    `*NIK Ibu:* ${nikIbu}%0A` +
+    `*TTL Ibu:* ${tempatIbu}, ${tglIbu}%0A` +
+    `*Pendidikan Ibu:* ${pendidikanIbu}%0A` +
+    `*Pekerjaan Ibu:* ${pekerjaanIbu}%0A` +
+    `*HP Ibu:* ${hpIbu}%0A%0A` +
+    `_Foto Kartu Keluarga (KK) akan dikirim menyusul melalui WhatsApp ini._%0A%0A` +
+    `Mohon proses pendaftarannya. Jazakumullah khairan.`;
 
   window.open('https://wa.me/6282239693243?text=' + pesan, '_blank');
-  alert('Pendaftaran berhasil dikirim!\n\nWhatsApp akan terbuka — silakan klik KIRIM, lalu lampirkan dokumen (foto santri, KK, akta, ijazah, surat sehat) di chat yang sama.');
+  alert('Pendaftaran berhasil dikirim!\n\nWhatsApp akan terbuka — silakan klik KIRIM, lalu lampirkan foto Kartu Keluarga (KK) di chat yang sama.');
   f.reset();
 }
 

@@ -52,18 +52,39 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
+    "@type": ["EducationalOrganization", "SecondarySchool"],
+    "@id": "https://santripapua.com/#organization",
     "name": "Pondok Pesantren Ulumul Qur'an Hasyim Muzadi",
-    "alternateName": "PPUQHM",
+    "alternateName": ["PPUQHM", "Pesantren Hasyim Muzadi", "Santri Papua"],
     "url": "https://santripapua.com/",
-    "logo": "https://santripapua.com/logo%20pesantren.jpg",
-    "image": "https://santripapua.com/sampul%20pondok.png",
-    "description": "Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM) adalah pesantren tahfidz Aswaja An-Nahdliyah pertama di Kabupaten Mimika, Papua Tengah. Mengusung nama Almaghfurullah KH. Ahmad Hasyim Muzadi.",
-    "foundingDate": "2017-10-28",
-    "founder": {
-      "@type": "Person",
-      "name": "Gus Mursyid Adi Saputra Al-Hafidz"
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://santripapua.com/logo%20pesantren.jpg",
+      "width": 512,
+      "height": 512
     },
+    "image": "https://santripapua.com/sampul%20pondok.png",
+    "description": "Pondok Pesantren Ulumul Qur'an Hasyim Muzadi (PPUQHM) adalah pesantren tahfidz Aswaja An-Nahdliyah pertama di Kabupaten Mimika, Papua Tengah. Mengusung nama Almaghfurullah KH. Ahmad Hasyim Muzadi. Diasuh pasangan hafidz-hafidzah dengan sanad muttashil ke KH. Munawwir Krapyak. Program: Tahfidz Pure, Kitab Kuning, SMP & SMA Terakreditasi.",
+    "slogan": "Tandurane Abah, Tukule nang Papua",
+    "foundingDate": "2017-10-28",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Kuala Kencana, Mimika, Papua Tengah"
+    },
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Gus Mursyid Adi Saputra Al-Hafidz",
+        "jobTitle": "Pengasuh & Pendiri",
+        "url": "https://santripapua.com/gus-mursyid"
+      },
+      {
+        "@type": "Person",
+        "name": "Ning Siti Imroatus Sholihah Al-Hafidzoh",
+        "jobTitle": "Pengasuh & Pendiri",
+        "url": "https://santripapua.com/ning-siti"
+      }
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Jl. Sunan Kalijaga, RT 10/RW 02, SP.3, Desa Karang Senang",
@@ -72,11 +93,57 @@
       "addressCountry": "ID"
     },
     "telephone": "+62-822-3969-3243",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+62-822-3969-3243",
+        "contactType": "Pendaftaran Santri Baru",
+        "name": "Mbak Novita",
+        "availableLanguage": ["Indonesian"],
+        "areaServed": "ID"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+62-812-4889-2290",
+        "contactType": "Informasi Umum",
+        "name": "Kang Bedul",
+        "availableLanguage": ["Indonesian"],
+        "areaServed": "ID"
+      }
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    "numberOfStudents": 95,
+    "knowsAbout": [
+      "Tahfidz Al-Qur'an",
+      "Kitab Kuning",
+      "Aswaja An-Nahdliyah",
+      "Sanad Krapyak",
+      "Pendidikan Pesantren Modern"
+    ],
     "sameAs": [
       "https://www.facebook.com/share/15kT4C5bao2/",
       "https://www.instagram.com/ppuqhm.official/",
       "https://youtube.com/@ppuqhm"
     ]
+  }
+  </script>
+
+  <!-- WEBSITE SCHEMA (untuk SearchAction sitelinks) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://santripapua.com/#website",
+    "url": "https://santripapua.com/",
+    "name": "Pondok Pesantren Ulumul Qur'an Hasyim Muzadi",
+    "alternateName": "Santri Papua",
+    "publisher": { "@id": "https://santripapua.com/#organization" },
+    "inLanguage": "id-ID"
   }
   </script>
 

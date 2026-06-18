@@ -1362,6 +1362,20 @@
           <label>Hobi *</label>
           <input type="text" name="hobi" placeholder="Contoh: Membaca, Sepak bola, Menulis" required>
         </div>
+        <div class="form-group">
+          <label>Jenjang Belajar Al-Qur'an *</label>
+          <select name="jenjang_quran" required>
+            <option value="" disabled selected>Pilih jenjang</option>
+            <option value="Belum bisa baca">Belum bisa baca Al-Qur'an</option>
+            <option value="Iqro">Iqro' (jilid 1-6)</option>
+            <option value="Bin Nadhar">Bin Nadhar (sudah lancar baca)</option>
+            <option value="Hafalan 1-5 juz">Hafalan 1 – 5 juz</option>
+            <option value="Hafalan 6-15 juz">Hafalan 6 – 15 juz</option>
+            <option value="Hafalan 16-29 juz">Hafalan 16 – 29 juz</option>
+            <option value="30 juz (khatam)">30 juz (sudah khatam hafalan)</option>
+          </select>
+          <span class="hint">Untuk penempatan kelas sesuai kemampuan awal santri</span>
+        </div>
         <div class="form-row">
           <div class="form-group">
             <label>Email Santri</label>
@@ -1566,7 +1580,7 @@ function submitForm(e){
   const tempat=v('tempat_lahir'), tgl=v('tanggal_lahir');
   const jk=v('jenis_kelamin'), agama=v('agama');
   const jumlahSaudara=v('jumlah_saudara'), anakKe=v('anak_ke');
-  const citaCita=v('cita_cita'), hobi=v('hobi');
+  const citaCita=v('cita_cita'), hobi=v('hobi'), jenjangQuran=v('jenjang_quran');
   const emailSantri=v('email_santri')||'-', hpSantri=v('hp_santri')||'-';
   const tanggalMasuk=v('tanggal_masuk');
   const noKK=v('no_kk'), kepalaKeluarga=v('kepala_keluarga');
@@ -1589,6 +1603,7 @@ function submitForm(e){
     `*Anak ke-:* ${anakKe}%0A`+
     `*Cita-cita:* ${citaCita}%0A`+
     `*Hobi:* ${hobi}%0A`+
+    `*Jenjang Al-Qur'an:* ${jenjangQuran}%0A`+
     `*Email:* ${emailSantri}%0A`+
     `*HP Santri:* ${hpSantri}%0A`+
     `*Tanggal Masuk Pondok:* ${tanggalMasuk}%0A%0A`+
